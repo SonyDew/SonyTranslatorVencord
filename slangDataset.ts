@@ -18,8 +18,8 @@ const slangDataset: {
     incoming_chat_rules?: any[];
     source_normalization_rules?: any[];
 } = {
-  "version": "1.4",
-  "generated_at": "2026-09-13",
+  "version": "1.5",
+  "generated_at": "2026-10-14",
   "naturalization_rules": [
     {
       "id": "en_formal_contrast",
@@ -20179,6 +20179,16 @@ const slangDataset: {
       "confidence": "high",
       "current": true,
       "can_recognize": true
+    },
+    {
+      "id": "en_key_assignment_typo",
+      "language": "en",
+      "pattern": "\\bkey assigment\\b",
+      "replacement": "key assignment",
+      "kind": "typo",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
     }
   ],
   "incoming_chat_rules": [
@@ -20866,6 +20876,83 @@ const slangDataset: {
           ],
           "heavy": [
             "ок"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_key_assignment_controls",
+      "language": "en",
+      "pattern": "^key assign?ment[.!?]*$",
+      "normalized": "keyboard key bindings",
+      "sense": "mapping keyboard keys to controls",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "requires_context": true,
+      "context_patterns": [
+        "remap",
+        "buttons",
+        "keyboard",
+        "controls",
+        "клавиш",
+        "кнопки",
+        "кнопок",
+        "управление"
+      ],
+      "slots": {
+        "intent": "control_configuration",
+        "speechAct": "statement",
+        "action": "assign_keys",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Назначение клавиш"
+          ],
+          "casual": [
+            "назначение клавиш"
+          ],
+          "slang": [
+            "назначение клавиш"
+          ],
+          "heavy": [
+            "назначение клавиш"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_remap_buttons_controls",
+      "language": "en",
+      "pattern": "^remap (?:buttons|keys)[.!?]*$",
+      "normalized": "reassign the controls to different buttons",
+      "sense": "reassigning input controls",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {
+        "intent": "control_configuration",
+        "speechAct": "statement",
+        "action": "remap_buttons",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Переназначить кнопки"
+          ],
+          "casual": [
+            "переназначить кнопки"
+          ],
+          "slang": [
+            "переназначить кнопки"
+          ],
+          "heavy": [
+            "переназначить кнопки"
           ]
         }
       }

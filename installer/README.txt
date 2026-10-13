@@ -1,4 +1,4 @@
-SonyTranslator AutoInstaller v0.9.4
+SonyTranslator AutoInstaller v0.9.5
 ===================================
 
 Normal installation/update:

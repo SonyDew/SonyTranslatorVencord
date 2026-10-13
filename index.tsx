@@ -1,5 +1,5 @@
 /*
- * SonyTranslator - Vencord userplugin v0.9.4
+ * SonyTranslator - Vencord userplugin v0.9.5
  * Copyright (c) 2026 SonyDev
  * SPDX-License-Identifier: LicenseRef-SonyTranslator-Personal-Use-1.0
  *
@@ -11,6 +11,7 @@ import "./styles.css";
 
 import slangDataset from "./slangDataset";
 import { languageDisplayName, uiText, type UiKey } from "./localization";
+import { googleSourceCode, runPreparedTranslation } from "./translationRunner";
 import {
     canTranslate,
     createTranslationEngine,
@@ -136,6 +137,12 @@ const settings = definePluginSettings({
     protectNames: {
         type: OptionType.BOOLEAN,
         description: "Keep game, software, product and intentionally typed English names unchanged",
+        default: true,
+        hidden: true,
+    },
+    preserveMixedEnglish: {
+        type: OptionType.BOOLEAN,
+        description: "Keep English words inside mixed-language messages",
         default: true,
         hidden: true,
     },
@@ -1276,6 +1283,7 @@ async function translateStyled(kind: "received" | "sent", input: string, context
         smartSourceSlang: settings.store.smartSourceSlang,
         targetSlangPacks: settings.store.targetSlangPacks,
         protectNames: settings.store.protectNames,
+        preserveMixedEnglish: settings.store.preserveMixedEnglish,
         customProtectedNames: settings.store.customProtectedNames,
         dropEnglishApostrophes: settings.store.dropEnglishApostrophes,
         softenAmbiguousProfanity: settings.store.softenAmbiguousProfanity,
@@ -1284,13 +1292,22 @@ async function translateStyled(kind: "received" | "sent", input: string, context
 
     // Exact reactions, dataset phrases, profanity meanings and gaming terms already have a
     // target-language result. Avoid the latency and privacy cost of an unnecessary Google call.
-    let providerOutput = "";
-    if (!prepared.shortcut) {
-        const translated = await withTranslationLimit(async () => coreTranslate(kind, prepared.text));
-        providerOutput = translated.text;
-    }
-
-    const finalized = translationEngine.finalize(prepared, providerOutput).trim();
+    const finalized = (await runPreparedTranslation(translationEngine, prepared, async (text, sourceLanguage) => {
+        const translated = await withTranslationLimit(() => {
+            const inputKey = kind === "sent" ? "sentInput" : "receivedInput";
+            const previous = coreTranslateSettings.store[inputKey];
+            const sourceCode = googleSourceCode(sourceLanguage);
+            coreTranslateSettings.store[inputKey] = sourceCode && sourceCode in GoogleLanguages
+                ? sourceCode as keyof typeof GoogleLanguages : "auto";
+            try {
+                // coreTranslate reads settings synchronously before starting its request.
+                return coreTranslate(kind, text);
+            } finally {
+                coreTranslateSettings.store[inputKey] = previous;
+            }
+        });
+        return translated.text;
+    })).trim();
     // Fail open: an empty/malformed provider result must never hide Discord's original body.
     return finalized || null;
 }
@@ -1392,6 +1409,7 @@ function getIncomingCacheKey(message: Message, context?: TranslationContext) {
         settings.store.smartSourceSlang ? "slang-recognition" : "literal-source",
         settings.store.targetSlangPacks ? "target-slang" : "no-target-slang",
         settings.store.protectNames ? "protect-names" : "translate-names",
+        settings.store.preserveMixedEnglish ? "keep-mixed-english" : "translate-mixed-english",
         settings.store.customProtectedNames,
         settings.store.dropEnglishApostrophes ? "drop-apostrophes" : "keep-apostrophes",
         slangDataset.version,
@@ -1441,6 +1459,7 @@ function IncomingTranslation({ message }: { message: Message; }) {
         "smartSourceSlang",
         "targetSlangPacks",
         "protectNames",
+        "preserveMixedEnglish",
         "customProtectedNames",
         "dropEnglishApostrophes",
         "showTranslationBadge",
@@ -1476,6 +1495,7 @@ function IncomingTranslation({ message }: { message: Message; }) {
         s.smartSourceSlang,
         s.targetSlangPacks,
         s.protectNames,
+        s.preserveMixedEnglish,
         s.customProtectedNames,
         s.dropEnglishApostrophes,
     ]);
@@ -1510,7 +1530,7 @@ type ReplyTranslationProps = {
 };
 
 function ReplyTranslation({ baseMessage, referencedMessage }: ReplyTranslationProps) {
-    const s = settings.use(["incomingEnabled", "incomingTarget", "incomingStyle", "preserveStyle"]);
+    const s = settings.use(["incomingEnabled", "incomingTarget", "incomingStyle", "preserveStyle", "preserveMixedEnglish"]);
     const [translated, setTranslated] = useState<string | null>(null);
     const referenced = referencedMessage.state === ReferencedMessageState.Loaded ? referencedMessage.message : undefined;
 
@@ -1532,6 +1552,7 @@ function ReplyTranslation({ baseMessage, referencedMessage }: ReplyTranslationPr
         s.incomingTarget,
         s.incomingStyle,
         s.preserveStyle,
+        s.preserveMixedEnglish,
     ]);
 
     if (!translated?.trim() || translated === referenced?.content) return null;
@@ -1601,7 +1622,7 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                 <div className="sony-translator-hero">
                     <div className="sony-translator-hero-icon"><TranslateIcon width={24} height={24} /></div>
                     <div>
-                        <div className="sony-translator-hero-title">SonyTranslator · v0.9.4</div>
+                        <div className="sony-translator-hero-title">SonyTranslator · v0.9.5</div>
                         <div className="sony-translator-hero-subtitle">{t("subtitle")}</div>
                     </div>
                 </div>
@@ -1710,6 +1731,17 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                     description={t("targetSlangHelp")}
                     value={s.targetSlangPacks}
                     onChange={v => settings.store.targetSlangPacks = v}
+                    hideBorder
+                />
+
+                <FormSwitch
+                    title={t("mixedEnglish")}
+                    description={t("mixedEnglishHelp")}
+                    value={s.preserveMixedEnglish}
+                    onChange={v => {
+                        settings.store.preserveMixedEnglish = v;
+                        clearTranslationCache();
+                    }}
                     hideBorder
                 />
 

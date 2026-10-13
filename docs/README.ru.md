@@ -6,9 +6,9 @@
 
 ![Пример перевода с вымышленными участниками](images/chat-preview.svg)
 
-## Установка v0.9.4
+## Установка v0.9.5
 
-1. Скачайте **SonyTranslator-AutoInstaller-0.9.4.zip** из [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
+1. Скачайте **SonyTranslator-AutoInstaller-0.9.5.zip** из [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
 2. Распакуйте архив целиком.
 3. Запустите **Install SonyTranslator.cmd** или **Update SonyTranslator.cmd**.
 4. Дождитесь завершения. Запущенный до установки Discord Stable/Canary/PTB запустится снова.
@@ -26,6 +26,7 @@
 - Отдельные Clean, Casual, Slang, Heavy и Mirror для чтения и отправки.
 - Понимание сленга, сокращений, уверенно распознанных опечаток, реакций и игровых конструкций.
 - Защита имён, mentions, URL, кода, файлов и emoji.
+- Русские и украинские сообщения на языке чтения сохраняются без повторного перевода. Английские вставки в них по умолчанию остаются как написано; это можно изменить в настройках.
 - Перевод reply-цитат с порядком `@ник → текст`, цветом и шрифтом Discord.
 - EN, DE, RU, UA, Mainland Chinese, Taiwan Chinese, ES, FR, PT-BR, PL, JA и KO.
 

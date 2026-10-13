@@ -325,6 +325,7 @@ export interface SlangDataset {
 }
 
 export interface EngineOptions {
+    preserveMixedEnglish?: boolean;
     kind: "received" | "sent";
     targetLanguage: string;
     mode: ChatStyle;
@@ -418,6 +419,8 @@ export interface SourceAnalysis {
 }
 
 export interface PreparedTranslation {
+    preserveTargetText: boolean;
+    foreignSegments: Array<{ text: string; index: number; }>;
     original: string;
     text: string;
     sourceLanguage: string | null;
@@ -936,10 +939,17 @@ function detectSourceLanguage(dataset: SlangDataset, input: string, context?: Tr
 
     const ranked = [...scores].sort((a, b) => b[1] - a[1]);
     if (!ranked.length || (ranked[1] && ranked[0][1] === ranked[1][1])) {
+        const recognizedLanguages = new Set((dataset.source_normalization_rules ?? [])
+            .filter(rule => rule.current && rule.can_recognize && rule.confidence === "high")
+            .filter(rule => { try { return new RegExp(rule.pattern, "iu").test(input); } catch { return false; } })
+            .map(rule => normalizeLanguageCode(rule.language)));
+        if (recognizedLanguages.size === 1) return [...recognizedLanguages][0];
         if (context) {
             const contextual = detectSourceLanguage(dataset, context.replyMessage ?? relevantContextTexts(context)[0] ?? "");
             // Context is only a tie-breaker for short replies, never a replacement for clear script evidence.
-            if (contextual && (input.match(/[\p{L}\p{N}]+/gu)?.length ?? 0) <= 3) return contextual;
+            const conflictsWithLatin = /\p{Script=Latin}/u.test(input) &&
+                ["ru", "uk", "ja", "ko", "zh-cn", "zh-tw"].includes(normalizeLanguageCode(contextual ?? ""));
+            if (contextual && !conflictsWithLatin && (input.match(/[\p{L}\p{N}]+/gu)?.length ?? 0) <= 3) return contextual;
         }
         return null;
     }
@@ -2107,14 +2117,19 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
         prepare(input, options) {
             const analysis = captureAnalysis(dataset, input, options.context);
             const level = levelForMode(options.mode, analysis.style);
+            // Incoming Cyrillic text already in the reading language is data to keep,
+            // not a request to autocorrect or restyle the author's own wording.
+            const preserveTargetText = options.kind === "received" &&
+                ["ru", "uk"].includes(normalizeLanguageCode(options.targetLanguage)) &&
+                normalizeLanguageCode(analysis.language ?? "") === normalizeLanguageCode(options.targetLanguage);
             const chatMatch = analysis.incomingChatMatches.find(match => match.confidence !== "low");
             const emoji = emojiTail(input);
-            const providerSource = chatMatch
+            const providerSource = chatMatch && !preserveTargetText
                 ? `${chatMatch.normalized}${emoji && !chatMatch.normalized.includes(emoji) ? ` ${emoji}` : ""}`
                 : input;
             const protectedText = protectText(dataset, providerSource, analysis.language, options);
             let working = protectedText.text;
-            if (options.smartSourceSlang) {
+            if (options.smartSourceSlang && !preserveTargetText) {
                 working = applySourceNormalizations(dataset, working, analysis.language, options.context).text;
                 working = applyPragmaticProfanityNormalization(dataset, working, analysis.pragmaticProfanity);
                 working = applySemanticRecognition(dataset, working, analysis.semanticMatches);
@@ -2123,7 +2138,13 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
             }
             if (options.softenAmbiguousProfanity && options.kind === "sent") working = normalizeAmbiguousProfanity(working);
 
-            const shortcut =
+            const foreignSegments = preserveTargetText && !options.preserveMixedEnglish
+                ? [...working.matchAll(/(?<![\p{L}\p{N}_])(?:(?!SONYPROTECT)[A-Za-z][A-Za-z'-]*)(?:[ \t]+(?!SONYPROTECT)[A-Za-z][A-Za-z'-]*)*/gu)]
+                    .map(match => ({ text: match[0], index: match.index! }))
+                : [];
+            const shortcut = preserveTargetText
+                ? (foreignSegments.length ? null : input)
+                :
                 findIncomingChatShortcut(dataset, input, analysis.incomingChatMatches, options.targetLanguage, level) ??
                 findPragmaticProfanityShortcut(dataset, input, analysis.pragmaticProfanity, options.targetLanguage, level) ??
                 findSemanticShortcut(dataset, input, analysis.semanticMatches, options.targetLanguage, level) ??
@@ -2134,6 +2155,8 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
 
             analysis.providerSafeInput = protectedText.restore(working);
             return {
+                preserveTargetText,
+                foreignSegments,
                 original: input,
                 text: working,
                 sourceLanguage: analysis.language,
@@ -2147,6 +2170,7 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
             };
         },
         finalize(prepared, providerOutput) {
+            if (prepared.preserveTargetText) return prepared.restore(prepared.shortcut ?? providerOutput);
             let output = prepared.shortcut ?? providerOutput;
             // A style-specific dataset shortcut is already more precise than the generic
             // mistake candidates; only repair actual provider output.

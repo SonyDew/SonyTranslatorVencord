@@ -6,9 +6,9 @@
 
 ![使用虚构参与者的翻译示例](images/chat-preview.svg)
 
-## 安装 v0.9.4
+## 安装 v0.9.5
 
-1. 从 [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest) 下载 **SonyTranslator-AutoInstaller-0.9.4.zip**。
+1. 从 [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest) 下载 **SonyTranslator-AutoInstaller-0.9.5.zip**。
 2. 完整解压 ZIP。
 3. 运行 **Install SonyTranslator.cmd** 或 **Update SonyTranslator.cmd**。
 4. 等待完成。安装前运行的 Stable、Canary 或 PTB 客户端会重新启动。

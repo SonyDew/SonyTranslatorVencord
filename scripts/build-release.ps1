@@ -7,7 +7,7 @@ if (-not $OutputDirectory) { $OutputDirectory = Join-Path $Root 'release' }
 $Version = (Get-Content -LiteralPath (Join-Path $Root 'package.json') -Raw | ConvertFrom-Json).version
 $SourceZip = Join-Path $OutputDirectory "SonyTranslatorVencord-$Version.zip"
 $InstallerZip = Join-Path $OutputDirectory "SonyTranslator-AutoInstaller-$Version.zip"
-$RuntimeFiles = @('index.tsx', 'styles.css', 'translationCore.ts', 'localization.ts', 'slang-dataset.json', 'slangDataset.ts', 'README.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md')
+$RuntimeFiles = @('index.tsx', 'styles.css', 'translationCore.ts', 'translationRunner.ts', 'localization.ts', 'slang-dataset.json', 'slangDataset.ts', 'README.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md')
 
 function Assert-Version([string]$Path, [string]$Needle) {
     if ((Get-Content -LiteralPath $Path -Raw) -notmatch [regex]::Escape($Needle)) {

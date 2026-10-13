@@ -23,6 +23,8 @@ const english = {
     translated: "translated", clear: "Clear translation cache", cleared: "Translation cache cleared",
     privacy: "Messages being translated are sent to Google Translate. No API key is required.",
     on: "ON", off: "OFF", sendFailed: "Translation failed. Your message will be sent unchanged.",
+    mixedEnglish: "Keep English in mixed messages",
+    mixedEnglishHelp: "Keep English words inside Russian or Ukrainian messages already in your reading language. Fully English messages still translate.",
 } as const;
 
 export type UiKey = keyof typeof english;
@@ -274,6 +276,23 @@ export const uiPacks: Record<string, readonly string[]> = {
         "켜짐", "꺼짐", "번역하지 못했습니다. 메시지를 원문 그대로 보냅니다.",
     ],
 };
+
+const mixedEnglishMessages: Record<string, readonly [string, string]> = {
+    ru: ["Сохранять английский в смешанных сообщениях", "Не переводить английские слова внутри русских или украинских сообщений на языке чтения. Полностью английские сообщения переводятся."],
+    de: ["Englisch in gemischten Nachrichten erhalten", "Englische Wörter in russischen oder ukrainischen Nachrichten in deiner Lesesprache erhalten. Rein englische Nachrichten werden übersetzt."],
+    uk: ["Зберігати англійську в змішаних повідомленнях", "Не перекладати англійські слова всередині російських або українських повідомлень мовою читання. Повністю англійські повідомлення перекладаються."],
+    "zh-CN": ["保留混合消息中的英文", "保留已使用阅读语言的俄语或乌克兰语消息中的英文词语。完整英文消息仍会翻译。"],
+    "zh-TW": ["保留混合訊息中的英文", "保留已使用閱讀語言的俄語或烏克蘭語訊息中的英文詞語。完整英文訊息仍會翻譯。"],
+    es: ["Conservar inglés en mensajes mixtos", "Conservar palabras inglesas dentro de mensajes rusos o ucranianos en tu idioma de lectura. Los mensajes totalmente ingleses se traducen."],
+    fr: ["Conserver l’anglais dans les messages mixtes", "Garder les mots anglais dans les messages russes ou ukrainiens déjà dans votre langue de lecture. Les messages entièrement anglais sont traduits."],
+    "pt-BR": ["Manter inglês em mensagens mistas", "Manter palavras inglesas em mensagens russas ou ucranianas no seu idioma de leitura. Mensagens totalmente em inglês são traduzidas."],
+    pl: ["Zachowaj angielski w mieszanych wiadomościach", "Zachowaj angielskie słowa w rosyjskich lub ukraińskich wiadomościach w języku odczytu. Wiadomości w całości po angielsku są tłumaczone."],
+    ja: ["混在するメッセージの英語を保持", "読む言語と同じロシア語・ウクライナ語の文中にある英語を保持します。全文が英語なら翻訳します。"],
+    ko: ["혼합 메시지의 영어 유지", "읽기 언어와 같은 러시아어 또는 우크라이나어 메시지 속 영어 단어를 유지합니다. 전체가 영어인 메시지는 번역합니다."],
+};
+for (const [locale, messages] of Object.entries(mixedEnglishMessages)) {
+    uiPacks[locale] = [...uiPacks[locale], ...messages];
+}
 
 export function resolveUiLocale(locale?: string): string {
     const normalized = (locale ?? "en").replaceAll("_", "-").toLowerCase();

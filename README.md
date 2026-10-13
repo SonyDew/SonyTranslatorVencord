@@ -8,7 +8,7 @@ Discord chat translation for Vencord · by **SonyDev**
 
 [English](README.md) · [Русский](docs/README.ru.md) · [Deutsch](docs/README.de.md) · [简体中文](docs/README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/version-0.9.4-b77984)
+![Version](https://img.shields.io/badge/version-0.9.5-b77984)
 ![Transport](https://img.shields.io/badge/transport-Google_Translate-555b66)
 ![License](https://img.shields.io/badge/license-personal_use_%2B_attribution-555b66)
 
@@ -25,7 +25,7 @@ and gaming language. No paid API key or mandatory LLM is required.
 
 ## Install
 
-1. Download **SonyTranslator-AutoInstaller-0.9.4.zip** from [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
+1. Download **SonyTranslator-AutoInstaller-0.9.5.zip** from [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
 2. Extract the entire archive.
 3. Run **Install SonyTranslator.cmd**, or **Update SonyTranslator.cmd** for an existing installation.
 4. Wait for completion. The previously running Discord Stable/Canary/PTB client restarts automatically.
@@ -61,6 +61,8 @@ other Discord languages use English. Your reading and sending languages remain y
 - Literal meanings: reaction `Cool` differs from `It's cool outside`.
 - Informal address and source punctuation/casing where safe.
 - Translated reply previews with native `@name → quote` order, typography and colors.
+- Incoming Russian/Ukrainian messages already in the reading language stay unchanged.
+- English words in those mixed messages are kept by default; you can enable translating them in settings.
 
 **Languages:** English, German, Russian, Ukrainian, Simplified Chinese (Mainland),
 Traditional Chinese (Taiwan), Spanish, French, Brazilian Portuguese, Polish, Japanese
@@ -83,12 +85,12 @@ npm ci
 npm run check
 ```
 
-168 tests cover golden modes, incoming regressions, entities, dataset integrity, UI localization and
+184 tests cover golden modes, incoming regressions, entities, dataset integrity, UI localization and
 installer Git-update recovery on Windows. The benchmark has 500 cases. Full Vencord
 `testTsc` and production build are required before release.
 
 For manual installation, copy `index.tsx`, `styles.css`, `translationCore.ts` and
-`slangDataset.ts` and `localization.ts` into Vencord's `src/userplugins/SonyTranslator/`, then build and inject.
+`slangDataset.ts`, `translationRunner.ts` and `localization.ts` into Vencord's `src/userplugins/SonyTranslator/`, then build and inject.
 See [development history](docs/DEVELOPMENT.md) and [research notes](research/modern-chat-language-2025-2026.md).
 
 ## Authorship and permissions

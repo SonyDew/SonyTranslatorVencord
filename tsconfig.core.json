@@ -9,6 +9,7 @@
   },
   "include": [
     "translationCore.ts",
+    "translationRunner.ts",
     "localization.ts",
     "slangDataset.ts"
   ]

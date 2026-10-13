@@ -21,7 +21,7 @@ describe("incoming translation rendering regressions", () => {
     });
 
     test("an empty translation cannot hide the original message", () => {
-        assert.match(index, /finalize\(prepared, providerOutput\)\.trim\(\)/);
+        assert.match(index, /runPreparedTranslation\(translationEngine, prepared/);
         assert.match(index, /!translated\?\.trim\(\)/);
     });
 
@@ -50,7 +50,7 @@ describe("outgoing language regressions", () => {
         assert.match(index, /previousTurns/);
         assert.match(index, /context\?\.replyMessage/);
         assert.match(index, /sendOptions\?\.messageReference/);
-        assert.match(index, /coreTranslate\(kind, prepared\.text\)/);
+        assert.match(index, /coreTranslate\(kind, text\)/);
     });
 
     test("context is participant-aware, relevance-ranked and bounded", () => {
