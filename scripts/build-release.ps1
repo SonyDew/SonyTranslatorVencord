@@ -38,6 +38,7 @@ Copy-Item -LiteralPath (Join-Path $Root 'scripts') -Destination (Join-Path $Sour
 Copy-Item -LiteralPath (Join-Path $Root 'research') -Destination (Join-Path $SourceRoot 'research') -Recurse
 Copy-Item -LiteralPath (Join-Path $Root 'benchmark') -Destination (Join-Path $SourceRoot 'benchmark') -Recurse
 Copy-Item -LiteralPath (Join-Path $Root 'docs') -Destination (Join-Path $SourceRoot 'docs') -Recurse
+Copy-Item -LiteralPath (Join-Path $Root 'installer') -Destination (Join-Path $SourceRoot 'installer') -Recurse
 Copy-Item -LiteralPath (Join-Path $Root 'docs') -Destination (Join-Path $InstallerRoot 'payload\SonyTranslator\docs') -Recurse
 foreach ($file in @('Install-SonyTranslator.ps1', 'Install SonyTranslator.cmd', 'Update SonyTranslator.cmd', 'Uninstall-SonyTranslator.ps1', 'Uninstall SonyTranslator.cmd', 'README.txt')) {
     Copy-Item -LiteralPath (Join-Path $Root "installer\$file") -Destination (Join-Path $InstallerRoot $file)
