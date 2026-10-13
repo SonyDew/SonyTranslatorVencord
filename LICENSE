@@ -1,0 +1,47 @@
+SonyTranslator Personal Use and Attribution License 1.0
+Copyright (c) 2026 SonyDev (GitHub: SonyDew). All rights reserved.
+
+1. Scope and personal use
+This license applies to original SonyTranslator material published under it.
+You may download, install, run, study and privately modify this material for
+personal use and make personal backups. GitHub users may view and fork this
+public repository as permitted by GitHub's Terms of Service. These permissions
+do not authorize publishing or distributing a modified product.
+
+2. Authorship
+Preserve this license and copyright notices. Do not claim SonyTranslator or its
+original code, dataset additions, documentation or assets as your own work.
+Do not remove author credits or misrepresent authorship.
+
+3. Publication and derivatives
+Public distribution, republication, sale, bundling, rebranding and release of
+modified or derivative versions require prior explicit written permission from
+SonyDev. This includes an improved version released under your own name.
+Every authorized derivative must visibly credit SonyDev as the original author
+of SonyTranslator and identify the changes and their author. No permission to
+use the branding for a separate product is implied.
+
+4. Contributions
+Agree on contribution and redistribution terms with SonyDev before submitting
+changes. Submission alone does not transfer copyright or grant unstated rights.
+
+5. Third-party and prior rights
+This license does not override third-party licenses, including Vencord's GPL-3.0
+license and dependency licenses. Vencord source and compiled distributions are
+not relicensed by this document. Earlier SonyTranslator copies distributed with
+an MIT notice retain their original terms; rights previously granted for those
+copies are not revoked. Third-party licenses and prior permissions take
+precedence for the material they cover.
+
+6. Warranty
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, TO THE EXTENT
+PERMITTED BY LAW. THE AUTHOR IS NOT LIABLE FOR DAMAGES ARISING FROM ITS USE,
+TO THE EXTENT PERMITTED BY LAW.
+
+7. Permission requests
+Contact SonyDev at https://github.com/SonyDew/SonyTranslatorVencord/issues.
+Describe your changes, distribution, proposed name and attribution. Permission
+requires an explicit written response from SonyDev/SonyDew. Silence is not consent.
+
+The English text is authoritative. README translations are explanatory only.
+This is a source-available personal-use license, not an OSI open-source license.

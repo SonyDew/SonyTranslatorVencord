@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="460" viewBox="0 0 1100 460" role="img" aria-labelledby="title desc">
+<title id="title">SonyTranslator — meaning, context, style</title>
+<desc id="desc">Illustrative translation examples with fictional participants, from Discord English into conversational Russian.</desc>
+<rect width="1100" height="460" rx="24" fill="#111318"/>
+<path d="M40 85H1060" stroke="#343842"/>
+<text x="42" y="48" fill="#f4f4f5" font-family="Arial,sans-serif" font-size="28" font-weight="700">SonyTranslator</text>
+<text x="1058" y="46" text-anchor="end" fill="#acb3bf" font-family="Arial,sans-serif" font-size="15">MEANING · CONTEXT · STYLE</text>
+<text x="44" y="123" fill="#919baa" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">DISCORD ENGLISH</text>
+<text x="596" y="123" fill="#919baa" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">RUSSIAN · CHAT STYLE</text>
+<g font-family="Arial,sans-serif" font-size="23" fill="#e5e7eb">
+<text x="44" y="177">Sup Mocha dude</text><text x="596" y="177">сап, Mocha</text>
+<text x="44" y="247">Cool</text><text x="596" y="247">норм</text>
+<text x="44" y="317">Finna send the forbidden ss</text><text x="596" y="317">щас скину запрещенный скрин</text>
+</g>
+<g fill="#ba7984" font-family="Arial,sans-serif" font-size="26"><text x="542" y="177">→</text><text x="542" y="247">→</text><text x="542" y="317">→</text></g>
+<path d="M40 359H1060" stroke="#343842"/>
+<text x="44" y="396" fill="#d5d8df" font-family="Arial,sans-serif" font-size="16">Clean / Casual / Slang / Heavy / Mirror</text>
+<text x="44" y="426" fill="#919baa" font-family="Arial,sans-serif" font-size="13">Illustrative preview · fictional participants · Google transport · local context analysis</text>
+</svg>
