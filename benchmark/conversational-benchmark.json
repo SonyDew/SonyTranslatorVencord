@@ -1,0 +1,4802 @@
+[
+  {
+    "id": "en-01",
+    "source": "Could you check the server settings?",
+    "sourceLanguage": "en",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-02",
+    "source": "idk bro maybe later",
+    "sourceLanguage": "en",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-03",
+    "source": "this build is busted",
+    "sourceLanguage": "en",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-04",
+    "source": "i got one tapped",
+    "sourceLanguage": "en",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-05",
+    "source": "im cooked",
+    "sourceLanguage": "en",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-06",
+    "source": "we're so back",
+    "sourceLanguage": "en",
+    "semanticIntent": "comeback",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-07",
+    "source": "ain't no way",
+    "sourceLanguage": "en",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-08",
+    "source": "this shit keeps crashing",
+    "sourceLanguage": "en",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-09",
+    "source": "бля this build is so ass",
+    "sourceLanguage": "en",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-10",
+    "source": "I cooked chicken for dinner",
+    "sourceLanguage": "en",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-11",
+    "source": "fr?",
+    "sourceLanguage": "en",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-12",
+    "source": "fr",
+    "sourceLanguage": "en",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-13",
+    "source": "check https://example.com after the match",
+    "sourceLanguage": "en",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-14",
+    "source": "tell <@123> to run `npm test`",
+    "sourceLanguage": "en",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-15",
+    "source": "upload crash.log please",
+    "sourceLanguage": "en",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-16",
+    "source": "anyone wanna play Valorant?",
+    "sourceLanguage": "en",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-17",
+    "source": "server keeps lagging rn",
+    "sourceLanguage": "en",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-18",
+    "source": "u got any heals?",
+    "sourceLanguage": "en",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-19",
+    "source": "report that griefer",
+    "sourceLanguage": "en",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-20",
+    "source": "been grinding this drop all night",
+    "sourceLanguage": "en",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-21",
+    "source": "gg we clutched that",
+    "sourceLanguage": "en",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-22",
+    "source": "we choked the last round",
+    "sourceLanguage": "en",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-23",
+    "source": "ive got no heals left",
+    "sourceLanguage": "en",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-24",
+    "source": "ngl the patch nerfed my build hard but the ult still melts",
+    "sourceLanguage": "en",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "en-25",
+    "source": "Could you please review this contract?",
+    "sourceLanguage": "en",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-01",
+    "source": "Können Sie die Servereinstellungen prüfen?",
+    "sourceLanguage": "de",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-02",
+    "source": "kp bro vielleicht später",
+    "sourceLanguage": "de",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-03",
+    "source": "der Build ist komplett broken",
+    "sourceLanguage": "de",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-04",
+    "source": "ich wurde geoneshottet",
+    "sourceLanguage": "de",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-05",
+    "source": "ich bin geliefert",
+    "sourceLanguage": "de",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-06",
+    "source": "wir sind wieder da",
+    "sourceLanguage": "de",
+    "semanticIntent": "comeback",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-07",
+    "source": "das kann nicht sein",
+    "sourceLanguage": "de",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-08",
+    "source": "dieser Scheiß crasht ständig",
+    "sourceLanguage": "de",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-09",
+    "source": "bro das game ist literally unspielbar",
+    "sourceLanguage": "de",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-10",
+    "source": "Ich habe das Hähnchen gekocht",
+    "sourceLanguage": "de",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-11",
+    "source": "safe?",
+    "sourceLanguage": "de",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-12",
+    "source": "safe",
+    "sourceLanguage": "de",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-13",
+    "source": "prüf https://example.com nach der Runde",
+    "sourceLanguage": "de",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-14",
+    "source": "sag <@123>, er soll `npm test` starten",
+    "sourceLanguage": "de",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-15",
+    "source": "lad crash.log hoch",
+    "sourceLanguage": "de",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-16",
+    "source": "Jemand Bock auf Valorant?",
+    "sourceLanguage": "de",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-17",
+    "source": "der Server laggt schon wieder",
+    "sourceLanguage": "de",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-18",
+    "source": "hast du noch Heals?",
+    "sourceLanguage": "de",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-19",
+    "source": "report den Griefer",
+    "sourceLanguage": "de",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-20",
+    "source": "farme den Drop seit Stunden",
+    "sourceLanguage": "de",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-21",
+    "source": "gg stark gecarried",
+    "sourceLanguage": "de",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-22",
+    "source": "wir haben die letzte Runde gechoked",
+    "sourceLanguage": "de",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-23",
+    "source": "hab keine Heals mehr",
+    "sourceLanguage": "de",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-24",
+    "source": "der Patch hat meinen Build hart generft, aber die Ult ist noch OP",
+    "sourceLanguage": "de",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "de-25",
+    "source": "Könnten Sie bitte den Vertrag prüfen?",
+    "sourceLanguage": "de",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-01",
+    "source": "Вы можете проверить настройки сервера?",
+    "sourceLanguage": "ru",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-02",
+    "source": "хз бро мб позже",
+    "sourceLanguage": "ru",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-03",
+    "source": "этот билд имба",
+    "sourceLanguage": "ru",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-04",
+    "source": "меня ваншотнули",
+    "sourceLanguage": "ru",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-05",
+    "source": "мне конец",
+    "sourceLanguage": "ru",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-06",
+    "source": "мы снова в игре",
+    "sourceLanguage": "ru",
+    "semanticIntent": "comeback",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-07",
+    "source": "не может быть",
+    "sourceLanguage": "ru",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-08",
+    "source": "эта хуйня опять крашится",
+    "sourceLanguage": "ru",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-09",
+    "source": "бля this build is so ass",
+    "sourceLanguage": "ru",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-10",
+    "source": "Я приготовил курицу на ужин",
+    "sourceLanguage": "ru",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-11",
+    "source": "втф?",
+    "sourceLanguage": "ru",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-12",
+    "source": "втф",
+    "sourceLanguage": "ru",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-13",
+    "source": "проверь https://example.com после катки",
+    "sourceLanguage": "ru",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-14",
+    "source": "скажи <@123> запустить `npm test`",
+    "sourceLanguage": "ru",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-15",
+    "source": "закинь crash.log",
+    "sourceLanguage": "ru",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-16",
+    "source": "кто в Valorant?",
+    "sourceLanguage": "ru",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-17",
+    "source": "сервер опять лагает",
+    "sourceLanguage": "ru",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-18",
+    "source": "у тебя хилки есть?",
+    "sourceLanguage": "ru",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-19",
+    "source": "репортни грифeра",
+    "sourceLanguage": "ru",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-20",
+    "source": "всю ночь фармлю этот дроп",
+    "sourceLanguage": "ru",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-21",
+    "source": "гг затащили",
+    "sourceLanguage": "ru",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-22",
+    "source": "слили последний раунд",
+    "sourceLanguage": "ru",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-23",
+    "source": "хилок больше нет",
+    "sourceLanguage": "ru",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-24",
+    "source": "патч занерфил билд в говно, но ульта всё ещё плавит",
+    "sourceLanguage": "ru",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ru-25",
+    "source": "Не могли бы Вы проверить договор?",
+    "sourceLanguage": "ru",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-01",
+    "source": "Ви можете перевірити налаштування сервера?",
+    "sourceLanguage": "uk",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-02",
+    "source": "хз бро може пізніше",
+    "sourceLanguage": "uk",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-03",
+    "source": "цей білд імба",
+    "sourceLanguage": "uk",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-04",
+    "source": "мене ваншотнули",
+    "sourceLanguage": "uk",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-05",
+    "source": "мені кінець",
+    "sourceLanguage": "uk",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-06",
+    "source": "ми знову в грі",
+    "sourceLanguage": "uk",
+    "semanticIntent": "comeback",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-07",
+    "source": "та ну",
+    "sourceLanguage": "uk",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-08",
+    "source": "ця хрінь знову крашиться",
+    "sourceLanguage": "uk",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-09",
+    "source": "бля this build такий поганий",
+    "sourceLanguage": "uk",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-10",
+    "source": "Я приготував курку на вечерю",
+    "sourceLanguage": "uk",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-11",
+    "source": "серйозно?",
+    "sourceLanguage": "uk",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-12",
+    "source": "реально",
+    "sourceLanguage": "uk",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-13",
+    "source": "перевір https://example.com після катки",
+    "sourceLanguage": "uk",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-14",
+    "source": "скажи <@123> запустити `npm test`",
+    "sourceLanguage": "uk",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-15",
+    "source": "закинь crash.log",
+    "sourceLanguage": "uk",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-16",
+    "source": "хто в Valorant?",
+    "sourceLanguage": "uk",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-17",
+    "source": "сервер знову лагає",
+    "sourceLanguage": "uk",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-18",
+    "source": "у тебе є хілки?",
+    "sourceLanguage": "uk",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-19",
+    "source": "репортни грифера",
+    "sourceLanguage": "uk",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-20",
+    "source": "всю ніч фармлю цей дроп",
+    "sourceLanguage": "uk",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-21",
+    "source": "гг витягнули",
+    "sourceLanguage": "uk",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-22",
+    "source": "злили останній раунд",
+    "sourceLanguage": "uk",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-23",
+    "source": "хілок більше нема",
+    "sourceLanguage": "uk",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-24",
+    "source": "патч сильно понерфив білд, але ульта ще плавить",
+    "sourceLanguage": "uk",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "uk-25",
+    "source": "Чи могли б Ви перевірити договір?",
+    "sourceLanguage": "uk",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-01",
+    "source": "您能检查一下服务器设置吗？",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-02",
+    "source": "不知道兄弟晚点吧",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-03",
+    "source": "这个流派太超模了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-04",
+    "source": "我被秒了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-05",
+    "source": "我寄了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-06",
+    "source": "我们又行了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "comeback",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-07",
+    "source": "不是吧",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-08",
+    "source": "这破东西又崩了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-09",
+    "source": "这个 build 太垃圾了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-10",
+    "source": "我晚饭做了鸡肉",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-11",
+    "source": "真的？",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-12",
+    "source": "真的",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-13",
+    "source": "打完检查 https://example.com",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-14",
+    "source": "让 <@123> 跑一下 `npm test`",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-15",
+    "source": "把 crash.log 发上来",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-16",
+    "source": "有人玩 Valorant 吗？",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-17",
+    "source": "服务器又卡了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-18",
+    "source": "你还有治疗吗？",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-19",
+    "source": "举报那个恶意玩家",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-20",
+    "source": "刷这个掉落刷了一整晚",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-21",
+    "source": "gg 这把翻盘了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-22",
+    "source": "最后一局打崩了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-23",
+    "source": "我没治疗了",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-24",
+    "source": "补丁把 build 砍废了但大招伤害还很高",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-cn-25",
+    "source": "请您审阅这份合同。",
+    "sourceLanguage": "zh-CN",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-01",
+    "source": "您能檢查一下伺服器設定嗎？",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-02",
+    "source": "不知道啦晚點吧",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-03",
+    "source": "這個流派太超模了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-04",
+    "source": "我被秒了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-05",
+    "source": "我沒救了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-06",
+    "source": "我們又行了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "comeback",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-07",
+    "source": "不是吧",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-08",
+    "source": "這東西又當掉了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-09",
+    "source": "這個 build 太爛了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-10",
+    "source": "我晚餐煮了雞肉",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-11",
+    "source": "真的？",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-12",
+    "source": "真的",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-13",
+    "source": "打完檢查 https://example.com",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-14",
+    "source": "叫 <@123> 跑 `npm test`",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-15",
+    "source": "把 crash.log 傳上來",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-16",
+    "source": "有人要玩 Valorant 嗎？",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-17",
+    "source": "伺服器又 lag 了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-18",
+    "source": "你還有補嗎？",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-19",
+    "source": "檢舉那個雷隊友",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-20",
+    "source": "刷這個掉落刷整晚",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-21",
+    "source": "gg 這把逆轉了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-22",
+    "source": "最後一局打崩了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-23",
+    "source": "我沒補了",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-24",
+    "source": "更新把 build 砍爛了但大招還是很痛",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "zh-tw-25",
+    "source": "請您審閱這份合約。",
+    "sourceLanguage": "zh-TW",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-01",
+    "source": "¿Puede usted revisar la configuración del servidor?",
+    "sourceLanguage": "es",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-02",
+    "source": "ns bro quizá luego",
+    "sourceLanguage": "es",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-03",
+    "source": "esta build está rotísima",
+    "sourceLanguage": "es",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-04",
+    "source": "me hizo one shot",
+    "sourceLanguage": "es",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-05",
+    "source": "estoy frito",
+    "sourceLanguage": "es",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-06",
+    "source": "estamos de vuelta",
+    "sourceLanguage": "es",
+    "semanticIntent": "comeback",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-07",
+    "source": "no puede ser",
+    "sourceLanguage": "es",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-08",
+    "source": "esta mierda sigue crasheando",
+    "sourceLanguage": "es",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-09",
+    "source": "bro este juego está literally roto",
+    "sourceLanguage": "es",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-10",
+    "source": "Cociné pollo para cenar",
+    "sourceLanguage": "es",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-11",
+    "source": "¿de verdad?",
+    "sourceLanguage": "es",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-12",
+    "source": "de verdad",
+    "sourceLanguage": "es",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-13",
+    "source": "mira https://example.com después de la partida",
+    "sourceLanguage": "es",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-14",
+    "source": "dile a <@123> que ejecute `npm test`",
+    "sourceLanguage": "es",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-15",
+    "source": "sube crash.log",
+    "sourceLanguage": "es",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-16",
+    "source": "¿alguien para Valorant?",
+    "sourceLanguage": "es",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-17",
+    "source": "el servidor vuelve a tener lag",
+    "sourceLanguage": "es",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-18",
+    "source": "¿te quedan curas?",
+    "sourceLanguage": "es",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-19",
+    "source": "reporta al griefer",
+    "sourceLanguage": "es",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-20",
+    "source": "llevo toda la noche farmeando este drop",
+    "sourceLanguage": "es",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-21",
+    "source": "gg remontamos",
+    "sourceLanguage": "es",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-22",
+    "source": "tiramos la última ronda",
+    "sourceLanguage": "es",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-23",
+    "source": "ya no me quedan curas",
+    "sourceLanguage": "es",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-24",
+    "source": "el parche nerfeó muchísimo mi build pero la ulti aún derrite",
+    "sourceLanguage": "es",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "es-25",
+    "source": "¿Podría revisar este contrato?",
+    "sourceLanguage": "es",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-01",
+    "source": "Pourriez-vous vérifier les paramètres du serveur ?",
+    "sourceLanguage": "fr",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-02",
+    "source": "jsp frérot peut-être plus tard",
+    "sourceLanguage": "fr",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-03",
+    "source": "ce build est complètement pété",
+    "sourceLanguage": "fr",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-04",
+    "source": "il m'a one shot",
+    "sourceLanguage": "fr",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-05",
+    "source": "je suis foutu",
+    "sourceLanguage": "fr",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-06",
+    "source": "on est de retour",
+    "sourceLanguage": "fr",
+    "semanticIntent": "comeback",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-07",
+    "source": "c'est pas possible",
+    "sourceLanguage": "fr",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-08",
+    "source": "cette merde crash encore",
+    "sourceLanguage": "fr",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-09",
+    "source": "frérot ce jeu est literally injouable",
+    "sourceLanguage": "fr",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-10",
+    "source": "J'ai cuisiné du poulet",
+    "sourceLanguage": "fr",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-11",
+    "source": "sérieux ?",
+    "sourceLanguage": "fr",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-12",
+    "source": "sérieux",
+    "sourceLanguage": "fr",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-13",
+    "source": "regarde https://example.com après la game",
+    "sourceLanguage": "fr",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-14",
+    "source": "dis à <@123> de lancer `npm test`",
+    "sourceLanguage": "fr",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-15",
+    "source": "envoie crash.log",
+    "sourceLanguage": "fr",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-16",
+    "source": "qui pour Valorant ?",
+    "sourceLanguage": "fr",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-17",
+    "source": "le serveur lag encore",
+    "sourceLanguage": "fr",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-18",
+    "source": "t'as encore des heals ?",
+    "sourceLanguage": "fr",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-19",
+    "source": "report le griefer",
+    "sourceLanguage": "fr",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-20",
+    "source": "je farm ce drop depuis des heures",
+    "sourceLanguage": "fr",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-21",
+    "source": "gg on a clutch",
+    "sourceLanguage": "fr",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-22",
+    "source": "on a choke la dernière manche",
+    "sourceLanguage": "fr",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-23",
+    "source": "j'ai plus de heals",
+    "sourceLanguage": "fr",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-24",
+    "source": "le patch a nerf mon build à mort mais l'ulti fait toujours mal",
+    "sourceLanguage": "fr",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "fr-25",
+    "source": "Pourriez-vous examiner ce contrat ?",
+    "sourceLanguage": "fr",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-01",
+    "source": "O senhor pode verificar as configurações do servidor?",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-02",
+    "source": "n sei mano talvez dps",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-03",
+    "source": "essa build tá quebrada",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-04",
+    "source": "tomei one shot",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-05",
+    "source": "tô ferrado",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-06",
+    "source": "tamo de volta",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "comeback",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-07",
+    "source": "não é possível",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-08",
+    "source": "essa merda continua crashando",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-09",
+    "source": "mano esse jogo tá literally injogável",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-10",
+    "source": "Cozinhei frango no jantar",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-11",
+    "source": "sério?",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-12",
+    "source": "sério",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-13",
+    "source": "olha https://example.com depois da partida",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-14",
+    "source": "fala pro <@123> rodar `npm test`",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-15",
+    "source": "manda crash.log",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-16",
+    "source": "bora Valorant?",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-17",
+    "source": "o servidor tá lagando de novo",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-18",
+    "source": "vc tem heal?",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-19",
+    "source": "reporta o griefer",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-20",
+    "source": "tô farmando esse drop a noite toda",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-21",
+    "source": "gg carregamos",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-22",
+    "source": "jogamos fora o último round",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-23",
+    "source": "tô sem heal",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-24",
+    "source": "o patch deu um nerf pesado na build mas a ult ainda derrete",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pt-br-25",
+    "source": "O senhor poderia revisar este contrato?",
+    "sourceLanguage": "pt-BR",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-01",
+    "source": "Czy może Pan sprawdzić ustawienia serwera?",
+    "sourceLanguage": "pl",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-02",
+    "source": "nwm bro może później",
+    "sourceLanguage": "pl",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-03",
+    "source": "ten build jest broken",
+    "sourceLanguage": "pl",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-04",
+    "source": "dostałem oneshota",
+    "sourceLanguage": "pl",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-05",
+    "source": "po mnie",
+    "sourceLanguage": "pl",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-06",
+    "source": "wracamy do gry",
+    "sourceLanguage": "pl",
+    "semanticIntent": "comeback",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-07",
+    "source": "nie ma szans",
+    "sourceLanguage": "pl",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-08",
+    "source": "to gówno znowu crashuje",
+    "sourceLanguage": "pl",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-09",
+    "source": "bro ta gra jest literally niegrywalna",
+    "sourceLanguage": "pl",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-10",
+    "source": "Ugotowałem kurczaka na kolację",
+    "sourceLanguage": "pl",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-11",
+    "source": "serio?",
+    "sourceLanguage": "pl",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-12",
+    "source": "serio",
+    "sourceLanguage": "pl",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-13",
+    "source": "sprawdź https://example.com po meczu",
+    "sourceLanguage": "pl",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-14",
+    "source": "powiedz <@123>, żeby odpalił `npm test`",
+    "sourceLanguage": "pl",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-15",
+    "source": "wrzuć crash.log",
+    "sourceLanguage": "pl",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-16",
+    "source": "ktoś w Valorant?",
+    "sourceLanguage": "pl",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-17",
+    "source": "serwer znowu laguje",
+    "sourceLanguage": "pl",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-18",
+    "source": "masz jakieś heale?",
+    "sourceLanguage": "pl",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-19",
+    "source": "zgłoś griefera",
+    "sourceLanguage": "pl",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-20",
+    "source": "farmie ten drop całą noc",
+    "sourceLanguage": "pl",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-21",
+    "source": "gg wyciągnęliśmy to",
+    "sourceLanguage": "pl",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-22",
+    "source": "rzuciliśmy ostatnią rundę",
+    "sourceLanguage": "pl",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-23",
+    "source": "nie mam już heali",
+    "sourceLanguage": "pl",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-24",
+    "source": "patch mocno znerfił build, ale ult dalej topi",
+    "sourceLanguage": "pl",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "pl-25",
+    "source": "Czy mógłby Pan sprawdzić umowę?",
+    "sourceLanguage": "pl",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-01",
+    "source": "サーバー設定を確認していただけますか？",
+    "sourceLanguage": "ja",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-02",
+    "source": "わからん、たぶん後で",
+    "sourceLanguage": "ja",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-03",
+    "source": "このビルド壊れてる",
+    "sourceLanguage": "ja",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-04",
+    "source": "ワンパンされた",
+    "sourceLanguage": "ja",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-05",
+    "source": "詰んだ",
+    "sourceLanguage": "ja",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-06",
+    "source": "復活した",
+    "sourceLanguage": "ja",
+    "semanticIntent": "comeback",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-07",
+    "source": "ありえない",
+    "sourceLanguage": "ja",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-08",
+    "source": "このクソゲーまた落ちる",
+    "sourceLanguage": "ja",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-09",
+    "source": "この build マジで弱い",
+    "sourceLanguage": "ja",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-10",
+    "source": "夕食に鶏肉を料理した",
+    "sourceLanguage": "ja",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-11",
+    "source": "マジ？",
+    "sourceLanguage": "ja",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-12",
+    "source": "それな",
+    "sourceLanguage": "ja",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-13",
+    "source": "試合後に https://example.com を見て",
+    "sourceLanguage": "ja",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-14",
+    "source": "<@123> に `npm test` を実行してって言って",
+    "sourceLanguage": "ja",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-15",
+    "source": "crash.log 上げて",
+    "sourceLanguage": "ja",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-16",
+    "source": "Valorant やる人？",
+    "sourceLanguage": "ja",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-17",
+    "source": "サーバーまたラグい",
+    "sourceLanguage": "ja",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-18",
+    "source": "回復まだある？",
+    "sourceLanguage": "ja",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-19",
+    "source": "荒らしを通報して",
+    "sourceLanguage": "ja",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-20",
+    "source": "このドロップ一晩中周回してる",
+    "sourceLanguage": "ja",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-21",
+    "source": "gg 逆転した",
+    "sourceLanguage": "ja",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-22",
+    "source": "最後のラウンドでやらかした",
+    "sourceLanguage": "ja",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-23",
+    "source": "回復もうない",
+    "sourceLanguage": "ja",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-24",
+    "source": "パッチでビルドが産廃になったけどウルトはまだ火力ある",
+    "sourceLanguage": "ja",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ja-25",
+    "source": "この契約を確認していただけますか？",
+    "sourceLanguage": "ja",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-01",
+    "source": "서버 설정을 확인해 주시겠습니까?",
+    "sourceLanguage": "ko",
+    "semanticIntent": "polite_request",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "polite_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-02",
+    "source": "몰라 아마 나중에",
+    "sourceLanguage": "ko",
+    "semanticIntent": "casual_uncertainty",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "casual_uncertainty"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-03",
+    "source": "이 빌드 너무 사기야",
+    "sourceLanguage": "ko",
+    "semanticIntent": "overpowered_balance",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "overpowered_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-04",
+    "source": "원콤 당했다",
+    "sourceLanguage": "ko",
+    "semanticIntent": "instant_defeat",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "instant_defeat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-05",
+    "source": "망했다",
+    "sourceLanguage": "ko",
+    "semanticIntent": "speaker_doomed",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "speaker_doomed"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-06",
+    "source": "다시 살아났다",
+    "sourceLanguage": "ko",
+    "semanticIntent": "comeback",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "comeback"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-07",
+    "source": "말도 안 돼",
+    "sourceLanguage": "ko",
+    "semanticIntent": "disbelief",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-08",
+    "source": "이 망할 게임 또 튕겨",
+    "sourceLanguage": "ko",
+    "semanticIntent": "frustrated_crash",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "frustrated_crash"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-09",
+    "source": "이 build 진짜 구림",
+    "sourceLanguage": "ko",
+    "semanticIntent": "mixed_language_complaint",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "mixed_language_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-10",
+    "source": "저녁으로 닭을 요리했다",
+    "sourceLanguage": "ko",
+    "semanticIntent": "literal_cooking",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "literal_cooking"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-11",
+    "source": "진짜?",
+    "sourceLanguage": "ko",
+    "semanticIntent": "question_reaction",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "question_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-12",
+    "source": "ㄹㅇ",
+    "sourceLanguage": "ko",
+    "semanticIntent": "agreement_reaction",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "agreement_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-13",
+    "source": "게임 끝나고 https://example.com 확인해",
+    "sourceLanguage": "ko",
+    "semanticIntent": "url_preservation",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "url_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-14",
+    "source": "<@123>한테 `npm test` 돌리라고 해",
+    "sourceLanguage": "ko",
+    "semanticIntent": "discord_and_code_preservation",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "discord_and_code_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-15",
+    "source": "crash.log 올려",
+    "sourceLanguage": "ko",
+    "semanticIntent": "filename_preservation",
+    "targetLanguage": "ru",
+    "expectedImportantMeanings": [
+      "filename_preservation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-16",
+    "source": "Valorant 할 사람?",
+    "sourceLanguage": "ko",
+    "semanticIntent": "gaming_invitation",
+    "targetLanguage": "uk",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-17",
+    "source": "서버 또 렉 걸려",
+    "sourceLanguage": "ko",
+    "semanticIntent": "lag_complaint",
+    "targetLanguage": "zh-CN",
+    "expectedImportantMeanings": [
+      "lag_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-18",
+    "source": "힐 남았어?",
+    "sourceLanguage": "ko",
+    "semanticIntent": "healing_request",
+    "targetLanguage": "zh-TW",
+    "expectedImportantMeanings": [
+      "healing_request"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-19",
+    "source": "트롤 신고해",
+    "sourceLanguage": "ko",
+    "semanticIntent": "moderation_report",
+    "targetLanguage": "es",
+    "expectedImportantMeanings": [
+      "moderation_report"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-20",
+    "source": "이 드롭 밤새 파밍 중",
+    "sourceLanguage": "ko",
+    "semanticIntent": "grind_progress",
+    "targetLanguage": "fr",
+    "expectedImportantMeanings": [
+      "grind_progress"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-21",
+    "source": "gg 역전했다",
+    "sourceLanguage": "ko",
+    "semanticIntent": "win_reaction",
+    "targetLanguage": "pt-BR",
+    "expectedImportantMeanings": [
+      "win_reaction"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-22",
+    "source": "마지막 라운드 던졌다",
+    "sourceLanguage": "ko",
+    "semanticIntent": "loss_responsibility",
+    "targetLanguage": "pl",
+    "expectedImportantMeanings": [
+      "loss_responsibility"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-23",
+    "source": "힐 다 썼어",
+    "sourceLanguage": "ko",
+    "semanticIntent": "chat_spelling",
+    "targetLanguage": "ja",
+    "expectedImportantMeanings": [
+      "chat_spelling"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-24",
+    "source": "패치로 빌드가 관짝 갔는데 궁딜은 아직 셈",
+    "sourceLanguage": "ko",
+    "semanticIntent": "multi_clause_balance",
+    "targetLanguage": "ko",
+    "expectedImportantMeanings": [
+      "multi_clause_balance"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  },
+  {
+    "id": "ko-25",
+    "source": "이 계약을 검토해 주시겠습니까?",
+    "sourceLanguage": "ko",
+    "semanticIntent": "formal_register",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "formal_register"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented threat",
+      "invented addressee",
+      "invented certainty",
+      "invented profanity"
+    ]
+  }
+]

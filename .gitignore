@@ -1,0 +1,7 @@
+node_modules/
+release/
+SonyTranslatorVencord.zip
+*.log
+.env
+.env.*
+installer/payload/

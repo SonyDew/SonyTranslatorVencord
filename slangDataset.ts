@@ -1,0 +1,20876 @@
+/*
+ * SonyTranslator slang dataset bridge.
+ * Generated from slang-dataset.json by scripts/generate-dataset-bridge.mjs.
+ */
+
+const slangDataset: {
+    version: string;
+    generated_at: string;
+    naturalization_rules: any[];
+    languages: any[];
+    protected_entities: any[];
+    cross_language_rules: any[];
+    translation_mistakes: any[];
+    semantic_mappings?: any[];
+    register_markers?: any[];
+    register_repairs?: any[];
+    pragmatic_profanity_rules?: any[];
+    incoming_chat_rules?: any[];
+    source_normalization_rules?: any[];
+} = {
+  "version": "1.4",
+  "generated_at": "2026-09-13",
+  "naturalization_rules": [
+    {
+      "id": "en_formal_contrast",
+      "language": "en",
+      "stage": "clause",
+      "operation": "contrast",
+      "source_patterns": [
+        "however"
+      ],
+      "outputs": {
+        "casual": [
+          "but"
+        ],
+        "slang": [
+          "tho"
+        ],
+        "heavy": [
+          "tho"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "en_formal_frames",
+      "language": "en",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "due to the fact that",
+        "owing to the fact that"
+      ],
+      "outputs": {
+        "casual": [
+          "because"
+        ],
+        "slang": [
+          "because"
+        ],
+        "heavy": [
+          "because"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_formal_purpose",
+      "language": "en",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "in order to"
+      ],
+      "outputs": {
+        "casual": [
+          "to"
+        ],
+        "slang": [
+          "to"
+        ],
+        "heavy": [
+          "to"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_formal_warning",
+      "language": "en",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "please be aware that",
+        "it should be noted that"
+      ],
+      "outputs": {
+        "casual": [
+          "just so you know,"
+        ],
+        "slang": [
+          "just so you know,"
+        ],
+        "heavy": [
+          "just so you know,"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "moderation"
+      ],
+      "region": "global",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "en_no_need",
+      "language": "en",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "there is no need to",
+        "it is not necessary to"
+      ],
+      "outputs": {
+        "casual": [
+          "you don't need to"
+        ],
+        "slang": [
+          "no need to"
+        ],
+        "heavy": [
+          "no need to"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "en_break_rules",
+      "language": "en",
+      "stage": "formality",
+      "operation": "regex",
+      "pattern": "\\b(?:violates?|is in violation of|does not comply with)\\s+(?<rules>(?:(?:our|the|your|these|those)\\s+)?(?:[\\p{L}\\p{N}-]+\\s+){0,3}(?:rules?|policy|terms))\\b",
+      "outputs": {
+        "casual": [
+          "breaks $<rules>"
+        ],
+        "slang": [
+          "breaks $<rules>"
+        ],
+        "heavy": [
+          "breaks $<rules>"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "discord",
+        "moderation"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 2
+    },
+    {
+      "id": "en_picture_register",
+      "language": "en",
+      "stage": "formality",
+      "operation": "regex",
+      "pattern": "\\b(?:an?\\s+)?(?:image|photograph)\\b",
+      "outputs": {
+        "casual": [
+          "a picture"
+        ],
+        "slang": [
+          "a picture"
+        ],
+        "heavy": [
+          "a picture"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 2
+    },
+    {
+      "id": "en_evaluative_article_drop",
+      "language": "en",
+      "stage": "compression",
+      "operation": "regex",
+      "pattern": "^(?:a|an)\\s+(?=(?:very|really|pretty|quite)\\b)",
+      "outputs": {
+        "slang": [
+          ""
+        ],
+        "heavy": [
+          ""
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "en_play_invitation",
+      "language": "en",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^(?:would|does) anyone (?:like|want) to play (?<game>.+?)[?？]?$",
+      "outputs": {
+        "casual": [
+          "Anyone want to play $<game>?"
+        ],
+        "slang": [
+          "Anyone wanna play $<game>?"
+        ],
+        "heavy": [
+          "$<game> anyone?"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "discord"
+      ],
+      "context_patterns": [
+        "play"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "en_negative_without_even",
+      "language": "en",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "\\b(?<verb>downloaded|installed|opened|ran|shared|sent|clicked)(?<object>[^.!?]{1,100}?) without even checking (?<condition>[^.!?]+)",
+      "outputs": {
+        "casual": [
+          "$<verb>$<object> without even checking $<condition>"
+        ],
+        "slang": [
+          "$<verb>$<object> and didn't even check $<condition>"
+        ],
+        "heavy": [
+          "$<verb>$<object> and didn't even check $<condition>"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "gaming",
+        "technical"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "en_container_existential",
+      "language": "en",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "\\b(?:if|whether) there (?:is|are) (?<item>[^,.!?]+?) in them\\b",
+      "outputs": {
+        "casual": [
+          "whether they contain $<item>"
+        ],
+        "slang": [
+          "if they have $<item>"
+        ],
+        "heavy": [
+          "if they have $<item>"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "technical"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "en_without_compression",
+      "language": "en",
+      "stage": "compression",
+      "operation": "regex",
+      "pattern": "\\bwithout (?<tail>(?:even )?[\\p{L}]+ing\\b)",
+      "outputs": {
+        "heavy": [
+          "w/o $<tail>"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "technical",
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "de_formal_contrast",
+      "language": "de",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "jedoch,",
+        "allerdings,",
+        "jedoch",
+        "allerdings"
+      ],
+      "outputs": {
+        "casual": [
+          "aber"
+        ],
+        "slang": [
+          "aber"
+        ],
+        "heavy": [
+          "aber"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "de_formal_concession",
+      "language": "de",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "nichtsdestotrotz",
+        "dennoch"
+      ],
+      "outputs": {
+        "casual": [
+          "trotzdem"
+        ],
+        "slang": [
+          "trotzdem"
+        ],
+        "heavy": [
+          "trotzdem"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "de_formal_result",
+      "language": "de",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "folglich"
+      ],
+      "outputs": {
+        "casual": [
+          "deshalb"
+        ],
+        "slang": [
+          "also"
+        ],
+        "heavy": [
+          "also"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "de_no_need",
+      "language": "de",
+      "stage": "formality",
+      "operation": "regex",
+      "pattern": "\\bes ist nicht notwendig,?\\s+(?<action>.+?)\\s+zu\\s+(?<verb>[\\p{L}-]+)",
+      "outputs": {
+        "casual": [
+          "du brauchst $<action> nicht zu $<verb>"
+        ],
+        "slang": [
+          "brauchst $<action> nicht zu $<verb>"
+        ],
+        "heavy": [
+          "brauchst $<action> nicht zu $<verb>"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": true
+    },
+    {
+      "id": "de_lfg",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^(?:möchte|will) jemand (?<game>.+?) spielen[?？]?$",
+      "outputs": {
+        "casual": [
+          "Hat jemand Lust auf $<game>?"
+        ],
+        "slang": [
+          "Jemand Bock auf $<game>?"
+        ],
+        "heavy": [
+          "$<game>, noch wer?"
+        ]
+      },
+      "contexts": [
+        "gaming"
+      ],
+      "context_patterns": [
+        "spielen"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "ru_formal_time",
+      "language": "ru",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "в настоящее время",
+        "на данный момент"
+      ],
+      "outputs": {
+        "casual": [
+          "сейчас"
+        ],
+        "slang": [
+          "сейчас"
+        ],
+        "heavy": [
+          "сейчас"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "ru_formal_contrast",
+      "language": "ru",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "тем не менее,",
+        "однако,",
+        "тем не менее",
+        "однако"
+      ],
+      "outputs": {
+        "casual": [
+          "но"
+        ],
+        "slang": [
+          "но"
+        ],
+        "heavy": [
+          "но"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "ru_formal_goal",
+      "language": "ru",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "для того чтобы"
+      ],
+      "outputs": {
+        "casual": [
+          "чтобы"
+        ],
+        "slang": [
+          "чтобы"
+        ],
+        "heavy": [
+          "чтобы"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "ru_support_verb_check",
+      "language": "ru",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "(?<![\\p{L}\\p{N}_])(?:необходимо|требуется|следует)\\s+(?:осуществить|выполнить|провести)\\s+проверку(?![\\p{L}\\p{N}_])",
+      "outputs": {
+        "casual": [
+          "нужно проверить"
+        ],
+        "slang": [
+          "надо проверить"
+        ],
+        "heavy": [
+          "надо чекнуть"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "technical"
+      ],
+      "negative_patterns": [
+        "следует за"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "ru_support_verb_general",
+      "language": "ru",
+      "stage": "clause",
+      "operation": "replace",
+      "source_patterns": [
+        "необходимо осуществить",
+        "необходимо выполнить"
+      ],
+      "outputs": {
+        "casual": [
+          "нужно сделать"
+        ],
+        "slang": [
+          "надо сделать"
+        ],
+        "heavy": [
+          "надо сделать"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "technical"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "ru_rules_register",
+      "language": "ru",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "ломает правила"
+      ],
+      "outputs": {
+        "casual": [
+          "нарушает правила"
+        ],
+        "slang": [
+          "ломает правила"
+        ],
+        "heavy": [
+          "ломает правила"
+        ]
+      },
+      "contexts": [
+        "discord",
+        "gaming"
+      ],
+      "region": "global",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "uk_formal_time",
+      "language": "uk",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "у цей час",
+        "наразі"
+      ],
+      "outputs": {
+        "casual": [
+          "зараз"
+        ],
+        "slang": [
+          "зараз"
+        ],
+        "heavy": [
+          "зараз"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Ukraine",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "uk_formal_contrast",
+      "language": "uk",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "однак,",
+        "проте,",
+        "однак",
+        "проте"
+      ],
+      "outputs": {
+        "casual": [
+          "але"
+        ],
+        "slang": [
+          "але"
+        ],
+        "heavy": [
+          "але"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Ukraine",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "uk_support_verb_check",
+      "language": "uk",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "(?<![\\p{L}\\p{N}_])(?:необхідно|слід)\\s+(?:здійснити|виконати|провести)\\s+перевірку(?![\\p{L}\\p{N}_])",
+      "outputs": {
+        "casual": [
+          "треба перевірити"
+        ],
+        "slang": [
+          "треба перевірити"
+        ],
+        "heavy": [
+          "треба глянути"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "technical"
+      ],
+      "negative_patterns": [
+        "слід на"
+      ],
+      "region": "Ukraine",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "uk_formal_possibility",
+      "language": "uk",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "існує можливість"
+      ],
+      "outputs": {
+        "casual": [
+          "можна"
+        ],
+        "slang": [
+          "можна"
+        ],
+        "heavy": [
+          "можна"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Ukraine",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "cn_bug_complaint",
+      "language": "zh-CN",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^为什么(?:他们|你们)?还没有修(?:复)?(?<topic>.+?)[？?]?$",
+      "outputs": {
+        "casual": [
+          "$<topic> 怎么还没修？"
+        ],
+        "slang": [
+          "$<topic> 怎么还没修？"
+        ],
+        "heavy": [
+          "$<topic> 怎么还不修？"
+        ]
+      },
+      "contexts": [
+        "complaint",
+        "gaming",
+        "technical"
+      ],
+      "context_patterns": [
+        "修"
+      ],
+      "region": "Mainland China",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "cn_formal_contrast",
+      "language": "zh-CN",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "然而，",
+        "尽管如此，",
+        "然而",
+        "尽管如此"
+      ],
+      "outputs": {
+        "casual": [
+          "不过"
+        ],
+        "slang": [
+          "不过"
+        ],
+        "heavy": [
+          "不过"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Mainland China",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "cn_rules_register",
+      "language": "zh-CN",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "违反了规则",
+        "违反规则"
+      ],
+      "outputs": {
+        "casual": [
+          "违规了"
+        ],
+        "slang": [
+          "违规了"
+        ],
+        "heavy": [
+          "违规了"
+        ]
+      },
+      "contexts": [
+        "discord",
+        "gaming",
+        "moderation"
+      ],
+      "region": "Mainland China",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "tw_bug_complaint",
+      "language": "zh-TW",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^為什麼(?:他們|你們)?還沒有修(?:復)?(?<topic>.+?)[？?]?$",
+      "outputs": {
+        "casual": [
+          "$<topic> 怎麼還沒修？"
+        ],
+        "slang": [
+          "$<topic> 到底怎麼還沒修？"
+        ],
+        "heavy": [
+          "$<topic> 到底要拖多久？"
+        ]
+      },
+      "contexts": [
+        "complaint",
+        "gaming",
+        "technical"
+      ],
+      "context_patterns": [
+        "修"
+      ],
+      "region": "Taiwan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "tw_formal_contrast",
+      "language": "zh-TW",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "然而，",
+        "儘管如此，",
+        "然而",
+        "儘管如此"
+      ],
+      "outputs": {
+        "casual": [
+          "不過"
+        ],
+        "slang": [
+          "不過"
+        ],
+        "heavy": [
+          "不過"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Taiwan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "tw_rules_register",
+      "language": "zh-TW",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "違反了規則",
+        "違反規則"
+      ],
+      "outputs": {
+        "casual": [
+          "違規了"
+        ],
+        "slang": [
+          "違規了"
+        ],
+        "heavy": [
+          "違規了"
+        ]
+      },
+      "contexts": [
+        "discord",
+        "gaming",
+        "moderation"
+      ],
+      "region": "Taiwan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "es_formal_contrast",
+      "language": "es",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "sin embargo,",
+        "no obstante,",
+        "sin embargo",
+        "no obstante"
+      ],
+      "outputs": {
+        "casual": [
+          "pero"
+        ],
+        "slang": [
+          "pero"
+        ],
+        "heavy": [
+          "pero"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "es_formal_necessity",
+      "language": "es",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "es necesario"
+      ],
+      "outputs": {
+        "casual": [
+          "hay que"
+        ],
+        "slang": [
+          "hay que"
+        ],
+        "heavy": [
+          "hay que"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "es_no_need",
+      "language": "es",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "no es necesario"
+      ],
+      "outputs": {
+        "casual": [
+          "no hace falta"
+        ],
+        "slang": [
+          "no hace falta"
+        ],
+        "heavy": [
+          "no hace falta"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "es_rules_register",
+      "language": "es",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "incumple las reglas",
+        "viola las reglas"
+      ],
+      "outputs": {
+        "casual": [
+          "rompe las reglas"
+        ],
+        "slang": [
+          "rompe las reglas"
+        ],
+        "heavy": [
+          "rompe las reglas"
+        ]
+      },
+      "contexts": [
+        "discord",
+        "gaming",
+        "moderation"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "fr_formal_contrast",
+      "language": "fr",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "cependant,",
+        "néanmoins,",
+        "cependant",
+        "néanmoins"
+      ],
+      "outputs": {
+        "casual": [
+          "mais"
+        ],
+        "slang": [
+          "mais"
+        ],
+        "heavy": [
+          "mais"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "fr_formal_necessity",
+      "language": "fr",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "il est nécessaire de"
+      ],
+      "outputs": {
+        "casual": [
+          "il faut"
+        ],
+        "slang": [
+          "faut"
+        ],
+        "heavy": [
+          "faut"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "fr_formal_purpose",
+      "language": "fr",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "afin de"
+      ],
+      "outputs": {
+        "casual": [
+          "pour"
+        ],
+        "slang": [
+          "pour"
+        ],
+        "heavy": [
+          "pour"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "fr_negative_compression",
+      "language": "fr",
+      "stage": "grammar",
+      "operation": "regex",
+      "pattern": "\\bje ne (?<verb>sais|peux|veux|vais|comprends) pas\\b",
+      "outputs": {
+        "casual": [
+          "je ne $<verb> pas"
+        ],
+        "slang": [
+          "je $<verb> pas"
+        ],
+        "heavy": [
+          "je $<verb> pas"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 2
+    },
+    {
+      "id": "pt_formal_contrast",
+      "language": "pt-BR",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "no entanto,",
+        "contudo,",
+        "no entanto",
+        "contudo"
+      ],
+      "outputs": {
+        "casual": [
+          "mas"
+        ],
+        "slang": [
+          "mas"
+        ],
+        "heavy": [
+          "mas"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Brazil",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "pt_formal_necessity",
+      "language": "pt-BR",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "é necessário"
+      ],
+      "outputs": {
+        "casual": [
+          "tem que"
+        ],
+        "slang": [
+          "tem que"
+        ],
+        "heavy": [
+          "tem q"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Brazil",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "pt_no_need",
+      "language": "pt-BR",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "não é necessário"
+      ],
+      "outputs": {
+        "casual": [
+          "não precisa"
+        ],
+        "slang": [
+          "não precisa"
+        ],
+        "heavy": [
+          "n precisa"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Brazil",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "pt_play_invitation",
+      "language": "pt-BR",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^(?:alguém quer|vocês querem) jogar (?<game>.+?)[?？]?$",
+      "outputs": {
+        "casual": [
+          "Alguém a fim de jogar $<game>?"
+        ],
+        "slang": [
+          "bora jogar $<game>?"
+        ],
+        "heavy": [
+          "bora $<game>?"
+        ]
+      },
+      "contexts": [
+        "gaming"
+      ],
+      "context_patterns": [
+        "jogar"
+      ],
+      "region": "Brazil",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "pl_formal_time",
+      "language": "pl",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "obecnie"
+      ],
+      "outputs": {
+        "casual": [
+          "teraz"
+        ],
+        "slang": [
+          "teraz"
+        ],
+        "heavy": [
+          "teraz"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Poland",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "pl_formal_contrast",
+      "language": "pl",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "niemniej jednak,",
+        "jednakże,",
+        "niemniej jednak",
+        "jednakże"
+      ],
+      "outputs": {
+        "casual": [
+          "ale"
+        ],
+        "slang": [
+          "ale"
+        ],
+        "heavy": [
+          "ale"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Poland",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "pl_support_verb_check",
+      "language": "pl",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "(?<![\\p{L}\\p{N}_])(?:należy|konieczne jest)\\s+(?:dokonać|przeprowadzić)\\s+sprawdzenia(?![\\p{L}\\p{N}_])",
+      "outputs": {
+        "casual": [
+          "trzeba sprawdzić"
+        ],
+        "slang": [
+          "trzeba sprawdzić"
+        ],
+        "heavy": [
+          "trzeba ogarnąć"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "technical"
+      ],
+      "negative_patterns": [
+        "należy do"
+      ],
+      "region": "Poland",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "pl_rules_register",
+      "language": "pl",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "narusza zasady"
+      ],
+      "outputs": {
+        "casual": [
+          "łamie zasady"
+        ],
+        "slang": [
+          "łamie zasady"
+        ],
+        "heavy": [
+          "łamie zasady"
+        ]
+      },
+      "contexts": [
+        "discord",
+        "gaming",
+        "moderation"
+      ],
+      "region": "Poland",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "ja_formal_question_bug",
+      "language": "ja",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^なぜ(?<topic>.+?)はまだ修正されていないのですか[？?]?$",
+      "outputs": {
+        "casual": [
+          "$<topic>、まだ直ってないの？"
+        ],
+        "slang": [
+          "$<topic>まだ直ってないの？"
+        ],
+        "heavy": [
+          "なんで$<topic>まだ直ってないんだよ"
+        ]
+      },
+      "contexts": [
+        "complaint",
+        "gaming",
+        "technical"
+      ],
+      "context_patterns": [
+        "修正"
+      ],
+      "region": "Japan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": true
+    },
+    {
+      "id": "ja_progressive_contraction",
+      "language": "ja",
+      "stage": "grammar",
+      "operation": "replace",
+      "source_patterns": [
+        "している",
+        "していない"
+      ],
+      "outputs": {
+        "casual": [
+          "してる"
+        ],
+        "slang": [
+          "してる"
+        ],
+        "heavy": [
+          "してる"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Japan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 2
+    },
+    {
+      "id": "ja_copula_contraction",
+      "language": "ja",
+      "stage": "grammar",
+      "operation": "replace",
+      "source_patterns": [
+        "ではない"
+      ],
+      "outputs": {
+        "casual": [
+          "じゃない"
+        ],
+        "slang": [
+          "じゃない"
+        ],
+        "heavy": [
+          "じゃない"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Japan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "ja_quote_contraction",
+      "language": "ja",
+      "stage": "grammar",
+      "operation": "replace",
+      "source_patterns": [
+        "という"
+      ],
+      "outputs": {
+        "casual": [
+          "って"
+        ],
+        "slang": [
+          "って"
+        ],
+        "heavy": [
+          "って"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "Japan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "ko_instruction_contraction",
+      "language": "ko",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^(?<topic>.+?[은는]) 그냥 (?<action>.+?)하면 됩니다[.!。]?$",
+      "outputs": {
+        "casual": [
+          "$<topic> 그냥 $<action>하면 돼"
+        ],
+        "slang": [
+          "$<topic> 걍 $<action>하면 됨"
+        ],
+        "heavy": [
+          "$<topic> 걍 $<action>하면 됨"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "gaming"
+      ],
+      "region": "South Korea",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": true
+    },
+    {
+      "id": "ko_formal_copula",
+      "language": "ko",
+      "stage": "grammar",
+      "operation": "regex",
+      "pattern": "(?<noun>[가-힣]+)입니다\\b",
+      "outputs": {
+        "casual": [
+          "$<noun>이야"
+        ],
+        "slang": [
+          "$<noun>임"
+        ],
+        "heavy": [
+          "$<noun>임"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "South Korea",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": true
+    },
+    {
+      "id": "ko_real_intensity",
+      "language": "ko",
+      "stage": "formality",
+      "operation": "replace",
+      "source_patterns": [
+        "매우"
+      ],
+      "outputs": {
+        "casual": [
+          "진짜"
+        ],
+        "slang": [
+          "진짜"
+        ],
+        "heavy": [
+          "진짜"
+        ]
+      },
+      "contexts": [
+        "chat"
+      ],
+      "region": "South Korea",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true
+    },
+    {
+      "id": "ko_game_compression",
+      "language": "ko",
+      "stage": "compression",
+      "operation": "replace",
+      "source_patterns": [
+        "게임"
+      ],
+      "outputs": {
+        "heavy": [
+          "겜"
+        ]
+      },
+      "contexts": [
+        "gaming"
+      ],
+      "context_patterns": [
+        "게임"
+      ],
+      "region": "South Korea",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "de_wellbeing_question_compression",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Wie geht es dir\\??$",
+      "outputs": {
+        "casual": [
+          "Wie geht's dir?"
+        ],
+        "slang": [
+          "wie gehts?"
+        ],
+        "heavy": [
+          "wie gehts"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "discord"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "de_neutral_sleep_desire",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Ich (?:möchte|will) (?:wirklich |sehr )?schlafen[.!]?$",
+      "outputs": {
+        "casual": [
+          "Ich will einfach nur schlafen."
+        ],
+        "slang": [
+          "ich will einfach nur pennen"
+        ],
+        "heavy": [
+          "will nur pennen"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "discord"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "de_reward_question_compression",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Hast du (?:die )?(?<reward>Belohnung|Reward) (?:bereits|schon) (?:abgeholt|geholt|eingesammelt)\\??$",
+      "outputs": {
+        "casual": [
+          "Hast du die $<reward> schon geholt?"
+        ],
+        "slang": [
+          "$<reward> schon geholt?"
+        ],
+        "heavy": [
+          "$<reward> schon geholt"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "discord"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "de_bug_still_unfixed",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Warum haben (?:sie|die) (?:diesen|den) (?<bug>Bug|Fehler) (?:immer )?noch nicht (?:behoben|repariert|gefixt)\\??$",
+      "outputs": {
+        "casual": [
+          "Warum haben die den $<bug> noch nicht gefixt?"
+        ],
+        "slang": [
+          "warum ist der $<bug> immer noch nicht gefixt?"
+        ],
+        "heavy": [
+          "warum ist der $<bug> noch nicht gefixt"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "discord",
+        "chat"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "en_wellbeing_question_compression",
+      "language": "en",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^How are you(?: doing)?\\??$",
+      "outputs": {
+        "casual": [
+          "How's it going?"
+        ],
+        "slang": [
+          "hows it going?"
+        ],
+        "heavy": [
+          "how u doing"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "discord"
+      ],
+      "region": "global",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "ru_bug_question_compression",
+      "language": "ru",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Почему они (?:всё ещё|до сих пор) не (?:исправили|починили) этот баг\\??$",
+      "outputs": {
+        "casual": [
+          "Почему они до сих пор не починили баг?"
+        ],
+        "slang": [
+          "почему баг ещё не пофиксили?"
+        ],
+        "heavy": [
+          "баг ещё не пофиксили?"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "discord"
+      ],
+      "region": "Russia / global Russian",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "uk_bug_question_compression",
+      "language": "uk",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Чому вони досі не (?:виправили|полагодили) цей баг\\??$",
+      "outputs": {
+        "casual": [
+          "Чому вони досі не полагодили баг?"
+        ],
+        "slang": [
+          "чого баг досі не пофіксили?"
+        ],
+        "heavy": [
+          "баг досі не пофіксили?"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "discord"
+      ],
+      "region": "Ukraine",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "zh_cn_bug_question_compression_v09",
+      "language": "zh-CN",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^为什么他们还没有修复这个 (?<bug>bug|漏洞)[？?]?$",
+      "outputs": {
+        "casual": [
+          "这个 $<bug> 怎么还没修？"
+        ],
+        "slang": [
+          "这 $<bug> 咋还没修？"
+        ],
+        "heavy": [
+          "这 $<bug> 还不修？"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "chat"
+      ],
+      "region": "Mainland China",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "zh_tw_bug_question_compression_v09",
+      "language": "zh-TW",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^為什麼他們還沒有修復這個 (?<bug>bug|漏洞)[？?]?$",
+      "outputs": {
+        "casual": [
+          "這個 $<bug> 怎麼還沒修？"
+        ],
+        "slang": [
+          "這 $<bug> 到底怎麼還沒修？"
+        ],
+        "heavy": [
+          "這 $<bug> 到底要拖多久？"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "chat"
+      ],
+      "region": "Taiwan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "es_bug_question_compression_v09",
+      "language": "es",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^¿?Por qué todavía no han arreglado este (?<bug>bug|error)\\??$",
+      "outputs": {
+        "casual": [
+          "¿Por qué aún no arreglaron el $<bug>?"
+        ],
+        "slang": [
+          "por qué no arreglan el $<bug> todavía?"
+        ],
+        "heavy": [
+          "el $<bug> sigue sin arreglar"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "chat"
+      ],
+      "region": "global / region-sensitive",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "fr_bug_question_compression_v09",
+      "language": "fr",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Pourquoi n'ont-ils toujours pas corrigé ce (?<bug>bug|problème) ?\\??$",
+      "outputs": {
+        "casual": [
+          "Pourquoi ils ont toujours pas corrigé ce $<bug> ?"
+        ],
+        "slang": [
+          "pourquoi ce $<bug> est toujours pas fix ?"
+        ],
+        "heavy": [
+          "ce $<bug> toujours pas fix"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "chat"
+      ],
+      "region": "France / global French",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "pt_br_bug_question_compression_v09",
+      "language": "pt-BR",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Por que eles ainda não corrigiram (?:esse|este) (?<bug>bug|erro)\\??$",
+      "outputs": {
+        "casual": [
+          "Por que ainda não corrigiram o $<bug>?"
+        ],
+        "slang": [
+          "pq ainda não arrumaram o $<bug>?"
+        ],
+        "heavy": [
+          "$<bug> ainda não arrumado"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "chat"
+      ],
+      "region": "Brazil",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "pl_bug_question_compression_v09",
+      "language": "pl",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Dlaczego oni wciąż nie naprawili tego (?<bug>buga|błędu)\\??$",
+      "outputs": {
+        "casual": [
+          "Czemu jeszcze nie naprawili tego $<bug>?"
+        ],
+        "slang": [
+          "czemu $<bug> dalej nie naprawiony?"
+        ],
+        "heavy": [
+          "$<bug> dalej nie naprawiony"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "chat"
+      ],
+      "region": "Poland",
+      "confidence": "medium",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1
+    },
+    {
+      "id": "ja_bug_question_compression_v09",
+      "language": "ja",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^なぜこのバグはまだ修正されていないのですか[？?]?$",
+      "outputs": {
+        "casual": [
+          "このバグ、まだ直ってないの？"
+        ],
+        "slang": [
+          "このバグまだ直ってないの？"
+        ],
+        "heavy": [
+          "なんでこのバグまだ直ってないんだよ"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "chat"
+      ],
+      "region": "Japan",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": true
+    },
+    {
+      "id": "ko_bug_question_compression_v09",
+      "language": "ko",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^왜 아직도 이 버그를 고치지 않았(?:나요|습니까)[?？]?$",
+      "outputs": {
+        "casual": [
+          "이 버그 왜 아직도 안 고쳤어?"
+        ],
+        "slang": [
+          "이 버그 아직도 안 고침?"
+        ],
+        "heavy": [
+          "이 버그 왜 아직도 안 고침"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "chat"
+      ],
+      "region": "South Korea",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": true
+    },
+    {
+      "id": "de_server_check_compression",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Hast du (?:den )?(?<thing>Server|Build|Patch) (?:bereits|schon) (?:überprüft|geprüft|gecheckt)\\??$",
+      "outputs": {
+        "casual": [
+          "Hast du den $<thing> schon gecheckt?"
+        ],
+        "slang": [
+          "$<thing> schon gecheckt?"
+        ],
+        "heavy": [
+          "$<thing> gecheckt?"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "technical",
+        "discord"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "de_join_now_compression",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Ich werde (?:jetzt|gleich) (?:beitreten|reinkommen|reingehen)[.!]?$",
+      "outputs": {
+        "casual": [
+          "Ich komm gleich rein."
+        ],
+        "slang": [
+          "komm gleich rein"
+        ],
+        "heavy": [
+          "gleich drin"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "discord",
+        "chat"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "de_heals_question_compression",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^(?:Hast du|Habt ihr) (?:noch )?(?<thing>Heilungen|Heiltränke|Heals)\\??$",
+      "outputs": {
+        "casual": [
+          "Hast du noch Heals?"
+        ],
+        "slang": [
+          "noch Heals?"
+        ],
+        "heavy": [
+          "Heals?"
+        ]
+      },
+      "contexts": [
+        "gaming",
+        "discord"
+      ],
+      "context_patterns": [
+        "Heilungen",
+        "Heiltränke",
+        "Heals"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "de_finished_already_compression",
+      "language": "de",
+      "stage": "clause",
+      "operation": "regex",
+      "pattern": "^Wir haben (?:bereits|schon) (?:abgeschlossen|aufgehört|fertiggemacht)[.!]?$",
+      "outputs": {
+        "casual": [
+          "Wir sind schon fertig."
+        ],
+        "slang": [
+          "sind schon fertig"
+        ],
+        "heavy": [
+          "schon fertig"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "gaming",
+        "discord"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "de_gibt_es_question",
+      "language": "de",
+      "stage": "grammar",
+      "operation": "regex",
+      "pattern": "^Gibt es (?<thing>.+?)\\?$",
+      "outputs": {
+        "casual": [
+          "Gibt's $<thing>?"
+        ],
+        "slang": [
+          "gibts $<thing>?"
+        ],
+        "heavy": [
+          "gibts $<thing>"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "gaming",
+        "discord"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    },
+    {
+      "id": "de_habe_gerade_compression",
+      "language": "de",
+      "stage": "grammar",
+      "operation": "regex",
+      "pattern": "^Ich habe (?:gerade|soeben) (?<tail>.+)$",
+      "outputs": {
+        "casual": [
+          "Ich hab gerade $<tail>"
+        ],
+        "slang": [
+          "hab grad $<tail>"
+        ],
+        "heavy": [
+          "grad $<tail>"
+        ]
+      },
+      "contexts": [
+        "chat",
+        "gaming",
+        "discord"
+      ],
+      "negative_patterns": [
+        "Vertrag",
+        "Antrag",
+        "Kündigung"
+      ],
+      "region": "Germany / DACH",
+      "confidence": "high",
+      "current": true,
+      "can_generate": true,
+      "can_recognize": true,
+      "max_applications": 1,
+      "changes_register": false
+    }
+  ],
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "region": "global",
+      "slang": [
+        {
+          "id": "en_idk",
+          "canonical": "I don't know",
+          "forms": [
+            "idk"
+          ],
+          "meaning": "I don't know",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting",
+            "reddit"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "i don't know",
+              "chat": "idk"
+            }
+          ]
+        },
+        {
+          "id": "en_idc",
+          "canonical": "I don't care",
+          "forms": [
+            "idc"
+          ],
+          "meaning": "I don't care",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "i don't care anymore",
+              "chat": "idc anymore"
+            }
+          ]
+        },
+        {
+          "id": "en_ngl",
+          "canonical": "not gonna lie",
+          "forms": [
+            "ngl"
+          ],
+          "meaning": "not gonna lie; honest opinion opener",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "reddit",
+            "tiktok",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "not gonna lie, that was good",
+              "chat": "ngl that was good"
+            }
+          ]
+        },
+        {
+          "id": "en_tbh",
+          "canonical": "to be honest",
+          "forms": [
+            "tbh"
+          ],
+          "meaning": "to be honest",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "reddit",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "to be honest i agree",
+              "chat": "tbh i agree"
+            }
+          ]
+        },
+        {
+          "id": "en_btw",
+          "canonical": "by the way",
+          "forms": [
+            "btw"
+          ],
+          "meaning": "by the way",
+          "register": [
+            "casual"
+          ],
+          "contexts": [
+            "discord",
+            "texting",
+            "reddit"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "by the way i'm leaving soon",
+              "chat": "btw im leaving soon"
+            }
+          ]
+        },
+        {
+          "id": "en_fr",
+          "canonical": "for real",
+          "forms": [
+            "fr",
+            "frfr",
+            "fr fr"
+          ],
+          "meaning": "for real; genuinely; emphatic agreement",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "tiktok",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "for real, that's crazy",
+              "chat": "fr thats crazy"
+            }
+          ]
+        },
+        {
+          "id": "en_rn",
+          "canonical": "right now",
+          "forms": [
+            "rn"
+          ],
+          "meaning": "right now",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "i'm busy right now",
+              "chat": "im busy rn"
+            }
+          ]
+        },
+        {
+          "id": "en_please",
+          "canonical": "please",
+          "forms": [
+            "pls",
+            "plz"
+          ],
+          "meaning": "please",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "please invite me",
+              "chat": "pls invite me"
+            }
+          ]
+        },
+        {
+          "id": "en_thanks",
+          "canonical": "thanks",
+          "forms": [
+            "thx",
+            "ty"
+          ],
+          "meaning": "thanks / thank you",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "thanks for the help",
+              "chat": "ty for the help"
+            }
+          ]
+        },
+        {
+          "id": "en_sorry",
+          "canonical": "sorry",
+          "forms": [
+            "sry",
+            "srry"
+          ],
+          "meaning": "sorry",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "sorry, my bad",
+              "chat": "sry mb"
+            }
+          ]
+        },
+        {
+          "id": "en_alright",
+          "canonical": "alright",
+          "forms": [
+            "alr"
+          ],
+          "meaning": "alright / okay",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "texting",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "alright, i'll join",
+              "chat": "alr ill join"
+            }
+          ]
+        },
+        {
+          "id": "en_wdym",
+          "canonical": "what do you mean",
+          "forms": [
+            "wdym"
+          ],
+          "meaning": "what do you mean?",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "what do you mean?",
+              "chat": "wdym"
+            }
+          ]
+        },
+        {
+          "id": "en_wyd",
+          "canonical": "what are you doing",
+          "forms": [
+            "wyd"
+          ],
+          "meaning": "what are you doing / what are you up to?",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "what are you doing tonight?",
+              "chat": "wyd tn"
+            }
+          ]
+        },
+        {
+          "id": "en_wya",
+          "canonical": "where are you at",
+          "forms": [
+            "wya"
+          ],
+          "meaning": "where are you / where are you at?",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "where are you?",
+              "chat": "wya"
+            }
+          ]
+        },
+        {
+          "id": "en_wsp",
+          "canonical": "what's up",
+          "forms": [
+            "wsp",
+            "wsg"
+          ],
+          "meaning": "what's up / what's good?",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "what's up bro?",
+              "chat": "wsp bro"
+            }
+          ]
+        },
+        {
+          "id": "en_lmk",
+          "canonical": "let me know",
+          "forms": [
+            "lmk"
+          ],
+          "meaning": "let me know",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "reddit"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "let me know when you're ready",
+              "chat": "lmk when ur ready"
+            }
+          ]
+        },
+        {
+          "id": "en_fs",
+          "canonical": "for sure",
+          "forms": [
+            "fs"
+          ],
+          "meaning": "for sure; definitely",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "yeah, for sure",
+              "chat": "yeah fs"
+            }
+          ]
+        },
+        {
+          "id": "en_icl",
+          "canonical": "I can't lie",
+          "forms": [
+            "icl"
+          ],
+          "meaning": "I can't lie; honestly",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "tiktok",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "i can't lie, that was bad",
+              "chat": "icl that was bad"
+            }
+          ]
+        },
+        {
+          "id": "en_iykyk",
+          "canonical": "if you know, you know",
+          "forms": [
+            "iykyk"
+          ],
+          "meaning": "inside-reference marker: if you know, you know",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "tiktok",
+            "reddit",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "if you know, you know",
+              "chat": "iykyk"
+            }
+          ]
+        },
+        {
+          "id": "en_really",
+          "canonical": "really",
+          "forms": [
+            "rlly",
+            "rly"
+          ],
+          "meaning": "really",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "i really don't know",
+              "chat": "i rlly dont know"
+            }
+          ]
+        },
+        {
+          "id": "en_tomorrow",
+          "canonical": "tomorrow",
+          "forms": [
+            "tmr",
+            "tmrw"
+          ],
+          "meaning": "tomorrow",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "i'll do it tomorrow",
+              "chat": "ill do it tmr"
+            }
+          ]
+        },
+        {
+          "id": "en_tonight",
+          "canonical": "tonight",
+          "forms": [
+            "tn"
+          ],
+          "meaning": "tonight",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "are you playing tonight?",
+              "chat": "u playing tn?"
+            }
+          ]
+        },
+        {
+          "id": "en_before",
+          "canonical": "before",
+          "forms": [
+            "b4"
+          ],
+          "meaning": "before",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "can look dated or SMS-era outside playful texting"
+          ],
+          "examples": [
+            {
+              "normal": "i've seen it before",
+              "chat": "ive seen it b4"
+            }
+          ]
+        },
+        {
+          "id": "en_something",
+          "canonical": "something",
+          "forms": [
+            "smth",
+            "sth"
+          ],
+          "meaning": "something",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "reddit"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "say something",
+              "chat": "say smth"
+            }
+          ]
+        },
+        {
+          "id": "en_people",
+          "canonical": "people",
+          "forms": [
+            "ppl"
+          ],
+          "meaning": "people",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "reddit"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "people are mad",
+              "chat": "ppl are mad"
+            }
+          ]
+        },
+        {
+          "id": "en_because",
+          "canonical": "because",
+          "forms": [
+            "bc",
+            "bcs",
+            "cuz",
+            "cos"
+          ],
+          "meaning": "because",
+          "register": [
+            "casual",
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "because i don't know",
+              "chat": "bcs idk"
+            }
+          ]
+        },
+        {
+          "id": "en_though",
+          "canonical": "though",
+          "forms": [
+            "tho"
+          ],
+          "meaning": "though",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "texting",
+            "reddit"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "it's good though",
+              "chat": "its good tho"
+            }
+          ]
+        },
+        {
+          "id": "en_probably",
+          "canonical": "probably",
+          "forms": [
+            "prolly"
+          ],
+          "meaning": "probably",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "texting",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "i'll probably join later",
+              "chat": "ill prolly join later"
+            }
+          ]
+        },
+        {
+          "id": "en_message",
+          "canonical": "message",
+          "forms": [
+            "msg"
+          ],
+          "meaning": "message",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "send me a message",
+              "chat": "send me a msg"
+            }
+          ]
+        },
+        {
+          "id": "en_picture",
+          "canonical": "picture",
+          "forms": [
+            "pic"
+          ],
+          "meaning": "picture or image",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "texting",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "nice picture",
+              "chat": "nice pic"
+            }
+          ]
+        },
+        {
+          "id": "en_you",
+          "canonical": "you",
+          "forms": [
+            "u"
+          ],
+          "meaning": "you",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "are you coming?",
+              "chat": "u coming?"
+            }
+          ]
+        },
+        {
+          "id": "en_your",
+          "canonical": "your / you're",
+          "forms": [
+            "ur"
+          ],
+          "meaning": "your or you're depending on syntax",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "ambiguous between your and you're; generate only with a grammar-aware rule"
+          ],
+          "examples": [
+            {
+              "normal": "your build is good",
+              "chat": "ur build is good"
+            }
+          ]
+        },
+        {
+          "id": "en_yourself",
+          "canonical": "yourself",
+          "forms": [
+            "urself"
+          ],
+          "meaning": "yourself in an already compressed u/ur style cluster",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "requires_generation_ids": [
+            "en_you"
+          ],
+          "avoid": [
+            "generate only when the same sentence also supports u-style compression"
+          ],
+          "examples": [
+            {
+              "normal": "check it yourself",
+              "chat": "check it urself"
+            }
+          ]
+        },
+        {
+          "id": "en_without_short",
+          "canonical": "without",
+          "forms": [
+            "w/o"
+          ],
+          "meaning": "without before a short noun phrase or gerund",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "technical",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "generation requires a short-complement grammar guard"
+          ],
+          "examples": [
+            {
+              "normal": "without checking",
+              "chat": "w/o checking"
+            }
+          ]
+        },
+        {
+          "id": "en_them_em",
+          "canonical": "them",
+          "forms": [
+            "em"
+          ],
+          "meaning": "object or prepositional them with a close antecedent",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "requires a close unambiguous antecedent and object position"
+          ],
+          "examples": [
+            {
+              "normal": "block them",
+              "chat": "block em"
+            }
+          ]
+        },
+        {
+          "id": "en_are",
+          "canonical": "are",
+          "forms": [
+            "ar"
+          ],
+          "meaning": "are in highly compressed typing",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "not broadly standardized; can collide with initials or other abbreviations"
+          ],
+          "examples": [
+            {
+              "normal": "are you ready?",
+              "chat": "ar u ready?"
+            }
+          ]
+        },
+        {
+          "id": "en_and",
+          "canonical": "and",
+          "forms": [
+            "nd"
+          ],
+          "meaning": "and in compressed typing",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "not universal; can look like a typo"
+          ],
+          "examples": [
+            {
+              "normal": "you and me",
+              "chat": "u nd me"
+            }
+          ]
+        },
+        {
+          "id": "en_ofcourse",
+          "canonical": "of course",
+          "forms": [
+            "ofc"
+          ],
+          "meaning": "of course",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "of course i remember",
+              "chat": "ofc i remember"
+            }
+          ]
+        },
+        {
+          "id": "en_af",
+          "canonical": "as fuck",
+          "forms": [
+            "af"
+          ],
+          "meaning": "very / extremely",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "tiktok",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "that was really funny",
+              "chat": "that was funny af"
+            }
+          ]
+        },
+        {
+          "id": "en_bro",
+          "canonical": "brother / friend",
+          "forms": [
+            "bro",
+            "bruh"
+          ],
+          "meaning": "bro / dude; address or reaction",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "tiktok",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "speaker- and persona-sensitive address; never insert as generic humanizer"
+          ],
+          "examples": [
+            {
+              "normal": "bro, what are you doing?",
+              "chat": "bro wtf are u doing"
+            }
+          ]
+        },
+        {
+          "id": "en_sup_v091",
+          "canonical": "hello",
+          "forms": [
+            "sup"
+          ],
+          "meaning": "casual greeting",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global / community-sensitive",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": []
+        },
+        {
+          "id": "en_brb_v091",
+          "canonical": "I will be right back",
+          "forms": [
+            "brb"
+          ],
+          "meaning": "temporary absence",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global / community-sensitive",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": []
+        },
+        {
+          "id": "en_relationship_abbrev_v091",
+          "canonical": "girlfriend / boyfriend",
+          "forms": [
+            "gf",
+            "bf"
+          ],
+          "meaning": "relationship abbreviation; context dependent",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global / community-sensitive",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": []
+        },
+        {
+          "id": "en_screenshot_abbrev_v091",
+          "canonical": "screenshot / context dependent",
+          "forms": [
+            "ss"
+          ],
+          "meaning": "screenshot in send/post/delete context",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global / community-sensitive",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": []
+        },
+        {
+          "id": "en_finna_v091",
+          "canonical": "about to",
+          "forms": [
+            "finna",
+            "boutta"
+          ],
+          "meaning": "imminent intention",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global / community-sensitive",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": []
+        },
+        {
+          "id": "en_gotta_v091",
+          "canonical": "have to",
+          "forms": [
+            "gotta"
+          ],
+          "meaning": "obligation",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global / community-sensitive",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": []
+        }
+      ],
+      "phrases": [
+        {
+          "id": "en_dead_chat",
+          "meaning": "chat is inactive",
+          "source_examples": [
+            "chat is dead",
+            "dead chat"
+          ],
+          "bad_literal_translations": [
+            "the chat died physically"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "chat is dead"
+            ],
+            "slang": [
+              "chat dead",
+              "dead chat"
+            ],
+            "heavy": [
+              "dead chat"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "en_cooked",
+          "meaning": "doomed or in trouble",
+          "source_examples": [
+            "we're cooked",
+            "bro is cooked"
+          ],
+          "bad_literal_translations": [
+            "we are cooked as food"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "we're in trouble"
+            ],
+            "slang": [
+              "we're cooked"
+            ],
+            "heavy": [
+              "we're so cooked"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord",
+            "tiktok"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "en_skill_issue",
+          "meaning": "mocking explanation that failure is due to lack of skill",
+          "source_examples": [
+            "skill issue",
+            "sounds like a skill issue"
+          ],
+          "bad_literal_translations": [
+            "problem of skill"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "maybe you need more practice"
+            ],
+            "slang": [
+              "skill issue"
+            ],
+            "heavy": [
+              "massive skill issue"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "en_let_him_cook",
+          "meaning": "let someone continue because they may have a good idea",
+          "source_examples": [
+            "let him cook",
+            "let bro cook"
+          ],
+          "bad_literal_translations": [
+            "let him prepare food"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "let him finish"
+            ],
+            "slang": [
+              "let him cook"
+            ],
+            "heavy": [
+              "let bro cook"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming",
+            "tiktok"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "en_lol",
+          "form": "lol",
+          "meaning": "laughter; often also a tone-softener",
+          "equivalents": {
+            "en": [
+              "lol"
+            ],
+            "ru": [
+              "лол",
+              "ахах"
+            ],
+            "de": [
+              "lol",
+              "haha"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "discord",
+            "reddit"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "en_lmao",
+          "form": "lmao",
+          "meaning": "strong laughter",
+          "equivalents": {
+            "ru": [
+              "ору",
+              "ахахах"
+            ],
+            "de": [
+              "lmao",
+              "ich sterbe"
+            ],
+            "fr": [
+              "ptdr",
+              "jpp"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "en_wtf",
+          "form": "wtf",
+          "meaning": "shock, disbelief, anger; 'what the fuck'",
+          "equivalents": {
+            "ru": [
+              "что за хуйня",
+              "чзх"
+            ],
+            "de": [
+              "wtf",
+              "was zum fick"
+            ],
+            "fr": [
+              "wtf",
+              "c'est quoi ça"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "gaming",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "en_ong",
+          "form": "ong",
+          "meaning": "on God; emphatic truth/seriousness",
+          "equivalents": {
+            "en": [
+              "fr",
+              "i swear"
+            ],
+            "ru": [
+              "реально",
+              "клянусь"
+            ],
+            "de": [
+              "safe",
+              "schwöre"
+            ]
+          },
+          "contexts": [
+            "tiktok",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        }
+      ],
+      "gaming": [
+        {
+          "id": "game_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg",
+            "ggwp"
+          ],
+          "meaning": "good game / good game, well played",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "game_afk",
+          "canonical": "AFK",
+          "forms": [
+            "afk"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "game_op",
+          "canonical": "OP",
+          "forms": [
+            "op"
+          ],
+          "meaning": "overpowered in gaming; context can also mean original poster",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "ru": [
+              "имба",
+              "слишком сильный"
+            ],
+            "de": [
+              "OP",
+              "zu stark"
+            ]
+          }
+        },
+        {
+          "id": "game_nerf",
+          "canonical": "nerf",
+          "forms": [
+            "nerf",
+            "nerfed"
+          ],
+          "meaning": "reduce power through a balance change",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "game_buff",
+          "canonical": "buff",
+          "forms": [
+            "buff",
+            "buffed"
+          ],
+          "meaning": "increase power through a balance change",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "game_grind",
+          "canonical": "grind",
+          "forms": [
+            "grind",
+            "grinding"
+          ],
+          "meaning": "repeat content to gain levels, currency, items, or rank",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "game_carry",
+          "canonical": "carry",
+          "forms": [
+            "carry",
+            "carried"
+          ],
+          "meaning": "player who drives the team to victory",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "game_noob",
+          "canonical": "noob",
+          "forms": [
+            "noob",
+            "newb",
+            "newbie"
+          ],
+          "meaning": "inexperienced player; 'noob' can be insulting",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "game_skillissue",
+          "canonical": "skill issue",
+          "forms": [
+            "skill issue"
+          ],
+          "meaning": "taunt implying failure is due to lack of skill",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming",
+            "discord"
+          ],
+          "translations": {
+            "ru": [
+              "скилл ишью",
+              "проблема в скилле"
+            ],
+            "de": [
+              "Skill Issue"
+            ]
+          }
+        },
+        {
+          "id": "game_deadgame",
+          "canonical": "dead game",
+          "forms": [
+            "dead game"
+          ],
+          "meaning": "game perceived as inactive, declining, or lacking players",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "ru": [
+              "мертвая игра",
+              "игра умерла"
+            ],
+            "de": [
+              "totes Game"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "en_fuck",
+          "source": "fuck",
+          "language": "en",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "damn"
+              ],
+              "literal_allowed": true
+            },
+            {
+              "context": "we're fucked",
+              "natural": [
+                "we're fucked",
+                "we're screwed",
+                "we're cooked"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Polysemous profanity; do not translate every occurrence as sexual."
+        },
+        {
+          "id": "en_shit",
+          "source": "shit",
+          "language": "en",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "shit",
+                "damn"
+              ],
+              "literal_allowed": true
+            },
+            {
+              "context": "this shit",
+              "natural": [
+                "this stuff",
+                "this shit"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Can be literal excrement, generic noun, intensifier, or reaction."
+        }
+      ]
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "region": "Germany",
+      "slang": [
+        {
+          "id": "de_kp",
+          "canonical": "keinen Plan",
+          "forms": [
+            "kp",
+            "KP"
+          ],
+          "meaning": "no idea / no clue; sometimes 'kein Problem' by context",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "ambiguous with 'kein Problem'; prefer 'kein Plan' unless context is clear"
+          ],
+          "examples": [
+            {
+              "normal": "ich habe keine Ahnung",
+              "chat": "kp"
+            }
+          ]
+        },
+        {
+          "id": "de_ka",
+          "canonical": "keine Ahnung",
+          "forms": [
+            "ka",
+            "kA"
+          ],
+          "meaning": "no idea",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "keine Ahnung",
+              "chat": "ka"
+            }
+          ]
+        },
+        {
+          "id": "de_jz",
+          "canonical": "jetzt",
+          "forms": [
+            "jz",
+            "jtz"
+          ],
+          "meaning": "now",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "komm jetzt",
+              "chat": "komm jz"
+            }
+          ]
+        },
+        {
+          "id": "de_eig",
+          "canonical": "eigentlich",
+          "forms": [
+            "eig",
+            "eigtl"
+          ],
+          "meaning": "actually / really",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "was machst du eigentlich?",
+              "chat": "was machst du eig?"
+            }
+          ]
+        },
+        {
+          "id": "de_iwie",
+          "canonical": "irgendwie",
+          "forms": [
+            "iwie"
+          ],
+          "meaning": "somehow / kind of",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "das ist irgendwie komisch",
+              "chat": "das ist iwie komisch"
+            }
+          ]
+        },
+        {
+          "id": "de_digga",
+          "canonical": "Digga",
+          "forms": [
+            "digga",
+            "digger"
+          ],
+          "meaning": "bro / dude; address or exclamation",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "tiktok",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "regional, age- and persona-marked address/filler"
+          ],
+          "examples": [
+            {
+              "normal": "Alter, was war das?",
+              "chat": "digga was war das"
+            }
+          ]
+        },
+        {
+          "id": "de_brudi",
+          "canonical": "Bruder",
+          "forms": [
+            "brudi",
+            "bruder",
+            "bro"
+          ],
+          "meaning": "bro / mate",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "persona-sensitive address; do not insert automatically"
+          ],
+          "examples": [
+            {
+              "normal": "Bruder, komm mit",
+              "chat": "brudi komm"
+            }
+          ]
+        },
+        {
+          "id": "de_safe",
+          "canonical": "sicher",
+          "forms": [
+            "safe"
+          ],
+          "meaning": "for sure / definitely",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "tiktok",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "ja, auf jeden Fall",
+              "chat": "ja safe"
+            }
+          ]
+        },
+        {
+          "id": "de_lost",
+          "canonical": "verpeilt / ahnungslos",
+          "forms": [
+            "lost"
+          ],
+          "meaning": "clueless, confused, out of touch",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "tiktok",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "der ist komplett planlos",
+              "chat": "der ist komplett lost"
+            }
+          ]
+        },
+        {
+          "id": "de_cringe",
+          "canonical": "peinlich / fremdschämig",
+          "forms": [
+            "cringe"
+          ],
+          "meaning": "cringe / embarrassing",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "tiktok",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "das ist echt peinlich",
+              "chat": "das ist so cringe"
+            }
+          ]
+        },
+        {
+          "id": "de_heftig",
+          "canonical": "heftig",
+          "forms": [
+            "heftig"
+          ],
+          "meaning": "intense / crazy / impressive depending on tone",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "das ist krass",
+              "chat": "heftig"
+            }
+          ]
+        },
+        {
+          "id": "de_fuehlich",
+          "canonical": "fühl ich",
+          "forms": [
+            "fühl ich",
+            "fuehl ich"
+          ],
+          "meaning": "I relate / I feel that",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "texting",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "das kann ich nachvollziehen",
+              "chat": "fühl ich"
+            }
+          ]
+        },
+        {
+          "id": "de_nh",
+          "canonical": "ne / 'ne'",
+          "forms": [
+            "nh"
+          ],
+          "meaning": "youth-texting particle resembling 'ne'; can mark agreement or soften a statement",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Germany",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "age-marked and highly context-dependent; often criticized or interpreted inconsistently"
+          ],
+          "examples": [
+            {
+              "normal": "ist schon komisch, oder?",
+              "chat": "ist schon komisch nh"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "de_chat_tot",
+          "meaning": "chat is inactive",
+          "source_examples": [
+            "der Chat ist tot",
+            "toter Chat"
+          ],
+          "bad_literal_translations": [
+            "the chat is deceased"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "der Chat ist tot"
+            ],
+            "slang": [
+              "Chat tot",
+              "toter Chat"
+            ],
+            "heavy": [
+              "Chat komplett tot"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "de_keinen_plan",
+          "meaning": "no idea",
+          "source_examples": [
+            "kein Plan",
+            "hab keinen Plan"
+          ],
+          "bad_literal_translations": [
+            "no plan"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "keine Ahnung"
+            ],
+            "slang": [
+              "kein Plan",
+              "kp"
+            ],
+            "heavy": [
+              "kp"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "texting"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "de_fuehl_ich",
+          "meaning": "strong agreement / relatability",
+          "source_examples": [
+            "fühl ich",
+            "fühl ich komplett"
+          ],
+          "bad_literal_translations": [
+            "I feel it physically"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "kann ich nachvollziehen"
+            ],
+            "slang": [
+              "fühl ich"
+            ],
+            "heavy": [
+              "fühl ich komplett"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "texting",
+            "tiktok"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "de_hae",
+          "form": "hä",
+          "meaning": "confusion / what?",
+          "equivalents": {
+            "en": [
+              "huh?",
+              "what?"
+            ],
+            "ru": [
+              "а?",
+              "чё?"
+            ],
+            "fr": [
+              "hein?"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "de_uff",
+          "form": "uff",
+          "meaning": "disbelief, discomfort, 'oof'",
+          "equivalents": {
+            "en": [
+              "oof"
+            ],
+            "ru": [
+              "уф",
+              "жесть"
+            ],
+            "fr": [
+              "oulah"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "de_lol",
+          "form": "lol",
+          "meaning": "laughter; borrowed English form",
+          "equivalents": {
+            "en": [
+              "lol"
+            ],
+            "ru": [
+              "лол"
+            ],
+            "fr": [
+              "mdr"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "gaming",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        }
+      ],
+      "gaming": [
+        {
+          "id": "de_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "de_afk",
+          "canonical": "AFK",
+          "forms": [
+            "afk"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "de_op",
+          "canonical": "OP",
+          "forms": [
+            "op"
+          ],
+          "meaning": "overpowered",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "de_nerf",
+          "canonical": "Nerf",
+          "forms": [
+            "nerf",
+            "nerfen",
+            "generft"
+          ],
+          "meaning": "balance reduction",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "de_buff",
+          "canonical": "Buff",
+          "forms": [
+            "buff",
+            "buffen",
+            "gebufft"
+          ],
+          "meaning": "balance increase",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "de_carry",
+          "canonical": "Carry",
+          "forms": [
+            "carry",
+            "carrien",
+            "gecarried"
+          ],
+          "meaning": "carry a team",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "de_noob",
+          "canonical": "Noob",
+          "forms": [
+            "noob",
+            "newbie"
+          ],
+          "meaning": "inexperienced player",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "de_skillissue",
+          "canonical": "Skill Issue",
+          "forms": [
+            "skill issue"
+          ],
+          "meaning": "taunt that failure is a skill problem",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        }
+      ],
+      "profanity": [
+        {
+          "id": "de_scheisse",
+          "source": "Scheiße",
+          "language": "de",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "shit",
+                "damn"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "das ist scheiße",
+              "natural": [
+                "that sucks",
+                "that's shit"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Literal feces translation is usually wrong in chat."
+        },
+        {
+          "id": "de_fick",
+          "source": "fick",
+          "language": "de",
+          "meanings": [
+            {
+              "context": "fick dich",
+              "natural": [
+                "fuck you"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "was zum Fick",
+              "natural": [
+                "what the fuck"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Treat idiomatically, not as a sexual verb unless context is actually sexual."
+        }
+      ]
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "region": "RU/CIS internet",
+      "slang": [
+        {
+          "id": "ru_hz",
+          "canonical": "хрен/хуй знает",
+          "forms": [
+            "хз",
+            "ХЗ"
+          ],
+          "generation_sources": [
+            "я не знаю",
+            "не знаю"
+          ],
+          "meaning": "I don't know / who knows",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "я не знаю",
+              "chat": "хз"
+            }
+          ]
+        },
+        {
+          "id": "ru_poh",
+          "canonical": "похуй",
+          "forms": [
+            "пох",
+            "похуй"
+          ],
+          "meaning": "I don't care / whatever",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "мне всё равно",
+              "chat": "мне пох"
+            }
+          ]
+        },
+        {
+          "id": "ru_chel",
+          "canonical": "человек",
+          "forms": [
+            "чел"
+          ],
+          "meaning": "guy / dude / person",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "этот парень странный",
+              "chat": "этот чел странный"
+            }
+          ]
+        },
+        {
+          "id": "ru_schas",
+          "canonical": "сейчас",
+          "forms": [
+            "щас"
+          ],
+          "meaning": "now / in a moment",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [
+            "generate only in the strongest compressed profile"
+          ],
+          "examples": [
+            {
+              "normal": "сейчас зайду",
+              "chat": "щас зайду"
+            }
+          ]
+        },
+        {
+          "id": "ru_scha",
+          "canonical": "сейчас",
+          "forms": [
+            "ща"
+          ],
+          "meaning": "highly reduced now / in a moment",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "age- and persona-marked extreme reduction"
+          ],
+          "examples": [
+            {
+              "normal": "сейчас зайду",
+              "chat": "ща зайду"
+            }
+          ]
+        },
+        {
+          "id": "ru_ksta",
+          "canonical": "кстати",
+          "forms": [
+            "кста",
+            "кст"
+          ],
+          "meaning": "by the way",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "кстати, я уже дома",
+              "chat": "кста я уже дома"
+            }
+          ]
+        },
+        {
+          "id": "ru_vashche",
+          "canonical": "вообще",
+          "forms": [
+            "ваще",
+            "вщ"
+          ],
+          "meaning": "at all / generally / really depending on context",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "orthographic persona marker; recognition or strongly matched Mirror only"
+          ],
+          "examples": [
+            {
+              "normal": "я вообще не понял",
+              "chat": "я ваще не понял"
+            }
+          ]
+        },
+        {
+          "id": "ru_go",
+          "canonical": "пойдём / давай",
+          "forms": [
+            "го",
+            "гоу"
+          ],
+          "meaning": "let's go / let's do it",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "telegram"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "давай играть",
+              "chat": "го играть"
+            }
+          ]
+        },
+        {
+          "id": "ru_pzh",
+          "canonical": "пожалуйста",
+          "forms": [
+            "пж",
+            "пжлст"
+          ],
+          "meaning": "please",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "скинь пожалуйста",
+              "chat": "скинь пж"
+            }
+          ]
+        },
+        {
+          "id": "ru_sps",
+          "canonical": "спасибо",
+          "forms": [
+            "спс"
+          ],
+          "meaning": "thanks",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "спасибо за помощь",
+              "chat": "спс за помощь"
+            }
+          ]
+        },
+        {
+          "id": "ru_syab",
+          "canonical": "спасибо",
+          "forms": [
+            "сяб"
+          ],
+          "meaning": "thanks; playful reduced spelling",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "playful and age-marked; recognition-only"
+          ],
+          "examples": [
+            {
+              "normal": "спасибо",
+              "chat": "сяб"
+            }
+          ]
+        },
+        {
+          "id": "ru_mb",
+          "canonical": "может быть",
+          "forms": [
+            "мб"
+          ],
+          "meaning": "maybe",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "может быть позже",
+              "chat": "мб позже"
+            }
+          ]
+        },
+        {
+          "id": "ru_krch",
+          "canonical": "короче",
+          "forms": [
+            "крч"
+          ],
+          "meaning": "anyway / basically / long story short",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "короче, я не пойду",
+              "chat": "крч я не пойду"
+            }
+          ]
+        },
+        {
+          "id": "ru_pon",
+          "canonical": "понятно",
+          "forms": [
+            "пон"
+          ],
+          "meaning": "got it / understood",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "very clipped and age-marked; can sound intentionally childish or dry"
+          ],
+          "examples": [
+            {
+              "normal": "понятно",
+              "chat": "пон"
+            }
+          ]
+        },
+        {
+          "id": "ru_soglasen",
+          "canonical": "согласен",
+          "forms": [
+            "согл"
+          ],
+          "meaning": "agree",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "clipped form is readable but not universal enough for automatic generation"
+          ],
+          "examples": [
+            {
+              "normal": "согласен",
+              "chat": "согл"
+            }
+          ]
+        },
+        {
+          "id": "ru_imba",
+          "canonical": "имба",
+          "forms": [
+            "имба",
+            "имбовый"
+          ],
+          "meaning": "overpowered; by extension extremely good",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "telegram",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "это слишком сильное оружие",
+              "chat": "это имба"
+            }
+          ]
+        },
+        {
+          "id": "ru_zhiza",
+          "canonical": "жизненно",
+          "forms": [
+            "жиза"
+          ],
+          "meaning": "relatable / so true",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "telegram",
+            "tiktok",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "очень жизненно",
+              "chat": "жиза"
+            }
+          ]
+        },
+        {
+          "id": "ru_baza",
+          "canonical": "база",
+          "forms": [
+            "база",
+            "выдал базу"
+          ],
+          "meaning": "based / true statement / strong agreement",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "это правда",
+              "chat": "база"
+            }
+          ]
+        },
+        {
+          "id": "ru_krinzh",
+          "canonical": "кринж",
+          "forms": [
+            "кринж",
+            "кринжово"
+          ],
+          "meaning": "cringe / embarrassing",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "это очень неловко",
+              "chat": "это кринж"
+            }
+          ]
+        },
+        {
+          "id": "ru_rofl",
+          "canonical": "рофл",
+          "forms": [
+            "рофл",
+            "рофлить"
+          ],
+          "meaning": "joke / kidding / joking around",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "telegram"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "я просто шучу",
+              "chat": "я рофлю"
+            }
+          ]
+        },
+        {
+          "id": "ru_soryan",
+          "canonical": "извини",
+          "forms": [
+            "сорян"
+          ],
+          "meaning": "sorry",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "telegram",
+            "discord"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "RU/CIS",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "still understood but noticeably older/millennial-coded in many groups"
+          ],
+          "examples": [
+            {
+              "normal": "извини, забыл",
+              "chat": "сорян забыл"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "ru_dead_chat",
+          "meaning": "chat is inactive",
+          "source_examples": [
+            "чат умер",
+            "чат мертв",
+            "мертвый чат"
+          ],
+          "bad_literal_translations": [
+            "the chat died",
+            "the chat is deceased"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "chat is dead"
+            ],
+            "slang": [
+              "chat dead",
+              "dead chat"
+            ],
+            "heavy": [
+              "dead chat"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ru_go_game",
+          "meaning": "let's play / queue",
+          "source_examples": [
+            "го играть",
+            "го катку",
+            "го в катку"
+          ],
+          "bad_literal_translations": [
+            "go game",
+            "go to a match"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "let's play"
+            ],
+            "slang": [
+              "wanna queue?",
+              "let's run a game"
+            ],
+            "heavy": [
+              "queue up"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ru_hz",
+          "meaning": "uncertainty / no idea",
+          "source_examples": [
+            "хз",
+            "я хз"
+          ],
+          "bad_literal_translations": [
+            "dick knows"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "i don't know"
+            ],
+            "slang": [
+              "idk"
+            ],
+            "heavy": [
+              "idk"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "telegram",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ru_zhest",
+          "meaning": "strong shock, disbelief or intensity",
+          "source_examples": [
+            "жесть",
+            "это жесть"
+          ],
+          "bad_literal_translations": [
+            "cruelty",
+            "tin"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "that's crazy",
+              "that's rough"
+            ],
+            "slang": [
+              "damn",
+              "that's wild"
+            ],
+            "heavy": [
+              "wtf",
+              "that's fucked"
+            ]
+          },
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ru_kapets",
+          "meaning": "mild-to-strong dismay",
+          "source_examples": [
+            "капец",
+            "это капец"
+          ],
+          "bad_literal_translations": [
+            "the end"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "damn",
+              "this is bad"
+            ],
+            "slang": [
+              "this is crazy",
+              "damn"
+            ],
+            "heavy": [
+              "we're cooked",
+              "this is fucked"
+            ]
+          },
+          "contexts": [
+            "telegram",
+            "texting",
+            "discord"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ru_che_za",
+          "meaning": "what the hell is / what kind of",
+          "source_examples": [
+            "че за",
+            "чё за",
+            "что за"
+          ],
+          "bad_literal_translations": [
+            "what for"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "what is this?"
+            ],
+            "slang": [
+              "what's this?",
+              "what the hell is this?"
+            ],
+            "heavy": [
+              "wtf is this?"
+            ]
+          },
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ru_nam_pizda",
+          "meaning": "we are doomed / in serious trouble",
+          "source_examples": [
+            "нам пизда",
+            "нам пиздец"
+          ],
+          "bad_literal_translations": [
+            "we have a cunt",
+            "we are genitals"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "we're screwed"
+            ],
+            "slang": [
+              "we're fucked",
+              "we're cooked"
+            ],
+            "heavy": [
+              "we're so fucked"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord",
+            "telegram"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ru_eto_pizdets",
+          "meaning": "extreme shock / disaster / absurdity",
+          "source_examples": [
+            "это пиздец",
+            "пиздец"
+          ],
+          "bad_literal_translations": [
+            "this is a sexual anatomy term"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "this is insane",
+              "this is awful"
+            ],
+            "slang": [
+              "this is fucked",
+              "what a mess"
+            ],
+            "heavy": [
+              "this is fucking insane"
+            ]
+          },
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "ru_ahah",
+          "form": "ахах",
+          "meaning": "laughter",
+          "equivalents": {
+            "en": [
+              "haha",
+              "lmao"
+            ],
+            "de": [
+              "haha",
+              "lol"
+            ],
+            "zh-CN": [
+              "哈哈哈",
+              "xswl"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ru_lol",
+          "form": "лол",
+          "meaning": "laughter / amused reaction",
+          "equivalents": {
+            "en": [
+              "lol"
+            ],
+            "de": [
+              "lol"
+            ],
+            "fr": [
+              "mdr"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "gaming",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ru_horosh",
+          "form": "хорош",
+          "meaning": "nice / well played / enough depending on tone",
+          "equivalents": {
+            "en": [
+              "nice",
+              "good one",
+              "stop"
+            ],
+            "zh-CN": [
+              "666",
+              "牛"
+            ],
+            "de": [
+              "stark",
+              "nice"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord",
+            "telegram"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ru_krasava",
+          "form": "красава",
+          "meaning": "well done / you're a legend",
+          "equivalents": {
+            "en": [
+              "nice",
+              "good job",
+              "legend"
+            ],
+            "de": [
+              "stark",
+              "Ehrenmann"
+            ],
+            "zh-CN": [
+              "牛",
+              "666"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ru_vtf",
+          "form": "втф",
+          "equivalents": {
+            "en": [
+              "wtf"
+            ],
+            "de": [
+              "wtf"
+            ],
+            "ru": [
+              "wtf"
+            ],
+            "uk": [
+              "wtf"
+            ],
+            "zh-cn": [
+              "wtf"
+            ],
+            "zh-tw": [
+              "wtf"
+            ],
+            "es": [
+              "wtf"
+            ],
+            "fr": [
+              "wtf"
+            ],
+            "pt-br": [
+              "wtf"
+            ],
+            "pl": [
+              "wtf"
+            ],
+            "ja": [
+              "wtf"
+            ],
+            "ko": [
+              "wtf"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming",
+            "reaction"
+          ],
+          "current": true,
+          "outdated": false
+        }
+      ],
+      "gaming": [
+        {
+          "id": "ru_katka",
+          "canonical": "катка",
+          "forms": [
+            "катка"
+          ],
+          "meaning": "a game/match/session",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "match",
+              "game",
+              "run"
+            ]
+          }
+        },
+        {
+          "id": "ru_tima",
+          "canonical": "тима",
+          "forms": [
+            "тима",
+            "тимка"
+          ],
+          "meaning": "team",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "team"
+            ]
+          }
+        },
+        {
+          "id": "ru_lagaet",
+          "canonical": "лагает",
+          "forms": [
+            "лагает",
+            "лаги"
+          ],
+          "meaning": "lags / is lagging",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "lags",
+              "is lagging"
+            ]
+          }
+        },
+        {
+          "id": "ru_afk",
+          "canonical": "АФК",
+          "forms": [
+            "афк"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "ru_gg",
+          "canonical": "GG",
+          "forms": [
+            "гг",
+            "gg"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "ru_nerf",
+          "canonical": "нерф",
+          "forms": [
+            "нерф",
+            "нерфить",
+            "понерфили"
+          ],
+          "meaning": "balance reduction",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf",
+              "nerfed"
+            ]
+          }
+        },
+        {
+          "id": "ru_buff",
+          "canonical": "бафф",
+          "forms": [
+            "баф",
+            "бафф",
+            "бафнуть"
+          ],
+          "meaning": "balance increase or beneficial effect",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        },
+        {
+          "id": "ru_livnut",
+          "canonical": "ливнуть",
+          "forms": [
+            "ливнуть",
+            "лив"
+          ],
+          "meaning": "leave a match/server",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "leave",
+              "quit"
+            ]
+          }
+        },
+        {
+          "id": "ru_skillissue",
+          "canonical": "скилл ишью",
+          "forms": [
+            "скилл ишью",
+            "skill issue"
+          ],
+          "meaning": "taunt that failure is due to skill",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming",
+            "discord"
+          ],
+          "translations": {
+            "en": [
+              "skill issue"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "ru_pizda",
+          "source": "пизда",
+          "language": "ru",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "damn",
+                "fuck"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "нам пизда",
+              "natural": [
+                "we're fucked",
+                "we're cooked"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "literal anatomy",
+              "natural": [
+                "vulgar anatomical term"
+              ],
+              "literal_allowed": true
+            }
+          ],
+          "notes": "Never force the anatomical English equivalent when Russian uses the word idiomatically."
+        },
+        {
+          "id": "ru_pizdets",
+          "source": "пиздец",
+          "language": "ru",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "holy shit",
+                "damn"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "disaster",
+              "natural": [
+                "this is fucked",
+                "this is a disaster"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Highly polysemous intensifier/reaction."
+        },
+        {
+          "id": "ru_huinya",
+          "source": "хуйня",
+          "language": "ru",
+          "meanings": [
+            {
+              "context": "bad thing / nonsense",
+              "natural": [
+                "bullshit",
+                "crap",
+                "this sucks"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "placeholder object",
+              "natural": [
+                "thing",
+                "stuff"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Usually not a literal anatomical reference."
+        }
+      ]
+    },
+    {
+      "code": "uk",
+      "name": "Ukrainian",
+      "region": "Ukraine",
+      "slang": [
+        {
+          "id": "uk_sho",
+          "canonical": "що",
+          "forms": [
+            "шо"
+          ],
+          "meaning": "what; colloquial spelling reflecting speech",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "regional conversational form; generate only in a future opt-in profile or strongly matched Mirror style"
+          ],
+          "examples": [
+            {
+              "normal": "що це?",
+              "chat": "шо це?"
+            }
+          ]
+        },
+        {
+          "id": "uk_hz",
+          "canonical": "хтозна / хрін знає",
+          "forms": [
+            "хз"
+          ],
+          "meaning": "I don't know",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "widely understood but often perceived as Russian-influenced; generation should follow user's register"
+          ],
+          "examples": [
+            {
+              "normal": "я не знаю",
+              "chat": "хз"
+            }
+          ]
+        },
+        {
+          "id": "uk_go",
+          "canonical": "давай / ходімо",
+          "forms": [
+            "го"
+          ],
+          "meaning": "let's go / let's do it",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "telegram"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "давай грати",
+              "chat": "го грати"
+            }
+          ]
+        },
+        {
+          "id": "uk_bro",
+          "canonical": "бро",
+          "forms": [
+            "бро"
+          ],
+          "meaning": "bro / friend",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "telegram"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "друже, ти де?",
+              "chat": "бро ти де?"
+            }
+          ]
+        },
+        {
+          "id": "uk_imba",
+          "canonical": "імба",
+          "forms": [
+            "імба",
+            "імбовий"
+          ],
+          "meaning": "overpowered; extremely good",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "це занадто сильне",
+              "chat": "це імба"
+            }
+          ]
+        },
+        {
+          "id": "uk_cringe",
+          "canonical": "крінж",
+          "forms": [
+            "крінж",
+            "крінжово"
+          ],
+          "meaning": "cringe / embarrassing",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "telegram",
+            "discord",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "це дуже ніяково",
+              "chat": "це крінж"
+            }
+          ]
+        },
+        {
+          "id": "uk_rofl",
+          "canonical": "рофл",
+          "forms": [
+            "рофл",
+            "рофлити"
+          ],
+          "meaning": "joke / joking",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "telegram"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "я жартую",
+              "chat": "я рофлю"
+            }
+          ]
+        },
+        {
+          "id": "uk_vibe",
+          "canonical": "вайб",
+          "forms": [
+            "вайб",
+            "вайбово"
+          ],
+          "meaning": "vibe / atmosphere",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "tiktok",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "тут класна атмосфера",
+              "chat": "тут вайб"
+            }
+          ]
+        },
+        {
+          "id": "uk_chill",
+          "canonical": "чилити",
+          "forms": [
+            "чил",
+            "чилити"
+          ],
+          "meaning": "to chill / relax",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "telegram"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "я відпочиваю",
+              "chat": "я чилю"
+            }
+          ]
+        },
+        {
+          "id": "uk_lag",
+          "canonical": "лагати",
+          "forms": [
+            "лагає",
+            "лаги"
+          ],
+          "meaning": "to lag / lagging",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Ukraine",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "гра гальмує",
+              "chat": "гра лагає"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "uk_chat_dead",
+          "meaning": "chat is inactive",
+          "source_examples": [
+            "чат помер",
+            "мертвий чат"
+          ],
+          "bad_literal_translations": [
+            "the chat died physically"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "chat is dead"
+            ],
+            "slang": [
+              "dead chat",
+              "chat dead"
+            ],
+            "heavy": [
+              "dead chat"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "uk_go_game",
+          "meaning": "let's play",
+          "source_examples": [
+            "го грати",
+            "го в катку"
+          ],
+          "bad_literal_translations": [
+            "go to play"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "let's play"
+            ],
+            "slang": [
+              "wanna queue?",
+              "let's run a game"
+            ],
+            "heavy": [
+              "queue up"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "uk_sho_za",
+          "meaning": "what the hell is / what kind of",
+          "source_examples": [
+            "шо за",
+            "що за"
+          ],
+          "bad_literal_translations": [
+            "what for"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "what is this?"
+            ],
+            "slang": [
+              "what's this?",
+              "what the hell is this?"
+            ],
+            "heavy": [
+              "wtf is this?"
+            ]
+          },
+          "contexts": [
+            "telegram",
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "uk_ahaha",
+          "form": "ахаха",
+          "meaning": "laughter",
+          "equivalents": {
+            "en": [
+              "haha",
+              "lmao"
+            ],
+            "ru": [
+              "ахах"
+            ],
+            "pl": [
+              "haha",
+              "XD"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "uk_zhest",
+          "form": "жесть",
+          "meaning": "shock / that's wild; shared East-Slavic internet form",
+          "equivalents": {
+            "en": [
+              "damn",
+              "that's wild"
+            ],
+            "ru": [
+              "жесть"
+            ],
+            "de": [
+              "heftig"
+            ]
+          },
+          "contexts": [
+            "telegram",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "uk_harosh",
+          "form": "хорош",
+          "meaning": "nice / well played; borrowed colloquial gaming reaction",
+          "equivalents": {
+            "en": [
+              "nice"
+            ],
+            "ru": [
+              "хорош"
+            ],
+            "zh-CN": [
+              "666"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "uk_vtf",
+          "form": "втф",
+          "equivalents": {
+            "en": [
+              "wtf"
+            ],
+            "de": [
+              "wtf"
+            ],
+            "ru": [
+              "wtf"
+            ],
+            "uk": [
+              "wtf"
+            ],
+            "zh-cn": [
+              "wtf"
+            ],
+            "zh-tw": [
+              "wtf"
+            ],
+            "es": [
+              "wtf"
+            ],
+            "fr": [
+              "wtf"
+            ],
+            "pt-br": [
+              "wtf"
+            ],
+            "pl": [
+              "wtf"
+            ],
+            "ja": [
+              "wtf"
+            ],
+            "ko": [
+              "wtf"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming",
+            "reaction"
+          ],
+          "current": true,
+          "outdated": false
+        }
+      ],
+      "gaming": [
+        {
+          "id": "uk_katka",
+          "canonical": "катка",
+          "forms": [
+            "катка"
+          ],
+          "meaning": "match/game session",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "match",
+              "game"
+            ]
+          }
+        },
+        {
+          "id": "uk_tima",
+          "canonical": "тіма",
+          "forms": [
+            "тіма",
+            "тімка"
+          ],
+          "meaning": "team",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "team"
+            ]
+          }
+        },
+        {
+          "id": "uk_afk",
+          "canonical": "AFK",
+          "forms": [
+            "афк",
+            "afk"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "uk_gg",
+          "canonical": "GG",
+          "forms": [
+            "гг",
+            "gg"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "uk_nerf",
+          "canonical": "нерф",
+          "forms": [
+            "нерф",
+            "нерфити"
+          ],
+          "meaning": "balance reduction",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf"
+            ]
+          }
+        },
+        {
+          "id": "uk_buff",
+          "canonical": "баф",
+          "forms": [
+            "баф",
+            "бафнути"
+          ],
+          "meaning": "balance increase / beneficial effect",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "uk_pizdets",
+          "source": "пиздець",
+          "language": "uk",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "damn",
+                "fuck",
+                "holy shit"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "disaster",
+              "natural": [
+                "this is fucked",
+                "this is a disaster"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Treat as an idiomatic reaction/intensifier, not literally."
+        },
+        {
+          "id": "uk_kapets",
+          "source": "капець",
+          "language": "uk",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "damn",
+                "wow",
+                "that's bad"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Milder than пиздець; literal 'end' translation usually misses tone."
+        }
+      ]
+    },
+    {
+      "code": "zh-CN",
+      "name": "Simplified Chinese / Mainland China",
+      "region": "Mainland China",
+      "slang": [
+        {
+          "id": "cn_hhh",
+          "canonical": "哈哈哈",
+          "forms": [
+            "hhh",
+            "hhhh",
+            "哈哈哈"
+          ],
+          "meaning": "laughter / hahaha",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "wechat",
+            "bilibili",
+            "douyin",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "哈哈哈太搞笑了",
+              "chat": "hhh太搞笑了"
+            }
+          ]
+        },
+        {
+          "id": "cn_xswl",
+          "canonical": "笑死我了",
+          "forms": [
+            "xswl"
+          ],
+          "meaning": "dying laughing / lmao",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "bilibili",
+            "weibo",
+            "douyin",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "initialism remains recognizable but full 笑死我了 is safer to generate"
+          ],
+          "examples": [
+            {
+              "normal": "笑死我了",
+              "chat": "xswl"
+            }
+          ]
+        },
+        {
+          "id": "cn_yyds",
+          "canonical": "永远的神",
+          "forms": [
+            "yyds"
+          ],
+          "meaning": "GOAT / legendary / the best; now often semi-ironic",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "bilibili",
+            "douyin",
+            "gaming",
+            "weibo"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "active but promotional, ironic, and increasingly template-like"
+          ],
+          "examples": [
+            {
+              "normal": "这个角色太强了",
+              "chat": "这个角色yyds"
+            }
+          ]
+        },
+        {
+          "id": "cn_awsl",
+          "canonical": "啊我死了",
+          "forms": [
+            "awsl"
+          ],
+          "meaning": "I'm dead from cuteness/excitement",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "bilibili",
+            "fandom",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "fandom-specific and no longer safe as a general chat voice"
+          ],
+          "examples": [
+            {
+              "normal": "太可爱了，我死了",
+              "chat": "太可爱了awsl"
+            }
+          ]
+        },
+        {
+          "id": "cn_u1s1",
+          "canonical": "有一说一",
+          "forms": [
+            "u1s1"
+          ],
+          "meaning": "to be fair / honestly / real talk",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "weibo",
+            "bilibili",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "recognize the initialism but prefer full 有一说一 for generation"
+          ],
+          "examples": [
+            {
+              "normal": "有一说一，这局打得不错",
+              "chat": "u1s1这局打得不错"
+            }
+          ]
+        },
+        {
+          "id": "cn_nsdd",
+          "canonical": "你说得对",
+          "forms": [
+            "nsdd"
+          ],
+          "meaning": "you're right; can be sincere or dismissive",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "weibo",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "can sound dismissive or argument-ending; tone is context-sensitive"
+          ],
+          "examples": [
+            {
+              "normal": "你说得对",
+              "chat": "nsdd"
+            }
+          ]
+        },
+        {
+          "id": "cn_srds",
+          "canonical": "虽然但是",
+          "forms": [
+            "srds"
+          ],
+          "meaning": "that said / although... still",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "weibo",
+            "bilibili",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "虽然但是，我还是不同意",
+              "chat": "srds我还是不同意"
+            }
+          ]
+        },
+        {
+          "id": "cn_bdjw",
+          "canonical": "不懂就问",
+          "forms": [
+            "bdjw"
+          ],
+          "meaning": "genuine question / asking because I don't know",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "weibo",
+            "bilibili",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "不懂就问，这是什么？",
+              "chat": "bdjw这是什么"
+            }
+          ]
+        },
+        {
+          "id": "cn_dddd",
+          "canonical": "懂的都懂",
+          "forms": [
+            "dddd"
+          ],
+          "meaning": "if you know, you know",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "weibo",
+            "douyin",
+            "bilibili"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "懂的都懂",
+              "chat": "dddd"
+            }
+          ]
+        },
+        {
+          "id": "cn_bzd",
+          "canonical": "不知道",
+          "forms": [
+            "bzd"
+          ],
+          "meaning": "don't know",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "chat",
+            "wechat",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "pinyin-initial shorthand is informal and style-dependent"
+          ],
+          "examples": [
+            {
+              "normal": "我不知道",
+              "chat": "我bzd"
+            }
+          ]
+        },
+        {
+          "id": "cn_dbq",
+          "canonical": "对不起",
+          "forms": [
+            "dbq"
+          ],
+          "meaning": "sorry",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "chat",
+            "fandom"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "recognizable but stylized/cutesy in some groups"
+          ],
+          "examples": [
+            {
+              "normal": "对不起，我忘了",
+              "chat": "dbq我忘了"
+            }
+          ]
+        },
+        {
+          "id": "cn_bhys",
+          "canonical": "不好意思",
+          "forms": [
+            "bhys"
+          ],
+          "meaning": "sorry / excuse me / embarrassed",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "chat",
+            "fandom"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "not universal; generation can sound performative"
+          ],
+          "examples": [
+            {
+              "normal": "不好意思，打扰了",
+              "chat": "bhys打扰了"
+            }
+          ]
+        },
+        {
+          "id": "cn_gkd",
+          "canonical": "搞快点",
+          "forms": [
+            "gkd"
+          ],
+          "meaning": "hurry up / do it faster",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "bilibili",
+            "gaming",
+            "chat"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "older meme shorthand; still recognized"
+          ],
+          "examples": [
+            {
+              "normal": "快点更新",
+              "chat": "gkd更新"
+            }
+          ]
+        },
+        {
+          "id": "cn_tql",
+          "canonical": "太强了",
+          "forms": [
+            "tql"
+          ],
+          "meaning": "so strong / amazing",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "bilibili"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "older pinyin-initial praise; 666/牛更自然"
+          ],
+          "examples": [
+            {
+              "normal": "太强了",
+              "chat": "tql"
+            }
+          ]
+        },
+        {
+          "id": "cn_nb",
+          "canonical": "牛逼",
+          "forms": [
+            "nb",
+            "牛逼",
+            "牛"
+          ],
+          "meaning": "awesome / badass / very skilled; vulgar origin",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "bilibili",
+            "douyin",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "你这操作太厉害了",
+              "chat": "这操作nb"
+            }
+          ]
+        },
+        {
+          "id": "cn_wc",
+          "canonical": "我操",
+          "forms": [
+            "wc",
+            "卧槽",
+            "我操"
+          ],
+          "meaning": "holy shit / fuck; shock reaction",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "chat",
+            "bilibili"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "天啊，这也能赢",
+              "chat": "wc这也能赢"
+            }
+          ]
+        },
+        {
+          "id": "cn_pyq",
+          "canonical": "朋友圈",
+          "forms": [
+            "pyq"
+          ],
+          "meaning": "WeChat Moments",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "wechat",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "safe to recognize; generation depends on user style"
+          ],
+          "examples": [
+            {
+              "normal": "我发到朋友圈了",
+              "chat": "我发pyq了"
+            }
+          ]
+        },
+        {
+          "id": "cn_szd",
+          "canonical": "是真的",
+          "forms": [
+            "szd"
+          ],
+          "meaning": "it's real / for real",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "fandom",
+            "weibo",
+            "bilibili"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "fandom-heavy and style-dependent"
+          ],
+          "examples": [
+            {
+              "normal": "这是真的",
+              "chat": "这szd"
+            }
+          ]
+        },
+        {
+          "id": "cn_baode",
+          "canonical": "包的",
+          "forms": [
+            "包的"
+          ],
+          "meaning": "for sure / guaranteed / I got you",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "douyin",
+            "bilibili",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "没问题，肯定行",
+              "chat": "包的"
+            }
+          ]
+        },
+        {
+          "id": "cn_chouxiang",
+          "canonical": "抽象",
+          "forms": [
+            "抽象",
+            "搞抽象"
+          ],
+          "meaning": "absurd, intentionally weird, chaotic internet humor",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "douyin",
+            "bilibili",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "你这也太离谱了",
+              "chat": "你这太抽象了"
+            }
+          ]
+        },
+        {
+          "id": "cn_renji",
+          "canonical": "人机",
+          "forms": [
+            "人机"
+          ],
+          "meaning": "NPC/bot-like person; unskilled or mindless player/person",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "douyin",
+            "bilibili"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "他打得像机器人",
+              "chat": "他纯人机"
+            }
+          ]
+        },
+        {
+          "id": "cn_nitian",
+          "canonical": "逆天",
+          "forms": [
+            "逆天"
+          ],
+          "meaning": "outrageous / absurd / unbelievably bad or good",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "douyin",
+            "bilibili",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "这也太离谱了",
+              "chat": "太逆天了"
+            }
+          ]
+        },
+        {
+          "id": "cn_bengbuzhu",
+          "canonical": "绷不住了",
+          "forms": [
+            "绷不住了",
+            "蚌埠住了"
+          ],
+          "meaning": "can't hold it together; usually about laughter, disbelief, or emotional overload",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "bilibili",
+            "douyin",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "我真的忍不住笑了",
+              "chat": "绷不住了"
+            }
+          ]
+        },
+        {
+          "id": "cn_yingmale",
+          "canonical": "赢麻了",
+          "forms": [
+            "赢麻了"
+          ],
+          "meaning": "winning so much you're numb; often ironic",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "weibo",
+            "bilibili"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "这次赚大了",
+              "chat": "这波赢麻了"
+            }
+          ]
+        },
+        {
+          "id": "cn_juejuezi",
+          "canonical": "绝绝子",
+          "forms": [
+            "绝绝子"
+          ],
+          "meaning": "amazing / fabulous; influencer-style praise",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "douyin",
+            "xiaohongshu"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Mainland China",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "strongly dated 2021-style influencer slang; often mocked in 2026"
+          ],
+          "examples": [
+            {
+              "normal": "太棒了",
+              "chat": "绝绝子"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "cn_beng",
+          "meaning": "can't hold back laughter/disbelief",
+          "source_examples": [
+            "绷不住了",
+            "我真绷不住了"
+          ],
+          "bad_literal_translations": [
+            "I can't stretch it"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "I can't hold it together"
+            ],
+            "slang": [
+              "I'm dying",
+              "I can't"
+            ],
+            "heavy": [
+              "I'm fucking losing it"
+            ]
+          },
+          "contexts": [
+            "bilibili",
+            "douyin",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "cn_renji_phrase",
+          "meaning": "calling someone bot-like / NPC-like",
+          "source_examples": [
+            "你是人机吗",
+            "纯人机"
+          ],
+          "bad_literal_translations": [
+            "are you a human-machine"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "are you a bot?"
+            ],
+            "slang": [
+              "bro is an NPC",
+              "actual bot"
+            ],
+            "heavy": [
+              "literal NPC"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "douyin"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "cn_baode_phrase",
+          "meaning": "confident assurance",
+          "source_examples": [
+            "包的",
+            "这把包赢"
+          ],
+          "bad_literal_translations": [
+            "wrapped",
+            "this round is wrapped"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "for sure",
+              "I've got it"
+            ],
+            "slang": [
+              "easy",
+              "we got this"
+            ],
+            "heavy": [
+              "free win"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "chat"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "cn_yingmale_phrase",
+          "meaning": "ironic or emphatic winning",
+          "source_examples": [
+            "赢麻了",
+            "这波赢麻了"
+          ],
+          "bad_literal_translations": [
+            "won numb"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "we won big"
+            ],
+            "slang": [
+              "huge W",
+              "we're winning"
+            ],
+            "heavy": [
+              "massive W"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "weibo",
+            "bilibili"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "cn_666",
+          "form": "666",
+          "meaning": "impressive / nice / skilled; sometimes ironic",
+          "equivalents": {
+            "ru": [
+              "хорош",
+              "круто",
+              "красава"
+            ],
+            "en": [
+              "nice",
+              "sick",
+              "damn"
+            ],
+            "zh-CN": [
+              "666"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "chat",
+            "bilibili"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "cn_233",
+          "form": "233",
+          "meaning": "laughter / lol; more 3s intensify",
+          "equivalents": {
+            "en": [
+              "lol",
+              "lmao"
+            ],
+            "ru": [
+              "лол",
+              "ахах"
+            ],
+            "ja": [
+              "草",
+              "www"
+            ]
+          },
+          "contexts": [
+            "bilibili",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "cn_555",
+          "form": "555",
+          "meaning": "crying / waaah, often playful",
+          "equivalents": {
+            "en": [
+              "😭",
+              "waaah"
+            ],
+            "ru": [
+              "😭",
+              "хнык"
+            ],
+            "ko": [
+              "ㅠㅠ"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "fandom"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "cn_520",
+          "form": "520",
+          "meaning": "I love you; romantic number code",
+          "equivalents": {
+            "en": [
+              "love you"
+            ],
+            "ru": [
+              "люблю тебя"
+            ],
+            "zh-CN": [
+              "520"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "romance"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": "Romance-coded; do not generate for casual acquaintances."
+        }
+      ],
+      "gaming": [
+        {
+          "id": "cn_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg",
+            "GG"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "cn_afk",
+          "canonical": "AFK",
+          "forms": [
+            "afk",
+            "AFK"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "cn_op",
+          "canonical": "OP",
+          "forms": [
+            "op",
+            "OP"
+          ],
+          "meaning": "overpowered",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "cn_nerf",
+          "canonical": "削弱",
+          "forms": [
+            "削弱",
+            "nerf"
+          ],
+          "meaning": "reduce power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf"
+            ]
+          }
+        },
+        {
+          "id": "cn_buff",
+          "canonical": "加强",
+          "forms": [
+            "加强",
+            "buff"
+          ],
+          "meaning": "increase power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        },
+        {
+          "id": "cn_carry",
+          "canonical": "carry",
+          "forms": [
+            "carry",
+            "带飞"
+          ],
+          "meaning": "carry teammates to victory",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "carry"
+            ]
+          }
+        },
+        {
+          "id": "cn_noob",
+          "canonical": "菜鸟",
+          "forms": [
+            "菜",
+            "菜鸟",
+            "萌新"
+          ],
+          "meaning": "inexperienced or weak player",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "noob",
+              "newbie"
+            ]
+          }
+        },
+        {
+          "id": "cn_bot",
+          "canonical": "人机",
+          "forms": [
+            "人机"
+          ],
+          "meaning": "bot/NPC; insult for an unskilled or robotic player",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "bot",
+              "NPC"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "cn_wc_prof",
+          "source": "卧槽 / 我操",
+          "language": "zh-CN",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "holy shit",
+                "wtf",
+                "damn"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Do not render literally as a sexual verb in ordinary chat."
+        },
+        {
+          "id": "cn_tmd",
+          "source": "他妈的",
+          "language": "zh-CN",
+          "meanings": [
+            {
+              "context": "intensifier",
+              "natural": [
+                "fucking",
+                "damn"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "anger",
+              "natural": [
+                "fuck",
+                "goddamn"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Context decides whether to soften or preserve profanity."
+        },
+        {
+          "id": "cn_sjb",
+          "source": "神经病",
+          "language": "zh-CN",
+          "meanings": [
+            {
+              "context": "insult",
+              "natural": [
+                "idiot",
+                "psycho",
+                "are you crazy?"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Literal medical translation is usually wrong and stigmatizing in chat context."
+        }
+      ]
+    },
+    {
+      "code": "zh-TW",
+      "name": "Traditional Chinese / Taiwan",
+      "region": "Taiwan",
+      "slang": [
+        {
+          "id": "tw_484",
+          "canonical": "是不是",
+          "forms": [
+            "484"
+          ],
+          "meaning": "is it / isn't it / are you...?",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "line",
+            "dcard",
+            "ptt",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "numeric and age/platform-coded; keep for recognition or exact Mirror style"
+          ],
+          "examples": [
+            {
+              "normal": "你是不是生氣了？",
+              "chat": "你484生氣了？"
+            }
+          ]
+        },
+        {
+          "id": "tw_94",
+          "canonical": "就是",
+          "forms": [
+            "94"
+          ],
+          "meaning": "exactly / it is / that's it",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "ptt",
+            "dcard",
+            "texting"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "widely recognizable but older numeric net-speak"
+          ],
+          "examples": [
+            {
+              "normal": "就是這樣",
+              "chat": "94這樣"
+            }
+          ]
+        },
+        {
+          "id": "tw_hh",
+          "canonical": "呵呵 / 哈哈",
+          "forms": [
+            "ㄏㄏ",
+            "ㄏㄏㄏ"
+          ],
+          "meaning": "haha / hehe; can be dismissive or sarcastic",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "line",
+            "dcard",
+            "ptt"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "tone can be sarcastic, dismissive, or awkward"
+          ],
+          "examples": [
+            {
+              "normal": "哈哈",
+              "chat": "ㄏㄏ"
+            }
+          ]
+        },
+        {
+          "id": "tw_3q",
+          "canonical": "thank you",
+          "forms": [
+            "3Q",
+            "3q"
+          ],
+          "meaning": "thanks",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "line",
+            "texting"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "older playful form; still understood"
+          ],
+          "examples": [
+            {
+              "normal": "謝謝",
+              "chat": "3Q"
+            }
+          ]
+        },
+        {
+          "id": "tw_mutang",
+          "canonical": "毋通 / 不要",
+          "forms": [
+            "母湯",
+            "毋湯"
+          ],
+          "meaning": "don't / no good / shouldn't",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "ptt",
+            "dcard",
+            "line"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "meme/Hokkien-coded; natural mainly if user/community already uses it"
+          ],
+          "examples": [
+            {
+              "normal": "這樣不行喔",
+              "chat": "這樣母湯喔"
+            }
+          ]
+        },
+        {
+          "id": "tw_paixie",
+          "canonical": "歹勢",
+          "forms": [
+            "拍謝",
+            "歹勢"
+          ],
+          "meaning": "sorry / excuse me",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "line",
+            "texting",
+            "dcard"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "不好意思",
+              "chat": "拍謝"
+            }
+          ]
+        },
+        {
+          "id": "tw_87",
+          "canonical": "白痴",
+          "forms": [
+            "87"
+          ],
+          "meaning": "idiot / dumb, often teasing",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "dcard",
+            "ptt"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "insult; can be friendly teasing only with context"
+          ],
+          "examples": [
+            {
+              "normal": "你很笨欸",
+              "chat": "你87喔"
+            }
+          ]
+        },
+        {
+          "id": "tw_sen77",
+          "canonical": "生氣",
+          "forms": [
+            "森77"
+          ],
+          "meaning": "angry; deliberately cutesy phonetic spelling",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "dcard",
+            "texting"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "older cutesy meme spelling"
+          ],
+          "examples": [
+            {
+              "normal": "不要生氣",
+              "chat": "不要森77"
+            }
+          ]
+        },
+        {
+          "id": "tw_halou",
+          "canonical": "這是在幹嘛 / what is this",
+          "forms": [
+            "是在哈囉"
+          ],
+          "meaning": "what the heck is this / um, hello?",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "dcard",
+            "line",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "meme-ish; can sound mocking"
+          ],
+          "examples": [
+            {
+              "normal": "這到底是在幹嘛？",
+              "chat": "這是在哈囉？"
+            }
+          ]
+        },
+        {
+          "id": "tw_kaobei",
+          "canonical": "靠北",
+          "forms": [
+            "靠北",
+            "靠邀"
+          ],
+          "meaning": "damn / wtf / complain / bitch about",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "ptt",
+            "dcard",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "搞什麼啦",
+              "chat": "靠北啦"
+            }
+          ]
+        },
+        {
+          "id": "tw_sanxiao",
+          "canonical": "三小",
+          "forms": [
+            "三小"
+          ],
+          "meaning": "what the hell / what the fuck",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "ptt",
+            "dcard"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "這是什麼？",
+              "chat": "這三小？"
+            }
+          ]
+        },
+        {
+          "id": "tw_xiaosi",
+          "canonical": "笑死",
+          "forms": [
+            "笑死"
+          ],
+          "meaning": "dying laughing / lmao",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "line",
+            "dcard",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Taiwan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "笑死我了",
+              "chat": "笑死"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "tw_484_phrase",
+          "meaning": "casual yes/no question",
+          "source_examples": [
+            "你484忘了？",
+            "他484生氣？"
+          ],
+          "bad_literal_translations": [
+            "you 484 forgot?"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "did you forget?",
+              "is he mad?"
+            ],
+            "slang": [
+              "u forgot or what?",
+              "he mad?"
+            ],
+            "heavy": [
+              "bro forgot?",
+              "he tilted?"
+            ]
+          },
+          "contexts": [
+            "line",
+            "dcard",
+            "ptt"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "tw_halou_phrase",
+          "meaning": "mocking confusion",
+          "source_examples": [
+            "是在哈囉",
+            "你是在哈囉"
+          ],
+          "bad_literal_translations": [
+            "is at hello"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "what is this?",
+              "what are you doing?"
+            ],
+            "slang": [
+              "what the heck?",
+              "um hello?"
+            ],
+            "heavy": [
+              "wtf are you doing?"
+            ]
+          },
+          "contexts": [
+            "dcard",
+            "social",
+            "texting"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "tw_kaobei_phrase",
+          "meaning": "annoyance / complaint",
+          "source_examples": [
+            "靠北喔",
+            "是在靠北"
+          ],
+          "bad_literal_translations": [
+            "lean north"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "damn",
+              "come on"
+            ],
+            "slang": [
+              "wtf",
+              "bro come on"
+            ],
+            "heavy": [
+              "fuck off with that"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "ptt",
+            "dcard"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "tw_xdd",
+          "form": "XDD",
+          "meaning": "laughter; repeated D intensifies",
+          "equivalents": {
+            "en": [
+              "lol",
+              "lmao"
+            ],
+            "ru": [
+              "ахах"
+            ],
+            "zh-TW": [
+              "XDD"
+            ]
+          },
+          "contexts": [
+            "line",
+            "gaming",
+            "dcard"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "tw_qq",
+          "form": "QQ",
+          "meaning": "crying / sad face",
+          "equivalents": {
+            "en": [
+              "😭",
+              "sad"
+            ],
+            "ko": [
+              "ㅠㅠ"
+            ],
+            "zh-CN": [
+              "555"
+            ]
+          },
+          "contexts": [
+            "line",
+            "gaming",
+            "dcard"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "tw_hh_react",
+          "form": "ㄏㄏ",
+          "meaning": "light laugh or sarcastic/dismissive chuckle",
+          "equivalents": {
+            "en": [
+              "heh",
+              "lol"
+            ],
+            "zh-CN": [
+              "呵呵"
+            ],
+            "ja": [
+              "w"
+            ]
+          },
+          "contexts": [
+            "line",
+            "ptt",
+            "dcard"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": "Generate cautiously because tone can be cold or mocking."
+        },
+        {
+          "id": "tw_orz",
+          "form": "orz",
+          "meaning": "collapsed/bowing figure; defeat, embarrassment, resignation",
+          "equivalents": {
+            "en": [
+              "orz",
+              "i'm done"
+            ],
+            "ja": [
+              "orz"
+            ],
+            "ko": [
+              "망했다"
+            ]
+          },
+          "contexts": [
+            "forum",
+            "gaming"
+          ],
+          "current": false,
+          "outdated": true,
+          "notes": "Recognize; generation is nostalgia/old-internet coded."
+        }
+      ],
+      "gaming": [
+        {
+          "id": "tw_gg",
+          "canonical": "GG",
+          "forms": [
+            "GG",
+            "gg"
+          ],
+          "meaning": "good game / game over depending on tone",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "tw_afk",
+          "canonical": "AFK",
+          "forms": [
+            "AFK",
+            "afk"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "tw_op",
+          "canonical": "OP",
+          "forms": [
+            "OP",
+            "op"
+          ],
+          "meaning": "overpowered",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "tw_nerf",
+          "canonical": "nerf",
+          "forms": [
+            "nerf",
+            "砍",
+            "削弱"
+          ],
+          "meaning": "balance reduction",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf"
+            ]
+          }
+        },
+        {
+          "id": "tw_buff",
+          "canonical": "buff",
+          "forms": [
+            "buff",
+            "加強"
+          ],
+          "meaning": "balance increase",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        },
+        {
+          "id": "tw_87_game",
+          "canonical": "87",
+          "forms": [
+            "87"
+          ],
+          "meaning": "idiot/noob taunt",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "idiot",
+              "noob"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "tw_kaobei_prof",
+          "source": "靠北",
+          "language": "zh-TW",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "damn",
+                "wtf",
+                "come on"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "complaining",
+              "natural": [
+                "bitching",
+                "complaining"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Never translate the characters literally as 'lean north'."
+        },
+        {
+          "id": "tw_gan",
+          "source": "幹",
+          "language": "zh-TW",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "damn"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "verb meaning do",
+              "natural": [
+                "do"
+              ],
+              "literal_allowed": true
+            }
+          ],
+          "notes": "Critical lexical ambiguity: profanity 幹 and ordinary 'do' must be disambiguated by context."
+        },
+        {
+          "id": "tw_sanxiao_prof",
+          "source": "三小",
+          "language": "zh-TW",
+          "meanings": [
+            {
+              "context": "reaction/question",
+              "natural": [
+                "what the hell",
+                "what the fuck"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Taiwanese/Hokkien-derived vulgar question; never translate as 'three small'."
+        }
+      ]
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "region": "global / region-sensitive",
+      "slang": [
+        {
+          "id": "es_q",
+          "canonical": "que",
+          "forms": [
+            "q"
+          ],
+          "meaning": "que / what / that, context-dependent",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global Spanish",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "qué haces?",
+              "chat": "q haces?"
+            }
+          ]
+        },
+        {
+          "id": "es_xq",
+          "canonical": "porque / por qué",
+          "forms": [
+            "xq",
+            "pq"
+          ],
+          "meaning": "because or why depending on syntax",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global Spanish",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "ambiguous between porque and por qué; generate only with syntax-aware rule"
+          ],
+          "examples": [
+            {
+              "normal": "¿por qué no vienes?",
+              "chat": "xq no vienes?"
+            }
+          ]
+        },
+        {
+          "id": "es_tmb",
+          "canonical": "también",
+          "forms": [
+            "tmb",
+            "tb",
+            "tbn"
+          ],
+          "meaning": "also / too",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global Spanish",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "yo también",
+              "chat": "yo tmb"
+            }
+          ]
+        },
+        {
+          "id": "es_xfa",
+          "canonical": "por favor",
+          "forms": [
+            "xfa",
+            "porfa"
+          ],
+          "meaning": "please",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global Spanish",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "invítame por favor",
+              "chat": "invítame xfa"
+            }
+          ]
+        },
+        {
+          "id": "es_ns",
+          "canonical": "no sé",
+          "forms": [
+            "ns"
+          ],
+          "meaning": "I don't know",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global Spanish",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "no sé qué pasó",
+              "chat": "ns q pasó"
+            }
+          ]
+        },
+        {
+          "id": "es_bro",
+          "canonical": "bro",
+          "forms": [
+            "bro"
+          ],
+          "meaning": "bro / mate",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "global Spanish",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "amigo, qué haces?",
+              "chat": "bro q haces"
+            }
+          ]
+        },
+        {
+          "id": "es_tio",
+          "canonical": "tío / tía",
+          "forms": [
+            "tío",
+            "tia",
+            "tía"
+          ],
+          "meaning": "dude / mate / guy",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "gaming",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Spain",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "tío, no puede ser",
+              "chat": "tío no puede ser"
+            }
+          ]
+        },
+        {
+          "id": "es_wey",
+          "canonical": "güey / wey",
+          "forms": [
+            "wey",
+            "güey",
+            "we"
+          ],
+          "meaning": "dude / idiot depending on tone",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "texting",
+            "gaming",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mexico",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "regional and tone-sensitive"
+          ],
+          "examples": [
+            {
+              "normal": "oye, amigo",
+              "chat": "wey"
+            }
+          ]
+        },
+        {
+          "id": "es_pana",
+          "canonical": "pana",
+          "forms": [
+            "pana"
+          ],
+          "meaning": "friend / bro",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "gaming",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Venezuela/Caribbean/LatAm",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "mi amigo",
+              "chat": "mi pana"
+            }
+          ]
+        },
+        {
+          "id": "es_nmms",
+          "canonical": "no mames",
+          "forms": [
+            "nmms",
+            "no mms"
+          ],
+          "meaning": "no way / you're kidding / don't mess with me",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mexico",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "vulgar/regional; use only when target register explicitly permits"
+          ],
+          "examples": [
+            {
+              "normal": "no puede ser",
+              "chat": "nmms"
+            }
+          ]
+        },
+        {
+          "id": "es_alv",
+          "canonical": "a la verga",
+          "forms": [
+            "alv"
+          ],
+          "meaning": "to hell / holy shit / fuck it; context-dependent",
+          "register": [
+            "heavy"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Mexico/LatAm",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "vulgar and highly regional/context-dependent"
+          ],
+          "examples": [
+            {
+              "normal": "qué locura",
+              "chat": "alv"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "es_me_muero",
+          "meaning": "strong laughter or emotional overload",
+          "source_examples": [
+            "me muero",
+            "me muero de risa"
+          ],
+          "bad_literal_translations": [
+            "I die"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "I'm dying",
+              "that's hilarious"
+            ],
+            "slang": [
+              "I'm dead",
+              "I can't"
+            ],
+            "heavy": [
+              "I'm fucking dead"
+            ]
+          },
+          "contexts": [
+            "tiktok",
+            "texting",
+            "discord"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "es_no_puedo",
+          "meaning": "I can't / too funny / overwhelmed",
+          "source_examples": [
+            "no puedo",
+            "no puedo jajaja"
+          ],
+          "bad_literal_translations": [
+            "I am unable"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "I can't"
+            ],
+            "slang": [
+              "I can't lmao"
+            ],
+            "heavy": [
+              "I'm done"
+            ]
+          },
+          "contexts": [
+            "texting",
+            "social"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "es_dead_chat",
+          "meaning": "chat is inactive",
+          "source_examples": [
+            "el chat está muerto",
+            "chat muerto"
+          ],
+          "bad_literal_translations": [
+            "the chat is physically dead"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "the chat is dead"
+            ],
+            "slang": [
+              "chat muerto",
+              "chat dead"
+            ],
+            "heavy": [
+              "dead chat"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "es_jaja",
+          "form": "jajaja",
+          "meaning": "default written laughter",
+          "equivalents": {
+            "en": [
+              "haha",
+              "lol"
+            ],
+            "fr": [
+              "mdr"
+            ],
+            "pt-BR": [
+              "kkkk"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "texting",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "es_xd",
+          "form": "xD",
+          "meaning": "laughter; gamer/old-internet coded but still active in Spanish",
+          "equivalents": {
+            "en": [
+              "lol"
+            ],
+            "pl": [
+              "XD"
+            ],
+            "zh-TW": [
+              "XDD"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord",
+            "twitch"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "es_jeje",
+          "form": "jeje",
+          "meaning": "mischievous / softer chuckle",
+          "equivalents": {
+            "en": [
+              "hehe"
+            ],
+            "fr": [
+              "héhé"
+            ],
+            "pt-BR": [
+              "hehe"
+            ]
+          },
+          "contexts": [
+            "texting",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        }
+      ],
+      "gaming": [
+        {
+          "id": "es_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg",
+            "GG"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "es_afk",
+          "canonical": "AFK",
+          "forms": [
+            "afk",
+            "AFK"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "es_op",
+          "canonical": "OP",
+          "forms": [
+            "op",
+            "OP"
+          ],
+          "meaning": "overpowered",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "es_nerf",
+          "canonical": "nerf",
+          "forms": [
+            "nerf",
+            "nerfear",
+            "nerfeado"
+          ],
+          "meaning": "reduce power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf"
+            ]
+          }
+        },
+        {
+          "id": "es_buff",
+          "canonical": "buff",
+          "forms": [
+            "buff",
+            "bufear",
+            "buffear"
+          ],
+          "meaning": "increase power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        },
+        {
+          "id": "es_carry",
+          "canonical": "carry",
+          "forms": [
+            "carry",
+            "carrear"
+          ],
+          "meaning": "carry team",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "carry"
+            ]
+          }
+        },
+        {
+          "id": "es_noob",
+          "canonical": "noob",
+          "forms": [
+            "noob",
+            "manco"
+          ],
+          "meaning": "inexperienced/bad player; manco is insulting",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "noob",
+              "bad player"
+            ]
+          }
+        },
+        {
+          "id": "es_grind",
+          "canonical": "farmear",
+          "forms": [
+            "farmear",
+            "grindear"
+          ],
+          "meaning": "repeat content/farm resources",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "farm",
+              "grind"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "es_putamadre",
+          "source": "puta madre",
+          "language": "es",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "damn",
+                "holy shit"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "de puta madre",
+              "natural": [
+                "fucking great",
+                "awesome"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Polarity changes drastically by phrase."
+        },
+        {
+          "id": "es_nomames",
+          "source": "no mames",
+          "language": "es",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "no way",
+                "you're kidding",
+                "wtf"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Mexican slang; literal sexual translation is wrong in most chat."
+        },
+        {
+          "id": "es_joder",
+          "source": "joder",
+          "language": "es",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "damn"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "annoy",
+              "natural": [
+                "mess with",
+                "annoy"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Strongly Spain-associated in everyday interjection use."
+        }
+      ]
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "region": "France / francophone internet",
+      "slang": [
+        {
+          "id": "fr_mdr",
+          "canonical": "mort de rire",
+          "forms": [
+            "mdr"
+          ],
+          "meaning": "lol / dying laughing",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "c'est trop drôle",
+              "chat": "mdr"
+            }
+          ]
+        },
+        {
+          "id": "fr_ptdr",
+          "canonical": "pété de rire",
+          "forms": [
+            "ptdr",
+            "xptdr"
+          ],
+          "meaning": "lmao / strong laughter",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "je suis mort de rire",
+              "chat": "ptdr"
+            }
+          ]
+        },
+        {
+          "id": "fr_jpp",
+          "canonical": "j'en peux plus",
+          "forms": [
+            "jpp"
+          ],
+          "meaning": "I can't anymore; laughter, exhaustion, exasperation",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "tiktok",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "j'en peux plus, c'est trop drôle",
+              "chat": "jpp c trop drôle"
+            }
+          ]
+        },
+        {
+          "id": "fr_jsp",
+          "canonical": "je sais pas",
+          "forms": [
+            "jsp"
+          ],
+          "meaning": "I don't know",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "je sais pas",
+              "chat": "jsp"
+            }
+          ]
+        },
+        {
+          "id": "fr_tkt",
+          "canonical": "t'inquiète",
+          "forms": [
+            "tkt",
+            "tqt"
+          ],
+          "meaning": "don't worry / no worries",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "t'inquiète, c'est bon",
+              "chat": "tkt c bon"
+            }
+          ]
+        },
+        {
+          "id": "fr_bg",
+          "canonical": "beau gosse / belle gosse",
+          "forms": [
+            "bg"
+          ],
+          "meaning": "good-looking person; can also mean 'nice one, bro' as praise",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "can mean attractive person or friendly praise; context-sensitive"
+          ],
+          "examples": [
+            {
+              "normal": "bien joué mec",
+              "chat": "bien joué bg"
+            }
+          ]
+        },
+        {
+          "id": "fr_frr",
+          "canonical": "frère",
+          "forms": [
+            "frr",
+            "frérot",
+            "frero"
+          ],
+          "meaning": "bro / dude",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "speaker- and age-sensitive address; never insert automatically"
+          ],
+          "examples": [
+            {
+              "normal": "frère, regarde ça",
+              "chat": "frr regarde ça"
+            }
+          ]
+        },
+        {
+          "id": "fr_wesh",
+          "canonical": "wesh",
+          "forms": [
+            "wsh",
+            "wesh"
+          ],
+          "meaning": "yo / what / come on; multifunctional youth interjection",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "tiktok",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "highly register- and speaker-sensitive"
+          ],
+          "examples": [
+            {
+              "normal": "mais qu'est-ce que tu fais?",
+              "chat": "wsh tu fais quoi"
+            }
+          ]
+        },
+        {
+          "id": "fr_ouais",
+          "canonical": "ouais",
+          "forms": [
+            "oe",
+            "oué",
+            "ouais"
+          ],
+          "meaning": "yeah",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "ouais, je viens",
+              "chat": "oe j'arrive"
+            }
+          ]
+        },
+        {
+          "id": "fr_pk",
+          "canonical": "pourquoi",
+          "forms": [
+            "pk",
+            "pq",
+            "prq"
+          ],
+          "meaning": "why",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "pourquoi tu pars?",
+              "chat": "pk tu pars?"
+            }
+          ]
+        },
+        {
+          "id": "fr_pcq",
+          "canonical": "parce que",
+          "forms": [
+            "pcq",
+            "pck",
+            "psk"
+          ],
+          "meaning": "because",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "parce que je sais pas",
+              "chat": "pcq jsp"
+            }
+          ]
+        },
+        {
+          "id": "fr_stv",
+          "canonical": "si tu veux",
+          "forms": [
+            "stv"
+          ],
+          "meaning": "if you want",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "on peut jouer si tu veux",
+              "chat": "on peut jouer stv"
+            }
+          ]
+        },
+        {
+          "id": "fr_askip",
+          "canonical": "à ce qu'il paraît",
+          "forms": [
+            "askip"
+          ],
+          "meaning": "apparently / supposedly",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "tiktok",
+            "texting",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "apparemment il vient",
+              "chat": "askip il vient"
+            }
+          ]
+        },
+        {
+          "id": "fr_osef",
+          "canonical": "on s'en fout",
+          "forms": [
+            "osef"
+          ],
+          "meaning": "who cares / don't care",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "on s'en fiche",
+              "chat": "osef"
+            }
+          ]
+        },
+        {
+          "id": "fr_lol_old",
+          "canonical": "laughing out loud",
+          "forms": [
+            "lol"
+          ],
+          "meaning": "lol; understood but can feel older/ironic compared with mdr",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "chat",
+            "gaming"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "France",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "2026 youth usage favors mdr/ptdr/jpp; lol can sound old or ironic"
+          ],
+          "examples": [
+            {
+              "normal": "c'est drôle",
+              "chat": "lol"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "fr_jpp_phrase",
+          "meaning": "overwhelmed / can't take it / laughing hard",
+          "source_examples": [
+            "j'en peux plus",
+            "jpp"
+          ],
+          "bad_literal_translations": [
+            "I can no more"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "I can't anymore"
+            ],
+            "slang": [
+              "jpp",
+              "I can't"
+            ],
+            "heavy": [
+              "I'm dead"
+            ]
+          },
+          "contexts": [
+            "tiktok",
+            "discord",
+            "texting"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "fr_chat_mort",
+          "meaning": "chat is inactive",
+          "source_examples": [
+            "le chat est mort",
+            "chat mort"
+          ],
+          "bad_literal_translations": [
+            "the cat is dead"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "the chat is dead"
+            ],
+            "slang": [
+              "chat mort",
+              "dead chat"
+            ],
+            "heavy": [
+              "dead chat"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming"
+          ],
+          "notes": "French 'chat' can mean cat; platform context must override literal animal translation."
+        },
+        {
+          "id": "fr_balek",
+          "meaning": "I don't care",
+          "source_examples": [
+            "je m'en bats les couilles",
+            "balek"
+          ],
+          "bad_literal_translations": [
+            "I beat my balls"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "I don't care"
+            ],
+            "slang": [
+              "don't care",
+              "idc"
+            ],
+            "heavy": [
+              "I don't give a fuck"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "texting"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "fr_mdr_react",
+          "form": "mdr",
+          "meaning": "lol / laughter",
+          "equivalents": {
+            "en": [
+              "lol"
+            ],
+            "es": [
+              "jajaja"
+            ],
+            "pt-BR": [
+              "kkkk"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "fr_ptdr_react",
+          "form": "ptdr",
+          "meaning": "strong laughter / lmao",
+          "equivalents": {
+            "en": [
+              "lmao"
+            ],
+            "ru": [
+              "ору"
+            ],
+            "es": [
+              "me muero"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "fr_hein",
+          "form": "hein?",
+          "meaning": "huh? / what?",
+          "equivalents": {
+            "en": [
+              "huh?"
+            ],
+            "de": [
+              "hä?"
+            ],
+            "ru": [
+              "а?"
+            ]
+          },
+          "contexts": [
+            "texting",
+            "chat"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        }
+      ],
+      "gaming": [
+        {
+          "id": "fr_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg",
+            "GG"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "fr_afk",
+          "canonical": "AFK",
+          "forms": [
+            "afk",
+            "AFK"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "fr_op",
+          "canonical": "OP",
+          "forms": [
+            "op",
+            "OP"
+          ],
+          "meaning": "overpowered",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "fr_nerf",
+          "canonical": "nerf",
+          "forms": [
+            "nerf",
+            "nerfer",
+            "nerfé"
+          ],
+          "meaning": "reduce power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf"
+            ]
+          }
+        },
+        {
+          "id": "fr_buff",
+          "canonical": "buff",
+          "forms": [
+            "buff",
+            "buffer",
+            "buffé"
+          ],
+          "meaning": "increase power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        },
+        {
+          "id": "fr_carry",
+          "canonical": "carry",
+          "forms": [
+            "carry",
+            "carry la game"
+          ],
+          "meaning": "carry the team",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "carry"
+            ]
+          }
+        },
+        {
+          "id": "fr_noob",
+          "canonical": "noob",
+          "forms": [
+            "noob",
+            "débutant"
+          ],
+          "meaning": "inexperienced player",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        }
+      ],
+      "profanity": [
+        {
+          "id": "fr_putain",
+          "source": "putain",
+          "language": "fr",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "damn",
+                "holy shit"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "intensifier",
+              "natural": [
+                "fucking",
+                "damn"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Usually an interjection/intensifier in chat, not the literal noun."
+        },
+        {
+          "id": "fr_merde",
+          "source": "merde",
+          "language": "fr",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "shit",
+                "damn"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "c'est la merde",
+              "natural": [
+                "it's a mess",
+                "we're in trouble"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Do not over-literalize."
+        },
+        {
+          "id": "fr_baise",
+          "source": "baisé",
+          "language": "fr",
+          "meanings": [
+            {
+              "context": "on est baisés",
+              "natural": [
+                "we're fucked",
+                "we're screwed"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "sexual",
+              "natural": [
+                "fucked"
+              ],
+              "literal_allowed": true
+            }
+          ],
+          "notes": "Context determines idiom vs sexual meaning."
+        }
+      ]
+    },
+    {
+      "code": "pt-BR",
+      "name": "Brazilian Portuguese",
+      "region": "Brazil",
+      "slang": [
+        {
+          "id": "pt_vc",
+          "canonical": "você",
+          "forms": [
+            "vc"
+          ],
+          "meaning": "you",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "você vai jogar?",
+              "chat": "vc vai jogar?"
+            }
+          ]
+        },
+        {
+          "id": "pt_tbm",
+          "canonical": "também",
+          "forms": [
+            "tb",
+            "tbm"
+          ],
+          "meaning": "also / too",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "eu também",
+              "chat": "eu tbm"
+            }
+          ]
+        },
+        {
+          "id": "pt_pq",
+          "canonical": "porque / por quê",
+          "forms": [
+            "pq"
+          ],
+          "meaning": "because or why depending on syntax",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "ambiguous between porque/por quê; generate only syntax-aware"
+          ],
+          "examples": [
+            {
+              "normal": "por que você saiu?",
+              "chat": "pq vc saiu?"
+            }
+          ]
+        },
+        {
+          "id": "pt_q",
+          "canonical": "que",
+          "forms": [
+            "q"
+          ],
+          "meaning": "that / what",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "o que aconteceu?",
+              "chat": "q aconteceu?"
+            }
+          ]
+        },
+        {
+          "id": "pt_blz",
+          "canonical": "beleza",
+          "forms": [
+            "blz"
+          ],
+          "meaning": "okay / all good",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "beleza, combinado",
+              "chat": "blz"
+            }
+          ]
+        },
+        {
+          "id": "pt_vlw",
+          "canonical": "valeu",
+          "forms": [
+            "vlw"
+          ],
+          "meaning": "thanks / cheers",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "valeu pela ajuda",
+              "chat": "vlw pela ajuda"
+            }
+          ]
+        },
+        {
+          "id": "pt_flw",
+          "canonical": "falou",
+          "forms": [
+            "flw"
+          ],
+          "meaning": "bye / see ya",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "falou, até mais",
+              "chat": "flw"
+            }
+          ]
+        },
+        {
+          "id": "pt_pfv",
+          "canonical": "por favor",
+          "forms": [
+            "pfv",
+            "pf"
+          ],
+          "meaning": "please",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "manda por favor",
+              "chat": "manda pfv"
+            }
+          ]
+        },
+        {
+          "id": "pt_ctz",
+          "canonical": "certeza",
+          "forms": [
+            "ctz"
+          ],
+          "meaning": "sure / certainty",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "com certeza",
+              "chat": "ctz"
+            }
+          ]
+        },
+        {
+          "id": "pt_mano",
+          "canonical": "mano",
+          "forms": [
+            "mano",
+            "mn"
+          ],
+          "meaning": "bro / dude",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "whatsapp",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "persona-sensitive address; do not insert as generic chat decoration"
+          ],
+          "examples": [
+            {
+              "normal": "mano, olha isso",
+              "chat": "mn olha isso"
+            }
+          ]
+        },
+        {
+          "id": "pt_vei",
+          "canonical": "véi",
+          "forms": [
+            "véi",
+            "vei",
+            "velho"
+          ],
+          "meaning": "dude / man; reaction/address",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "cara, não acredito",
+              "chat": "véi não acredito"
+            }
+          ]
+        },
+        {
+          "id": "pt_slk",
+          "canonical": "cê é louco / se é louco",
+          "forms": [
+            "slk"
+          ],
+          "meaning": "damn / that's crazy / impressive",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "reaction and group-specific reduction; recognition-only by default"
+          ],
+          "examples": [
+            {
+              "normal": "isso é muito bom",
+              "chat": "slk isso é bom demais"
+            }
+          ]
+        },
+        {
+          "id": "pt_mds",
+          "canonical": "meu Deus",
+          "forms": [
+            "mds"
+          ],
+          "meaning": "my God / omg",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "meu Deus, que isso",
+              "chat": "mds q isso"
+            }
+          ]
+        },
+        {
+          "id": "pt_tmj",
+          "canonical": "tamo junto",
+          "forms": [
+            "tmj"
+          ],
+          "meaning": "we're together / thanks / got you",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "valeu, estamos juntos",
+              "chat": "vlw tmj"
+            }
+          ]
+        },
+        {
+          "id": "pt_pprt",
+          "canonical": "papo reto",
+          "forms": [
+            "pprt"
+          ],
+          "meaning": "for real / straight talk / honestly",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "discord",
+            "tiktok",
+            "whatsapp"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "socially marked reduction; recognition-only by default"
+          ],
+          "examples": [
+            {
+              "normal": "falando sério, é verdade",
+              "chat": "pprt é vdd"
+            }
+          ]
+        },
+        {
+          "id": "pt_sqn",
+          "canonical": "só que não",
+          "forms": [
+            "sqn"
+          ],
+          "meaning": "not really / just kidding reversal",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "sarcastic and somewhat older; tone-sensitive"
+          ],
+          "examples": [
+            {
+              "normal": "claro... só que não",
+              "chat": "claro sqn"
+            }
+          ]
+        },
+        {
+          "id": "pt_sdds",
+          "canonical": "saudades",
+          "forms": [
+            "sdds"
+          ],
+          "meaning": "miss you / nostalgia / longing",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "estou com saudades",
+              "chat": "sdds"
+            }
+          ]
+        },
+        {
+          "id": "pt_agr",
+          "canonical": "agora",
+          "forms": [
+            "agr"
+          ],
+          "meaning": "now",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "vou agora",
+              "chat": "vou agr"
+            }
+          ]
+        },
+        {
+          "id": "pt_aq",
+          "canonical": "aqui",
+          "forms": [
+            "aq"
+          ],
+          "meaning": "here",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "whatsapp",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Brazil",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "estou aqui",
+              "chat": "to aq"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "pt_bora",
+          "meaning": "let's go / let's do it",
+          "source_examples": [
+            "bora",
+            "bora jogar"
+          ],
+          "bad_literal_translations": [
+            "let us go physically"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "let's go",
+              "let's play"
+            ],
+            "slang": [
+              "bora",
+              "let's run it"
+            ],
+            "heavy": [
+              "go go"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "whatsapp",
+            "discord"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "pt_deboa",
+          "meaning": "all good / chill",
+          "source_examples": [
+            "de boa",
+            "tô de boa"
+          ],
+          "bad_literal_translations": [
+            "of good"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "I'm good",
+              "no worries"
+            ],
+            "slang": [
+              "de boa",
+              "all chill"
+            ],
+            "heavy": [
+              "idc / I'm chilling"
+            ]
+          },
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "texting"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "pt_fodeu",
+          "meaning": "we are screwed / situation went bad",
+          "source_examples": [
+            "fodeu",
+            "agora fodeu"
+          ],
+          "bad_literal_translations": [
+            "it had sex"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "we're screwed"
+            ],
+            "slang": [
+              "we're fucked"
+            ],
+            "heavy": [
+              "we're so fucked"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord",
+            "whatsapp"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "pt_kkkk",
+          "form": "kkkk",
+          "meaning": "default Brazilian written laughter; more k = stronger laughter",
+          "equivalents": {
+            "en": [
+              "lol",
+              "lmao"
+            ],
+            "es": [
+              "jajaja"
+            ],
+            "fr": [
+              "mdr"
+            ]
+          },
+          "contexts": [
+            "whatsapp",
+            "discord",
+            "gaming",
+            "tiktok"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "pt_rsrs",
+          "form": "rsrs",
+          "meaning": "laughter/chuckle from 'risos'; softer or older-looking than kkkk",
+          "equivalents": {
+            "en": [
+              "haha",
+              "heh"
+            ],
+            "es": [
+              "jeje"
+            ],
+            "fr": [
+              "hehe"
+            ]
+          },
+          "contexts": [
+            "whatsapp",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": "Understand broadly; generation can skew older or softer than kkkk."
+        },
+        {
+          "id": "pt_pqp",
+          "form": "pqp",
+          "meaning": "shock/anger: puta que pariu",
+          "equivalents": {
+            "en": [
+              "holy shit",
+              "fuck"
+            ],
+            "ru": [
+              "пиздец"
+            ],
+            "es": [
+              "puta madre"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord",
+            "whatsapp"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        }
+      ],
+      "gaming": [
+        {
+          "id": "pt_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg",
+            "GG"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "pt_afk",
+          "canonical": "AFK",
+          "forms": [
+            "afk",
+            "AFK"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "pt_op",
+          "canonical": "OP",
+          "forms": [
+            "op",
+            "OP"
+          ],
+          "meaning": "overpowered",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "pt_nerf",
+          "canonical": "nerf",
+          "forms": [
+            "nerf",
+            "nerfar",
+            "nerfado"
+          ],
+          "meaning": "reduce power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf"
+            ]
+          }
+        },
+        {
+          "id": "pt_buff",
+          "canonical": "buff",
+          "forms": [
+            "buff",
+            "bufar",
+            "buffado"
+          ],
+          "meaning": "increase power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        },
+        {
+          "id": "pt_carry",
+          "canonical": "carry",
+          "forms": [
+            "carry",
+            "carregar"
+          ],
+          "meaning": "carry team",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "carry"
+            ]
+          }
+        },
+        {
+          "id": "pt_noob",
+          "canonical": "noob",
+          "forms": [
+            "noob",
+            "nub"
+          ],
+          "meaning": "inexperienced player",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "pt_grind",
+          "canonical": "farmar",
+          "forms": [
+            "farmar",
+            "grindar"
+          ],
+          "meaning": "repeat content to get resources",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "farm",
+              "grind"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "pt_pqp_prof",
+          "source": "puta que pariu",
+          "language": "pt-BR",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "holy shit",
+                "fuck",
+                "damn"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Do not translate literally."
+        },
+        {
+          "id": "pt_vsf",
+          "source": "vai se foder",
+          "language": "pt-BR",
+          "meanings": [
+            {
+              "context": "insult",
+              "natural": [
+                "fuck off",
+                "go fuck yourself"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "friendly disbelief",
+              "natural": [
+                "no fucking way",
+                "get outta here"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Can be joking among friends or hostile; tone is essential."
+        },
+        {
+          "id": "pt_fodeu_prof",
+          "source": "fodeu",
+          "language": "pt-BR",
+          "meanings": [
+            {
+              "context": "situation",
+              "natural": [
+                "we're fucked",
+                "it's fucked",
+                "we're screwed"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Usually indicates trouble, not literal sex."
+        }
+      ]
+    },
+    {
+      "code": "pl",
+      "name": "Polish",
+      "region": "Poland",
+      "slang": [
+        {
+          "id": "pl_nwm",
+          "canonical": "nie wiem",
+          "forms": [
+            "nwm"
+          ],
+          "meaning": "I don't know",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "underrepresented in current general UGC; keep for recognition"
+          ],
+          "examples": [
+            {
+              "normal": "nie wiem",
+              "chat": "nwm"
+            }
+          ]
+        },
+        {
+          "id": "pl_spoko",
+          "canonical": "spoko",
+          "forms": [
+            "spoko"
+          ],
+          "meaning": "okay / no problem / chill",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "w porządku, nie ma problemu",
+              "chat": "spoko"
+            }
+          ]
+        },
+        {
+          "id": "pl_git",
+          "canonical": "git",
+          "forms": [
+            "git"
+          ],
+          "meaning": "good / okay / all set",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "wszystko dobrze",
+              "chat": "wszystko git"
+            }
+          ]
+        },
+        {
+          "id": "pl_rel",
+          "canonical": "rel",
+          "forms": [
+            "rel"
+          ],
+          "meaning": "relatable / same / I agree",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "tiktok",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "mam tak samo",
+              "chat": "rel"
+            }
+          ]
+        },
+        {
+          "id": "pl_beka",
+          "canonical": "beka",
+          "forms": [
+            "beka"
+          ],
+          "meaning": "laugh / joke / funny situation",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "ale to śmieszne",
+              "chat": "ale beka"
+            }
+          ]
+        },
+        {
+          "id": "pl_sztos",
+          "canonical": "sztos",
+          "forms": [
+            "sztos"
+          ],
+          "meaning": "awesome / top-tier",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "texting",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "to jest świetne",
+              "chat": "to sztos"
+            }
+          ]
+        },
+        {
+          "id": "pl_essa",
+          "canonical": "essa",
+          "forms": [
+            "essa"
+          ],
+          "meaning": "victory / hype / easy-going cheer",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "tiktok"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "still known but 2026 slang references label it weakening"
+          ],
+          "examples": [
+            {
+              "normal": "udało się!",
+              "chat": "essa"
+            }
+          ]
+        },
+        {
+          "id": "pl_cringe",
+          "canonical": "cringe",
+          "forms": [
+            "cringe",
+            "krindż"
+          ],
+          "meaning": "cringe / embarrassing",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "discord",
+            "tiktok",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "ale żenada",
+              "chat": "ale cringe"
+            }
+          ]
+        },
+        {
+          "id": "pl_odklejka",
+          "canonical": "odklejka",
+          "forms": [
+            "odklejka",
+            "odklejony"
+          ],
+          "meaning": "detached from reality / delusional take",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "tiktok",
+            "discord",
+            "reddit"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "on jest oderwany od rzeczywistości",
+              "chat": "ale odklejka"
+            }
+          ]
+        },
+        {
+          "id": "pl_lowkey",
+          "canonical": "lowkey",
+          "forms": [
+            "lowkey"
+          ],
+          "meaning": "kind of / secretly / understatedly",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "tiktok",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "trochę mi się podoba",
+              "chat": "lowkey mi się podoba"
+            }
+          ]
+        },
+        {
+          "id": "pl_based",
+          "canonical": "based",
+          "forms": [
+            "based"
+          ],
+          "meaning": "based / approved / unapologetically right, often ironic",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "reddit",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Poland",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "dobrze powiedziane",
+              "chat": "based"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "pl_rel_phrase",
+          "meaning": "strong relatability/agreement",
+          "source_examples": [
+            "rel",
+            "totalny rel"
+          ],
+          "bad_literal_translations": [
+            "relation"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "same",
+              "I relate"
+            ],
+            "slang": [
+              "rel"
+            ],
+            "heavy": [
+              "hard rel"
+            ]
+          },
+          "contexts": [
+            "tiktok",
+            "discord"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "pl_chat_dead",
+          "meaning": "chat is inactive",
+          "source_examples": [
+            "martwy chat",
+            "chat umarł"
+          ],
+          "bad_literal_translations": [
+            "chat physically died"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "the chat is dead"
+            ],
+            "slang": [
+              "dead chat",
+              "chat dead"
+            ],
+            "heavy": [
+              "dead chat"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "pl_mam_wyjebane",
+          "meaning": "I don't care at all",
+          "source_examples": [
+            "mam wyjebane",
+            "wyjebane"
+          ],
+          "bad_literal_translations": [
+            "I have thrown out"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "I don't care"
+            ],
+            "slang": [
+              "idc"
+            ],
+            "heavy": [
+              "I don't give a fuck"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "pl_xd",
+          "form": "XD",
+          "meaning": "laughter; extremely common Polish internet reaction",
+          "equivalents": {
+            "en": [
+              "lol"
+            ],
+            "es": [
+              "xD"
+            ],
+            "zh-TW": [
+              "XDD"
+            ]
+          },
+          "contexts": [
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "pl_rel_react",
+          "form": "rel",
+          "meaning": "same / relatable",
+          "equivalents": {
+            "en": [
+              "same",
+              "fr"
+            ],
+            "ru": [
+              "жиза"
+            ],
+            "ja": [
+              "それな"
+            ]
+          },
+          "contexts": [
+            "tiktok",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "pl_ez",
+          "form": "ez",
+          "meaning": "easy / easy win, often taunting",
+          "equivalents": {
+            "en": [
+              "ez"
+            ],
+            "ru": [
+              "изи"
+            ],
+            "de": [
+              "ez"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        }
+      ],
+      "gaming": [
+        {
+          "id": "pl_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg",
+            "GG"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "pl_afk",
+          "canonical": "AFK",
+          "forms": [
+            "afk",
+            "AFK"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "pl_op",
+          "canonical": "OP",
+          "forms": [
+            "op",
+            "OP"
+          ],
+          "meaning": "overpowered",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "pl_nerf",
+          "canonical": "nerf",
+          "forms": [
+            "nerf",
+            "nerfić",
+            "znerfiony"
+          ],
+          "meaning": "reduce power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf"
+            ]
+          }
+        },
+        {
+          "id": "pl_buff",
+          "canonical": "buff",
+          "forms": [
+            "buff",
+            "buffować"
+          ],
+          "meaning": "increase power",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        },
+        {
+          "id": "pl_carry",
+          "canonical": "carry",
+          "forms": [
+            "carry",
+            "carrować"
+          ],
+          "meaning": "carry team",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "carry"
+            ]
+          }
+        },
+        {
+          "id": "pl_noob",
+          "canonical": "noob",
+          "forms": [
+            "noob",
+            "nub"
+          ],
+          "meaning": "inexperienced player",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "pl_ezgame",
+          "canonical": "ez",
+          "forms": [
+            "ez"
+          ],
+          "meaning": "easy win / taunt",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        }
+      ],
+      "profanity": [
+        {
+          "id": "pl_kurwa",
+          "source": "kurwa",
+          "language": "pl",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "damn",
+                "shit"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "insult/noun",
+              "natural": [
+                "whore",
+                "bitch"
+              ],
+              "literal_allowed": true
+            }
+          ],
+          "notes": "Most chat uses are interjections/intensifiers, not the literal noun."
+        },
+        {
+          "id": "pl_przejebane",
+          "source": "przejebane",
+          "language": "pl",
+          "meanings": [
+            {
+              "context": "situation",
+              "natural": [
+                "we're fucked",
+                "this is bad",
+                "we're screwed"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Idiomatic doom/trouble expression."
+        },
+        {
+          "id": "pl_wyjebane",
+          "source": "wyjebane",
+          "language": "pl",
+          "meanings": [
+            {
+              "context": "indifference",
+              "natural": [
+                "don't care",
+                "couldn't give a fuck"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Do not translate with literal throwing/ejection senses."
+        }
+      ]
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "region": "Japan",
+      "slang": [
+        {
+          "id": "ja_kusa",
+          "canonical": "笑い",
+          "forms": [
+            "草",
+            "w",
+            "www"
+          ],
+          "meaning": "lol / laughter; more w means stronger laughter",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "x",
+            "youtube",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "それ面白い",
+              "chat": "それ草"
+            }
+          ]
+        },
+        {
+          "id": "ja_sorena",
+          "canonical": "その通り",
+          "forms": [
+            "それな",
+            "ほんそれ"
+          ],
+          "meaning": "exactly / same / for real",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "x",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "本当にそう",
+              "chat": "それな"
+            }
+          ]
+        },
+        {
+          "id": "ja_gachi",
+          "canonical": "本気",
+          "forms": [
+            "ガチ",
+            "ガチで"
+          ],
+          "meaning": "seriously / for real / hardcore",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "x",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "本当に強い",
+              "chat": "ガチで強い"
+            }
+          ]
+        },
+        {
+          "id": "ja_maji",
+          "canonical": "本当 / seriously",
+          "forms": [
+            "マジ",
+            "まじ"
+          ],
+          "meaning": "seriously / really / for real",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "texting",
+            "gaming",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "本当に？",
+              "chat": "マジ？"
+            }
+          ]
+        },
+        {
+          "id": "ja_ryo",
+          "canonical": "了解",
+          "forms": [
+            "りょ"
+          ],
+          "meaning": "got it / okay",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "line",
+            "texting",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "了解、あとで",
+              "chat": "りょ、あとで"
+            }
+          ]
+        },
+        {
+          "id": "ja_otsu",
+          "canonical": "お疲れ",
+          "forms": [
+            "おつ",
+            "乙"
+          ],
+          "meaning": "good work / thanks / bye after an activity",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "streaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "お疲れ！",
+              "chat": "おつ！"
+            }
+          ]
+        },
+        {
+          "id": "ja_numa",
+          "canonical": "沼",
+          "forms": [
+            "沼",
+            "沼る"
+          ],
+          "meaning": "deeply hooked / rabbit hole / can't stop",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "fandom",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "このゲームにハマった",
+              "chat": "このゲーム沼"
+            }
+          ]
+        },
+        {
+          "id": "ja_oshi",
+          "canonical": "推し",
+          "forms": [
+            "推し"
+          ],
+          "meaning": "favorite person/character/idol; one you support",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "fandom",
+            "social",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "このキャラが一番好き",
+              "chat": "このキャラ推し"
+            }
+          ]
+        },
+        {
+          "id": "ja_buzz",
+          "canonical": "バズる",
+          "forms": [
+            "バズる",
+            "バズった"
+          ],
+          "meaning": "go viral",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "tiktok",
+            "x",
+            "youtube"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "この動画が急に有名になった",
+              "chat": "この動画バズった"
+            }
+          ]
+        },
+        {
+          "id": "ja_emoi",
+          "canonical": "エモい",
+          "forms": [
+            "エモい"
+          ],
+          "meaning": "emotionally moving / nostalgic / hits different",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "social",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "この曲はすごく心にくる",
+              "chat": "この曲エモい"
+            }
+          ]
+        },
+        {
+          "id": "ja_pien",
+          "canonical": "悲しい",
+          "forms": [
+            "ぴえん"
+          ],
+          "meaning": "cute/performative sadness",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "social",
+            "texting"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "understood but strongly late-2010s/early-2020s youth-slang coded"
+          ],
+          "examples": [
+            {
+              "normal": "チケット取れなくて悲しい",
+              "chat": "チケット取れなかった、ぴえん"
+            }
+          ]
+        },
+        {
+          "id": "ja_nau",
+          "canonical": "今",
+          "forms": [
+            "なう"
+          ],
+          "meaning": "now; old Twitter-style suffix",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "x",
+            "texting"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "Japan",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "dated Twitter-era usage"
+          ],
+          "examples": [
+            {
+              "normal": "渋谷にいる",
+              "chat": "渋谷なう"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "ja_sorena_phrase",
+          "meaning": "strong casual agreement",
+          "source_examples": [
+            "それな",
+            "ほんそれ"
+          ],
+          "bad_literal_translations": [
+            "that"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "exactly",
+              "so true"
+            ],
+            "slang": [
+              "fr",
+              "same"
+            ],
+            "heavy": [
+              "literally this"
+            ]
+          },
+          "contexts": [
+            "texting",
+            "discord",
+            "x"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ja_kusa_phrase",
+          "meaning": "laughter at something absurd/funny",
+          "source_examples": [
+            "草",
+            "草生える",
+            "大草原"
+          ],
+          "bad_literal_translations": [
+            "grass",
+            "grass grows",
+            "prairie"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "that's funny"
+            ],
+            "slang": [
+              "lol",
+              "lmao"
+            ],
+            "heavy": [
+              "I'm dead"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "streaming",
+            "x"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ja_murige",
+          "meaning": "something impossibly hard/unwinnable",
+          "source_examples": [
+            "無理ゲー",
+            "これ無理ゲー"
+          ],
+          "bad_literal_translations": [
+            "impossible game"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "this is impossible"
+            ],
+            "slang": [
+              "unwinnable",
+              "no shot"
+            ],
+            "heavy": [
+              "this is cooked"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "social"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "ja_kusa_react",
+          "form": "草",
+          "meaning": "lol / that's hilarious",
+          "equivalents": {
+            "en": [
+              "lol",
+              "lmao"
+            ],
+            "ru": [
+              "лол",
+              "ору"
+            ],
+            "zh-CN": [
+              "233",
+              "xswl"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "x",
+            "youtube"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ja_majika",
+          "form": "まじか",
+          "meaning": "seriously? / no way",
+          "equivalents": {
+            "en": [
+              "no way",
+              "fr?"
+            ],
+            "ru": [
+              "серьёзно?"
+            ],
+            "de": [
+              "echt jetzt?"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ja_yabai",
+          "form": "やばい",
+          "meaning": "crazy / awesome / terrible / dangerous depending on context",
+          "equivalents": {
+            "en": [
+              "crazy",
+              "damn",
+              "bad"
+            ],
+            "ru": [
+              "жесть",
+              "капец"
+            ],
+            "de": [
+              "krass"
+            ]
+          },
+          "contexts": [
+            "chat",
+            "gaming",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        }
+      ],
+      "gaming": [
+        {
+          "id": "ja_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg",
+            "GG"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "ja_afk",
+          "canonical": "AFK",
+          "forms": [
+            "AFK",
+            "afk"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "ja_gachizei",
+          "canonical": "ガチ勢",
+          "forms": [
+            "ガチ勢"
+          ],
+          "meaning": "hardcore/serious players",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "hardcore players",
+              "sweats"
+            ]
+          }
+        },
+        {
+          "id": "ja_enjoyzei",
+          "canonical": "エンジョイ勢",
+          "forms": [
+            "エンジョイ勢"
+          ],
+          "meaning": "casual players who prioritize fun",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "casual players"
+            ]
+          }
+        },
+        {
+          "id": "ja_murige",
+          "canonical": "無理ゲー",
+          "forms": [
+            "無理ゲー"
+          ],
+          "meaning": "impossibly hard game/situation",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "unwinnable",
+              "impossible"
+            ]
+          }
+        },
+        {
+          "id": "ja_kamige",
+          "canonical": "神ゲー",
+          "forms": [
+            "神ゲー"
+          ],
+          "meaning": "amazing/god-tier game",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "great game",
+              "god-tier game"
+            ]
+          }
+        },
+        {
+          "id": "ja_jirai",
+          "canonical": "地雷",
+          "forms": [
+            "地雷"
+          ],
+          "meaning": "problematic/toxic player or risky pick/person",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "toxic player",
+              "red flag"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "ja_kuso",
+          "source": "くそ",
+          "language": "ja",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "shit",
+                "damn"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "intensifier",
+              "natural": [
+                "fucking",
+                "damn"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Often an interjection/intensifier, not literal feces."
+        },
+        {
+          "id": "ja_shine",
+          "source": "死ね",
+          "language": "ja",
+          "meanings": [
+            {
+              "context": "hostile insult",
+              "natural": [
+                "die",
+                "go die"
+              ],
+              "literal_allowed": true
+            }
+          ],
+          "notes": "Severe hostile language; recognize but do not casually generate."
+        }
+      ]
+    },
+    {
+      "code": "ko",
+      "name": "Korean",
+      "region": "South Korea",
+      "slang": [
+        {
+          "id": "ko_kk",
+          "canonical": "웃음",
+          "forms": [
+            "ㅋㅋ",
+            "ㅋㅋㅋ",
+            "ㅋㅋㅋㅋ"
+          ],
+          "meaning": "lol / laughter; more ㅋ usually means stronger laughter",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "kakao",
+            "discord",
+            "gaming",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "너무 웃겨",
+              "chat": "너무 웃겨ㅋㅋ"
+            }
+          ]
+        },
+        {
+          "id": "ko_hh",
+          "canonical": "웃음",
+          "forms": [
+            "ㅎㅎ",
+            "ㅎㅎㅎ"
+          ],
+          "meaning": "soft haha / friendly tone softener",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "kakao",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "그래, 알겠어",
+              "chat": "그래ㅎㅎ"
+            }
+          ]
+        },
+        {
+          "id": "ko_yes",
+          "canonical": "응",
+          "forms": [
+            "ㅇㅇ"
+          ],
+          "meaning": "yeah / yep",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "kakao",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "응, 좋아",
+              "chat": "ㅇㅇ 좋음"
+            }
+          ]
+        },
+        {
+          "id": "ko_no",
+          "canonical": "노노",
+          "forms": [
+            "ㄴㄴ"
+          ],
+          "meaning": "nope / no",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "kakao",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "아니, 그거 아냐",
+              "chat": "ㄴㄴ 그거 아님"
+            }
+          ]
+        },
+        {
+          "id": "ko_gogo",
+          "canonical": "고고",
+          "forms": [
+            "ㄱㄱ"
+          ],
+          "meaning": "let's go / do it",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "kakao"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "가자",
+              "chat": "ㄱㄱ"
+            }
+          ]
+        },
+        {
+          "id": "ko_bye",
+          "canonical": "바이바이",
+          "forms": [
+            "ㅂㅂ"
+          ],
+          "meaning": "bye bye",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "kakao"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "잘 가",
+              "chat": "ㅂㅂ"
+            }
+          ]
+        },
+        {
+          "id": "ko_sorry",
+          "canonical": "죄송",
+          "forms": [
+            "ㅈㅅ"
+          ],
+          "meaning": "sorry",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "kakao"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "미안",
+              "chat": "ㅈㅅ"
+            }
+          ]
+        },
+        {
+          "id": "ko_okay",
+          "canonical": "괜찮아",
+          "forms": [
+            "ㄱㅊ"
+          ],
+          "meaning": "okay / fine / no problem",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "kakao",
+            "discord",
+            "gaming"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "괜찮아",
+              "chat": "ㄱㅊ"
+            }
+          ]
+        },
+        {
+          "id": "ko_hi",
+          "canonical": "하이",
+          "forms": [
+            "ㅎㅇ"
+          ],
+          "meaning": "hi",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "kakao"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "안녕",
+              "chat": "ㅎㅇ"
+            }
+          ]
+        },
+        {
+          "id": "ko_real",
+          "canonical": "레알",
+          "forms": [
+            "ㄹㅇ"
+          ],
+          "meaning": "for real / really / genuinely",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "kakao"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "진짜야?",
+              "chat": "ㄹㅇ?"
+            }
+          ]
+        },
+        {
+          "id": "ko_agree",
+          "canonical": "인정",
+          "forms": [
+            "ㅇㅈ"
+          ],
+          "meaning": "agreed / true / 인정",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "인정한다",
+              "chat": "ㅇㅈ"
+            }
+          ]
+        },
+        {
+          "id": "ko_dd",
+          "canonical": "덜덜",
+          "forms": [
+            "ㄷㄷ",
+            "ㅎㄷㄷ"
+          ],
+          "meaning": "shivering; wow/scary/impressive reaction",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "discord",
+            "kakao"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "와, 무섭다",
+              "chat": "ㄷㄷ"
+            }
+          ]
+        },
+        {
+          "id": "ko_chuk",
+          "canonical": "축하",
+          "forms": [
+            "ㅊㅋ",
+            "ㅊㅊ"
+          ],
+          "meaning": "congrats",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "kakao"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "축하해",
+              "chat": "ㅊㅋ"
+            }
+          ]
+        },
+        {
+          "id": "ko_mohae",
+          "canonical": "뭐 해",
+          "forms": [
+            "모해"
+          ],
+          "meaning": "what are you doing? casual phonetic spelling",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "kakao",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "뭐 해?",
+              "chat": "모해?ㅋㅋ"
+            }
+          ]
+        },
+        {
+          "id": "ko_naeil",
+          "canonical": "내일",
+          "forms": [
+            "낼"
+          ],
+          "meaning": "tomorrow, casual contraction",
+          "register": [
+            "casual",
+            "slang"
+          ],
+          "contexts": [
+            "kakao",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "내일 봐",
+              "chat": "낼 봐"
+            }
+          ]
+        },
+        {
+          "id": "ko_nojam",
+          "canonical": "노잼",
+          "forms": [
+            "노잼"
+          ],
+          "meaning": "not fun / boring",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "gaming",
+            "social",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "재미없어",
+              "chat": "노잼"
+            }
+          ]
+        },
+        {
+          "id": "ko_gaewoos",
+          "canonical": "개웃겨",
+          "forms": [
+            "개웃겨",
+            "개웃김"
+          ],
+          "meaning": "fucking hilarious / really funny",
+          "register": [
+            "slang",
+            "heavy"
+          ],
+          "contexts": [
+            "social",
+            "discord",
+            "texting"
+          ],
+          "current": true,
+          "outdated": false,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": true,
+          "can_recognize": true,
+          "avoid": [],
+          "examples": [
+            {
+              "normal": "진짜 너무 웃겨",
+              "chat": "개웃겨ㅋㅋ"
+            }
+          ]
+        },
+        {
+          "id": "ko_kingbad",
+          "canonical": "킹받네",
+          "forms": [
+            "킹받네",
+            "킹받다"
+          ],
+          "meaning": "annoying / makes me mad, playful meme slang",
+          "register": [
+            "slang"
+          ],
+          "contexts": [
+            "social",
+            "gaming"
+          ],
+          "current": false,
+          "outdated": true,
+          "region": "South Korea",
+          "case_sensitive": false,
+          "whole_word": true,
+          "can_generate": false,
+          "can_recognize": true,
+          "avoid": [
+            "well-known but peaked earlier; Korean slang ages very fast"
+          ],
+          "examples": [
+            {
+              "normal": "좀 열받네",
+              "chat": "킹받네"
+            }
+          ]
+        }
+      ],
+      "phrases": [
+        {
+          "id": "ko_kk_phrase",
+          "meaning": "laughter / friendliness marker",
+          "source_examples": [
+            "ㅋㅋ",
+            "ㅋㅋㅋㅋ",
+            "문장 끝의 ㅋㅋ"
+          ],
+          "bad_literal_translations": [
+            "k k k"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "lol",
+              "haha"
+            ],
+            "slang": [
+              "lol",
+              "lmao"
+            ],
+            "heavy": [
+              "I'm dead"
+            ]
+          },
+          "contexts": [
+            "kakao",
+            "gaming",
+            "discord"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ko_go_phrase",
+          "meaning": "let's go / do it",
+          "source_examples": [
+            "ㄱㄱ",
+            "내일 ㄱㄱ?"
+          ],
+          "bad_literal_translations": [
+            "letters"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "let's go",
+              "wanna do it?"
+            ],
+            "slang": [
+              "go go",
+              "run it"
+            ],
+            "heavy": [
+              "queue up"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "kakao"
+          ],
+          "notes": ""
+        },
+        {
+          "id": "ko_real_phrase",
+          "meaning": "strong agreement / for real",
+          "source_examples": [
+            "ㄹㅇ",
+            "ㄹㅇ ㅇㅈ"
+          ],
+          "bad_literal_translations": [
+            "real letters"
+          ],
+          "natural_outputs": {
+            "casual": [
+              "for real",
+              "I agree"
+            ],
+            "slang": [
+              "fr",
+              "fr agreed"
+            ],
+            "heavy": [
+              "real shit"
+            ]
+          },
+          "contexts": [
+            "gaming",
+            "discord",
+            "social"
+          ],
+          "notes": ""
+        }
+      ],
+      "reactions": [
+        {
+          "id": "ko_kk_react",
+          "form": "ㅋㅋ",
+          "meaning": "laughter; also softens casual messages",
+          "equivalents": {
+            "en": [
+              "lol",
+              "haha"
+            ],
+            "ja": [
+              "w",
+              "草"
+            ],
+            "zh-CN": [
+              "hhh",
+              "233"
+            ]
+          },
+          "contexts": [
+            "kakao",
+            "gaming",
+            "discord"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ko_cry",
+          "form": "ㅠㅠ",
+          "meaning": "crying / sadness / whining",
+          "equivalents": {
+            "en": [
+              "😭",
+              "sad"
+            ],
+            "zh-CN": [
+              "555"
+            ],
+            "zh-TW": [
+              "QQ"
+            ]
+          },
+          "contexts": [
+            "kakao",
+            "texting",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ko_heol",
+          "form": "헐",
+          "meaning": "no way / omg / shock",
+          "equivalents": {
+            "en": [
+              "omg",
+              "no way"
+            ],
+            "ru": [
+              "офигеть",
+              "жесть"
+            ],
+            "de": [
+              "krass"
+            ]
+          },
+          "contexts": [
+            "texting",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        },
+        {
+          "id": "ko_daebak",
+          "form": "대박",
+          "meaning": "awesome / wow / jackpot",
+          "equivalents": {
+            "en": [
+              "wow",
+              "awesome"
+            ],
+            "ru": [
+              "круто"
+            ],
+            "zh-CN": [
+              "牛",
+              "666"
+            ]
+          },
+          "contexts": [
+            "texting",
+            "gaming",
+            "social"
+          ],
+          "current": true,
+          "outdated": false,
+          "notes": ""
+        }
+      ],
+      "gaming": [
+        {
+          "id": "ko_gg",
+          "canonical": "GG",
+          "forms": [
+            "gg",
+            "GG"
+          ],
+          "meaning": "good game",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "ko_afk",
+          "canonical": "AFK",
+          "forms": [
+            "afk",
+            "AFK"
+          ],
+          "meaning": "away from keyboard",
+          "keep_untranslated": true,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {}
+        },
+        {
+          "id": "ko_nerf",
+          "canonical": "너프",
+          "forms": [
+            "너프",
+            "너프됨"
+          ],
+          "meaning": "balance reduction",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "nerf"
+            ]
+          }
+        },
+        {
+          "id": "ko_buff",
+          "canonical": "버프",
+          "forms": [
+            "버프",
+            "버프됨"
+          ],
+          "meaning": "balance increase / beneficial effect",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "buff"
+            ]
+          }
+        },
+        {
+          "id": "ko_carry",
+          "canonical": "캐리",
+          "forms": [
+            "캐리",
+            "캐리하다"
+          ],
+          "meaning": "carry the team",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "carry"
+            ]
+          }
+        },
+        {
+          "id": "ko_troll",
+          "canonical": "트롤",
+          "forms": [
+            "트롤",
+            "트롤링"
+          ],
+          "meaning": "troll/griefing player",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "troll",
+              "griefer"
+            ]
+          }
+        },
+        {
+          "id": "ko_goimul",
+          "canonical": "고인물",
+          "forms": [
+            "고인물"
+          ],
+          "meaning": "highly experienced veteran player, often with huge game knowledge",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "veteran",
+              "sweat"
+            ]
+          }
+        },
+        {
+          "id": "ko_newbie",
+          "canonical": "뉴비",
+          "forms": [
+            "뉴비"
+          ],
+          "meaning": "new player",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "newbie"
+            ]
+          }
+        },
+        {
+          "id": "ko_bbakgem",
+          "canonical": "빡겜",
+          "forms": [
+            "빡겜"
+          ],
+          "meaning": "tryhard/serious play",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "tryhard",
+              "serious game"
+            ]
+          }
+        },
+        {
+          "id": "ko_jeulgem",
+          "canonical": "즐겜",
+          "forms": [
+            "즐겜"
+          ],
+          "meaning": "play for fun / casual game",
+          "keep_untranslated": false,
+          "contexts": [
+            "gaming"
+          ],
+          "translations": {
+            "en": [
+              "casual play",
+              "have fun"
+            ]
+          }
+        }
+      ],
+      "profanity": [
+        {
+          "id": "ko_ssibal",
+          "source": "씨발",
+          "language": "ko",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "shit",
+                "damn"
+              ],
+              "literal_allowed": false
+            },
+            {
+              "context": "insult/intensifier",
+              "natural": [
+                "fucking"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Romanized/literal treatment is usually less natural than pragmatic profanity."
+        },
+        {
+          "id": "ko_sb",
+          "source": "ㅅㅂ",
+          "language": "ko",
+          "meanings": [
+            {
+              "context": "reaction",
+              "natural": [
+                "fuck",
+                "shit"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Initial-consonant censorship/abbreviation of 씨발; heavy."
+        },
+        {
+          "id": "ko_jotdoetda",
+          "source": "좆됐다",
+          "language": "ko",
+          "meanings": [
+            {
+              "context": "situation",
+              "natural": [
+                "we're fucked",
+                "I'm screwed",
+                "this is bad"
+              ],
+              "literal_allowed": false
+            }
+          ],
+          "notes": "Do not translate the anatomical root literally."
+        }
+      ]
+    }
+  ],
+  "protected_entities": [
+    {
+      "name": "Steam",
+      "aliases": [
+        "steam"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true,
+      "protect_lowercase": false
+    },
+    {
+      "name": "Steam Tools",
+      "aliases": [
+        "steam tools"
+      ],
+      "type": "software",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Discord",
+      "aliases": [
+        "discord"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Vencord",
+      "aliases": [
+        "vencord"
+      ],
+      "type": "software",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Roblox",
+      "aliases": [
+        "roblox"
+      ],
+      "type": "game/platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Minecraft",
+      "aliases": [
+        "minecraft"
+      ],
+      "type": "game",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Fortnite",
+      "aliases": [
+        "fortnite"
+      ],
+      "type": "game",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Valorant",
+      "aliases": [
+        "valorant"
+      ],
+      "type": "game",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Counter-Strike 2",
+      "aliases": [
+        "counter-strike 2",
+        "counter strike 2",
+        "cs2"
+      ],
+      "type": "game",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "CS2",
+      "aliases": [
+        "cs2"
+      ],
+      "type": "game",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Iron Soul",
+      "aliases": [
+        "iron soul"
+      ],
+      "type": "game",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "GitHub",
+      "aliases": [
+        "github"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "KernelSU",
+      "aliases": [
+        "kernelsu"
+      ],
+      "type": "software",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Magisk",
+      "aliases": [
+        "magisk"
+      ],
+      "type": "software",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "HyperOS",
+      "aliases": [
+        "hyperos"
+      ],
+      "type": "operating_system",
+      "case_sensitive": false,
+      "always_keep": true,
+      "protect_lowercase": false
+    },
+    {
+      "name": "Windows",
+      "aliases": [
+        "windows"
+      ],
+      "type": "operating_system",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Linux",
+      "aliases": [
+        "linux"
+      ],
+      "type": "operating_system",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Android",
+      "aliases": [
+        "android"
+      ],
+      "type": "operating_system",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "iOS",
+      "aliases": [
+        "ios"
+      ],
+      "type": "operating_system",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Xiaomi",
+      "aliases": [
+        "xiaomi"
+      ],
+      "type": "brand",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Xiaomi 14",
+      "aliases": [
+        "xiaomi 14"
+      ],
+      "type": "product",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Telegram",
+      "aliases": [
+        "telegram"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "TikTok",
+      "aliases": [
+        "tiktok"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Douyin",
+      "aliases": [
+        "douyin",
+        "抖音"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Bilibili",
+      "aliases": [
+        "bilibili",
+        "哔哩哔哩",
+        "B站"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "WeChat",
+      "aliases": [
+        "wechat",
+        "微信"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Reddit",
+      "aliases": [
+        "reddit"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "YouTube",
+      "aliases": [
+        "youtube"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Twitch",
+      "aliases": [
+        "twitch"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "PlayStation",
+      "aliases": [
+        "playstation"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Xbox",
+      "aliases": [
+        "xbox"
+      ],
+      "type": "platform",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Nintendo Switch",
+      "aliases": [
+        "nintendo switch"
+      ],
+      "type": "product",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Unity",
+      "aliases": [
+        "unity"
+      ],
+      "type": "software",
+      "case_sensitive": false,
+      "always_keep": true,
+      "protect_lowercase": false
+    },
+    {
+      "name": "Unreal Engine",
+      "aliases": [
+        "unreal engine"
+      ],
+      "type": "software",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Python",
+      "aliases": [
+        "python"
+      ],
+      "type": "programming_language",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "JavaScript",
+      "aliases": [
+        "javascript",
+        "js"
+      ],
+      "type": "programming_language",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "TypeScript",
+      "aliases": [
+        "typescript",
+        "ts"
+      ],
+      "type": "programming_language",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "React",
+      "aliases": [
+        "react"
+      ],
+      "type": "library",
+      "case_sensitive": false,
+      "always_keep": true,
+      "protect_lowercase": false
+    },
+    {
+      "name": "Node.js",
+      "aliases": [
+        "node.js",
+        "nodejs"
+      ],
+      "type": "runtime",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "NVIDIA",
+      "aliases": [
+        "nvidia"
+      ],
+      "type": "brand",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "AMD",
+      "aliases": [
+        "amd"
+      ],
+      "type": "brand",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "Intel",
+      "aliases": [
+        "intel"
+      ],
+      "type": "brand",
+      "case_sensitive": false,
+      "always_keep": true
+    },
+    {
+      "name": "ASUS",
+      "aliases": [
+        "asus"
+      ],
+      "type": "brand",
+      "case_sensitive": false,
+      "always_keep": true
+    }
+  ],
+  "cross_language_rules": [
+    {
+      "id": "mixed_language_protection",
+      "description": "Protect intentional English names inside non-English text",
+      "rule": "If a Latin-script span is Title Case, known entity, acronym, product/game/software name, username, URL, code token, version, model number, or user-defined protected phrase, replace it with a placeholder before translation and restore it afterwards."
+    },
+    {
+      "id": "protect_urls",
+      "description": "Never translate or rewrite URLs",
+      "rule": "Detect http://, https://, www., domain names with paths/query strings, invite links, and deep links; preserve the full span byte-for-byte unless URL normalization is explicitly requested."
+    },
+    {
+      "id": "protect_discord_mentions",
+      "description": "Preserve Discord mentions and channel references",
+      "rule": "Protect <@id>, <@!id>, <@&id>, <#id>, @username, role mentions, and channel-style references before translation."
+    },
+    {
+      "id": "protect_emojis",
+      "description": "Preserve Unicode emoji sequences",
+      "rule": "Keep emoji code points, skin-tone modifiers, variation selectors, flags, keycaps, and ZWJ sequences unchanged and in the same relative position unless target-language punctuation requires harmless spacing."
+    },
+    {
+      "id": "protect_custom_discord_emojis",
+      "description": "Preserve custom Discord emoji syntax",
+      "rule": "Protect <:name:id> and <a:name:id> as atomic tokens; do not translate the emoji name inside the token."
+    },
+    {
+      "id": "protect_timestamps",
+      "description": "Preserve platform timestamps and time markup",
+      "rule": "Protect Discord timestamps such as <t:unix>, <t:unix:R>, ISO timestamps, and explicit machine-readable date-time tokens; translate only surrounding prose."
+    },
+    {
+      "id": "protect_code_blocks",
+      "description": "Do not translate fenced code blocks",
+      "rule": "Protect triple-backtick fenced blocks including language tags. Translate code comments only if explicitly requested."
+    },
+    {
+      "id": "protect_inline_code",
+      "description": "Do not translate inline code",
+      "rule": "Protect text inside single-backtick inline code spans as exact code tokens."
+    },
+    {
+      "id": "protect_file_paths",
+      "description": "Preserve file and directory paths",
+      "rule": "Protect Windows paths, POSIX paths, Android paths, UNC paths, filenames with extensions, and URI-like resource paths; do not translate path segments."
+    },
+    {
+      "id": "protect_cli",
+      "description": "Preserve command-line commands and flags",
+      "rule": "Protect shell commands, executable names, flags beginning with - or --, environment variable assignments, package coordinates, and command arguments that are syntactic tokens."
+    },
+    {
+      "id": "protect_versions",
+      "description": "Preserve software and game versions",
+      "rule": "Protect patterns such as v1.2.3, 1.2.3-beta, build 26200.9168, OS3.0.301.0.WNCMIXM, kernel versions, commit hashes, and release tags."
+    },
+    {
+      "id": "protect_model_numbers",
+      "description": "Preserve hardware/model identifiers",
+      "rule": "Protect alphanumeric model names such as RTX 5090, RX 9070 XT, Ryzen 7 9800X3D, Xiaomi 14, SM-S928B, 23127PN0CG, and similar product identifiers."
+    },
+    {
+      "id": "protect_usernames",
+      "description": "Preserve usernames, handles, and gamer tags",
+      "rule": "Protect @handles, platform usernames, discriminator-style names, mixed-case gamer tags, and user-defined names unless the user explicitly asks for transliteration."
+    },
+    {
+      "id": "protect_hashtags",
+      "description": "Preserve hashtag identity",
+      "rule": "Protect the # marker and named hashtag token. If the hashtag is a natural-language campaign phrase, optionally provide a translated gloss separately but do not replace the original tag by default."
+    },
+    {
+      "id": "protect_acronyms",
+      "description": "Do not expand or translate established platform/gaming acronyms blindly",
+      "rule": "Keep tokens such as GG, AFK, OP, FPS, DPS, PvP, PvE, NPC, CPU, GPU, RAM, API and SDK unchanged unless the target community convention strongly localizes them."
+    },
+    {
+      "id": "slang_generation_gate",
+      "description": "Separate recognition from generation",
+      "rule": "If an entry has can_generate=false and can_recognize=true, normalize its meaning for translation but do not emit that slang form in the target output unless the user explicitly requests that exact style or the surrounding conversation already uses it."
+    },
+    {
+      "id": "regional_slang_gate",
+      "description": "Respect region-specific slang",
+      "rule": "Do not generate region-marked slang outside its region unless the user requests that dialect. Recognition may remain enabled globally."
+    },
+    {
+      "id": "profanity_pragmatics",
+      "description": "Translate profanity by pragmatic function rather than literal anatomy",
+      "rule": "Classify profanity as reaction, intensifier, insult, doom statement, sexual/literal meaning, or filler before selecting a target equivalent. Prefer natural force and intent over dictionary literalness."
+    },
+    {
+      "id": "mixed_script_no_translation",
+      "description": "Protect intentional mixed-script technical spans",
+      "rule": "Inside a non-English sentence, preserve Latin-script package names, mod names, libraries, repo names, branch names, commit IDs, game item names, and exact UI labels when they appear intentional rather than ordinary foreign-language prose."
+    }
+  ],
+  "translation_mistakes": [
+    {
+      "id": "dead_chat_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "чат умер",
+        "чат мертв",
+        "мертвый чат"
+      ],
+      "bad_outputs": [
+        "the chat died",
+        "the chat is deceased"
+      ],
+      "preferred_outputs": [
+        "chat dead",
+        "dead chat",
+        "chat is dead"
+      ],
+      "contexts": [
+        "discord",
+        "gaming"
+      ]
+    },
+    {
+      "id": "dead_game_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "игра умерла",
+        "мертвая игра"
+      ],
+      "bad_outputs": [
+        "the game deceased"
+      ],
+      "preferred_outputs": [
+        "dead game",
+        "the game is dead"
+      ],
+      "contexts": [
+        "gaming"
+      ]
+    },
+    {
+      "id": "dead_server_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "сервер умер",
+        "сервак умер"
+      ],
+      "bad_outputs": [
+        "the server died as a person"
+      ],
+      "preferred_outputs": [
+        "server's dead",
+        "the server is down"
+      ],
+      "contexts": [
+        "discord",
+        "gaming"
+      ]
+    },
+    {
+      "id": "go_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "го",
+        "го играть",
+        "го катку"
+      ],
+      "bad_outputs": [
+        "go",
+        "go game"
+      ],
+      "preferred_outputs": [
+        "let's go",
+        "wanna play?",
+        "let's run a game",
+        "queue up"
+      ],
+      "contexts": [
+        "gaming",
+        "discord"
+      ]
+    },
+    {
+      "id": "imba_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "имба",
+        "имбовый"
+      ],
+      "bad_outputs": [
+        "imbalance",
+        "imbalanced thing"
+      ],
+      "preferred_outputs": [
+        "OP",
+        "broken",
+        "insane",
+        "really good"
+      ],
+      "contexts": [
+        "gaming",
+        "discord"
+      ]
+    },
+    {
+      "id": "zhest_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "жесть",
+        "это жесть"
+      ],
+      "bad_outputs": [
+        "cruelty",
+        "tin"
+      ],
+      "preferred_outputs": [
+        "damn",
+        "that's wild",
+        "that's rough",
+        "that's crazy"
+      ],
+      "contexts": [
+        "discord",
+        "telegram"
+      ]
+    },
+    {
+      "id": "kapets_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "капец",
+        "это капец"
+      ],
+      "bad_outputs": [
+        "the end",
+        "finish"
+      ],
+      "preferred_outputs": [
+        "damn",
+        "this is bad",
+        "that's crazy",
+        "we're cooked"
+      ],
+      "contexts": [
+        "discord",
+        "telegram",
+        "gaming"
+      ]
+    },
+    {
+      "id": "hz_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "хз",
+        "я хз"
+      ],
+      "bad_outputs": [
+        "dick knows",
+        "hell knows literally"
+      ],
+      "preferred_outputs": [
+        "idk",
+        "I don't know",
+        "no clue"
+      ],
+      "contexts": [
+        "discord",
+        "telegram",
+        "gaming"
+      ]
+    },
+    {
+      "id": "poh_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "пох",
+        "похуй",
+        "мне пох"
+      ],
+      "bad_outputs": [
+        "by dick",
+        "on dick"
+      ],
+      "preferred_outputs": [
+        "idc",
+        "I don't care",
+        "whatever",
+        "don't give a fuck"
+      ],
+      "contexts": [
+        "discord",
+        "telegram"
+      ]
+    },
+    {
+      "id": "bro_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "бро",
+        "братан"
+      ],
+      "bad_outputs": [
+        "brother"
+      ],
+      "preferred_outputs": [
+        "bro",
+        "dude",
+        "man"
+      ],
+      "contexts": [
+        "discord",
+        "gaming",
+        "texting"
+      ]
+    },
+    {
+      "id": "chel_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "чел",
+        "этот чел"
+      ],
+      "bad_outputs": [
+        "human",
+        "person literally"
+      ],
+      "preferred_outputs": [
+        "guy",
+        "dude",
+        "this guy"
+      ],
+      "contexts": [
+        "discord",
+        "telegram",
+        "gaming"
+      ]
+    },
+    {
+      "id": "katka_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "катка",
+        "в катку",
+        "го катку"
+      ],
+      "bad_outputs": [
+        "rolling",
+        "skating"
+      ],
+      "preferred_outputs": [
+        "match",
+        "game",
+        "run"
+      ],
+      "contexts": [
+        "gaming"
+      ]
+    },
+    {
+      "id": "tima_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "тима",
+        "тимка"
+      ],
+      "bad_outputs": [
+        "Tim"
+      ],
+      "preferred_outputs": [
+        "team"
+      ],
+      "contexts": [
+        "gaming"
+      ]
+    },
+    {
+      "id": "lag_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "лагает",
+        "у меня лагает"
+      ],
+      "bad_outputs": [
+        "it lies",
+        "it is late"
+      ],
+      "preferred_outputs": [
+        "it's lagging",
+        "I'm lagging"
+      ],
+      "contexts": [
+        "gaming",
+        "discord"
+      ]
+    },
+    {
+      "id": "bored_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "мне скучно"
+      ],
+      "bad_outputs": [
+        "to me it is boring"
+      ],
+      "preferred_outputs": [
+        "I'm bored"
+      ],
+      "contexts": [
+        "texting",
+        "discord"
+      ]
+    },
+    {
+      "id": "where_everyone_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "где все",
+        "а где все"
+      ],
+      "bad_outputs": [
+        "where all"
+      ],
+      "preferred_outputs": [
+        "where is everyone?",
+        "where y'all at?"
+      ],
+      "contexts": [
+        "discord",
+        "gaming"
+      ]
+    },
+    {
+      "id": "who_here_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "кто тут",
+        "кто здесь"
+      ],
+      "bad_outputs": [
+        "who here"
+      ],
+      "preferred_outputs": [
+        "who's here?",
+        "anyone here?"
+      ],
+      "contexts": [
+        "discord",
+        "telegram"
+      ]
+    },
+    {
+      "id": "afk_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "он афк",
+        "он в афк"
+      ],
+      "bad_outputs": [
+        "he is in away from keyboard"
+      ],
+      "preferred_outputs": [
+        "he's AFK"
+      ],
+      "contexts": [
+        "gaming",
+        "discord"
+      ]
+    },
+    {
+      "id": "nam_pizda_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "нам пизда",
+        "нам пиздец"
+      ],
+      "bad_outputs": [
+        "we have pussy",
+        "we are pussy"
+      ],
+      "preferred_outputs": [
+        "we're fucked",
+        "we're screwed",
+        "we're cooked"
+      ],
+      "contexts": [
+        "gaming",
+        "discord"
+      ]
+    },
+    {
+      "id": "eto_pizdets_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "это пиздец",
+        "пиздец"
+      ],
+      "bad_outputs": [
+        "this is cunt",
+        "this is pussy"
+      ],
+      "preferred_outputs": [
+        "this is fucked",
+        "holy shit",
+        "this is insane",
+        "what a mess"
+      ],
+      "contexts": [
+        "discord",
+        "telegram",
+        "gaming"
+      ]
+    },
+    {
+      "id": "seriously_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "ты серьезно?",
+        "ты серьёзно?"
+      ],
+      "bad_outputs": [
+        "you seriously?"
+      ],
+      "preferred_outputs": [
+        "are you serious?",
+        "fr?",
+        "you serious?"
+      ],
+      "contexts": [
+        "texting",
+        "discord"
+      ]
+    },
+    {
+      "id": "che_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "че",
+        "чё"
+      ],
+      "bad_outputs": [
+        "what is 'che'"
+      ],
+      "preferred_outputs": [
+        "what?",
+        "huh?"
+      ],
+      "contexts": [
+        "texting",
+        "discord"
+      ]
+    },
+    {
+      "id": "cheza_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "че за",
+        "чё за",
+        "что за"
+      ],
+      "bad_outputs": [
+        "what for"
+      ],
+      "preferred_outputs": [
+        "what's this?",
+        "what the hell is this?",
+        "what kind of..."
+      ],
+      "contexts": [
+        "discord",
+        "gaming"
+      ]
+    },
+    {
+      "id": "schas_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "щас",
+        "ща"
+      ],
+      "bad_outputs": [
+        "nowadays"
+      ],
+      "preferred_outputs": [
+        "now",
+        "in a sec",
+        "one sec"
+      ],
+      "contexts": [
+        "texting",
+        "discord"
+      ]
+    },
+    {
+      "id": "ksta_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "кста",
+        "кст"
+      ],
+      "bad_outputs": [
+        "to the word"
+      ],
+      "preferred_outputs": [
+        "btw",
+        "by the way"
+      ],
+      "contexts": [
+        "texting",
+        "discord"
+      ]
+    },
+    {
+      "id": "krasava_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "красава",
+        "красавчик"
+      ],
+      "bad_outputs": [
+        "handsome man"
+      ],
+      "preferred_outputs": [
+        "nice",
+        "good job",
+        "legend",
+        "my guy"
+      ],
+      "contexts": [
+        "gaming",
+        "discord"
+      ]
+    },
+    {
+      "id": "horosh_ru_en",
+      "source_language": "ru",
+      "target_language": "en",
+      "source_patterns": [
+        "хорош",
+        "харош"
+      ],
+      "bad_outputs": [
+        "good"
+      ],
+      "preferred_outputs": [
+        "nice",
+        "good one",
+        "well played",
+        "stop/enough"
+      ],
+      "contexts": [
+        "gaming",
+        "discord"
+      ]
+    },
+    {
+      "id": "cn_666_en",
+      "source_language": "zh-CN",
+      "target_language": "en",
+      "source_patterns": [
+        "666",
+        "666666"
+      ],
+      "bad_outputs": [
+        "six six six"
+      ],
+      "preferred_outputs": [
+        "nice",
+        "sick",
+        "well played",
+        "damn"
+      ],
+      "contexts": [
+        "gaming",
+        "bilibili",
+        "chat"
+      ]
+    },
+    {
+      "id": "cn_xswl_en",
+      "source_language": "zh-CN",
+      "target_language": "en",
+      "source_patterns": [
+        "xswl",
+        "笑死我了"
+      ],
+      "bad_outputs": [
+        "laughing killed me literally"
+      ],
+      "preferred_outputs": [
+        "lmao",
+        "I'm dead",
+        "dying"
+      ],
+      "contexts": [
+        "bilibili",
+        "douyin",
+        "chat"
+      ]
+    },
+    {
+      "id": "cn_renji_en",
+      "source_language": "zh-CN",
+      "target_language": "en",
+      "source_patterns": [
+        "人机",
+        "纯人机"
+      ],
+      "bad_outputs": [
+        "human-machine"
+      ],
+      "preferred_outputs": [
+        "bot",
+        "NPC",
+        "actual bot"
+      ],
+      "contexts": [
+        "gaming",
+        "douyin"
+      ]
+    },
+    {
+      "id": "cn_nitian_en",
+      "source_language": "zh-CN",
+      "target_language": "en",
+      "source_patterns": [
+        "逆天",
+        "太逆天了"
+      ],
+      "bad_outputs": [
+        "against heaven"
+      ],
+      "preferred_outputs": [
+        "insane",
+        "unhinged",
+        "outrageous",
+        "wtf"
+      ],
+      "contexts": [
+        "douyin",
+        "bilibili",
+        "gaming"
+      ]
+    },
+    {
+      "id": "cn_beng_en",
+      "source_language": "zh-CN",
+      "target_language": "en",
+      "source_patterns": [
+        "绷不住了",
+        "蚌埠住了"
+      ],
+      "bad_outputs": [
+        "can't stretch it",
+        "can't hold tight"
+      ],
+      "preferred_outputs": [
+        "I can't",
+        "I'm losing it",
+        "I'm dead",
+        "can't hold it together"
+      ],
+      "contexts": [
+        "bilibili",
+        "douyin",
+        "chat"
+      ]
+    },
+    {
+      "id": "tw_484_en",
+      "source_language": "zh-TW",
+      "target_language": "en",
+      "source_patterns": [
+        "484"
+      ],
+      "bad_outputs": [
+        "four eight four"
+      ],
+      "preferred_outputs": [
+        "is it?",
+        "isn't it?",
+        "are you...?"
+      ],
+      "contexts": [
+        "line",
+        "dcard",
+        "ptt"
+      ]
+    },
+    {
+      "id": "tw_kaobei_en",
+      "source_language": "zh-TW",
+      "target_language": "en",
+      "source_patterns": [
+        "靠北",
+        "靠邀"
+      ],
+      "bad_outputs": [
+        "lean north",
+        "lean invite"
+      ],
+      "preferred_outputs": [
+        "damn",
+        "wtf",
+        "come on",
+        "stop bitching"
+      ],
+      "contexts": [
+        "ptt",
+        "dcard",
+        "gaming"
+      ]
+    },
+    {
+      "id": "ja_kusa_en",
+      "source_language": "ja",
+      "target_language": "en",
+      "source_patterns": [
+        "草",
+        "草生える",
+        "www"
+      ],
+      "bad_outputs": [
+        "grass",
+        "grass grows"
+      ],
+      "preferred_outputs": [
+        "lol",
+        "lmao",
+        "that's hilarious"
+      ],
+      "contexts": [
+        "gaming",
+        "x",
+        "youtube"
+      ]
+    },
+    {
+      "id": "ko_kk_en",
+      "source_language": "ko",
+      "target_language": "en",
+      "source_patterns": [
+        "ㅋㅋ",
+        "ㅋㅋㅋㅋ"
+      ],
+      "bad_outputs": [
+        "kk",
+        "letter k"
+      ],
+      "preferred_outputs": [
+        "lol",
+        "haha",
+        "lmao"
+      ],
+      "contexts": [
+        "kakao",
+        "gaming",
+        "discord"
+      ]
+    },
+    {
+      "id": "fr_chat_en",
+      "source_language": "fr",
+      "target_language": "en",
+      "source_patterns": [
+        "le chat est mort",
+        "chat mort"
+      ],
+      "bad_outputs": [
+        "the cat is dead"
+      ],
+      "preferred_outputs": [
+        "the chat is dead",
+        "dead chat"
+      ],
+      "contexts": [
+        "discord",
+        "gaming"
+      ]
+    },
+    {
+      "id": "pt_fodeu_en",
+      "source_language": "pt-BR",
+      "target_language": "en",
+      "source_patterns": [
+        "fodeu",
+        "agora fodeu"
+      ],
+      "bad_outputs": [
+        "it fucked"
+      ],
+      "preferred_outputs": [
+        "we're fucked",
+        "we're screwed",
+        "now we're in trouble"
+      ],
+      "contexts": [
+        "gaming",
+        "discord",
+        "whatsapp"
+      ]
+    },
+    {
+      "id": "pl_kurwa_en",
+      "source_language": "pl",
+      "target_language": "en",
+      "source_patterns": [
+        "kurwa"
+      ],
+      "bad_outputs": [
+        "whore"
+      ],
+      "preferred_outputs": [
+        "fuck",
+        "damn",
+        "shit"
+      ],
+      "contexts": [
+        "gaming",
+        "discord",
+        "texting"
+      ]
+    },
+    {
+      "id": "es_no_mames_en",
+      "source_language": "es",
+      "target_language": "en",
+      "source_patterns": [
+        "no mames",
+        "nmms"
+      ],
+      "bad_outputs": [
+        "don't suck"
+      ],
+      "preferred_outputs": [
+        "no way",
+        "you're kidding",
+        "wtf"
+      ],
+      "contexts": [
+        "Mexico",
+        "gaming",
+        "texting"
+      ]
+    }
+  ],
+  "semantic_mappings": [
+    {
+      "id": "speaker_doomed",
+      "category": "doom",
+      "meaning": "the speaker expects to fail or is in serious trouble",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "sources": {
+        "en": {
+          "forms": [
+            "i'm cooked",
+            "im cooked",
+            "i am cooked"
+          ],
+          "normalized": "I am in serious trouble",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "negative_patterns": [
+            "chicken",
+            "food",
+            "dinner",
+            "meal",
+            "oven"
+          ]
+        },
+        "de": {
+          "forms": [
+            "ich bin geliefert"
+          ],
+          "normalized": "ich bin in ernsthaften Schwierigkeiten",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ru": {
+          "forms": [
+            "мне конец",
+            "я всё"
+          ],
+          "normalized": "у меня серьёзные проблемы",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "uk": {
+          "forms": [
+            "мені кінець",
+            "я все"
+          ],
+          "normalized": "у мене серйозні проблеми",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-CN": {
+          "forms": [
+            "我寄了",
+            "这下寄了"
+          ],
+          "normalized": "我这次要失败了",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-TW": {
+          "forms": [
+            "我沒救了",
+            "這下完了"
+          ],
+          "normalized": "我這次要失敗了",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "es": {
+          "forms": [
+            "estoy frito",
+            "ya valí"
+          ],
+          "normalized": "estoy en serios problemas",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "fr": {
+          "forms": [
+            "je suis foutu",
+            "j'suis foutu"
+          ],
+          "normalized": "je suis dans de sérieux problèmes",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pt-BR": {
+          "forms": [
+            "tô ferrado",
+            "me ferrei"
+          ],
+          "normalized": "estou em sérios apuros",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pl": {
+          "forms": [
+            "po mnie"
+          ],
+          "normalized": "mam poważne kłopoty",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ja": {
+          "forms": [
+            "詰んだ",
+            "もう無理"
+          ],
+          "normalized": "もう失敗しそうだ",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "ko": {
+          "forms": [
+            "망했다",
+            "나 망함"
+          ],
+          "normalized": "나는 실패할 것 같다",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "I am in serious trouble"
+          ],
+          "casual": [
+            "I'm in trouble"
+          ],
+          "slang": [
+            "I'm cooked"
+          ],
+          "heavy": [
+            "im cooked"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Ich bin in ernsthaften Schwierigkeiten"
+          ],
+          "casual": [
+            "Ich bin geliefert"
+          ],
+          "slang": [
+            "ich bin geliefert"
+          ],
+          "heavy": [
+            "ich bin geliefert"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "У меня серьёзные проблемы"
+          ],
+          "casual": [
+            "Мне конец"
+          ],
+          "slang": [
+            "я всё"
+          ],
+          "heavy": [
+            "я всё"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "У мене серйозні проблеми"
+          ],
+          "casual": [
+            "Мені кінець"
+          ],
+          "slang": [
+            "я все"
+          ],
+          "heavy": [
+            "я все"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "我这次要失败了"
+          ],
+          "casual": [
+            "这下完了"
+          ],
+          "slang": [
+            "我寄了"
+          ],
+          "heavy": [
+            "我寄了"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "我這次要失敗了"
+          ],
+          "casual": [
+            "這下完了"
+          ],
+          "slang": [
+            "我沒救了"
+          ],
+          "heavy": [
+            "我沒救了"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Estoy en serios problemas"
+          ],
+          "casual": [
+            "Estoy frito"
+          ],
+          "slang": [
+            "estoy frito"
+          ],
+          "heavy": [
+            "estoy frito"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "Je suis dans de sérieux problèmes"
+          ],
+          "casual": [
+            "Je suis foutu"
+          ],
+          "slang": [
+            "j'suis foutu"
+          ],
+          "heavy": [
+            "j'suis foutu"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Estou em sérios apuros"
+          ],
+          "casual": [
+            "Tô ferrado"
+          ],
+          "slang": [
+            "tô ferrado"
+          ],
+          "heavy": [
+            "tô ferrado"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Mam poważne kłopoty"
+          ],
+          "casual": [
+            "Po mnie"
+          ],
+          "slang": [
+            "po mnie"
+          ],
+          "heavy": [
+            "po mnie"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "もう失敗しそうです"
+          ],
+          "casual": [
+            "もう無理"
+          ],
+          "slang": [
+            "詰んだ"
+          ],
+          "heavy": [
+            "詰んだ"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "실패할 것 같습니다"
+          ],
+          "casual": [
+            "망했어"
+          ],
+          "slang": [
+            "망했다"
+          ],
+          "heavy": [
+            "망함"
+          ]
+        }
+      },
+      "literal_failures": {
+        "ru": [
+          "я приготовлен",
+          "меня приготовили"
+        ],
+        "de": [
+          "ich bin gekocht"
+        ],
+        "es": [
+          "estoy cocinado"
+        ],
+        "fr": [
+          "je suis cuit"
+        ],
+        "pt-BR": [
+          "estou cozido"
+        ],
+        "pl": [
+          "jestem ugotowany"
+        ],
+        "ja": [
+          "私は調理されています"
+        ],
+        "ko": [
+          "나는 요리되었습니다"
+        ],
+        "zh-CN": [
+          "我被煮熟了"
+        ],
+        "zh-TW": [
+          "我被煮熟了"
+        ]
+      }
+    },
+    {
+      "id": "group_doomed",
+      "category": "doom",
+      "meaning": "the speaker's group expects to lose or be in serious trouble",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "sources": {
+        "en": {
+          "forms": [
+            "we're cooked",
+            "were cooked",
+            "we are cooked"
+          ],
+          "normalized": "we are likely to lose",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "negative_patterns": [
+            "food",
+            "dinner",
+            "meal"
+          ]
+        },
+        "de": {
+          "forms": [
+            "wir sind geliefert"
+          ],
+          "normalized": "wir werden wahrscheinlich verlieren",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ru": {
+          "forms": [
+            "нам конец",
+            "мы всё"
+          ],
+          "normalized": "мы, скорее всего, проиграем",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "uk": {
+          "forms": [
+            "нам кінець",
+            "ми все"
+          ],
+          "normalized": "ми, скоріше за все, програємо",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-CN": {
+          "forms": [
+            "这把寄了",
+            "我们寄了"
+          ],
+          "normalized": "我们这局可能要输了",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-TW": {
+          "forms": [
+            "這把沒救了",
+            "我們完了"
+          ],
+          "normalized": "我們這局可能要輸了",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "es": {
+          "forms": [
+            "estamos fritos"
+          ],
+          "normalized": "probablemente vamos a perder",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "fr": {
+          "forms": [
+            "on est foutus",
+            "on est cuits"
+          ],
+          "normalized": "on va probablement perdre",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pt-BR": {
+          "forms": [
+            "a gente se ferrou",
+            "tamo ferrado"
+          ],
+          "normalized": "provavelmente vamos perder",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pl": {
+          "forms": [
+            "po nas"
+          ],
+          "normalized": "prawdopodobnie przegramy",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ja": {
+          "forms": [
+            "これ詰んだ",
+            "もう詰みだ"
+          ],
+          "normalized": "このままでは負けそうだ",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ko": {
+          "forms": [
+            "우리 망했다",
+            "이 판 망함"
+          ],
+          "normalized": "이번 판은 질 것 같다",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "We are likely to lose"
+          ],
+          "casual": [
+            "We're in trouble"
+          ],
+          "slang": [
+            "we're cooked"
+          ],
+          "heavy": [
+            "were cooked"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Wir werden wahrscheinlich verlieren"
+          ],
+          "casual": [
+            "Wir sind geliefert"
+          ],
+          "slang": [
+            "wir sind geliefert"
+          ],
+          "heavy": [
+            "wir sind geliefert"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Мы, скорее всего, проиграем"
+          ],
+          "casual": [
+            "Нам конец"
+          ],
+          "slang": [
+            "нам конец"
+          ],
+          "heavy": [
+            "нам конец"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Ми, скоріше за все, програємо"
+          ],
+          "casual": [
+            "Нам кінець"
+          ],
+          "slang": [
+            "нам кінець"
+          ],
+          "heavy": [
+            "нам кінець"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "我们这局可能要输了"
+          ],
+          "casual": [
+            "这把要输了"
+          ],
+          "slang": [
+            "这把寄了"
+          ],
+          "heavy": [
+            "这把寄了"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "我們這局可能要輸了"
+          ],
+          "casual": [
+            "這把要輸了"
+          ],
+          "slang": [
+            "這把沒救了"
+          ],
+          "heavy": [
+            "這把沒救了"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Probablemente vamos a perder"
+          ],
+          "casual": [
+            "Estamos fritos"
+          ],
+          "slang": [
+            "estamos fritos"
+          ],
+          "heavy": [
+            "estamos fritos"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "Nous allons probablement perdre"
+          ],
+          "casual": [
+            "On est foutus"
+          ],
+          "slang": [
+            "on est foutus"
+          ],
+          "heavy": [
+            "on est foutus"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Provavelmente vamos perder"
+          ],
+          "casual": [
+            "A gente se ferrou"
+          ],
+          "slang": [
+            "tamo ferrado"
+          ],
+          "heavy": [
+            "tamo ferrado"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Prawdopodobnie przegramy"
+          ],
+          "casual": [
+            "Po nas"
+          ],
+          "slang": [
+            "po nas"
+          ],
+          "heavy": [
+            "po nas"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "このままでは負けそうです"
+          ],
+          "casual": [
+            "これもう無理"
+          ],
+          "slang": [
+            "これ詰んだ"
+          ],
+          "heavy": [
+            "これ詰んだ"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "이번 판은 질 것 같습니다"
+          ],
+          "casual": [
+            "우리 망했어"
+          ],
+          "slang": [
+            "우리 망했다"
+          ],
+          "heavy": [
+            "이 판 망함"
+          ]
+        }
+      }
+    },
+    {
+      "id": "comeback_restored",
+      "category": "comeback",
+      "meaning": "the situation has improved again after looking bad",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "sources": {
+        "en": {
+          "forms": [
+            "we're so back",
+            "were so back"
+          ],
+          "normalized": "things are going well for us again",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "de": {
+          "forms": [
+            "wir sind wieder da"
+          ],
+          "normalized": "es läuft wieder gut für uns",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "ru": {
+          "forms": [
+            "мы снова в игре",
+            "камбэкнули"
+          ],
+          "normalized": "у нас снова всё получается",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "uk": {
+          "forms": [
+            "ми знову в грі"
+          ],
+          "normalized": "у нас знову все виходить",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-CN": {
+          "forms": [
+            "我们又行了",
+            "又活了"
+          ],
+          "normalized": "情况又好起来了",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "zh-TW": {
+          "forms": [
+            "我們又行了",
+            "又活了"
+          ],
+          "normalized": "情況又好起來了",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "es": {
+          "forms": [
+            "estamos de vuelta"
+          ],
+          "normalized": "las cosas nos vuelven a ir bien",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "fr": {
+          "forms": [
+            "on est de retour"
+          ],
+          "normalized": "ça va de nouveau bien pour nous",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "pt-BR": {
+          "forms": [
+            "voltamos",
+            "tamo de volta"
+          ],
+          "normalized": "as coisas voltaram a dar certo",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "pl": {
+          "forms": [
+            "wracamy do gry"
+          ],
+          "normalized": "znowu dobrze nam idzie",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ja": {
+          "forms": [
+            "復活した",
+            "またいける"
+          ],
+          "normalized": "またうまくいき始めた",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "ko": {
+          "forms": [
+            "다시 살아났다",
+            "우리 다시 된다"
+          ],
+          "normalized": "상황이 다시 좋아졌다",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "Things are going well for us again"
+          ],
+          "casual": [
+            "We're back"
+          ],
+          "slang": [
+            "we're back"
+          ],
+          "heavy": [
+            "we're back"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Für uns läuft es wieder gut"
+          ],
+          "casual": [
+            "Wir sind wieder da"
+          ],
+          "slang": [
+            "Wir sind wieder da"
+          ],
+          "heavy": [
+            "Wir sind wieder da"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "У нас снова всё получается"
+          ],
+          "casual": [
+            "Мы снова в игре"
+          ],
+          "slang": [
+            "Мы снова в игре"
+          ],
+          "heavy": [
+            "Мы снова в игре"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "У нас знову все виходить"
+          ],
+          "casual": [
+            "Ми знову в грі"
+          ],
+          "slang": [
+            "Ми знову в грі"
+          ],
+          "heavy": [
+            "Ми знову в грі"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "情况又好起来了"
+          ],
+          "casual": [
+            "我们又行了"
+          ],
+          "slang": [
+            "我们又行了"
+          ],
+          "heavy": [
+            "我们又行了"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "情況又好起來了"
+          ],
+          "casual": [
+            "我們又行了"
+          ],
+          "slang": [
+            "我們又行了"
+          ],
+          "heavy": [
+            "我們又行了"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Las cosas nos vuelven a ir bien"
+          ],
+          "casual": [
+            "Estamos de vuelta"
+          ],
+          "slang": [
+            "Estamos de vuelta"
+          ],
+          "heavy": [
+            "Estamos de vuelta"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "La situation s'est rétablie"
+          ],
+          "casual": [
+            "On est de retour"
+          ],
+          "slang": [
+            "On est de retour"
+          ],
+          "heavy": [
+            "On est de retour"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "As coisas voltaram a dar certo"
+          ],
+          "casual": [
+            "Voltamos"
+          ],
+          "slang": [
+            "Voltamos"
+          ],
+          "heavy": [
+            "Voltamos"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Znowu dobrze nam idzie"
+          ],
+          "casual": [
+            "Wracamy do gry"
+          ],
+          "slang": [
+            "Wracamy do gry"
+          ],
+          "heavy": [
+            "Wracamy do gry"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "またうまくいき始めました"
+          ],
+          "casual": [
+            "復活した"
+          ],
+          "slang": [
+            "復活した"
+          ],
+          "heavy": [
+            "復活した"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "상황이 다시 좋아졌습니다"
+          ],
+          "casual": [
+            "다시 살아났어"
+          ],
+          "slang": [
+            "다시 살아났어"
+          ],
+          "heavy": [
+            "다시 살아났어"
+          ]
+        }
+      }
+    },
+    {
+      "id": "strong_disbelief",
+      "category": "reaction",
+      "meaning": "strong disbelief at what just happened or was said",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "sources": {
+        "en": {
+          "forms": [
+            "ain't no way",
+            "aint no way",
+            "no shot"
+          ],
+          "normalized": "I cannot believe that",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "de": {
+          "forms": [
+            "niemals",
+            "das kann nicht sein"
+          ],
+          "normalized": "das kann ich nicht glauben",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "ru": {
+          "forms": [
+            "да ну нахуй",
+            "не может быть"
+          ],
+          "normalized": "я не могу в это поверить",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "uk": {
+          "forms": [
+            "та ну",
+            "не може бути"
+          ],
+          "normalized": "я не можу в це повірити",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "zh-CN": {
+          "forms": [
+            "不是吧",
+            "不可能吧"
+          ],
+          "normalized": "我不敢相信",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "zh-TW": {
+          "forms": [
+            "不是吧",
+            "不可能吧"
+          ],
+          "normalized": "我不敢相信",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "es": {
+          "forms": [
+            "no puede ser",
+            "ni de coña"
+          ],
+          "normalized": "no me lo puedo creer",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "fr": {
+          "forms": [
+            "mais non",
+            "c'est pas possible"
+          ],
+          "normalized": "je n'arrive pas à y croire",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "pt-BR": {
+          "forms": [
+            "nem ferrando",
+            "não é possível"
+          ],
+          "normalized": "não consigo acreditar",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "pl": {
+          "forms": [
+            "nie ma szans",
+            "niemożliwe"
+          ],
+          "normalized": "nie mogę w to uwierzyć",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "ja": {
+          "forms": [
+            "ありえない",
+            "まさか"
+          ],
+          "normalized": "信じられない",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        },
+        "ko": {
+          "forms": [
+            "말도 안 돼",
+            "설마"
+          ],
+          "normalized": "믿을 수 없다",
+          "confidence": "medium",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "exact_only": true
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "I cannot believe that"
+          ],
+          "casual": [
+            "No way"
+          ],
+          "slang": [
+            "ain't no way"
+          ],
+          "heavy": [
+            "ain't no way"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Das kann ich nicht glauben"
+          ],
+          "casual": [
+            "Niemals"
+          ],
+          "slang": [
+            "Niemals"
+          ],
+          "heavy": [
+            "Niemals"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Я не могу в это поверить"
+          ],
+          "casual": [
+            "Не может быть"
+          ],
+          "slang": [
+            "да ну"
+          ],
+          "heavy": [
+            "да ну"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Я не можу в це повірити"
+          ],
+          "casual": [
+            "Не може бути"
+          ],
+          "slang": [
+            "та ну"
+          ],
+          "heavy": [
+            "та ну"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "我不敢相信"
+          ],
+          "casual": [
+            "不是吧"
+          ],
+          "slang": [
+            "不是吧"
+          ],
+          "heavy": [
+            "不是吧"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "我不敢相信"
+          ],
+          "casual": [
+            "不是吧"
+          ],
+          "slang": [
+            "不是吧"
+          ],
+          "heavy": [
+            "不是吧"
+          ]
+        },
+        "es": {
+          "clean": [
+            "No me lo puedo creer"
+          ],
+          "casual": [
+            "No puede ser"
+          ],
+          "slang": [
+            "No puede ser"
+          ],
+          "heavy": [
+            "No puede ser"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "Je n'arrive pas à y croire"
+          ],
+          "casual": [
+            "C'est pas possible"
+          ],
+          "slang": [
+            "C'est pas possible"
+          ],
+          "heavy": [
+            "C'est pas possible"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Não consigo acreditar"
+          ],
+          "casual": [
+            "Não é possível"
+          ],
+          "slang": [
+            "Não é possível"
+          ],
+          "heavy": [
+            "Não é possível"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Nie mogę w to uwierzyć"
+          ],
+          "casual": [
+            "Niemożliwe"
+          ],
+          "slang": [
+            "Niemożliwe"
+          ],
+          "heavy": [
+            "Niemożliwe"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "信じられません"
+          ],
+          "casual": [
+            "ありえない"
+          ],
+          "slang": [
+            "ありえない"
+          ],
+          "heavy": [
+            "ありえない"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "믿을 수 없습니다"
+          ],
+          "casual": [
+            "말도 안 돼"
+          ],
+          "slang": [
+            "말도 안 돼"
+          ],
+          "heavy": [
+            "말도 안 돼"
+          ]
+        }
+      }
+    },
+    {
+      "id": "let_them_work",
+      "category": "approval",
+      "meaning": "allow someone to continue because their idea may work",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "sources": {
+        "en": {
+          "forms": [
+            "let him cook",
+            "let her cook",
+            "let them cook",
+            "let bro cook"
+          ],
+          "normalized": "let them continue; their idea may work",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "negative_patterns": [
+            "kitchen",
+            "dinner",
+            "food",
+            "meal"
+          ]
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "Let them continue; their idea may work"
+          ],
+          "casual": [
+            "Let them keep going"
+          ],
+          "slang": [
+            "Let them keep going"
+          ],
+          "heavy": [
+            "Let them keep going"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Lass sie weitermachen, die Idee könnte funktionieren"
+          ],
+          "casual": [
+            "Lass sie machen"
+          ],
+          "slang": [
+            "Lass sie machen"
+          ],
+          "heavy": [
+            "Lass sie machen"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Пусть продолжает — идея может сработать"
+          ],
+          "casual": [
+            "Пусть делает"
+          ],
+          "slang": [
+            "Пусть делает"
+          ],
+          "heavy": [
+            "Пусть делает"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Нехай продовжує — ідея може спрацювати"
+          ],
+          "casual": [
+            "Нехай робить"
+          ],
+          "slang": [
+            "Нехай робить"
+          ],
+          "heavy": [
+            "Нехай робить"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "让他继续，他的想法可能可行"
+          ],
+          "casual": [
+            "让他继续"
+          ],
+          "slang": [
+            "让他继续"
+          ],
+          "heavy": [
+            "让他继续"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "讓他繼續，他的想法可能可行"
+          ],
+          "casual": [
+            "讓他繼續"
+          ],
+          "slang": [
+            "讓他繼續"
+          ],
+          "heavy": [
+            "讓他繼續"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Déjalo seguir; su idea puede funcionar"
+          ],
+          "casual": [
+            "Déjalo seguir"
+          ],
+          "slang": [
+            "Déjalo seguir"
+          ],
+          "heavy": [
+            "Déjalo seguir"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "Laisse-le continuer, son idée peut marcher"
+          ],
+          "casual": [
+            "Laisse-le faire"
+          ],
+          "slang": [
+            "Laisse-le faire"
+          ],
+          "heavy": [
+            "Laisse-le faire"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Deixa ele continuar; a ideia pode dar certo"
+          ],
+          "casual": [
+            "Deixa ele fazer"
+          ],
+          "slang": [
+            "Deixa ele fazer"
+          ],
+          "heavy": [
+            "Deixa ele fazer"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Niech działa, ten pomysł może wypalić"
+          ],
+          "casual": [
+            "Niech działa"
+          ],
+          "slang": [
+            "Niech działa"
+          ],
+          "heavy": [
+            "Niech działa"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "うまくいくかもしれないので続けさせてください"
+          ],
+          "casual": [
+            "そのままやらせて"
+          ],
+          "slang": [
+            "そのままやらせて"
+          ],
+          "heavy": [
+            "そのままやらせて"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "잘될 수도 있으니 계속하게 두세요"
+          ],
+          "casual": [
+            "계속하게 둬"
+          ],
+          "slang": [
+            "계속하게 둬"
+          ],
+          "heavy": [
+            "계속하게 둬"
+          ]
+        }
+      }
+    },
+    {
+      "id": "did_exceptionally_well",
+      "category": "praise",
+      "meaning": "someone did something exceptionally well",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "sources": {
+        "en": {
+          "forms": [
+            "he cooked",
+            "she cooked",
+            "they cooked",
+            "bro cooked"
+          ],
+          "normalized": "they did that exceptionally well",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "negative_patterns": [
+            "dinner",
+            "food",
+            "meal",
+            "chicken"
+          ]
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "They did that exceptionally well"
+          ],
+          "casual": [
+            "They nailed it"
+          ],
+          "slang": [
+            "They nailed it"
+          ],
+          "heavy": [
+            "They nailed it"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Das haben sie außergewöhnlich gut gemacht"
+          ],
+          "casual": [
+            "Richtig gut gemacht"
+          ],
+          "slang": [
+            "Richtig gut gemacht"
+          ],
+          "heavy": [
+            "Richtig gut gemacht"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Он справился превосходно"
+          ],
+          "casual": [
+            "Он разнёс"
+          ],
+          "slang": [
+            "Он разнёс"
+          ],
+          "heavy": [
+            "Он разнёс"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Він упорався чудово"
+          ],
+          "casual": [
+            "Він розніс"
+          ],
+          "slang": [
+            "Він розніс"
+          ],
+          "heavy": [
+            "Він розніс"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "他做得特别好"
+          ],
+          "casual": [
+            "他这波太强了"
+          ],
+          "slang": [
+            "他这波太强了"
+          ],
+          "heavy": [
+            "他这波太强了"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "他做得特別好"
+          ],
+          "casual": [
+            "他這波太強了"
+          ],
+          "slang": [
+            "他這波太強了"
+          ],
+          "heavy": [
+            "他這波太強了"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Lo hizo excepcionalmente bien"
+          ],
+          "casual": [
+            "Lo clavó"
+          ],
+          "slang": [
+            "Lo clavó"
+          ],
+          "heavy": [
+            "Lo clavó"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "Il a fait ça exceptionnellement bien"
+          ],
+          "casual": [
+            "Il a assuré"
+          ],
+          "slang": [
+            "Il a assuré"
+          ],
+          "heavy": [
+            "Il a assuré"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Ele fez isso muito bem"
+          ],
+          "casual": [
+            "Ele mandou muito"
+          ],
+          "slang": [
+            "Ele mandou muito"
+          ],
+          "heavy": [
+            "Ele mandou muito"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Zrobił to wyjątkowo dobrze"
+          ],
+          "casual": [
+            "Ale to zrobił"
+          ],
+          "slang": [
+            "Ale to zrobił"
+          ],
+          "heavy": [
+            "Ale to zrobił"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "彼はとても上手くやりました"
+          ],
+          "casual": [
+            "めっちゃ上手かった"
+          ],
+          "slang": [
+            "めっちゃ上手かった"
+          ],
+          "heavy": [
+            "めっちゃ上手かった"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "정말 잘했습니다"
+          ],
+          "casual": [
+            "진짜 잘했다"
+          ],
+          "slang": [
+            "진짜 잘했다"
+          ],
+          "heavy": [
+            "진짜 잘했다"
+          ]
+        }
+      }
+    },
+    {
+      "id": "balance_overpowered",
+      "category": "gaming_balance",
+      "meaning": "a game item or build is substantially overpowered or unbalanced",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "sources": {
+        "en": {
+          "forms": [
+            "this build is busted",
+            "this weapon is busted",
+            "broken af"
+          ],
+          "normalized": "this is severely overpowered",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "context_patterns": [
+            "build",
+            "weapon",
+            "game",
+            "damage",
+            "dmg",
+            "rank",
+            "match"
+          ]
+        },
+        "de": {
+          "forms": [
+            "der build ist komplett broken",
+            "die waffe ist op"
+          ],
+          "normalized": "das ist viel zu stark und unausgeglichen",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ru": {
+          "forms": [
+            "этот билд имба",
+            "пушка сломана",
+            "оружие имба"
+          ],
+          "normalized": "это слишком сильное и несбалансированное",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "uk": {
+          "forms": [
+            "цей білд імба",
+            "зброя імба"
+          ],
+          "normalized": "це надто сильне й незбалансоване",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-CN": {
+          "forms": [
+            "这个流派太超模了",
+            "这武器超模"
+          ],
+          "normalized": "这个强得不平衡",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-TW": {
+          "forms": [
+            "這個流派太超模了",
+            "這武器太扯"
+          ],
+          "normalized": "這個強得不平衡",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "es": {
+          "forms": [
+            "esta build está rotísima",
+            "esta arma está rota"
+          ],
+          "normalized": "esto es demasiado fuerte y está desequilibrado",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "fr": {
+          "forms": [
+            "ce build est complètement pété",
+            "cette arme est pétée"
+          ],
+          "normalized": "c'est beaucoup trop puissant et déséquilibré",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pt-BR": {
+          "forms": [
+            "essa build tá quebrada",
+            "essa arma tá roubada"
+          ],
+          "normalized": "isso está forte demais e desbalanceado",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pl": {
+          "forms": [
+            "ten build jest broken",
+            "ta broń jest op"
+          ],
+          "normalized": "to jest zdecydowanie za mocne i niezbalansowane",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ja": {
+          "forms": [
+            "このビルド壊れてる",
+            "この武器ぶっ壊れ"
+          ],
+          "normalized": "これは強すぎてバランスが悪い",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ko": {
+          "forms": [
+            "이 빌드 너무 사기야",
+            "이 무기 개사기"
+          ],
+          "normalized": "이건 너무 강해서 밸런스가 맞지 않는다",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "This is substantially overpowered"
+          ],
+          "casual": [
+            "This is way too strong"
+          ],
+          "slang": [
+            "this is busted"
+          ],
+          "heavy": [
+            "broken af"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Das ist deutlich zu stark"
+          ],
+          "casual": [
+            "Das ist viel zu stark"
+          ],
+          "slang": [
+            "komplett broken"
+          ],
+          "heavy": [
+            "komplett broken"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Это слишком сильное и несбалансированное"
+          ],
+          "casual": [
+            "Это слишком сильное"
+          ],
+          "slang": [
+            "это имба"
+          ],
+          "heavy": [
+            "это имба"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Це надто сильне й незбалансоване"
+          ],
+          "casual": [
+            "Це надто сильне"
+          ],
+          "slang": [
+            "це імба"
+          ],
+          "heavy": [
+            "це імба"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "这个强得不平衡"
+          ],
+          "casual": [
+            "这个太强了"
+          ],
+          "slang": [
+            "这个太超模了"
+          ],
+          "heavy": [
+            "这个太超模了"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "這個強得不平衡"
+          ],
+          "casual": [
+            "這個太強了"
+          ],
+          "slang": [
+            "這個太扯了"
+          ],
+          "heavy": [
+            "這個太扯了"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Esto es demasiado fuerte y está desequilibrado"
+          ],
+          "casual": [
+            "Esto está demasiado fuerte"
+          ],
+          "slang": [
+            "esto está rotísimo"
+          ],
+          "heavy": [
+            "esto está rotísimo"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "C'est beaucoup trop puissant et déséquilibré"
+          ],
+          "casual": [
+            "C'est beaucoup trop fort"
+          ],
+          "slang": [
+            "c'est complètement pété"
+          ],
+          "heavy": [
+            "c'est complètement pété"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Isso está forte demais e desbalanceado"
+          ],
+          "casual": [
+            "Isso tá forte demais"
+          ],
+          "slang": [
+            "isso tá quebrado"
+          ],
+          "heavy": [
+            "isso tá quebrado"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "To jest zdecydowanie za mocne i niezbalansowane"
+          ],
+          "casual": [
+            "To jest za mocne"
+          ],
+          "slang": [
+            "to jest broken"
+          ],
+          "heavy": [
+            "to jest broken"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "これは強すぎてバランスが悪いです"
+          ],
+          "casual": [
+            "これ強すぎる"
+          ],
+          "slang": [
+            "これ壊れてる"
+          ],
+          "heavy": [
+            "これ壊れてる"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "이건 너무 강해서 밸런스가 맞지 않습니다"
+          ],
+          "casual": [
+            "이거 너무 세"
+          ],
+          "slang": [
+            "이거 사기야"
+          ],
+          "heavy": [
+            "이거 개사기"
+          ]
+        }
+      }
+    },
+    {
+      "id": "nerfed_severely",
+      "category": "gaming_balance",
+      "meaning": "a balance update made something much weaker",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "sources": {
+        "en": {
+          "forms": [
+            "got nerfed into the ground",
+            "got nerfed hard",
+            "was nerfed into the ground"
+          ],
+          "normalized": "was made much weaker by a balance update",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "de": {
+          "forms": [
+            "wurde totgenerft",
+            "wurde hart generft"
+          ],
+          "normalized": "wurde durch ein Balance-Update viel schwächer",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ru": {
+          "forms": [
+            "сильно понерфили"
+          ],
+          "normalized": "после изменения баланса это стало намного слабее",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "uk": {
+          "forms": [
+            "сильно понерфили",
+            "занерфили в землю"
+          ],
+          "normalized": "після зміни балансу це стало набагато слабшим",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-CN": {
+          "forms": [
+            "被砍废了",
+            "被大砍一刀"
+          ],
+          "normalized": "平衡调整后弱了很多",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-TW": {
+          "forms": [
+            "被砍爛了",
+            "被大砍一刀"
+          ],
+          "normalized": "平衡調整後弱了很多",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "es": {
+          "forms": [
+            "lo nerfearon hasta el suelo",
+            "lo nerfearon muchísimo"
+          ],
+          "normalized": "quedó mucho más débil tras un ajuste de balance",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "fr": {
+          "forms": [
+            "s'est fait nerf à mort",
+            "a été nerfé très fort"
+          ],
+          "normalized": "est devenu beaucoup plus faible après un équilibrage",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pt-BR": {
+          "forms": [
+            "foi nerfado até o chão",
+            "tomou um nerf pesado"
+          ],
+          "normalized": "ficou muito mais fraco após um ajuste de balanceamento",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pl": {
+          "forms": [
+            "znerfili to do ziemi",
+            "mocno to znerfili"
+          ],
+          "normalized": "po zmianie balansu stało się dużo słabsze",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ja": {
+          "forms": [
+            "ナーフで産廃になった",
+            "大幅にナーフされた"
+          ],
+          "normalized": "バランス調整でかなり弱くなった",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ko": {
+          "forms": [
+            "너프로 관짝 갔다",
+            "심하게 너프됐다"
+          ],
+          "normalized": "밸런스 조정으로 훨씬 약해졌다",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "It was made much weaker by a balance update"
+          ],
+          "casual": [
+            "It got nerfed really hard"
+          ],
+          "slang": [
+            "it got nerfed into the ground"
+          ],
+          "heavy": [
+            "it got nerfed into the ground"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Es wurde durch ein Balance-Update viel schwächer"
+          ],
+          "casual": [
+            "Es wurde hart generft"
+          ],
+          "slang": [
+            "es wurde totgenerft"
+          ],
+          "heavy": [
+            "es wurde totgenerft"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "После изменения баланса это стало намного слабее"
+          ],
+          "casual": [
+            "Его сильно понерфили"
+          ],
+          "slang": [
+            "его занерфили в землю"
+          ],
+          "heavy": [
+            "его занерфили в землю"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Після зміни балансу це стало набагато слабшим"
+          ],
+          "casual": [
+            "Його сильно понерфили"
+          ],
+          "slang": [
+            "Його сильно понерфили"
+          ],
+          "heavy": [
+            "Його сильно понерфили"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "平衡调整后弱了很多"
+          ],
+          "casual": [
+            "被大砍了一刀"
+          ],
+          "slang": [
+            "被砍废了"
+          ],
+          "heavy": [
+            "被砍废了"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "平衡調整後弱了很多"
+          ],
+          "casual": [
+            "被大砍了一刀"
+          ],
+          "slang": [
+            "被砍爛了"
+          ],
+          "heavy": [
+            "被砍爛了"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Quedó mucho más débil tras un ajuste de balance"
+          ],
+          "casual": [
+            "Lo nerfearon muchísimo"
+          ],
+          "slang": [
+            "Lo nerfearon muchísimo"
+          ],
+          "heavy": [
+            "Lo nerfearon muchísimo"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "C'est devenu beaucoup plus faible après un équilibrage"
+          ],
+          "casual": [
+            "Ça s'est fait nerf très fort"
+          ],
+          "slang": [
+            "ça s'est fait nerf à mort"
+          ],
+          "heavy": [
+            "ça s'est fait nerf à mort"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Ficou muito mais fraco após um ajuste de balanceamento"
+          ],
+          "casual": [
+            "Tomou um nerf pesado"
+          ],
+          "slang": [
+            "Tomou um nerf pesado"
+          ],
+          "heavy": [
+            "Tomou um nerf pesado"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Po zmianie balansu stało się dużo słabsze"
+          ],
+          "casual": [
+            "Mocno to znerfili"
+          ],
+          "slang": [
+            "Mocno to znerfili"
+          ],
+          "heavy": [
+            "Mocno to znerfili"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "バランス調整でかなり弱くなりました"
+          ],
+          "casual": [
+            "大幅にナーフされた"
+          ],
+          "slang": [
+            "ナーフで産廃になった"
+          ],
+          "heavy": [
+            "ナーフで産廃になった"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "밸런스 조정으로 훨씬 약해졌습니다"
+          ],
+          "casual": [
+            "심하게 너프됐어"
+          ],
+          "slang": [
+            "너프로 관짝 갔어"
+          ],
+          "heavy": [
+            "너프로 관짝 갔어"
+          ]
+        }
+      }
+    },
+    {
+      "id": "instant_defeat",
+      "category": "gaming_combat",
+      "meaning": "the speaker was defeated by a single hit or almost instantly",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "sources": {
+        "en": {
+          "forms": [
+            "i got one tapped",
+            "he one tapped me",
+            "i got deleted",
+            "he melted me"
+          ],
+          "normalized": "I was defeated almost instantly",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ],
+          "context_patterns": [
+            "hit",
+            "damage",
+            "dmg",
+            "weapon",
+            "boss",
+            "game",
+            "match",
+            "hp"
+          ]
+        },
+        "de": {
+          "forms": [
+            "ich wurde geoneshottet",
+            "der hat mich gelöscht"
+          ],
+          "normalized": "ich wurde fast sofort besiegt",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ru": {
+          "forms": [
+            "меня ваншотнули",
+            "меня удалили",
+            "меня расплавили"
+          ],
+          "normalized": "меня победили почти мгновенно",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "uk": {
+          "forms": [
+            "мене ваншотнули",
+            "мене видалили"
+          ],
+          "normalized": "мене перемогли майже миттєво",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-CN": {
+          "forms": [
+            "我被秒了",
+            "直接给我融了"
+          ],
+          "normalized": "我几乎瞬间就被击败了",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "zh-TW": {
+          "forms": [
+            "我被秒了",
+            "直接把我融了"
+          ],
+          "normalized": "我幾乎瞬間就被擊敗了",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "es": {
+          "forms": [
+            "me hizo one shot",
+            "me borró"
+          ],
+          "normalized": "me derrotó casi al instante",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "fr": {
+          "forms": [
+            "il m'a one shot",
+            "il m'a supprimé"
+          ],
+          "normalized": "j'ai été battu presque instantanément",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pt-BR": {
+          "forms": [
+            "tomei one shot",
+            "ele me deletou"
+          ],
+          "normalized": "fui derrotado quase instantaneamente",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "pl": {
+          "forms": [
+            "dostałem oneshota",
+            "usunął mnie"
+          ],
+          "normalized": "zostałem pokonany niemal natychmiast",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ja": {
+          "forms": [
+            "ワンパンされた",
+            "一瞬で溶かされた"
+          ],
+          "normalized": "ほぼ一瞬で倒された",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        },
+        "ko": {
+          "forms": [
+            "원콤 당했다",
+            "순삭당했다"
+          ],
+          "normalized": "거의 순식간에 쓰러졌다",
+          "confidence": "high",
+          "contexts": [
+            "chat",
+            "discord",
+            "gaming"
+          ]
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "I was defeated almost instantly"
+          ],
+          "casual": [
+            "I got taken out instantly"
+          ],
+          "slang": [
+            "I got one tapped"
+          ],
+          "heavy": [
+            "I got one tapped"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Ich wurde fast sofort besiegt"
+          ],
+          "casual": [
+            "Ich war sofort weg"
+          ],
+          "slang": [
+            "ich wurde geoneshottet"
+          ],
+          "heavy": [
+            "ich wurde geoneshottet"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Меня победили почти мгновенно"
+          ],
+          "casual": [
+            "Меня сразу вынесли"
+          ],
+          "slang": [
+            "меня ваншотнули"
+          ],
+          "heavy": [
+            "меня ваншотнули"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Мене перемогли майже миттєво"
+          ],
+          "casual": [
+            "Мене одразу винесли"
+          ],
+          "slang": [
+            "мене ваншотнули"
+          ],
+          "heavy": [
+            "мене ваншотнули"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "我几乎瞬间就被击败了"
+          ],
+          "casual": [
+            "我直接被秒了"
+          ],
+          "slang": [
+            "我直接被秒了"
+          ],
+          "heavy": [
+            "我直接被秒了"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "我幾乎瞬間就被擊敗了"
+          ],
+          "casual": [
+            "我直接被秒了"
+          ],
+          "slang": [
+            "我直接被秒了"
+          ],
+          "heavy": [
+            "我直接被秒了"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Me derrotaron casi al instante"
+          ],
+          "casual": [
+            "Me borraron"
+          ],
+          "slang": [
+            "me hicieron one shot"
+          ],
+          "heavy": [
+            "me hicieron one shot"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "J'ai été battu presque instantanément"
+          ],
+          "casual": [
+            "Je me suis fait supprimer"
+          ],
+          "slang": [
+            "je me suis fait one shot"
+          ],
+          "heavy": [
+            "je me suis fait one shot"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Fui derrotado quase instantaneamente"
+          ],
+          "casual": [
+            "Fui deletado"
+          ],
+          "slang": [
+            "tomei one shot"
+          ],
+          "heavy": [
+            "tomei one shot"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Zostałem pokonany niemal natychmiast"
+          ],
+          "casual": [
+            "Od razu mnie zdjęli"
+          ],
+          "slang": [
+            "dostałem oneshota"
+          ],
+          "heavy": [
+            "dostałem oneshota"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "ほぼ一瞬で倒されました"
+          ],
+          "casual": [
+            "一瞬でやられた"
+          ],
+          "slang": [
+            "ワンパンされた"
+          ],
+          "heavy": [
+            "ワンパンされた"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "거의 순식간에 쓰러졌습니다"
+          ],
+          "casual": [
+            "순식간에 죽었어"
+          ],
+          "slang": [
+            "원콤 당했어"
+          ],
+          "heavy": [
+            "순삭당함"
+          ]
+        }
+      }
+    },
+    {
+      "id": "social_wellbeing_checkin",
+      "category": "social_checkin",
+      "meaning": "a casual check-in asking how the other person is doing",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {
+        "intent": "social_wellbeing_checkin",
+        "speechAct": "question",
+        "subject": "other",
+        "target": "conversation_partner",
+        "stance": "neutral",
+        "polarity": "neutral",
+        "intensity": "none",
+        "register": "informal",
+        "contextDomain": "chat",
+        "certainty": "high",
+        "emphasisSources": []
+      },
+      "sources": {
+        "en": {
+          "forms": [
+            "how are you",
+            "how are you doing"
+          ],
+          "normalized": "how are you doing?",
+          "confidence": "high",
+          "exact_only": true
+        },
+        "ru": {
+          "forms": [
+            "как дела",
+            "как ты"
+          ],
+          "normalized": "как у тебя дела?",
+          "confidence": "high",
+          "exact_only": true
+        },
+        "uk": {
+          "forms": [
+            "як справи",
+            "як ти"
+          ],
+          "normalized": "як у тебе справи?",
+          "confidence": "high",
+          "exact_only": true
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "How are you?"
+          ],
+          "casual": [
+            "How's it going?"
+          ],
+          "slang": [
+            "hows it going?"
+          ],
+          "heavy": [
+            "hows it going"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Wie geht's dir?"
+          ],
+          "casual": [
+            "Wie geht's?"
+          ],
+          "slang": [
+            "wie gehts?"
+          ],
+          "heavy": [
+            "wie gehts"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Как дела?"
+          ],
+          "casual": [
+            "Как ты?"
+          ],
+          "slang": [
+            "как оно?"
+          ],
+          "heavy": [
+            "как ты"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Як справи?"
+          ],
+          "casual": [
+            "Як ти?"
+          ],
+          "slang": [
+            "як воно?"
+          ],
+          "heavy": [
+            "як ти"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "你怎么样？"
+          ],
+          "casual": [
+            "最近怎么样？"
+          ],
+          "slang": [
+            "咋样？"
+          ],
+          "heavy": [
+            "咋样"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "你最近好嗎？"
+          ],
+          "casual": [
+            "最近怎樣？"
+          ],
+          "slang": [
+            "最近怎樣"
+          ],
+          "heavy": [
+            "怎樣"
+          ]
+        },
+        "es": {
+          "clean": [
+            "¿Cómo estás?"
+          ],
+          "casual": [
+            "¿Qué tal?"
+          ],
+          "slang": [
+            "qué tal?"
+          ],
+          "heavy": [
+            "qué tal"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "Comment vas-tu ?"
+          ],
+          "casual": [
+            "Ça va ?"
+          ],
+          "slang": [
+            "ça va ?"
+          ],
+          "heavy": [
+            "ça va"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Como você está?"
+          ],
+          "casual": [
+            "Tudo bem?"
+          ],
+          "slang": [
+            "tudo certo?"
+          ],
+          "heavy": [
+            "tudo bem"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Jak się masz?"
+          ],
+          "casual": [
+            "Co tam?"
+          ],
+          "slang": [
+            "co tam?"
+          ],
+          "heavy": [
+            "co tam"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "お元気ですか？"
+          ],
+          "casual": [
+            "元気？"
+          ],
+          "slang": [
+            "最近どう？"
+          ],
+          "heavy": [
+            "どう？"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "잘 지내세요?"
+          ],
+          "casual": [
+            "잘 지내?"
+          ],
+          "slang": [
+            "요즘 어때?"
+          ],
+          "heavy": [
+            "어때"
+          ]
+        }
+      }
+    },
+    {
+      "id": "contextual_agreement_reaction",
+      "category": "agreement_reaction",
+      "meaning": "a short reply agreeing with the directly related conversation",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intent": "agreement",
+        "speechAct": "reaction",
+        "subject": "self",
+        "stance": "agreement",
+        "polarity": "positive",
+        "intensity": "mild",
+        "register": "informal",
+        "contextDomain": "chat",
+        "certainty": "medium",
+        "emphasisSources": []
+      },
+      "sources": {
+        "en": {
+          "forms": [
+            "real",
+            "same",
+            "fr"
+          ],
+          "normalized": "I agree",
+          "confidence": "medium",
+          "exact_only": true,
+          "requires_context": true
+        },
+        "de": {
+          "forms": [
+            "echt",
+            "genau"
+          ],
+          "normalized": "ich stimme zu",
+          "confidence": "medium",
+          "exact_only": true,
+          "requires_context": true
+        },
+        "ru": {
+          "forms": [
+            "жиза",
+            "точно"
+          ],
+          "normalized": "согласен",
+          "confidence": "medium",
+          "exact_only": true,
+          "requires_context": true
+        },
+        "uk": {
+          "forms": [
+            "жиза",
+            "точно"
+          ],
+          "normalized": "згоден",
+          "confidence": "medium",
+          "exact_only": true,
+          "requires_context": true
+        }
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "I agree."
+          ],
+          "casual": [
+            "Yeah, exactly."
+          ],
+          "slang": [
+            "true"
+          ],
+          "heavy": [
+            "fr"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Stimmt."
+          ],
+          "casual": [
+            "Ja, echt so."
+          ],
+          "slang": [
+            "true"
+          ],
+          "heavy": [
+            "fr"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Согласен."
+          ],
+          "casual": [
+            "Да, точно."
+          ],
+          "slang": [
+            "жиза"
+          ],
+          "heavy": [
+            "реал"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Згоден."
+          ],
+          "casual": [
+            "Так, точно."
+          ],
+          "slang": [
+            "жиза"
+          ],
+          "heavy": [
+            "реал"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "我同意。"
+          ],
+          "casual": [
+            "确实。"
+          ],
+          "slang": [
+            "真的"
+          ],
+          "heavy": [
+            "确实"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "我同意。"
+          ],
+          "casual": [
+            "真的。"
+          ],
+          "slang": [
+            "確實"
+          ],
+          "heavy": [
+            "真的"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Estoy de acuerdo."
+          ],
+          "casual": [
+            "Sí, tal cual."
+          ],
+          "slang": [
+            "literal"
+          ],
+          "heavy": [
+            "real"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "Je suis d'accord."
+          ],
+          "casual": [
+            "Oui, carrément."
+          ],
+          "slang": [
+            "grave"
+          ],
+          "heavy": [
+            "réel"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Concordo."
+          ],
+          "casual": [
+            "Pois é."
+          ],
+          "slang": [
+            "real"
+          ],
+          "heavy": [
+            "real"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Zgadzam się."
+          ],
+          "casual": [
+            "No właśnie."
+          ],
+          "slang": [
+            "rel"
+          ],
+          "heavy": [
+            "rel"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "同感です。"
+          ],
+          "casual": [
+            "ほんとそれ。"
+          ],
+          "slang": [
+            "それな"
+          ],
+          "heavy": [
+            "それな"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "동의해요."
+          ],
+          "casual": [
+            "진짜 그래."
+          ],
+          "slang": [
+            "ㄹㅇ"
+          ],
+          "heavy": [
+            "ㄹㅇ"
+          ]
+        }
+      }
+    }
+  ],
+  "register_markers": [
+    {
+      "id": "de_formal",
+      "language": "de",
+      "register": "formal",
+      "patterns": [
+        "Sie",
+        "Ihnen",
+        "Ihr",
+        "Ihre"
+      ],
+      "confidence": "high",
+      "case_sensitive": true
+    },
+    {
+      "id": "de_informal",
+      "language": "de",
+      "register": "informal",
+      "patterns": [
+        "du",
+        "dich",
+        "dir",
+        "dein",
+        "deine"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "de_plural_informal",
+      "language": "de",
+      "register": "plural_informal",
+      "patterns": [
+        "ihr",
+        "euch",
+        "euer",
+        "eure"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "ru_formal",
+      "language": "ru",
+      "register": "formal",
+      "patterns": [
+        "Вы",
+        "Вам",
+        "Ваш",
+        "Ваша"
+      ],
+      "confidence": "high",
+      "case_sensitive": true
+    },
+    {
+      "id": "ru_informal",
+      "language": "ru",
+      "register": "informal",
+      "patterns": [
+        "ты",
+        "тебя",
+        "тебе",
+        "твой",
+        "твоя",
+        "у тебя",
+        "можешь"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "ru_plural",
+      "language": "ru",
+      "register": "plural_informal",
+      "patterns": [
+        "ребята, вы",
+        "ребят, вы",
+        "вы все"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "uk_formal",
+      "language": "uk",
+      "register": "formal",
+      "patterns": [
+        "Ви",
+        "Вам",
+        "Ваш",
+        "Ваша"
+      ],
+      "confidence": "high",
+      "case_sensitive": true
+    },
+    {
+      "id": "uk_informal",
+      "language": "uk",
+      "register": "informal",
+      "patterns": [
+        "ти",
+        "тебе",
+        "тобі",
+        "твій",
+        "твоя",
+        "у тебе",
+        "можеш"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "uk_plural",
+      "language": "uk",
+      "register": "plural_informal",
+      "patterns": [
+        "хлопці, ви",
+        "ви всі"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "fr_formal",
+      "language": "fr",
+      "register": "formal",
+      "patterns": [
+        "vous",
+        "votre",
+        "vos"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "fr_informal",
+      "language": "fr",
+      "register": "informal",
+      "patterns": [
+        "tu",
+        "toi",
+        "ton",
+        "ta",
+        "tes"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "es_formal",
+      "language": "es",
+      "register": "formal",
+      "patterns": [
+        "usted",
+        "ustedes"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "es_informal",
+      "language": "es",
+      "register": "informal",
+      "patterns": [
+        "tú",
+        "te",
+        "contigo"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "es_plural_informal",
+      "language": "es",
+      "register": "plural_informal",
+      "patterns": [
+        "vosotros",
+        "vosotras",
+        "os",
+        "vuestro"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "pt_formal",
+      "language": "pt-BR",
+      "register": "formal",
+      "patterns": [
+        "o senhor",
+        "a senhora"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "pt_informal",
+      "language": "pt-BR",
+      "register": "informal",
+      "patterns": [
+        "tu",
+        "você",
+        "vc",
+        "teu",
+        "tua"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "pt_plural",
+      "language": "pt-BR",
+      "register": "plural_informal",
+      "patterns": [
+        "vocês",
+        "vcs"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "pl_formal",
+      "language": "pl",
+      "register": "formal",
+      "patterns": [
+        "Pan",
+        "Pani",
+        "Państwo",
+        "Pana",
+        "Panią"
+      ],
+      "confidence": "high",
+      "case_sensitive": true
+    },
+    {
+      "id": "pl_informal",
+      "language": "pl",
+      "register": "informal",
+      "patterns": [
+        "ty",
+        "tobie",
+        "ci",
+        "twój",
+        "twoja"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "zh_formal_cn",
+      "language": "zh-CN",
+      "register": "formal",
+      "patterns": [
+        "您"
+      ],
+      "confidence": "high",
+      "whole_word": false
+    },
+    {
+      "id": "zh_informal_cn",
+      "language": "zh-CN",
+      "register": "informal",
+      "patterns": [
+        "你"
+      ],
+      "confidence": "medium",
+      "whole_word": false
+    },
+    {
+      "id": "zh_formal_tw",
+      "language": "zh-TW",
+      "register": "formal",
+      "patterns": [
+        "您"
+      ],
+      "confidence": "high",
+      "whole_word": false
+    },
+    {
+      "id": "zh_informal_tw",
+      "language": "zh-TW",
+      "register": "informal",
+      "patterns": [
+        "你"
+      ],
+      "confidence": "medium",
+      "whole_word": false
+    },
+    {
+      "id": "ja_formal",
+      "language": "ja",
+      "register": "formal",
+      "patterns": [
+        "です",
+        "ます",
+        "ください"
+      ],
+      "confidence": "high",
+      "whole_word": false
+    },
+    {
+      "id": "ja_informal",
+      "language": "ja",
+      "register": "informal",
+      "patterns": [
+        "だよ",
+        "だね",
+        "じゃない",
+        "してる"
+      ],
+      "confidence": "medium",
+      "whole_word": false
+    },
+    {
+      "id": "ko_formal",
+      "language": "ko",
+      "register": "formal",
+      "patterns": [
+        "습니다",
+        "세요",
+        "합니다"
+      ],
+      "confidence": "high",
+      "whole_word": false
+    },
+    {
+      "id": "ko_informal",
+      "language": "ko",
+      "register": "informal",
+      "patterns": [
+        "했어",
+        "해",
+        "이야",
+        "했냐"
+      ],
+      "confidence": "medium",
+      "whole_word": false
+    }
+  ],
+  "register_repairs": [
+    {
+      "id": "de_inf_haben_q",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bHaben Sie\\b",
+      "replacement": "Hast du",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_sind_q",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bSind Sie\\b",
+      "replacement": "Bist du",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_koennen_q",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bKönnen Sie\\b",
+      "replacement": "Kannst du",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_wollen_q",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bWollen Sie\\b",
+      "replacement": "Willst du",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_moechten_q",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bMöchten Sie\\b",
+      "replacement": "Möchtest du",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_sie_haben",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bSie haben\\b",
+      "replacement": "du hast",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_sie_sind",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bSie sind\\b",
+      "replacement": "du bist",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_sie_koennen",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bSie können\\b",
+      "replacement": "du kannst",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_ihnen",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bIhnen\\b",
+      "replacement": "dir",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_ihre",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bIhre\\b",
+      "replacement": "deine",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_inf_ihr",
+      "target_language": "de",
+      "register": "informal",
+      "pattern": "\\bIhr\\b",
+      "replacement": "dein",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_formal_hast",
+      "target_language": "de",
+      "register": "formal",
+      "pattern": "\\bHast du\\b",
+      "replacement": "Haben Sie",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_formal_bist",
+      "target_language": "de",
+      "register": "formal",
+      "pattern": "\\bBist du\\b",
+      "replacement": "Sind Sie",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_formal_kannst",
+      "target_language": "de",
+      "register": "formal",
+      "pattern": "\\bKannst du\\b",
+      "replacement": "Können Sie",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_formal_du_hast",
+      "target_language": "de",
+      "register": "formal",
+      "pattern": "\\bdu hast\\b",
+      "replacement": "Sie haben",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ]
+    },
+    {
+      "id": "de_formal_du_bist",
+      "target_language": "de",
+      "register": "formal",
+      "pattern": "\\bdu bist\\b",
+      "replacement": "Sie sind",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ]
+    },
+    {
+      "id": "de_formal_dir",
+      "target_language": "de",
+      "register": "formal",
+      "pattern": "\\bdir\\b",
+      "replacement": "Ihnen",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ]
+    },
+    {
+      "id": "de_plural_haben",
+      "target_language": "de",
+      "register": "plural_informal",
+      "pattern": "\\bHaben Sie\\b",
+      "replacement": "Habt ihr",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_plural_koennen",
+      "target_language": "de",
+      "register": "plural_informal",
+      "pattern": "\\bKönnen Sie\\b",
+      "replacement": "Könnt ihr",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_plural_sie_haben",
+      "target_language": "de",
+      "register": "plural_informal",
+      "pattern": "\\bSie haben\\b",
+      "replacement": "ihr habt",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "de_plural_ihnen",
+      "target_language": "de",
+      "register": "plural_informal",
+      "pattern": "\\bIhnen\\b",
+      "replacement": "euch",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "ru_inf_can",
+      "target_language": "ru",
+      "register": "informal",
+      "pattern": "Вы можете",
+      "replacement": "Ты можешь",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "ru_inf_have",
+      "target_language": "ru",
+      "register": "informal",
+      "pattern": "У вас есть",
+      "replacement": "У тебя есть",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "ru_inf_to_you",
+      "target_language": "ru",
+      "register": "informal",
+      "pattern": "Вам",
+      "replacement": "Тебе",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "ru_inf_your",
+      "target_language": "ru",
+      "register": "informal",
+      "pattern": "Ваш",
+      "replacement": "Твой",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "ru_formal_can",
+      "target_language": "ru",
+      "register": "formal",
+      "pattern": "Ты можешь",
+      "replacement": "Вы можете",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "ru_formal_have",
+      "target_language": "ru",
+      "register": "formal",
+      "pattern": "У тебя есть",
+      "replacement": "У вас есть",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "uk_inf_can",
+      "target_language": "uk",
+      "register": "informal",
+      "pattern": "Ви можете",
+      "replacement": "Ти можеш",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "uk_inf_have",
+      "target_language": "uk",
+      "register": "informal",
+      "pattern": "У вас є",
+      "replacement": "У тебе є",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "fr_inf_can",
+      "target_language": "fr",
+      "register": "informal",
+      "pattern": "\\bVous pouvez\\b",
+      "replacement": "Tu peux",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "fr_inf_have",
+      "target_language": "fr",
+      "register": "informal",
+      "pattern": "\\bVous avez\\b",
+      "replacement": "Tu as",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "fr_inf_are",
+      "target_language": "fr",
+      "register": "informal",
+      "pattern": "\\bVous êtes\\b",
+      "replacement": "Tu es",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "fr_formal_can",
+      "target_language": "fr",
+      "register": "formal",
+      "pattern": "\\bTu peux\\b",
+      "replacement": "Vous pouvez",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "es_inf_can",
+      "target_language": "es",
+      "register": "informal",
+      "pattern": "\\bUsted puede\\b",
+      "replacement": "Tú puedes",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "es_inf_have",
+      "target_language": "es",
+      "register": "informal",
+      "pattern": "\\bUsted tiene\\b",
+      "replacement": "Tú tienes",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "es_formal_can",
+      "target_language": "es",
+      "register": "formal",
+      "pattern": "\\bTú puedes\\b",
+      "replacement": "Usted puede",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "pt_inf_can",
+      "target_language": "pt-BR",
+      "register": "informal",
+      "pattern": "\\bO senhor pode\\b",
+      "replacement": "Você pode",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "pt_formal_can",
+      "target_language": "pt-BR",
+      "register": "formal",
+      "pattern": "\\bVocê pode\\b",
+      "replacement": "O senhor pode",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "pl_inf_can",
+      "target_language": "pl",
+      "register": "informal",
+      "pattern": "\\bCzy Pan może\\b",
+      "replacement": "Czy możesz",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "pl_inf_have",
+      "target_language": "pl",
+      "register": "informal",
+      "pattern": "\\bPan ma\\b",
+      "replacement": "Masz",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "pl_formal_can",
+      "target_language": "pl",
+      "register": "formal",
+      "pattern": "\\bCzy możesz\\b",
+      "replacement": "Czy może Pan",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ],
+      "case_sensitive": true
+    },
+    {
+      "id": "zh_inf_you_cn",
+      "target_language": "zh-CN",
+      "register": "informal",
+      "pattern": "您",
+      "replacement": "你",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ]
+    },
+    {
+      "id": "zh_formal_you_cn",
+      "target_language": "zh-CN",
+      "register": "formal",
+      "pattern": "你",
+      "replacement": "您",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ]
+    },
+    {
+      "id": "zh_inf_you_tw",
+      "target_language": "zh-TW",
+      "register": "informal",
+      "pattern": "您",
+      "replacement": "你",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ]
+    },
+    {
+      "id": "zh_formal_you_tw",
+      "target_language": "zh-TW",
+      "register": "formal",
+      "pattern": "你",
+      "replacement": "您",
+      "confidence": "high",
+      "contexts": [
+        "chat",
+        "discord",
+        "gaming",
+        "business"
+      ]
+    }
+  ],
+  "pragmatic_profanity_rules": [
+    {
+      "id": "ru_profanity_intensifier_sleep",
+      "language": "ru",
+      "pattern": "^\\s*(?:пиздец|бля(?:ть)?|ебать|сука)\\s*,?\\s+как\\s+(?:же\\s+)?я\\s+хочу\\s+спать\\s*[.!?…]*\\s*$",
+      "normalized": "я очень сильно хочу спать",
+      "role": "intensifier",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {
+        "intent": "desire",
+        "speechAct": "statement",
+        "subject": "self",
+        "action": "sleep",
+        "intensity": "extreme",
+        "emotion": "exhaustion",
+        "register": "vulgar_informal",
+        "certainty": "high",
+        "emphasisSources": [
+          "profanity"
+        ]
+      },
+      "outputs": {
+        "en": {
+          "clean": [
+            "I desperately want to sleep."
+          ],
+          "casual": [
+            "I seriously just want to sleep."
+          ],
+          "slang": [
+            "i wanna sleep so bad"
+          ],
+          "heavy": [
+            "i wanna fucking sleep so bad"
+          ]
+        },
+        "de": {
+          "clean": [
+            "Ich will unbedingt schlafen."
+          ],
+          "casual": [
+            "Boah, ich will einfach nur pennen."
+          ],
+          "slang": [
+            "ich will so krass pennen"
+          ],
+          "heavy": [
+            "ich will verdammt nochmal pennen"
+          ]
+        },
+        "ru": {
+          "clean": [
+            "Я ужасно хочу спать."
+          ],
+          "casual": [
+            "Я безумно хочу спать."
+          ],
+          "slang": [
+            "я капец как хочу спать"
+          ],
+          "heavy": [
+            "я пиздец как хочу спать"
+          ]
+        },
+        "uk": {
+          "clean": [
+            "Я страшенно хочу спати."
+          ],
+          "casual": [
+            "Я неймовірно хочу спати."
+          ],
+          "slang": [
+            "я капець як хочу спати"
+          ],
+          "heavy": [
+            "я пиздець як хочу спати"
+          ]
+        },
+        "zh-CN": {
+          "clean": [
+            "我特别想睡觉。"
+          ],
+          "casual": [
+            "我真的好想睡觉。"
+          ],
+          "slang": [
+            "我困死了，超想睡"
+          ],
+          "heavy": [
+            "我他妈真的想睡觉"
+          ]
+        },
+        "zh-TW": {
+          "clean": [
+            "我非常想睡覺。"
+          ],
+          "casual": [
+            "我真的好想睡。"
+          ],
+          "slang": [
+            "我快睏死了，超想睡"
+          ],
+          "heavy": [
+            "我他媽真的超想睡"
+          ]
+        },
+        "es": {
+          "clean": [
+            "Tengo muchísimas ganas de dormir."
+          ],
+          "casual": [
+            "Tengo unas ganas tremendas de dormir."
+          ],
+          "slang": [
+            "me muero de sueño"
+          ],
+          "heavy": [
+            "necesito dormir ya, joder"
+          ]
+        },
+        "fr": {
+          "clean": [
+            "J'ai terriblement envie de dormir."
+          ],
+          "casual": [
+            "J'ai tellement envie de dormir."
+          ],
+          "slang": [
+            "j'ai trop envie de dormir"
+          ],
+          "heavy": [
+            "putain j'ai trop envie de dormir"
+          ]
+        },
+        "pt-BR": {
+          "clean": [
+            "Estou morrendo de vontade de dormir."
+          ],
+          "casual": [
+            "Tô com muita vontade de dormir."
+          ],
+          "slang": [
+            "tô doido pra dormir"
+          ],
+          "heavy": [
+            "caralho eu só quero dormir"
+          ]
+        },
+        "pl": {
+          "clean": [
+            "Strasznie chce mi się spać."
+          ],
+          "casual": [
+            "Tak bardzo chce mi się spać."
+          ],
+          "slang": [
+            "ale mi się chce spać"
+          ],
+          "heavy": [
+            "kurwa jak ja chcę spać"
+          ]
+        },
+        "ja": {
+          "clean": [
+            "ものすごく眠りたい。"
+          ],
+          "casual": [
+            "めちゃくちゃ寝たい。"
+          ],
+          "slang": [
+            "マジで寝たい"
+          ],
+          "heavy": [
+            "クソほど寝たい"
+          ]
+        },
+        "ko": {
+          "clean": [
+            "정말 너무 자고 싶어요."
+          ],
+          "casual": [
+            "진짜 너무 자고 싶어."
+          ],
+          "slang": [
+            "개같이 자고 싶다"
+          ],
+          "heavy": [
+            "씨발 진짜 자고 싶다"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ru_profanity_intensifier_temperature",
+      "language": "ru",
+      "pattern": "^\\s*пиздец\\s+как\\s+(?<state>холодно|жарко)\\s*[.!?…]*\\s*$",
+      "normalized": "очень $<state>",
+      "role": "intensifier",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intent": "state_emphasis",
+        "speechAct": "statement",
+        "intensity": "extreme",
+        "emotion": "discomfort",
+        "register": "vulgar_informal",
+        "certainty": "high",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "ru_profanity_intensifier_admiration",
+      "language": "ru",
+      "pattern": "^\\s*(?:пиздец\\s+как|ебать(?:\\s+тут)?)\\s+(?<state>красиво|круто|шикарно)\\s*[.!?…]*\\s*$",
+      "normalized": "невероятно $<state>",
+      "role": "admiration",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intent": "admiration",
+        "speechAct": "reaction",
+        "stance": "positive",
+        "polarity": "positive",
+        "intensity": "extreme",
+        "emotion": "admiration",
+        "register": "vulgar_informal",
+        "certainty": "high",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "ru_profanity_intensifier_duration_annoyance",
+      "language": "ru",
+      "pattern": "^\\s*пиздец\\s+как\\s+(?<state>долго|бесит)\\s*[.!?…]*\\s*$",
+      "normalized": "ужасно $<state>",
+      "role": "frustration",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intent": "frustration",
+        "speechAct": "complaint",
+        "stance": "negative",
+        "polarity": "negative",
+        "intensity": "extreme",
+        "emotion": "annoyance",
+        "register": "vulgar_informal",
+        "certainty": "high",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "ru_profanity_intensifier_fatigue",
+      "language": "ru",
+      "pattern": "^\\s*бля(?:ть)?\\s+как\\s+я\\s+устал\\s*[.!?…]*\\s*$",
+      "normalized": "я очень сильно устал",
+      "role": "intensifier",
+      "confidence": "medium",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intent": "state_emphasis",
+        "speechAct": "complaint",
+        "intensity": "extreme",
+        "emotion": "distress",
+        "register": "vulgar_informal",
+        "certainty": "medium",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "ru_profanity_intensifier_pain",
+      "language": "ru",
+      "pattern": "^\\s*сука\\s+как\\s+больно\\s*[.!?…]*\\s*$",
+      "normalized": "очень больно",
+      "role": "intensifier",
+      "confidence": "medium",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intent": "state_emphasis",
+        "speechAct": "complaint",
+        "intensity": "extreme",
+        "emotion": "pain",
+        "register": "vulgar_informal",
+        "certainty": "medium",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "en_fucking_intensifier",
+      "language": "en",
+      "pattern": "^(?<before>.*?)\\bfucking\\s+(?<focus>cold|hot|beautiful|tired|long|annoying|painful)\\b(?<after>.*)$",
+      "normalized": "$<before>extremely $<focus>$<after>",
+      "role": "intensifier",
+      "confidence": "medium",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intensity": "extreme",
+        "register": "vulgar_informal",
+        "certainty": "medium",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "de_scheiss_intensifier",
+      "language": "de",
+      "pattern": "^(?<before>.*?)\\b(?:scheiß|scheisse|scheiße)\\s*(?<focus>kalt|heiß|müde|schön|langsam)\\b(?<after>.*)$",
+      "normalized": "$<before>extrem $<focus>$<after>",
+      "role": "intensifier",
+      "confidence": "medium",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intensity": "extreme",
+        "register": "vulgar_informal",
+        "certainty": "medium",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "fr_putain_intensifier",
+      "language": "fr",
+      "pattern": "^\\s*putain(?:,)?\\s+(?<body>.+)$",
+      "normalized": "vraiment $<body>",
+      "role": "intensifier",
+      "confidence": "low",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intensity": "strong",
+        "register": "vulgar_informal",
+        "certainty": "low",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "es_joder_intensifier",
+      "language": "es",
+      "pattern": "^\\s*(?:joder|puta)(?:,)?\\s+(?<body>.+)$",
+      "normalized": "realmente $<body>",
+      "role": "intensifier",
+      "confidence": "low",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intensity": "strong",
+        "register": "vulgar_informal",
+        "certainty": "low",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "pl_kurwa_intensifier",
+      "language": "pl",
+      "pattern": "^\\s*kurwa(?:,)?\\s+(?<body>.+)$",
+      "normalized": "naprawdę $<body>",
+      "role": "intensifier",
+      "confidence": "low",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intensity": "strong",
+        "register": "vulgar_informal",
+        "certainty": "low",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "ko_ssibal_intensifier",
+      "language": "ko",
+      "pattern": "^\\s*씨발(?:,)?\\s*(?<body>.+)$",
+      "normalized": "진짜 $<body>",
+      "role": "intensifier",
+      "confidence": "low",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intensity": "strong",
+        "register": "vulgar_informal",
+        "certainty": "low",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "zh_profanity_intensifier",
+      "language": "zh-CN",
+      "pattern": "^\\s*他妈的?(?<body>.+)$",
+      "normalized": "非常$<body>",
+      "role": "intensifier",
+      "confidence": "low",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intensity": "strong",
+        "register": "vulgar_informal",
+        "certainty": "low",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    },
+    {
+      "id": "zh_tw_profanity_intensifier",
+      "language": "zh-TW",
+      "pattern": "^\\s*(?:幹|他媽的?)(?<body>.+)$",
+      "normalized": "超級$<body>",
+      "role": "intensifier",
+      "confidence": "low",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intensity": "strong",
+        "register": "vulgar_informal",
+        "certainty": "low",
+        "emphasisSources": [
+          "profanity"
+        ]
+      }
+    }
+  ],
+  "source_normalization_rules": [
+    {
+      "id": "en_accuse_off_typo",
+      "language": "en",
+      "pattern": "\\b(accus(?:e|es|ed|ing)\\s+(?:me|you|him|her|us|them))\\s+off\\b",
+      "replacement": "$1 of",
+      "kind": "typo",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_youre_typo",
+      "language": "en",
+      "pattern": "\\byoure\\b",
+      "replacement": "you're",
+      "kind": "typo",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_dont_typo",
+      "language": "en",
+      "pattern": "\\bdont\\b",
+      "replacement": "don't",
+      "kind": "typo",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_cant_typo",
+      "language": "en",
+      "pattern": "\\bcant\\b",
+      "replacement": "can't",
+      "kind": "typo",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_wont_typo",
+      "language": "en",
+      "pattern": "\\bwont\\b",
+      "replacement": "won't",
+      "kind": "typo",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_im_typo",
+      "language": "en",
+      "pattern": "\\bim\\b",
+      "replacement": "I'm",
+      "kind": "typo",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_ive_typo",
+      "language": "en",
+      "pattern": "\\bive\\b",
+      "replacement": "I've",
+      "kind": "typo",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_aint_no_way_grammar",
+      "language": "en",
+      "pattern": "\\baint no way\\b",
+      "replacement": "there is no way",
+      "kind": "grammar",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_there_are_screenshots_grammar",
+      "language": "en",
+      "pattern": "\\btheres already screenshots\\b",
+      "replacement": "there are already screenshots",
+      "kind": "grammar",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_expressive_odd",
+      "language": "en",
+      "pattern": "\\bod{2,}d+\\b",
+      "replacement": "odd",
+      "kind": "expressive",
+      "meaning": "odd with emphasis",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_expressive_nah",
+      "language": "en",
+      "pattern": "\\bnah{2,}\\b",
+      "replacement": "nah",
+      "kind": "expressive",
+      "meaning": "emphatic disagreement",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_expressive_bro",
+      "language": "en",
+      "pattern": "\\bbro{2,}\\b",
+      "replacement": "bro",
+      "kind": "expressive",
+      "meaning": "elongated vocative",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_sup_abbreviation",
+      "language": "en",
+      "pattern": "\\bsup\\b",
+      "replacement": "hello",
+      "kind": "abbreviation",
+      "meaning": "casual greeting",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_brb_abbreviation",
+      "language": "en",
+      "pattern": "\\bbrb\\b",
+      "replacement": "I will be right back",
+      "kind": "abbreviation",
+      "meaning": "be right back",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_gf_abbreviation",
+      "language": "en",
+      "pattern": "\\bgf\\b",
+      "replacement": "girlfriend",
+      "kind": "abbreviation",
+      "meaning": "girlfriend",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_bf_abbreviation",
+      "language": "en",
+      "pattern": "\\bbf\\b",
+      "replacement": "boyfriend",
+      "kind": "abbreviation",
+      "meaning": "boyfriend",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_idk_abbreviation_v091",
+      "language": "en",
+      "pattern": "\\bidk\\b",
+      "replacement": "I don't know",
+      "kind": "abbreviation",
+      "meaning": "I don't know",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_gotta_abbreviation",
+      "language": "en",
+      "pattern": "\\bgotta\\b",
+      "replacement": "have to",
+      "kind": "abbreviation",
+      "meaning": "have to",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_finna_abbreviation",
+      "language": "en",
+      "pattern": "\\bfinna\\b",
+      "replacement": "I am about to",
+      "kind": "abbreviation",
+      "meaning": "about to / imminent intention",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_boutta_abbreviation",
+      "language": "en",
+      "pattern": "\\bboutta\\b",
+      "replacement": "I am about to",
+      "kind": "abbreviation",
+      "meaning": "about to / imminent intention",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_gonna_abbreviation",
+      "language": "en",
+      "pattern": "\\bgonna\\b",
+      "replacement": "going to",
+      "kind": "abbreviation",
+      "meaning": "going to",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_rn_abbreviation_v091",
+      "language": "en",
+      "pattern": "\\brn\\b",
+      "replacement": "right now",
+      "kind": "abbreviation",
+      "meaning": "right now",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_ngl_abbreviation",
+      "language": "en",
+      "pattern": "\\bngl\\b",
+      "replacement": "honestly",
+      "kind": "abbreviation",
+      "meaning": "not going to lie",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_imo_abbreviation",
+      "language": "en",
+      "pattern": "\\bimo\\b",
+      "replacement": "in my opinion",
+      "kind": "abbreviation",
+      "meaning": "in my opinion",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_lmk_abbreviation",
+      "language": "en",
+      "pattern": "\\blmk\\b",
+      "replacement": "let me know",
+      "kind": "abbreviation",
+      "meaning": "let me know",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_mb_abbreviation",
+      "language": "en",
+      "pattern": "^\\s*mb\\s*[.!]*$",
+      "replacement": "my bad",
+      "kind": "abbreviation",
+      "meaning": "my mistake",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_np_abbreviation",
+      "language": "en",
+      "pattern": "^\\s*np\\s*[.!]*$",
+      "replacement": "no problem",
+      "kind": "abbreviation",
+      "meaning": "no problem",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_ss_screenshot_context",
+      "language": "en",
+      "pattern": "\\bss(?:es)?\\b",
+      "replacement": "screenshot",
+      "kind": "abbreviation",
+      "meaning": "screenshot",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "context_patterns": [
+        "send",
+        "post",
+        "delete",
+        "screenshot",
+        "forbidden",
+        "leak"
+      ]
+    },
+    {
+      "id": "en_af_degree",
+      "language": "en",
+      "pattern": "\\b(?<quality>good|bad|weird|odd|cold|hot|hard|funny|annoying|tired)\\s+af\\b",
+      "replacement": "extremely $<quality>",
+      "kind": "abbreviation",
+      "meaning": "extreme degree",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    }
+  ],
+  "incoming_chat_rules": [
+    {
+      "id": "en_named_casual_greeting",
+      "language": "en",
+      "pattern": "^hello[, ]+(?<name>[\\p{L}\\p{N}_.-]+)(?:\\s+(?:dude|bro|man|mate))?[.!?]*$",
+      "normalized": "Hello, $<name>.",
+      "sense": "greeting addressed to a known participant; trailing vocative is optional filler",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "required_entity_capture": "name",
+      "abbreviations": {
+        "sup": "casual greeting"
+      },
+      "slots": {
+        "intent": "greeting",
+        "speechAct": "reaction",
+        "target": "participant",
+        "stance": "positive",
+        "polarity": "positive",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Привет, $<name>."
+          ],
+          "casual": [
+            "Привет, $<name>"
+          ],
+          "slang": [
+            "сап, $<name>"
+          ],
+          "heavy": [
+            "сап $<name>"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_short_casual_greeting",
+      "language": "en",
+      "pattern": "^hello[.!?]*$",
+      "normalized": "Hello.",
+      "sense": "short casual greeting",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "abbreviations": {
+        "sup": "casual greeting"
+      },
+      "slots": {
+        "intent": "greeting",
+        "speechAct": "reaction",
+        "stance": "positive",
+        "polarity": "positive",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Привет."
+          ],
+          "casual": [
+            "привет"
+          ],
+          "slang": [
+            "сап"
+          ],
+          "heavy": [
+            "сап"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_hows_life_checkin",
+      "language": "en",
+      "pattern": "^how['’]?s life[?!.]*$",
+      "normalized": "How have you been?",
+      "sense": "casual wellbeing check-in",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {
+        "intent": "social_wellbeing_checkin",
+        "speechAct": "question",
+        "target": "conversation_partner",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Как жизнь?"
+          ],
+          "casual": [
+            "Как ты?"
+          ],
+          "slang": [
+            "как жизнь?"
+          ],
+          "heavy": [
+            "как жизнь"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_cool_reaction",
+      "language": "en",
+      "pattern": "^cool[.!]*$",
+      "normalized": "That is good.",
+      "sense": "approval or acknowledgement reaction, not temperature",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "negative_patterns": [
+        "outside",
+        "weather",
+        "temperature",
+        "air",
+        "water"
+      ],
+      "slots": {
+        "intent": "approval",
+        "speechAct": "reaction",
+        "stance": "positive",
+        "polarity": "positive",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Круто."
+          ],
+          "casual": [
+            "норм"
+          ],
+          "slang": [
+            "круто"
+          ],
+          "heavy": [
+            "норм"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_deleted_what_ellipsis",
+      "language": "en",
+      "pattern": "^deleted what[?!.]*$",
+      "normalized": "What did I delete?",
+      "sense": "elliptical clarification question about an accusation of deleting something",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "requires_context": true,
+      "context_patterns": [
+        "delete",
+        "deleted",
+        "screenshots"
+      ],
+      "slots": {
+        "intent": "clarification",
+        "speechAct": "question",
+        "subject": "self",
+        "action": "delete",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Что я удалил?"
+          ],
+          "casual": [
+            "Что я удалил?"
+          ],
+          "slang": [
+            "что удалил?"
+          ],
+          "heavy": [
+            "что удалил"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_delete_accusation_reaction",
+      "language": "en",
+      "pattern": "^there is no way you deleted them you['’]re actually so (?:weird|odd)(?:\\s*\\p{Extended_Pictographic})*$",
+      "normalized": "I cannot believe you deleted them; that is really strange.",
+      "sense": "incredulous social criticism about deletion",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "typos": {
+        "aint": "there is no way",
+        "youre": "you're"
+      },
+      "slots": {
+        "intent": "social_criticism",
+        "speechAct": "reaction",
+        "target": "conversation_partner",
+        "stance": "negative",
+        "polarity": "negative",
+        "intensity": "strong",
+        "emotion": "incredulity",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Не могу поверить, что ты это удалил. Это действительно странно."
+          ],
+          "casual": [
+            "Не верится, что ты это удалил, это реально странно"
+          ],
+          "slang": [
+            "да ну, ты реально это удалил, это странно"
+          ],
+          "heavy": [
+            "не, ты реально это удалил, это уже странно"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_brb_medication_reminder",
+      "language": "en",
+      "pattern": "^I will be right back,? have to remind my girlfriend to medicate[.!]*$",
+      "normalized": "I will be right back; I have to remind my girlfriend to take her medication.",
+      "sense": "temporary absence to remind girlfriend to take medication",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "abbreviations": {
+        "brb": "be right back",
+        "gf": "girlfriend",
+        "gotta": "have to"
+      },
+      "slots": {
+        "intent": "temporary_absence",
+        "speechAct": "statement",
+        "subject": "self",
+        "action": "medication_reminder",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Скоро вернусь, мне нужно напомнить девушке принять лекарства."
+          ],
+          "casual": [
+            "Щас вернусь, надо напомнить девушке принять лекарства"
+          ],
+          "slang": [
+            "щас вернусь, напомню девушке принять лекарства"
+          ],
+          "heavy": [
+            "щас буду, надо девушке про лекарства напомнить"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_screenshots_make_deletion_pointless",
+      "language": "en",
+      "pattern": "^the stuff there are already screenshots of that doesn['’]t even make sense to delete[.!]*$",
+      "normalized": "There are already screenshots of that stuff, so deleting it does not make sense.",
+      "sense": "deletion is pointless because screenshots already preserve the content",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "typos": {
+        "theres": "there are"
+      },
+      "slots": {
+        "intent": "argument",
+        "speechAct": "statement",
+        "action": "delete",
+        "stance": "negative",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Удалять это нет смысла, потому что скриншоты уже есть."
+          ],
+          "casual": [
+            "Смысла удалять нет, скрины уже есть"
+          ],
+          "slang": [
+            "зачем удалять, скрины уже есть"
+          ],
+          "heavy": [
+            "удалять бессмысленно, скрины уже есть"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_accusation_typo_defense",
+      "language": "en",
+      "pattern": "^I don['’]t know what you['’]re accusing me of(?:\\s*\\p{Extended_Pictographic})*$",
+      "normalized": "I do not know what you are accusing me of.",
+      "sense": "informal denial or request to clarify an accusation",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "abbreviations": {
+        "idk": "I don't know"
+      },
+      "typos": {
+        "off": "of"
+      },
+      "slots": {
+        "intent": "deny_accusation",
+        "speechAct": "statement",
+        "subject": "self",
+        "target": "conversation_partner",
+        "stance": "negative",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Не знаю, в чём ты меня обвиняешь."
+          ],
+          "casual": [
+            "Я хз, в чём ты меня обвиняешь"
+          ],
+          "slang": [
+            "хз в чем ты меня обвиняешь"
+          ],
+          "heavy": [
+            "хз че ты меня обвиняешь"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_nah_odd_social_judgment",
+      "language": "en",
+      "pattern": "^nah[, ]+you['’]re actually (?:so )?(?:odd|weird)(?:\\s*\\p{Extended_Pictographic})*$",
+      "normalized": "No, you are genuinely acting strange.",
+      "sense": "conversational disagreement followed by social judgment",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "typos": {
+        "youre": "you're"
+      },
+      "slots": {
+        "intent": "social_criticism",
+        "speechAct": "reaction",
+        "target": "conversation_partner",
+        "stance": "negative",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Нет, ты действительно ведёшь себя странно."
+          ],
+          "casual": [
+            "Не, ты реально странный"
+          ],
+          "slang": [
+            "не, ты реально странный"
+          ],
+          "heavy": [
+            "не ты реально странный"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_named_odd_question",
+      "language": "en",
+      "pattern": "^why is (?<name>[\\p{L}\\p{N}_.-]+) so odd[?!.]*$",
+      "normalized": "Why is $<name> acting so strange?",
+      "sense": "question about a known participant behaving strangely",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "required_entity_capture": "name",
+      "slots": {
+        "intent": "social_judgment_question",
+        "speechAct": "question",
+        "target": "participant",
+        "stance": "negative",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Почему $<name> ведёт себя так странно?"
+          ],
+          "casual": [
+            "Почему $<name> такой странный?"
+          ],
+          "slang": [
+            "почему $<name> такой странный?"
+          ],
+          "heavy": [
+            "че $<name> такой странный"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_chat_odd_judgment",
+      "language": "en",
+      "pattern": "^this chat(?: is)? so odd[?!.]*$",
+      "normalized": "This chat is very strange.",
+      "sense": "social judgment about the conversation",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {
+        "intent": "conversation_judgment",
+        "speechAct": "reaction",
+        "target": "chat",
+        "stance": "negative",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Этот чат очень странный."
+          ],
+          "casual": [
+            "Странный какой-то чат"
+          ],
+          "slang": [
+            "чат какой-то странный"
+          ],
+          "heavy": [
+            "странный чат"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_imminent_screenshot_send",
+      "language": "en",
+      "pattern": "^I am about to (?:send|post) (?:the )?forbidden screenshot[s]?[.!]*$",
+      "normalized": "I am about to send the forbidden screenshot.",
+      "sense": "imminent intention to send a forbidden screenshot",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "abbreviations": {
+        "finna": "about to",
+        "ss": "screenshot"
+      },
+      "slots": {
+        "intent": "imminent_action",
+        "speechAct": "statement",
+        "subject": "self",
+        "action": "send_screenshot",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Сейчас отправлю тот запрещённый скриншот."
+          ],
+          "casual": [
+            "Щас скину тот запрещённый скрин"
+          ],
+          "slang": [
+            "щас скину тот запрещенный скрин"
+          ],
+          "heavy": [
+            "щас кину запрещенный скрин"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_fire_reaction",
+      "language": "en",
+      "pattern": "^(?:that['’]?s |this is )?fire[.!]*$",
+      "normalized": "That is excellent.",
+      "sense": "strong praise, not literal fire",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {
+        "intent": "praise",
+        "speechAct": "reaction",
+        "stance": "positive",
+        "polarity": "positive",
+        "intensity": "strong",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Это потрясающе."
+          ],
+          "casual": [
+            "Это огонь"
+          ],
+          "slang": [
+            "имба"
+          ],
+          "heavy": [
+            "жесть как круто"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_sick_reaction",
+      "language": "en",
+      "pattern": "^(?:that['’]?s |this is )?sick[.!]*$",
+      "normalized": "That is very impressive.",
+      "sense": "praise, not illness",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {
+        "intent": "praise",
+        "speechAct": "reaction",
+        "stance": "positive",
+        "polarity": "positive",
+        "intensity": "strong",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Это впечатляет."
+          ],
+          "casual": [
+            "Очень круто"
+          ],
+          "slang": [
+            "жёстко"
+          ],
+          "heavy": [
+            "разнос"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_goes_hard_praise",
+      "language": "en",
+      "pattern": "^(?:this|that) (?<thing>song|track|edit|build|skin|fit) (?:goes|is) hard[.!]*$",
+      "normalized": "This $<thing> is very impressive.",
+      "sense": "strong praise, not physical hardness",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": false,
+      "slots": {
+        "intent": "praise",
+        "speechAct": "reaction",
+        "stance": "positive",
+        "polarity": "positive",
+        "intensity": "strong",
+        "register": "informal",
+        "certainty": "high"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Этот $<thing> очень впечатляет."
+          ],
+          "casual": [
+            "Этот $<thing> реально крутой"
+          ],
+          "slang": [
+            "$<thing> жёсткий"
+          ],
+          "heavy": [
+            "$<thing> разнос"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_dead_laughter_reaction",
+      "language": "en",
+      "pattern": "^I['’]?m dead(?:\\s*\\p{Extended_Pictographic})*$",
+      "normalized": "I am laughing very hard.",
+      "sense": "laughter reaction, not literal death",
+      "confidence": "medium",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "negative_patterns": [
+        "hospital",
+        "dying",
+        "hurt",
+        "ambulance"
+      ],
+      "slots": {
+        "intent": "laughter",
+        "speechAct": "reaction",
+        "stance": "positive",
+        "intensity": "strong",
+        "emotion": "amusement",
+        "register": "informal",
+        "certainty": "medium"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Я умираю со смеху."
+          ],
+          "casual": [
+            "Я не могу"
+          ],
+          "slang": [
+            "я умер"
+          ],
+          "heavy": [
+            "умер"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en_bet_acceptance",
+      "language": "en",
+      "pattern": "^bet[.!]*$",
+      "normalized": "Okay, agreed.",
+      "sense": "acceptance or agreement",
+      "confidence": "medium",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {
+        "intent": "acceptance",
+        "speechAct": "reaction",
+        "stance": "agreement",
+        "register": "informal",
+        "certainty": "medium"
+      },
+      "outputs": {
+        "ru": {
+          "clean": [
+            "Хорошо."
+          ],
+          "casual": [
+            "договорились"
+          ],
+          "slang": [
+            "окей"
+          ],
+          "heavy": [
+            "ок"
+          ]
+        }
+      }
+    }
+  ]
+};
+
+export default slangDataset;

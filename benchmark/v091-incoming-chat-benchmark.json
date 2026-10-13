@@ -1,0 +1,3388 @@
+[
+  {
+    "id": "typos-01",
+    "category": "typos",
+    "source": "Aint no way you deleted them youre actually so weird 😭",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Aint no way you deleted them youre actually so weird 😭]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Aint no way you deleted them youre actually so weird 😭]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "typos-02",
+    "category": "typos",
+    "source": "dont delete it",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: dont delete it]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: dont delete it]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "typos-03",
+    "category": "typos",
+    "source": "cant join rn",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: cant join rn]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: cant join rn]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "typos-04",
+    "category": "typos",
+    "source": "wont load",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: wont load]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: wont load]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "typos-05",
+    "category": "typos",
+    "source": "im tired",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: im tired]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: im tired]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "typos-06",
+    "category": "typos",
+    "source": "ive got it",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: ive got it]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: ive got it]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "typos-07",
+    "category": "typos",
+    "source": "Idk what you're accusing me off 💀",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Idk what you're accusing me off 💀]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Idk what you're accusing me off 💀]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "typos-08",
+    "category": "typos",
+    "source": "why is rob so oddd",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "почему грабить так нечётно",
+    "v090PipelineBaseline": "почему грабить так нечётно",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": [
+      {
+        "id": "rob",
+        "username": "rob",
+        "displayName": "Rob",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "typos-09",
+    "category": "typos",
+    "source": "theres already screenshots",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: theres already screenshots]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: theres already screenshots]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "typos-10",
+    "category": "typos",
+    "source": "aint no way",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: aint no way]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: aint no way]",
+    "candidateExpectedMeaning": "typos",
+    "expectedImportantMeanings": [
+      "typos",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-01",
+    "category": "abbreviations",
+    "source": "sup",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: sup]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: sup]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-02",
+    "category": "abbreviations",
+    "source": "Brb, gotta remind my gf to medicate",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Brb, gotta remind my gf to medicate]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Brb, gotta remind my gf to medicate]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-03",
+    "category": "abbreviations",
+    "source": "idk",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: idk]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: idk]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-04",
+    "category": "abbreviations",
+    "source": "busy rn",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: busy rn]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: busy rn]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-05",
+    "category": "abbreviations",
+    "source": "ngl this is odd",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: ngl this is odd]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: ngl this is odd]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-06",
+    "category": "abbreviations",
+    "source": "imo its fine",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: imo its fine]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: imo its fine]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-07",
+    "category": "abbreviations",
+    "source": "lmk when ready",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: lmk when ready]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: lmk when ready]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-08",
+    "category": "abbreviations",
+    "source": "mb",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: mb]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: mb]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-09",
+    "category": "abbreviations",
+    "source": "np",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: np]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: np]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "abbreviations-10",
+    "category": "abbreviations",
+    "source": "weird af",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: weird af]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: weird af]",
+    "candidateExpectedMeaning": "abbreviations",
+    "expectedImportantMeanings": [
+      "abbreviations",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "short_reactions-01",
+    "category": "short_reactions",
+    "source": "Cool",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "Прохладный",
+    "v090PipelineBaseline": "Прохладный",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "cool",
+        "username": "cool",
+        "displayName": "Cool",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "short_reactions-02",
+    "category": "short_reactions",
+    "source": "How's life",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: How's life]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: How's life]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "short_reactions-03",
+    "category": "short_reactions",
+    "source": "fire",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: fire]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: fire]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "fire",
+        "username": "fire",
+        "displayName": "Fire",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "short_reactions-04",
+    "category": "short_reactions",
+    "source": "sick",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: sick]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: sick]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "short_reactions-05",
+    "category": "short_reactions",
+    "source": "bet",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: bet]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: bet]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "short_reactions-06",
+    "category": "short_reactions",
+    "source": "real",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: real]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: real]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "short_reactions-07",
+    "category": "short_reactions",
+    "source": "same",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: same]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: same]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "short_reactions-08",
+    "category": "short_reactions",
+    "source": "fr",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: fr]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: fr]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "short_reactions-09",
+    "category": "short_reactions",
+    "source": "valid",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: valid]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: valid]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "short_reactions-10",
+    "category": "short_reactions",
+    "source": "based",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: based]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: based]",
+    "candidateExpectedMeaning": "short_reactions",
+    "expectedImportantMeanings": [
+      "short_reactions",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "slang-01",
+    "category": "slang",
+    "source": "Finna send it",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Finna send it]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Finna send it]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "slang-02",
+    "category": "slang",
+    "source": "boutta leave",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: boutta leave]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: boutta leave]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "slang-03",
+    "category": "slang",
+    "source": "gonna join",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: gonna join]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: gonna join]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "slang-04",
+    "category": "slang",
+    "source": "gotta go",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: gotta go]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: gotta go]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "slang-05",
+    "category": "slang",
+    "source": "this goes hard",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: this goes hard]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: this goes hard]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "slang-06",
+    "category": "slang",
+    "source": "that skin is fire",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: that skin is fire]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: that skin is fire]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": [
+      {
+        "id": "fire",
+        "username": "fire",
+        "displayName": "Fire",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "slang-07",
+    "category": "slang",
+    "source": "im dead 💀",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "я мёртв 💀",
+    "v090PipelineBaseline": "я мёртв 💀",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "slang-08",
+    "category": "slang",
+    "source": "nah thats wild",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: nah thats wild]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: nah thats wild]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "slang-09",
+    "category": "slang",
+    "source": "mad good",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: mad good]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: mad good]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "slang-10",
+    "category": "slang",
+    "source": "clean build",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: clean build]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: clean build]",
+    "candidateExpectedMeaning": "slang",
+    "expectedImportantMeanings": [
+      "slang",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "member_names-01",
+    "category": "member_names",
+    "source": "Sup mocha dude",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Sup mocha dude]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Sup mocha dude]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "mocha",
+        "username": "mocha",
+        "displayName": "Mocha",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-02",
+    "category": "member_names",
+    "source": "why is rob so oddd",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "почему грабить так нечётно",
+    "v090PipelineBaseline": "почему грабить так нечётно",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "rob",
+        "username": "rob",
+        "displayName": "Rob",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-03",
+    "category": "member_names",
+    "source": "Marco joined",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Marco joined]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Marco joined]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "marco",
+        "username": "marco",
+        "displayName": "Marco",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-04",
+    "category": "member_names",
+    "source": "hey Mark",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: hey Mark]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: hey Mark]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "mark",
+        "username": "mark",
+        "displayName": "Mark",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-05",
+    "category": "member_names",
+    "source": "Mocha deleted it",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Mocha deleted it]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Mocha deleted it]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "mocha",
+        "username": "mocha",
+        "displayName": "Mocha",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-06",
+    "category": "member_names",
+    "source": "ask Rob",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: ask Rob]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: ask Rob]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "rob",
+        "username": "rob",
+        "displayName": "Rob",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-07",
+    "category": "member_names",
+    "source": "yo Luna",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: yo Luna]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: yo Luna]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "luna",
+        "username": "luna",
+        "displayName": "Luna",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-08",
+    "category": "member_names",
+    "source": "where is Fire",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: where is Fire]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: where is Fire]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "fire",
+        "username": "fire",
+        "displayName": "Fire",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-09",
+    "category": "member_names",
+    "source": "tell Cool",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: tell Cool]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: tell Cool]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "cool",
+        "username": "cool",
+        "displayName": "Cool",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "member_names-10",
+    "category": "member_names",
+    "source": "why did May leave",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: why did May leave]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: why did May leave]",
+    "candidateExpectedMeaning": "member_names",
+    "expectedImportantMeanings": [
+      "member_names",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "may",
+        "username": "may",
+        "displayName": "May",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "reply_ellipsis-01",
+    "category": "reply_ellipsis",
+    "source": "Deleted what?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "Что удалено?",
+    "v090PipelineBaseline": "Что удалено?",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "Aint no way you deleted them",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-02",
+    "category": "reply_ellipsis",
+    "source": "what?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: what?]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: what?]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-03",
+    "category": "reply_ellipsis",
+    "source": "why?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: why?]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: why?]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-04",
+    "category": "reply_ellipsis",
+    "source": "same",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: same]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: same]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-05",
+    "category": "reply_ellipsis",
+    "source": "real",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: real]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: real]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-06",
+    "category": "reply_ellipsis",
+    "source": "which one?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: which one?]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: which one?]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-07",
+    "category": "reply_ellipsis",
+    "source": "who did?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: who did?]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: who did?]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-08",
+    "category": "reply_ellipsis",
+    "source": "when?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: when?]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: when?]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-09",
+    "category": "reply_ellipsis",
+    "source": "me?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: me?]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: me?]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "reply_ellipsis-10",
+    "category": "reply_ellipsis",
+    "source": "how so?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: how so?]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: how so?]",
+    "candidateExpectedMeaning": "reply_ellipsis",
+    "expectedImportantMeanings": [
+      "reply_ellipsis",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "that patch broke the build again",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-01",
+    "category": "malformed_grammar",
+    "source": "this chat so odd",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "этот чат такой нечётный",
+    "v090PipelineBaseline": "этот чат такой нечётный",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-02",
+    "category": "malformed_grammar",
+    "source": "The stuff theres already screenshots of that doesn't even make sense to delete",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: The stuff theres already screenshots of that doesn't even make sense to delete]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: The stuff theres already screenshots of that doesn't even make sense to delete]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-03",
+    "category": "malformed_grammar",
+    "source": "why he do that",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: why he do that]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: why he do that]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-04",
+    "category": "malformed_grammar",
+    "source": "you deleted why",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: you deleted why]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: you deleted why]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-05",
+    "category": "malformed_grammar",
+    "source": "me and her was there",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: me and her was there]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: me and her was there]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-06",
+    "category": "malformed_grammar",
+    "source": "aint nobody got time",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: aint nobody got time]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: aint nobody got time]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-07",
+    "category": "malformed_grammar",
+    "source": "how come it dont work",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: how come it dont work]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: how come it dont work]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-08",
+    "category": "malformed_grammar",
+    "source": "what you accusing me of",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: what you accusing me of]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: what you accusing me of]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-09",
+    "category": "malformed_grammar",
+    "source": "server been broke",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: server been broke]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: server been broke]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "malformed_grammar-10",
+    "category": "malformed_grammar",
+    "source": "that dont make sense",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: that dont make sense]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: that dont make sense]",
+    "candidateExpectedMeaning": "malformed_grammar",
+    "expectedImportantMeanings": [
+      "malformed_grammar",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "emoji-01",
+    "category": "emoji",
+    "source": "youre odd 💀",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: youre odd 💀]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: youre odd 💀]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "emoji-02",
+    "category": "emoji",
+    "source": "no way 😭",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: no way 😭]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: no way 😭]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "emoji-03",
+    "category": "emoji",
+    "source": "im dead 😂",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: im dead 😂]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: im dead 😂]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "emoji-04",
+    "category": "emoji",
+    "source": "cool 👍",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: cool 👍]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: cool 👍]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "cool",
+        "username": "cool",
+        "displayName": "Cool",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "emoji-05",
+    "category": "emoji",
+    "source": "bruh 💀",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: bruh 💀]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: bruh 💀]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "emoji-06",
+    "category": "emoji",
+    "source": "thats fire 🔥",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: thats fire 🔥]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: thats fire 🔥]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": [
+      {
+        "id": "fire",
+        "username": "fire",
+        "displayName": "Fire",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "emoji-07",
+    "category": "emoji",
+    "source": "why tho 😭",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: why tho 😭]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: why tho 😭]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "emoji-08",
+    "category": "emoji",
+    "source": "gg 😭",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: gg 😭]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: gg 😭]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "emoji-09",
+    "category": "emoji",
+    "source": "nahhh 💀",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: nahhh 💀]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: nahhh 💀]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "emoji-10",
+    "category": "emoji",
+    "source": "sick 🔥",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: sick 🔥]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: sick 🔥]",
+    "candidateExpectedMeaning": "emoji",
+    "expectedImportantMeanings": [
+      "emoji",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-01",
+    "category": "expressive_spelling",
+    "source": "oddd",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: oddd]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: oddd]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-02",
+    "category": "expressive_spelling",
+    "source": "nahhh",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: nahhh]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: nahhh]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-03",
+    "category": "expressive_spelling",
+    "source": "brooo",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: brooo]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: brooo]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-04",
+    "category": "expressive_spelling",
+    "source": "noooo",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: noooo]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: noooo]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-05",
+    "category": "expressive_spelling",
+    "source": "wtfff",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: wtfff]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: wtfff]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-06",
+    "category": "expressive_spelling",
+    "source": "soooo good",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: soooo good]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: soooo good]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-07",
+    "category": "expressive_spelling",
+    "source": "heyyyy",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: heyyyy]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: heyyyy]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-08",
+    "category": "expressive_spelling",
+    "source": "cooool",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: cooool]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: cooool]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-09",
+    "category": "expressive_spelling",
+    "source": "weirddd",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: weirddd]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: weirddd]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "expressive_spelling-10",
+    "category": "expressive_spelling",
+    "source": "yessss",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: yessss]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: yessss]",
+    "candidateExpectedMeaning": "expressive_spelling",
+    "expectedImportantMeanings": [
+      "expressive_spelling",
+      "screenshot when context supports it"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "polysemy-01",
+    "category": "polysemy",
+    "source": "Cool",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "Прохладный",
+    "v090PipelineBaseline": "Прохладный",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "cool",
+        "username": "cool",
+        "displayName": "Cool",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "polysemy-02",
+    "category": "polysemy",
+    "source": "that's fire",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "это огонь",
+    "v090PipelineBaseline": "это огонь",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "fire",
+        "username": "fire",
+        "displayName": "Fire",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "polysemy-03",
+    "category": "polysemy",
+    "source": "that's sick",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "это больное",
+    "v090PipelineBaseline": "это больное",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "polysemy-04",
+    "category": "polysemy",
+    "source": "this song goes hard",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "эта песня становится твёрдой",
+    "v090PipelineBaseline": "эта песня становится твёрдой",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "polysemy-05",
+    "category": "polysemy",
+    "source": "im dead 💀",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "я мёртв 💀",
+    "v090PipelineBaseline": "я мёртв 💀",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "polysemy-06",
+    "category": "polysemy",
+    "source": "mad good",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: mad good]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: mad good]",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "polysemy-07",
+    "category": "polysemy",
+    "source": "clean",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: clean]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: clean]",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "polysemy-08",
+    "category": "polysemy",
+    "source": "valid",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: valid]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: valid]",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "polysemy-09",
+    "category": "polysemy",
+    "source": "wild",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: wild]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: wild]",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "polysemy-10",
+    "category": "polysemy",
+    "source": "bet",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: bet]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: bet]",
+    "candidateExpectedMeaning": "polysemy",
+    "expectedImportantMeanings": [
+      "polysemy",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "gaming-01",
+    "category": "gaming",
+    "source": "Finna send the forbidden ss",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Finna send the forbidden ss]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Finna send the forbidden ss]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "screenshot when context supports it"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "gaming-02",
+    "category": "gaming",
+    "source": "this build goes hard",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: this build goes hard]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: this build goes hard]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "gaming-03",
+    "category": "gaming",
+    "source": "sick skin",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: sick skin]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: sick skin]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "gaming-04",
+    "category": "gaming",
+    "source": "dead lobby",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: dead lobby]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: dead lobby]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "gaming-05",
+    "category": "gaming",
+    "source": "hard carry",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: hard carry]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: hard carry]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "gaming-06",
+    "category": "gaming",
+    "source": "clean ace",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: clean ace]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: clean ace]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": []
+  },
+  {
+    "id": "gaming-07",
+    "category": "gaming",
+    "source": "mad damage",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: mad damage]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: mad damage]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "gaming-08",
+    "category": "gaming",
+    "source": "fire edit",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: fire edit]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: fire edit]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "fire",
+        "username": "fire",
+        "displayName": "Fire",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "gaming-09",
+    "category": "gaming",
+    "source": "ss the scoreboard",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: ss the scoreboard]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: ss the scoreboard]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "screenshot when context supports it"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "gaming-10",
+    "category": "gaming",
+    "source": "boutta queue",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: boutta queue]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: boutta queue]",
+    "candidateExpectedMeaning": "gaming",
+    "expectedImportantMeanings": [
+      "gaming",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-01",
+    "category": "moderation_mixed",
+    "source": "idk why u muted me",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: idk why u muted me]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: idk why u muted me]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-02",
+    "category": "moderation_mixed",
+    "source": "Nah youre actually odd💀",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: Nah youre actually odd💀]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: Nah youre actually odd💀]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-03",
+    "category": "moderation_mixed",
+    "source": "wtf за мут",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: wtf за мут]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: wtf за мут]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-04",
+    "category": "moderation_mixed",
+    "source": "lmk за что бан",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: lmk за что бан]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: lmk за что бан]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-05",
+    "category": "moderation_mixed",
+    "source": "the rule dont make sense",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: the rule dont make sense]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: the rule dont make sense]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-06",
+    "category": "moderation_mixed",
+    "source": "youre accusing me off spam",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: youre accusing me off spam]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: youre accusing me off spam]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-07",
+    "category": "moderation_mixed",
+    "source": "ss already exists",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: ss already exists]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: ss already exists]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "screenshot when context supports it"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-08",
+    "category": "moderation_mixed",
+    "source": "Deleted what?",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "Что удалено?",
+    "v090PipelineBaseline": "Что удалено?",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "context": {
+      "previousTurns": [
+        {
+          "content": "Aint no way you deleted them",
+          "authorId": "other",
+          "relevance": 5
+        }
+      ]
+    },
+    "participants": []
+  },
+  {
+    "id": "moderation_mixed-09",
+    "category": "moderation_mixed",
+    "source": "cool, appeal accepted",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: cool, appeal accepted]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: cool, appeal accepted]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": true,
+    "participants": [
+      {
+        "id": "cool",
+        "username": "cool",
+        "displayName": "Cool",
+        "evidence": "recent_author"
+      }
+    ]
+  },
+  {
+    "id": "moderation_mixed-10",
+    "category": "moderation_mixed",
+    "source": "aint no way thats a warning",
+    "targetLanguage": "ru",
+    "rawProviderBaseline": "[raw provider baseline for: aint no way thats a warning]",
+    "v090PipelineBaseline": "[v0.9.0 provider-shaped output for: aint no way thats a warning]",
+    "candidateExpectedMeaning": "moderation_mixed",
+    "expectedImportantMeanings": [
+      "moderation_mixed",
+      "source intent preserved"
+    ],
+    "forbiddenOutputs": [
+      "invented formal register",
+      "invented aggression",
+      "invented profanity",
+      "untranslated high-confidence typo"
+    ],
+    "forbiddenSemanticChanges": [
+      "nickname translated",
+      "literal reaction sense",
+      "context copied into output"
+    ],
+    "dictionaryTranslationWrong": false,
+    "participants": []
+  }
+]

@@ -1,0 +1,1459 @@
+[
+  {
+    "id": "german_conversational_compression-01",
+    "group": "german_conversational_compression",
+    "source": "как дела?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "providerBaseline": "Wie geht es dir?",
+    "expectedImportantMeanings": [
+      "Wie geht es dir?"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-02",
+    "group": "german_conversational_compression",
+    "source": "як справи?",
+    "sourceLanguage": "uk",
+    "targetLanguage": "de",
+    "providerBaseline": "Wie geht es dir?",
+    "expectedImportantMeanings": [
+      "Wie geht es dir?"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-03",
+    "group": "german_conversational_compression",
+    "source": "how are you?",
+    "sourceLanguage": "en",
+    "targetLanguage": "de",
+    "providerBaseline": "Wie geht es dir?",
+    "expectedImportantMeanings": [
+      "Wie geht es dir?"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-04",
+    "group": "german_conversational_compression",
+    "source": "я очень хочу спать",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "providerBaseline": "Ich will wirklich schlafen.",
+    "expectedImportantMeanings": [
+      "Ich will wirklich schlafen."
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-05",
+    "group": "german_conversational_compression",
+    "source": "ты уже забрал награду?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "providerBaseline": "Hast du die Belohnung schon abgeholt?",
+    "expectedImportantMeanings": [
+      "Hast du die Belohnung schon abgeholt?"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-06",
+    "group": "german_conversational_compression",
+    "source": "почему они ещё не починили этот баг?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "providerBaseline": "Warum haben sie diesen Bug noch nicht behoben?",
+    "expectedImportantMeanings": [
+      "Warum haben sie diesen Bug noch nicht behoben?"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-07",
+    "group": "german_conversational_compression",
+    "source": "ты уже проверил сервер?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "providerBaseline": "Hast du den Server bereits überprüft?",
+    "expectedImportantMeanings": [
+      "Hast du den Server bereits überprüft?"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-08",
+    "group": "german_conversational_compression",
+    "source": "я сейчас зайду",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "providerBaseline": "Ich werde jetzt beitreten.",
+    "expectedImportantMeanings": [
+      "Ich werde jetzt beitreten."
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-09",
+    "group": "german_conversational_compression",
+    "source": "у тебя ещё есть хилки?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "providerBaseline": "Haben Sie noch Heilungen?",
+    "expectedImportantMeanings": [
+      "Haben Sie noch Heilungen?"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "german_conversational_compression-10",
+    "group": "german_conversational_compression",
+    "source": "мы уже закончили",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "providerBaseline": "Wir haben bereits abgeschlossen.",
+    "expectedImportantMeanings": [
+      "Wir haben bereits abgeschlossen."
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-01",
+    "group": "pragmatic_profanity",
+    "source": "пиздец",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "disaster_or_doom"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-02",
+    "group": "pragmatic_profanity",
+    "source": "это пиздец",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "directed_situation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-03",
+    "group": "pragmatic_profanity",
+    "source": "ну пиздец...",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "frustration"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-04",
+    "group": "pragmatic_profanity",
+    "source": "пиздец как красиво",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "admiration"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-05",
+    "group": "pragmatic_profanity",
+    "source": "пиздец как бесит",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "frustration"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-06",
+    "group": "pragmatic_profanity",
+    "source": "блять как я устал",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "intensifier"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-07",
+    "group": "pragmatic_profanity",
+    "source": "ебать тут красиво",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "admiration"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-08",
+    "group": "pragmatic_profanity",
+    "source": "сука как больно",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "intensifier"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-09",
+    "group": "pragmatic_profanity",
+    "source": "it's fucking cold",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "intensifier"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "pragmatic_profanity-10",
+    "group": "pragmatic_profanity",
+    "source": "scheiß kalt heute",
+    "sourceLanguage": "de",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "intensifier"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-01",
+    "group": "intensifiers",
+    "source": "пиздец как я хочу спать",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "extreme_desire"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-02",
+    "group": "intensifiers",
+    "source": "пиздец как холодно",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "extreme_cold"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-03",
+    "group": "intensifiers",
+    "source": "пиздец как жарко",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "extreme_heat"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-04",
+    "group": "intensifiers",
+    "source": "пиздец как долго",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "extreme_duration"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-05",
+    "group": "intensifiers",
+    "source": "this is so incredibly good",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "strong_positive"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-06",
+    "group": "intensifiers",
+    "source": "das ist so krass gut",
+    "sourceLanguage": "de",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "strong_positive"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-07",
+    "group": "intensifiers",
+    "source": "超好看",
+    "sourceLanguage": "zh-CN",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "strong_positive"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-08",
+    "group": "intensifiers",
+    "source": "超級好看",
+    "sourceLanguage": "zh-TW",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "strong_positive"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-09",
+    "group": "intensifiers",
+    "source": "めっちゃきれい",
+    "sourceLanguage": "ja",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "strong_positive"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "intensifiers-10",
+    "group": "intensifiers",
+    "source": "진짜 너무 예뻐",
+    "sourceLanguage": "ko",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "strong_positive"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-01",
+    "group": "mode_differentiation",
+    "source": "как дела?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "social_checkin"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-02",
+    "group": "mode_differentiation",
+    "source": "я очень хочу спать",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "sleep_desire"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-03",
+    "group": "mode_differentiation",
+    "source": "пиздец как я хочу спать",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "vulgar_sleep_desire"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-04",
+    "group": "mode_differentiation",
+    "source": "ты уже забрал награду?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "reward_question"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-05",
+    "group": "mode_differentiation",
+    "source": "почему они ещё не починили этот баг?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "bug_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-06",
+    "group": "mode_differentiation",
+    "source": "Would anyone like to play Valorant?",
+    "sourceLanguage": "en",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "gaming_invitation"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-07",
+    "group": "mode_differentiation",
+    "source": "なぜこのバグはまだ修正されていないのですか？",
+    "sourceLanguage": "ja",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "bug_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-08",
+    "group": "mode_differentiation",
+    "source": "왜 아직도 이 버그를 고치지 않았나요?",
+    "sourceLanguage": "ko",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "bug_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-09",
+    "group": "mode_differentiation",
+    "source": "为什么他们还没有修复这个 bug？",
+    "sourceLanguage": "zh-CN",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "bug_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "mode_differentiation-10",
+    "group": "mode_differentiation",
+    "source": "為什麼他們還沒有修復這個 bug？",
+    "sourceLanguage": "zh-TW",
+    "targetLanguage": "de",
+    "expectedImportantMeanings": [
+      "bug_complaint"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-01",
+    "group": "multi_message_context",
+    "source": "real",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "this sword got nerfed again"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-02",
+    "group": "multi_message_context",
+    "source": "same",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "the queue is taking forever"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "shared_experience"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-03",
+    "group": "multi_message_context",
+    "source": "fr",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "this patch made the build useless"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-04",
+    "group": "multi_message_context",
+    "source": "жиза",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "опять всю ночь не спал"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "shared_experience"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-05",
+    "group": "multi_message_context",
+    "source": "точно",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "этот сервер опять лагает"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-06",
+    "group": "multi_message_context",
+    "source": "echt",
+    "sourceLanguage": "de",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "der Patch war echt schlecht"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-07",
+    "group": "multi_message_context",
+    "source": "genau",
+    "sourceLanguage": "de",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "der Build braucht einen Buff"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-08",
+    "group": "multi_message_context",
+    "source": "real",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "old",
+        "older",
+        "the boss is overtuned"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-09",
+    "group": "multi_message_context",
+    "source": "это реально плохо",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [
+        "this sword got nerfed"
+      ]
+    },
+    "expectedImportantMeanings": [
+      "literal_adverb"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "multi_message_context-10",
+    "group": "multi_message_context",
+    "source": "real",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "unknown_without_context"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-01",
+    "group": "reply_context",
+    "source": "real",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "this sword got nerfed again"
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-02",
+    "group": "reply_context",
+    "source": "same",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "I can barely stay awake"
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-03",
+    "group": "reply_context",
+    "source": "жиза",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "опять не выспался"
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-04",
+    "group": "reply_context",
+    "source": "точно",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "билд слишком сильный"
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-05",
+    "group": "reply_context",
+    "source": "fr",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "the server is lagging again"
+    },
+    "expectedImportantMeanings": [
+      "agreement"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-06",
+    "group": "reply_context",
+    "source": "да ну",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "он выбил предмет с первого раза"
+    },
+    "expectedImportantMeanings": [
+      "disbelief"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-07",
+    "group": "reply_context",
+    "source": "really?",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "I got the rare drop"
+    },
+    "expectedImportantMeanings": [
+      "question"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-08",
+    "group": "reply_context",
+    "source": "マジ？",
+    "sourceLanguage": "ja",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "一回で出た"
+    },
+    "expectedImportantMeanings": [
+      "question"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-09",
+    "group": "reply_context",
+    "source": "진짜?",
+    "sourceLanguage": "ko",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "한 번에 나왔어"
+    },
+    "expectedImportantMeanings": [
+      "question"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "reply_context-10",
+    "group": "reply_context",
+    "source": "真的假的",
+    "sourceLanguage": "zh-TW",
+    "targetLanguage": "en",
+    "context": {
+      "previousMessages": [],
+      "replyMessage": "第一次就掉了"
+    },
+    "expectedImportantMeanings": [
+      "question"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-01",
+    "group": "global_chat_expressions",
+    "source": "втф???",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "wtf"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-02",
+    "group": "global_chat_expressions",
+    "source": "wtf",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "wtf"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-03",
+    "group": "global_chat_expressions",
+    "source": "лол",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "lol"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-04",
+    "group": "global_chat_expressions",
+    "source": "lol",
+    "sourceLanguage": "de",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "lol"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-05",
+    "group": "global_chat_expressions",
+    "source": "омг",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "omg"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-06",
+    "group": "global_chat_expressions",
+    "source": "gg",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "gg"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-07",
+    "group": "global_chat_expressions",
+    "source": "wp",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "wp"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-08",
+    "group": "global_chat_expressions",
+    "source": "афк",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "afk"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-09",
+    "group": "global_chat_expressions",
+    "source": "brb",
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "brb"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "global_chat_expressions-10",
+    "group": "global_chat_expressions",
+    "source": "gg wp",
+    "sourceLanguage": "de",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "gg_wp"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-01",
+    "group": "register_preservation",
+    "source": "ты можешь помочь?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "informal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-02",
+    "group": "register_preservation",
+    "source": "Вы можете помочь?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "formal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-03",
+    "group": "register_preservation",
+    "source": "ребята, вы можете зайти?",
+    "sourceLanguage": "ru",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "plural_informal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-04",
+    "group": "register_preservation",
+    "source": "ти можеш допомогти?",
+    "sourceLanguage": "uk",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "informal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-05",
+    "group": "register_preservation",
+    "source": "Kannst du helfen?",
+    "sourceLanguage": "de",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "informal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-06",
+    "group": "register_preservation",
+    "source": "Können Sie helfen?",
+    "sourceLanguage": "de",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "formal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-07",
+    "group": "register_preservation",
+    "source": "tu peux venir ?",
+    "sourceLanguage": "fr",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "informal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-08",
+    "group": "register_preservation",
+    "source": "Vous pouvez confirmer ?",
+    "sourceLanguage": "fr",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "formal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-09",
+    "group": "register_preservation",
+    "source": "你能来吗",
+    "sourceLanguage": "zh-CN",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "informal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  },
+  {
+    "id": "register_preservation-10",
+    "group": "register_preservation",
+    "source": "您能确认吗",
+    "sourceLanguage": "zh-CN",
+    "targetLanguage": "en",
+    "expectedImportantMeanings": [
+      "formal"
+    ],
+    "forbiddenSemanticChanges": [
+      "invented addressee",
+      "invented aggression",
+      "invented profanity",
+      "lost polarity",
+      "context copied into output"
+    ]
+  }
+]
