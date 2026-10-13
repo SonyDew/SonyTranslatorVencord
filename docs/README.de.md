@@ -38,10 +38,6 @@ Nur die aktuelle Nachricht, bei Bedarf lokal normalisiert, geht an Google. Antwo
 relevante vorherige Nachrichten und Teilnehmerdaten werden lokal ausgewertet. Neue Memes,
 Ironie und mehrdeutige Abkürzungen können weiterhin falsch verstanden werden.
 
-v0.9.3 repariert das Update flacher Git-Klone und die veraltete Modal-Erkennung nach
-Discord-Updates. Benachrichtigungs-API und Fehlerbehandlung wurden angepasst. Prüfung:
-163 Tests, 500 Benchmark-Fälle, Vencord-TypeScript-Prüfung und Produktionsbuild.
-
 ## Lizenz
 
 Originalautor: **SonyDev / SonyDew**. Persönliche Nutzung und private Änderungen sind erlaubt.

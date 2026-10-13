@@ -72,14 +72,6 @@ Low-confidence cases use conservative provider fallback.
 
 SonyTranslator is not affiliated with Discord, Google or Vencord.
 
-## v0.9.3 compatibility repair
-
-- Restores shallow Git ancestry so Vencord actually updates after Discord changes.
-- Stops stale installations if a safe fast-forward is blocked by local edits.
-- Uses current Vencord's Discord Modal lookup and notification API.
-- Contains settings-render errors with an error boundary.
-- Shows simple installation stages and saves technical output to a log.
-
 ## Development
 
 ```sh
