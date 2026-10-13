@@ -1,5 +1,5 @@
 /*
- * SonyTranslator - Vencord userplugin v0.9.3
+ * SonyTranslator - Vencord userplugin v0.9.4
  * Copyright (c) 2026 SonyDev
  * SPDX-License-Identifier: LicenseRef-SonyTranslator-Personal-Use-1.0
  *
@@ -10,6 +10,7 @@
 import "./styles.css";
 
 import slangDataset from "./slangDataset";
+import { languageDisplayName, uiText, type UiKey } from "./localization";
 import {
     canTranslate,
     createTranslationEngine,
@@ -35,6 +36,7 @@ import {
     ChannelStore,
     Forms,
     GuildMemberStore,
+    LocaleStore,
     Modal,
     MessageStore,
     openModal,
@@ -46,7 +48,13 @@ import {
     useEffect,
     useMemo,
     useState,
+    useStateFromStores,
 } from "@webpack/common";
+
+function useUi() {
+    const locale = useStateFromStores([LocaleStore], () => LocaleStore.locale);
+    return { locale, t: (key: UiKey) => uiText(locale, key) };
+}
 
 const MessageContentClasses = findCssClassesLazy("messageContent", "markupRtl");
 const MarkupClasses = findCssClassesLazy("markup", "codeContainer");
@@ -1423,6 +1431,7 @@ function cachedIncomingTranslation(message: Message): Promise<string | null> {
 }
 
 function IncomingTranslation({ message }: { message: Message; }) {
+    const { t } = useUi();
     const s = settings.use([
         "incomingEnabled",
         "incomingTarget",
@@ -1486,7 +1495,7 @@ function IncomingTranslation({ message }: { message: Message; }) {
             <div className={`${MessageContentClasses.messageContent} ${MarkupClasses.markup} sony-translator-text`}>
                 {Parser.parse(translated)}
             </div>
-            {s.showTranslationBadge && <span className="sony-translator-badge">translated</span>}
+            {s.showTranslationBadge && <span className="sony-translator-badge">{t("translated")}</span>}
         </div>
     );
 }
@@ -1536,9 +1545,9 @@ function ReplyTranslation({ baseMessage, referencedMessage }: ReplyTranslationPr
     );
 }
 
-const languageOptions = () => Object.entries(GoogleLanguages)
+const languageOptions = (locale: string) => Object.entries(GoogleLanguages)
     .filter(([value]) => value !== "auto")
-    .map(([value, label]) => ({ value, label }));
+    .map(([value, label]) => ({ value, label: languageDisplayName(value, locale, label) }));
 
 function LanguageSelect({
     title,
@@ -1549,7 +1558,8 @@ function LanguageSelect({
     value: string;
     onChange: (value: string) => void;
 }) {
-    const options = useMemo(languageOptions, []);
+    const { locale, t } = useUi();
+    const options = useMemo(() => languageOptions(locale), [locale]);
 
     return (
         <section className={Margins.bottom16}>
@@ -1557,7 +1567,7 @@ function LanguageSelect({
             <SearchableSelect
                 options={options}
                 value={value}
-                placeholder="Выбери язык"
+                placeholder={t("selectLanguage")}
                 maxVisibleItems={6}
                 closeOnSelect
                 onChange={onChange}
@@ -1568,13 +1578,14 @@ function LanguageSelect({
 
 function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
     const s = settings.use();
+    const { t } = useUi();
 
     const styleOptions = [
-        { label: "Как я пишу — сохранять мою манеру", value: "mirror" },
-        { label: "Clean — обычный грамотный перевод", value: "clean" },
-        { label: "Casual — разговорно, без перегиба", value: "casual" },
-        { label: "Slang — Discord/Roblox/chat slang", value: "slang" },
-        { label: "Heavy — максимум сокращений", value: "heavy" },
+        { label: `Mirror — ${t("mirror")}`, value: "mirror" },
+        { label: `Clean — ${t("clean")}`, value: "clean" },
+        { label: `Casual — ${t("casual")}`, value: "casual" },
+        { label: `Slang — ${t("slang")}`, value: "slang" },
+        { label: `Heavy — ${t("heavy")}`, value: "heavy" },
     ];
 
     const updateLanguage = (kind: "incoming" | "outgoing", value: string) => {
@@ -1590,22 +1601,22 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                 <div className="sony-translator-hero">
                     <div className="sony-translator-hero-icon"><TranslateIcon width={24} height={24} /></div>
                     <div>
-                        <div className="sony-translator-hero-title">Auto Translate · v0.9.3</div>
-                        <div className="sony-translator-hero-subtitle">Перевод входящих и исходящих сообщений</div>
+                        <div className="sony-translator-hero-title">SonyTranslator · v0.9.4</div>
+                        <div className="sony-translator-hero-subtitle">{t("subtitle")}</div>
                     </div>
                 </div>
 
                 <FormSwitch
-                    title="Переводить входящие автоматически"
-                    description="Сообщения, которые появляются в чате, автоматически переводятся на твой язык."
+                    title={t("incoming")}
+                    description={t("incomingHelp")}
                     value={s.incomingEnabled}
                     onChange={v => settings.store.incomingEnabled = v}
                     hideBorder
                 />
 
                 <FormSwitch
-                    title="Переводить мои сообщения перед отправкой"
-                    description="Пишешь на своём языке — в Discord уходит перевод на выбранный язык."
+                    title={t("outgoing")}
+                    description={t("outgoingHelp")}
                     value={s.outgoingEnabled}
                     onChange={v => settings.store.outgoingEnabled = v}
                     hideBorder
@@ -1614,26 +1625,26 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                 <Divider className={Margins.bottom16} />
 
                 <LanguageSelect
-                    title="Мой язык (что я вижу)"
+                    title={t("readLanguage")}
                     value={s.incomingTarget}
                     onChange={v => updateLanguage("incoming", v)}
                 />
 
                 <LanguageSelect
-                    title="Язык отправки"
+                    title={t("sendLanguage")}
                     value={s.outgoingTarget}
                     onChange={v => updateLanguage("outgoing", v)}
                 />
 
                 <section className={Margins.bottom16}>
-                    <Forms.FormTitle tag="h3">Адаптация входящих сообщений</Forms.FormTitle>
+                    <Forms.FormTitle tag="h3">{t("incomingStyle")}</Forms.FormTitle>
                     <SearchableSelect
                         options={[
-                            { label: "Clean — максимально нейтрально", value: "clean" },
-                            { label: "Casual — естественно и понятно", value: "casual" },
-                            { label: "Slang — адаптировать под чат", value: "slang" },
-                            { label: "Heavy — сохранять сильный сленг", value: "heavy" },
-                            { label: "Как в оригинале", value: "mirror" },
+                            { label: `Clean — ${t("clean")}`, value: "clean" },
+                            { label: `Casual — ${t("casual")}`, value: "casual" },
+                            { label: `Slang — ${t("slang")}`, value: "slang" },
+                            { label: `Heavy — ${t("heavy")}`, value: "heavy" },
+                            { label: `Mirror — ${t("mirror")}`, value: "mirror" },
                         ]}
                         value={s.incomingStyle}
                         maxVisibleItems={5}
@@ -1644,12 +1655,12 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                         }}
                     />
                     <Forms.FormText className={Margins.top8}>
-                        Casual объясняет сленг естественным языком; Slang и Heavy подбирают разговорные формы языка перевода.
+                        {t("incomingNote")}
                     </Forms.FormText>
                 </section>
 
                 <section className={Margins.bottom16}>
-                    <Forms.FormTitle tag="h3">Стиль исходящего перевода</Forms.FormTitle>
+                    <Forms.FormTitle tag="h3">{t("outgoingStyle")}</Forms.FormTitle>
                     <SearchableSelect
                         options={styleOptions}
                         value={s.chatStyle}
@@ -1658,23 +1669,23 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                         onChange={v => settings.store.chatStyle = v as ChatStyle}
                     />
                     <Forms.FormText className={Margins.top8}>
-                        Сохраняет lowercase/CAPS, пунктуацию и делает перевод похожим на обычную переписку, а не на дословный перевод.
+                        {t("outgoingNote")}
                     </Forms.FormText>
                 </section>
 
                 <Divider className={Margins.bottom16} />
 
                 <FormSwitch
-                    title="Показывать только перевод"
-                    description="Когда перевод готов, оригинальный текст визуально скрывается."
+                    title={t("replace")}
+                    description={t("replaceHelp")}
                     value={s.replaceIncoming}
                     onChange={v => settings.store.replaceIncoming = v}
                     hideBorder
                 />
 
                 <FormSwitch
-                    title="Сохранять мою манеру письма"
-                    description="Сохранять lowercase/CAPS, отсутствие запятых и финальные !/? настолько близко к исходнику, насколько возможно."
+                    title={t("preserve")}
+                    description={t("preserveHelp")}
                     value={s.preserveStyle}
                     onChange={v => {
                         settings.store.preserveStyle = v;
@@ -1684,8 +1695,8 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                 />
 
                 <FormSwitch
-                    title="Понимать сокращения и сленг"
-                    description="Понимает сленг и сокращения из базы до перевода, чтобы смысл и грамматика не ломались."
+                    title={t("recognize")}
+                    description={t("recognizeHelp")}
                     value={s.smartSourceSlang}
                     onChange={v => {
                         settings.store.smartSourceSlang = v;
@@ -1695,16 +1706,16 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                 />
 
                 <FormSwitch
-                    title="Сленг языка назначения"
-                    description="Использует актуальные разговорные формы из базы для EN, DE, RU, UA, 中文简体/繁體, ES, FR, PT-BR, PL, JA и KO."
+                    title={t("targetSlang")}
+                    description={t("targetSlangHelp")}
                     value={s.targetSlangPacks}
                     onChange={v => settings.store.targetSlangPacks = v}
                     hideBorder
                 />
 
                 <FormSwitch
-                    title="Не переводить названия игр и программ"
-                    description="Steam Tools, Iron Soul, Roblox, Discord, KernelSU и другие известные названия остаются ровно как ты их написал."
+                    title={t("protect")}
+                    description={t("protectHelp")}
                     value={s.protectNames}
                     onChange={v => {
                         settings.store.protectNames = v;
@@ -1714,7 +1725,7 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                 />
 
                 <section className={Margins.bottom16}>
-                    <Forms.FormTitle tag="h3">Свои названия, которые не переводить</Forms.FormTitle>
+                    <Forms.FormTitle tag="h3">{t("names")}</Forms.FormTitle>
                     <TextInput
                         value={s.customProtectedNames}
                         placeholder="My Tool, Project Name, Game Name"
@@ -1724,33 +1735,33 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                         }}
                     />
                     <Forms.FormText className={Margins.top8}>
-                        Через запятую, точку с запятой или с новой строки. Например: My Mod, SonyDev Tool, Project X.
+                        {t("namesHelp")}
                     </Forms.FormText>
                 </section>
 
                 <FormSwitch
-                    title="English: im / dont / cant без апострофа"
-                    description="В разговорных режимах английский будет выглядеть как обычный чат, если исходник тоже неформальный."
+                    title={t("apostrophes")}
+                    description={t("apostrophesHelp")}
                     value={s.dropEnglishApostrophes}
                     onChange={v => settings.store.dropEnglishApostrophes = v}
                     hideBorder
                 />
 
                 <FormSwitch
-                    title="Не переводить мат буквально"
-                    description="Например, отдельное «пизда» в обычной переписке не превратится в анатомическое слово на английском — останется ругательством/реакцией по смыслу."
+                    title={t("profanity")}
+                    description={t("profanityHelp")}
                     value={s.softenAmbiguousProfanity}
                     onChange={v => settings.store.softenAmbiguousProfanity = v}
                     hideBorder
                 />
 
                 <div className="sony-translator-pack-note">
-                    <strong>База чата v1:</strong> актуальный сленг, игровые фразы, реакции, защита названий и исправления типичных машинных переводов для 12 языков.
+                    <strong>{t("dataset")}:</strong> {t("datasetHelp")}
                 </div>
 
                 <FormSwitch
-                    title="Метка translated"
-                    description="Показывать маленькую подпись под автоматически переведёнными сообщениями."
+                    title={t("badge")}
+                    description={t("badgeHelp")}
                     value={s.showTranslationBadge}
                     onChange={v => settings.store.showTranslationBadge = v}
                     hideBorder
@@ -1763,15 +1774,15 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                         color={Button.Colors.PRIMARY}
                         onClick={() => {
                             clearTranslationCache();
-                            showToast("Sony Translator: cache cleared", "success");
+                            showToast(`SonyTranslator: ${t("cleared")}`, "success");
                         }}
                     >
-                        Очистить кэш переводов
+                        {t("clear")}
                     </Button>
                 </div>
 
                 <Forms.FormText className={Margins.top16}>
-                    Важно: текст переводимых сообщений отправляется провайдеру Google Translate. API-ключ от тебя не нужен.
+                    {t("privacy")}
                 </Forms.FormText>
             </div>
         </Modal>
@@ -1785,12 +1796,13 @@ function openSonyTranslatorModal() {
 
 const TranslateChatBarButton: ChatBarButtonFactory = ({ isAnyChat }) => {
     const s = settings.use(["incomingEnabled", "outgoingEnabled"]);
+    const { t } = useUi();
     if (!isAnyChat) return null;
 
     const enabled = s.incomingEnabled || s.outgoingEnabled;
     return (
         <ChatBarButton
-            tooltip={`Sony Translator · ${enabled ? "ON" : "OFF"}`}
+            tooltip={`SonyTranslator · ${t(enabled ? "on" : "off")}`}
             onClick={openSonyTranslatorModal}
         >
             <span className={enabled ? "sony-translator-chat-icon active" : "sony-translator-chat-icon"}>
@@ -1846,7 +1858,7 @@ export default definePlugin({
             if (translated) message.content = translated;
         } catch (error) {
             console.error("[SonyTranslator] outgoing translation failed", error);
-            showToast("Sony Translator: не удалось перевести сообщение — отправка оставлена без изменений", "failure");
+            showToast(`SonyTranslator: ${uiText(LocaleStore.locale, "sendFailed")}`, "failure");
         }
     },
 

@@ -6,9 +6,9 @@
 
 ![使用虚构参与者的翻译示例](images/chat-preview.svg)
 
-## 安装 v0.9.3
+## 安装 v0.9.4
 
-1. 从 [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest) 下载 **SonyTranslator-AutoInstaller-0.9.3.zip**。
+1. 从 [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest) 下载 **SonyTranslator-AutoInstaller-0.9.4.zip**。
 2. 完整解压 ZIP。
 3. 运行 **Install SonyTranslator.cmd** 或 **Update SonyTranslator.cmd**。
 4. 等待完成。安装前运行的 Stable、Canary 或 PTB 客户端会重新启动。
@@ -31,6 +31,9 @@ Clean 注重自然准确；Casual 使用日常说法；Slang 和 Heavy 加强聊
 跟随原文。不会给中性消息添加辱骂。单独的 `Cool` 是回应，天气中的 cool 仍表示凉爽。
 
 ## 隐私与限制
+
+界面会自动跟随 Discord 的语言，包括设置、通知和语言名称。支持十二种语言配置，
+其他语言使用英文。阅读和发送语言仍可单独选择。
 
 只有当前消息会发送到 Google，必要时先在本地规范化表达。回复上下文、相关的历史
 消息和参与者信息只在本地分析，不会附加到请求。新梗、讽刺和模糊缩写仍可能误解。

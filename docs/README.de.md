@@ -6,9 +6,9 @@ Discord-Nachrichten übersetzen und Bedeutung sowie Schreibstil erhalten. Von **
 
 ![Illustrative Übersetzungsbeispiele mit fiktiven Teilnehmern](images/chat-preview.svg)
 
-## Installation von v0.9.3
+## Installation von v0.9.4
 
-1. **SonyTranslator-AutoInstaller-0.9.3.zip** unter [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest) herunterladen.
+1. **SonyTranslator-AutoInstaller-0.9.4.zip** unter [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest) herunterladen.
 2. Das gesamte Archiv entpacken.
 3. **Install SonyTranslator.cmd** oder **Update SonyTranslator.cmd** starten.
 4. Auf den Abschluss warten. Der zuvor gestartete Stable/Canary/PTB-Client wird wieder geöffnet.
@@ -33,6 +33,10 @@ komprimieren stärker; Mirror folgt dem Original. Neutrale Nachrichten erhalten 
 erfundenen Beleidigungen. `Cool` als Reaktion wird von einer Temperaturbeschreibung unterschieden.
 
 ## Datenschutz und Grenzen
+
+Die Oberfläche folgt automatisch der Discord-Sprache, einschließlich Einstellungen,
+Benachrichtigungen und Sprachnamen. Es gibt zwölf Sprachprofile; für andere Sprachen
+wird Englisch verwendet. Lese- und Sendesprache bleiben unabhängig wählbar.
 
 Nur die aktuelle Nachricht, bei Bedarf lokal normalisiert, geht an Google. Antwortkontext,
 relevante vorherige Nachrichten und Teilnehmerdaten werden lokal ausgewertet. Neue Memes,

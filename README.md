@@ -8,7 +8,7 @@ Discord chat translation for Vencord · by **SonyDev**
 
 [English](README.md) · [Русский](docs/README.ru.md) · [Deutsch](docs/README.de.md) · [简体中文](docs/README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/version-0.9.3-b77984)
+![Version](https://img.shields.io/badge/version-0.9.4-b77984)
 ![Transport](https://img.shields.io/badge/transport-Google_Translate-555b66)
 ![License](https://img.shields.io/badge/license-personal_use_%2B_attribution-555b66)
 
@@ -25,7 +25,7 @@ and gaming language. No paid API key or mandatory LLM is required.
 
 ## Install
 
-1. Download **SonyTranslator-AutoInstaller-0.9.3.zip** from [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
+1. Download **SonyTranslator-AutoInstaller-0.9.4.zip** from [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
 2. Extract the entire archive.
 3. Run **Install SonyTranslator.cmd**, or **Update SonyTranslator.cmd** for an existing installation.
 4. Wait for completion. The previously running Discord Stable/Canary/PTB client restarts automatically.
@@ -49,6 +49,10 @@ If no Discord was running, the installer does not guess which client to launch.
 
 Incoming and outgoing modes are independent. Neutral messages do not receive invented
 insults, profanity or vocatives. Recognition is broader than generation.
+
+The interface follows your Discord language automatically, including settings,
+notifications and language names. Twelve UI language profiles are available;
+other Discord languages use English. Your reading and sending languages remain your choice.
 
 ## What stays intact
 
@@ -79,12 +83,12 @@ npm ci
 npm run check
 ```
 
-163 tests cover golden modes, incoming regressions, entities, dataset integrity and
+168 tests cover golden modes, incoming regressions, entities, dataset integrity, UI localization and
 installer Git-update recovery on Windows. The benchmark has 500 cases. Full Vencord
 `testTsc` and production build are required before release.
 
 For manual installation, copy `index.tsx`, `styles.css`, `translationCore.ts` and
-`slangDataset.ts` into Vencord's `src/userplugins/SonyTranslator/`, then build and inject.
+`slangDataset.ts` and `localization.ts` into Vencord's `src/userplugins/SonyTranslator/`, then build and inject.
 See [development history](docs/DEVELOPMENT.md) and [research notes](research/modern-chat-language-2025-2026.md).
 
 ## Authorship and permissions
