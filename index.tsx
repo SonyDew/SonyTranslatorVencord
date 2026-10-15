@@ -1,5 +1,5 @@
 /*
- * SonyTranslator - Vencord userplugin v0.9.5
+ * SonyTranslator - Vencord userplugin v0.9.6
  * Copyright (c) 2026 SonyDev
  * SPDX-License-Identifier: LicenseRef-SonyTranslator-Personal-Use-1.0
  *
@@ -612,7 +612,7 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                 <div className="sony-translator-hero">
                     <div className="sony-translator-hero-icon"><TranslateIcon width={24} height={24} /></div>
                     <div>
-                        <div className="sony-translator-hero-title">SonyTranslator · v0.9.5</div>
+                        <div className="sony-translator-hero-title">SonyTranslator · v0.9.6</div>
                         <div className="sony-translator-hero-subtitle">{t("subtitle")}</div>
                     </div>
                 </div>

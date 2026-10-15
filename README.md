@@ -8,7 +8,7 @@ Discord chat translation for Vencord · by **SonyDev**
 
 [English](README.md) · [Русский](docs/README.ru.md) · [Deutsch](docs/README.de.md) · [简体中文](docs/README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/version-0.9.5-b77984)
+![Version](https://img.shields.io/badge/version-0.9.6-b77984)
 ![Transport](https://img.shields.io/badge/transport-Google_Translate-555b66)
 ![License](https://img.shields.io/badge/license-personal_use_%2B_attribution-555b66)
 
@@ -25,7 +25,7 @@ and gaming language. No paid API key or mandatory LLM is required.
 
 ## Install
 
-1. Download **SonyTranslator-AutoInstaller-0.9.5.zip** from [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
+1. Download **SonyTranslator-AutoInstaller-0.9.6.zip** from [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
 2. Extract the entire archive.
 3. Run **Install SonyTranslator.cmd**, or **Update SonyTranslator.cmd** for an existing installation.
 4. Wait for completion. The previously running Discord Stable/Canary/PTB client restarts automatically.
