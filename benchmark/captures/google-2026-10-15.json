@@ -1,0 +1,322 @@
+{
+  "capturedAt": "2026-10-15T20:25:53.570Z",
+  "note": "Synthetic fixtures; live Google outputs are variable. Not a native-speaker fluency rating or Discord UI test.",
+  "rows": [
+    {
+      "language": "en",
+      "source": "im cooked 💀",
+      "targetLanguage": "ru",
+      "raw": "Я в шоке 💀",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I am in serious trouble 💀",
+      "selectedSense": [
+        "speaker_doomed"
+      ],
+      "outputs": {
+        "clean": "У меня серьёзные проблемы 💀",
+        "casual": "мне конец 💀",
+        "slang": "я всё 💀",
+        "heavy": "я всё 💀",
+        "mirror": "мне конец 💀"
+      }
+    },
+    {
+      "language": "de",
+      "source": "ich bin komplett lost",
+      "targetLanguage": "ru",
+      "raw": "Я совершенно растерян.",
+      "detectedSourceLanguage": "de",
+      "register": "neutral",
+      "providerSafeInput": "ich bin völlig verwirrt",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я совершенно запутался.",
+        "casual": "я совершенно запутался",
+        "slang": "я совершенно запутался",
+        "heavy": "я совершенно запутался",
+        "mirror": "я совершенно запутался"
+      }
+    },
+    {
+      "language": "ru",
+      "source": "пиздец как я хочу спать",
+      "targetLanguage": "en",
+      "raw": "Fuck, I want to sleep so much.",
+      "detectedSourceLanguage": "ru",
+      "register": "neutral",
+      "providerSafeInput": "я очень сильно хочу спать",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "I desperately want to sleep.",
+        "casual": "i seriously just want to sleep",
+        "slang": "i wanna sleep so bad",
+        "heavy": "i wanna fucking sleep so bad",
+        "mirror": "i seriously just want to sleep"
+      }
+    },
+    {
+      "language": "uk",
+      "source": "шо ти робиш",
+      "targetLanguage": "en",
+      "raw": "What are you doing?",
+      "detectedSourceLanguage": "uk",
+      "register": "informal",
+      "providerSafeInput": "що ти робиш",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "What are you doing?",
+        "casual": "what are you doing",
+        "slang": "wyd",
+        "heavy": "wyd",
+        "mirror": "wyd"
+      }
+    },
+    {
+      "language": "zh-CN",
+      "source": "我寄了",
+      "targetLanguage": "ru",
+      "raw": "Я отправил это.",
+      "detectedSourceLanguage": "zh-cn",
+      "register": "neutral",
+      "providerSafeInput": "我这次要失败了",
+      "selectedSense": [
+        "speaker_doomed"
+      ],
+      "outputs": {
+        "clean": "У меня серьёзные проблемы",
+        "casual": "мне конец",
+        "slang": "я всё",
+        "heavy": "я всё",
+        "mirror": "мне конец"
+      }
+    },
+    {
+      "language": "zh-TW",
+      "source": "你484忘了",
+      "targetLanguage": "ru",
+      "raw": "Вы забыли?",
+      "detectedSourceLanguage": "zh-tw",
+      "register": "informal",
+      "providerSafeInput": "你是不是忘了",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Ты забыл?",
+        "casual": "ты забыл",
+        "slang": "ты забыл",
+        "heavy": "ты забыл",
+        "mirror": "ты забыл"
+      }
+    },
+    {
+      "language": "es",
+      "source": "estoy frito",
+      "targetLanguage": "ru",
+      "raw": "Мне конец.",
+      "detectedSourceLanguage": "es",
+      "register": "neutral",
+      "providerSafeInput": "estoy en serios problemas",
+      "selectedSense": [
+        "speaker_doomed"
+      ],
+      "outputs": {
+        "clean": "У меня серьёзные проблемы",
+        "casual": "мне конец",
+        "slang": "я всё",
+        "heavy": "я всё",
+        "mirror": "мне конец"
+      }
+    },
+    {
+      "language": "fr",
+      "source": "tkt je gère",
+      "targetLanguage": "ru",
+      "raw": "Не волнуйтесь, я справлюсь.",
+      "detectedSourceLanguage": "fr",
+      "register": "informal",
+      "providerSafeInput": "ne t'inquiète pas, je gère",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Не волнуйся, я справлюсь.",
+        "casual": "не волнуйся я справлюсь",
+        "slang": "не волнуйся я справлюсь",
+        "heavy": "не волнуйся я справлюсь",
+        "mirror": "не волнуйся я справлюсь"
+      }
+    },
+    {
+      "language": "pt-BR",
+      "source": "bora jogar amanhã",
+      "targetLanguage": "ru",
+      "raw": "Давайте поиграем завтра.",
+      "detectedSourceLanguage": "pt-br",
+      "register": "neutral",
+      "providerSafeInput": "que tal jogar amanhã",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Как насчет того, чтобы сыграть завтра?",
+        "casual": "как насчет того чтобы сыграть завтра",
+        "slang": "как насчет того чтобы сыграть завтра",
+        "heavy": "как насчет того чтобы сыграть завтра",
+        "mirror": "как насчет того чтобы сыграть завтра"
+      }
+    },
+    {
+      "language": "pl",
+      "source": "nwm czy działa",
+      "targetLanguage": "ru",
+      "raw": "Я не знаю, сработает ли это.",
+      "detectedSourceLanguage": "pl",
+      "register": "neutral",
+      "providerSafeInput": "nie wiem czy działa",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я не знаю, сработает ли это.",
+        "casual": "я не знаю сработает ли это",
+        "slang": "хз сработает ли это",
+        "heavy": "хз сработает ли это",
+        "mirror": "хз сработает ли это"
+      }
+    },
+    {
+      "language": "ja",
+      "source": "詰んだ",
+      "targetLanguage": "ru",
+      "raw": "Мне конец.",
+      "detectedSourceLanguage": "ja",
+      "register": "neutral",
+      "providerSafeInput": "もう失敗しそうだ",
+      "selectedSense": [
+        "speaker_doomed"
+      ],
+      "outputs": {
+        "clean": "У меня серьёзные проблемы",
+        "casual": "мне конец",
+        "slang": "я всё",
+        "heavy": "я всё",
+        "mirror": "мне конец"
+      }
+    },
+    {
+      "language": "ko",
+      "source": "망했다",
+      "targetLanguage": "ru",
+      "raw": "Я разорен",
+      "detectedSourceLanguage": "ko",
+      "register": "neutral",
+      "providerSafeInput": "나는 실패할 것 같다",
+      "selectedSense": [
+        "speaker_doomed"
+      ],
+      "outputs": {
+        "clean": "У меня серьёзные проблемы",
+        "casual": "мне конец",
+        "slang": "я всё",
+        "heavy": "я всё",
+        "mirror": "мне конец"
+      }
+    },
+    {
+      "language": "en",
+      "source": "It's cool outside.",
+      "targetLanguage": "ru",
+      "raw": "На улице прохладно.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "It's cool outside.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "На улице прохладно.",
+        "casual": "На улице прохладно.",
+        "slang": "На улице прохладно.",
+        "heavy": "На улице прохладно.",
+        "mirror": "На улице прохладно."
+      }
+    },
+    {
+      "language": "en",
+      "source": "I ordered a mocha.",
+      "targetLanguage": "ru",
+      "raw": "Я заказал мокко.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "I ordered a mocha.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я заказал мокко.",
+        "casual": "Я заказал мокко.",
+        "slang": "Я заказал мокко.",
+        "heavy": "Я заказал мокко.",
+        "mirror": "Я заказал мокко."
+      }
+    },
+    {
+      "language": "en",
+      "source": "She is sick.",
+      "targetLanguage": "ru",
+      "raw": "Она больна.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "She is sick.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Она больна.",
+        "casual": "Она больна.",
+        "slang": "Она больна.",
+        "heavy": "Она больна.",
+        "mirror": "Она больна."
+      }
+    },
+    {
+      "language": "en",
+      "source": "I cooked chicken for dinner.",
+      "targetLanguage": "ru",
+      "raw": "Я приготовила курицу на ужин.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "I cooked chicken for dinner.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я приготовила курицу на ужин.",
+        "casual": "Я приготовила курицу на ужин.",
+        "slang": "Я приготовила курицу на ужин.",
+        "heavy": "Я приготовила курицу на ужин.",
+        "mirror": "Я приготовила курицу на ужин."
+      }
+    },
+    {
+      "language": "de",
+      "source": "Ich habe meinen Schlüssel verloren.",
+      "targetLanguage": "ru",
+      "raw": "Мои ключи потерялись.",
+      "detectedSourceLanguage": "de",
+      "register": "neutral",
+      "providerSafeInput": "Ich habe meinen Schlüssel verloren.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Мои ключи потерялись.",
+        "casual": "Мои ключи потерялись.",
+        "slang": "Мои ключи потерялись.",
+        "heavy": "Мои ключи потерялись.",
+        "mirror": "Мои ключи потерялись."
+      }
+    },
+    {
+      "language": "zh-TW",
+      "source": "數量是484個",
+      "targetLanguage": "ru",
+      "raw": "數量是484個",
+      "detectedSourceLanguage": "zh-tw",
+      "register": "neutral",
+      "providerSafeInput": "數量是484個",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Количество составляет 484.",
+        "casual": "количество составляет 484",
+        "slang": "количество составляет 484",
+        "heavy": "количество составляет 484",
+        "mirror": "количество составляет 484"
+      }
+    }
+  ]
+}

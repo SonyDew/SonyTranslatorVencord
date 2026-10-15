@@ -1344,6 +1344,9 @@ function applyDatasetRecognition(dataset: SlangDataset, input: string, sourceLan
         if (!canonical) continue;
         for (const form of [...entry.forms].sort((a, b) => b.length - a.length)) {
             if (!form.trim() || normalizeComparable(form) === normalizeComparable(canonical)) continue;
+            // Numeric chat forms collide with quantities, scores and item IDs.
+            // Only syntax-bounded source_normalization_rules may expand them.
+            if (/^\d+$/u.test(form)) continue;
             try {
                 output = output.replace(entryPattern(entry, form, language.code), canonical);
             } catch {
