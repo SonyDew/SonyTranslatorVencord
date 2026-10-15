@@ -282,6 +282,8 @@ export interface SourceNormalizationRule {
     replacement: string;
     kind: "typo" | "abbreviation" | "expressive" | "grammar";
     meaning?: string;
+    /** Full grammatical source constructions may disambiguate weak lexical detection. */
+    language_hint?: boolean;
     confidence: SemanticConfidence;
     current: boolean;
     can_recognize: boolean;
@@ -955,6 +957,17 @@ function detectSourceLanguage(dataset: SlangDataset, input: string, context?: Tr
     if (byScript) return byScript;
 
     const scores = stopwordScores(input);
+    const grammarHints = new Set((dataset.source_normalization_rules ?? [])
+        .filter(rule => rule.language_hint && rule.current && rule.can_recognize && rule.confidence === "high")
+        .filter(rule => normalizationContextMatches(rule, input, context, input, true))
+        .filter(rule => { try { return new RegExp(rule.pattern, "iu").test(input); } catch { return false; } })
+        .map(rule => normalizeLanguageCode(rule.language)));
+    if (grammarHints.size === 1) {
+        const code = [...grammarHints][0];
+        // A context-validated subject + predicate outweighs one foreign
+        // possessive/register token (English "a TON" versus French "ton").
+        scores.set(code, (scores.get(code) ?? 0) + 8);
+    }
     for (const marker of dataset.register_markers ?? []) {
         if (markerMatches(marker, input)) {
             const code = normalizeLanguageCode(marker.language);

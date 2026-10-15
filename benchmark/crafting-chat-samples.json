@@ -1,0 +1,12 @@
+[
+  ["en", "i forged a TON. Only 3/4", "ru", {"replyMessage":"4/4 stats on heavy gears"}, {"required":["3/4"],"forbidden":["поддел", "фальсиф", "тонн"]}],
+  ["en", "i forged a TON. Only 3/4\n*has forge luck", "ru", {"previousTurns":[{"content":"only svip can pull a 4/4 stat on heavy gears","relevance":4}]}, {"required":["3/4", "forge luck"],"forbidden":["поддел", "тонн"]}],
+  ["en", "I think, only svip can pull a 4/4 stat on heavy gears", "ru", null, {"required":["4/4"],"forbidden":["шестерн"]}],
+  ["en", "Under 1000 ores yes", "ru", {"replyMessage":"For forge luck when crafting armor"}, {"required":["1000", "руды"],"forbidden":["1000 руд[ау]\\b"]}],
+  ["en", "For forge luck only, you get one at around 1k ores", "ru", {"replyMessage":"I forged a lot of armor with 3/4 stats"}, {"required":["forge luck", "1000|тысяч"],"forbidden":["поддел", "удача с подделками"]}],
+  ["en", "yeah I pulled one. But I messed up due to sudden frame drop, 93% masterwork", "ru", {"replyMessage":"I forged a lot of armor with 3/4 stats"}, {"required":["93%"],"forbidden":["вытащил.*зуб"]}],
+  ["en", "I forged a signature on the armor documents", "ru", {"replyMessage":"crafting armor"}, {"required":["поддел|сфальсиф"],"forbidden":["сковал подпись", "изготовил подпись"]}],
+  ["en", "I pulled one tooth", "ru", {"replyMessage":"I forged armor"}],
+  ["fr", "ton armure est lourde", "ru", null, {"forbidden":["тонн"]}],
+  ["en", "My phone broke yesterday so I got a new one today", "ru", null, {"required":["телефон", "вчера", "сегодня"]}]
+]

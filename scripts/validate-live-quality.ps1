@@ -36,6 +36,7 @@ try {
     Invoke-QualityCommand 'npx.cmd' @('tsx', $capture, $VencordPath, (Join-Path $OutputDirectory 'trading-chat.json'), 'benchmark/trading-chat-samples.json')
     Invoke-QualityCommand 'npx.cmd' @('tsx', $capture, $VencordPath, (Join-Path $OutputDirectory 'stat-grammar.json'), 'benchmark/stat-grammar-samples.json')
     Invoke-QualityCommand 'npx.cmd' @('tsx', $capture, $VencordPath, (Join-Path $OutputDirectory 'dictionary-context.json'), 'benchmark/dictionary-context-samples.json')
+    Invoke-QualityCommand 'npx.cmd' @('tsx', $capture, $VencordPath, (Join-Path $OutputDirectory 'crafting-chat.json'), 'benchmark/crafting-chat-samples.json')
 } finally { Pop-Location }
 
 $package = Get-Content -LiteralPath (Join-Path $VencordPath 'package.json') -Raw | ConvertFrom-Json

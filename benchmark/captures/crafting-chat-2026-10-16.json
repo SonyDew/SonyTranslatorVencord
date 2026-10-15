@@ -1,0 +1,215 @@
+{
+  "capturedAt": "2026-10-15T22:37:14.081Z",
+  "note": "Synthetic fixtures; live Google outputs are variable. Not a native-speaker fluency rating or Discord UI test.",
+  "rows": [
+    {
+      "language": "en",
+      "source": "i forged a TON. Only 3/4",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "4/4 stats on heavy gears"
+      },
+      "raw": "Я выковал ОЧЕНЬ много. Только 3/4.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "i crafted a TON. Only 3/4",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я создал ОГРОМНОЕ количество. Всего 3/4",
+        "casual": "я создал огромное количество. всего 3/4",
+        "slang": "я создал огромное количество. всего 3/4",
+        "heavy": "я создал огромное количество. всего 3/4",
+        "mirror": "я создал огромное количество. всего 3/4"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "i forged a TON. Only 3/4\n*has forge luck",
+      "targetLanguage": "ru",
+      "context": {
+        "previousTurns": [
+          {
+            "content": "only svip can pull a 4/4 stat on heavy gears",
+            "relevance": 4
+          }
+        ]
+      },
+      "raw": "Я выковал ОЧЕНЬ много. Только 3/4\n*у меня есть удача в кузнечном деле",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "i crafted a TON. Only 3/4\n*has forge luck",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я создал ОГРОМНОЕ количество. Всего 3/4\n*имеет forge luck",
+        "casual": "я создал огромное количество. всего 3/4\n*имеет forge luck",
+        "slang": "я создал огромное количество. всего 3/4\n*имеет forge luck",
+        "heavy": "я создал огромное количество. всего 3/4\n*имеет forge luck",
+        "mirror": "я создал огромное количество. всего 3/4\n*имеет forge luck"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I think, only svip can pull a 4/4 stat on heavy gears",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Думаю, только SVIP может получить характеристики 4/4 на тяжёлом снаряжении.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "I think, only svip can pull a 4/4 stat on heavy gears",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Думаю, только svip может получить характеристику 4/4 на тяжелом снаряжении.",
+        "casual": "Думаю, только svip может получить характеристику 4/4 на тяжелом снаряжении",
+        "slang": "Думаю, только svip может получить характеристику 4/4 на тяжелом снаряжении",
+        "heavy": "Думаю, только svip может получить характеристику 4/4 на тяжелом снаряжении",
+        "mirror": "Думаю, только svip может получить характеристику 4/4 на тяжелом снаряжении"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "Under 1000 ores yes",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "For forge luck when crafting armor"
+      },
+      "raw": "Менее 1000 руд, да",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "Under 1000 units of ore yes",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Менее 1000 единиц руды — да",
+        "casual": "Менее 1000 единиц руды — да",
+        "slang": "Менее 1000 единиц руды — да",
+        "heavy": "Менее 1000 единиц руды — да",
+        "mirror": "Менее 1000 единиц руды — да"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "For forge luck only, you get one at around 1k ores",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "I forged a lot of armor with 3/4 stats"
+      },
+      "raw": "Если вам повезет в кузнице, вы получите один примерно за 1000 руд.",
+      "detectedSourceLanguage": "en",
+      "register": "informal",
+      "providerSafeInput": "For forge luck only, you get one at around 1 thousand units of ore",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Только для forge luck вы получите один экземпляр примерно за тысячу единиц руды.",
+        "casual": "Только для forge luck вы получите один экземпляр примерно за тысячу единиц руды",
+        "slang": "Только для forge luck вы получите один экземпляр примерно за тысячу единиц руды",
+        "heavy": "Только для forge luck вы получите один экземпляр примерно за тысячу единиц руды",
+        "mirror": "Только для forge luck вы получите один экземпляр примерно за тысячу единиц руды"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "yeah I pulled one. But I messed up due to sudden frame drop, 93% masterwork",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "I forged a lot of armor with 3/4 stats"
+      },
+      "raw": "Да, мне удалось один раз. Но я облажался из-за резкого падения частоты кадров, мастерство 93%.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "yeah I got one. But I messed up due to sudden frame drop, 93% masterwork",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Да, у меня есть один. Но я облажался из-за внезапного падения частоты кадров, мастерство пройдено на 93%.",
+        "casual": "да, у меня есть один. но я облажался из-за внезапного падения частоты кадров, мастерство пройдено на 93%.",
+        "slang": "да, у меня есть один. но я облажался из-за внезапного падения частоты кадров, мастерство пройдено на 93%.",
+        "heavy": "да, у меня есть один. но я облажался из-за внезапного падения частоты кадров, мастерство пройдено на 93%.",
+        "mirror": "да, у меня есть один. но я облажался из-за внезапного падения частоты кадров, мастерство пройдено на 93%."
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I forged a signature on the armor documents",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "crafting armor"
+      },
+      "raw": "Я подделал подпись на документах на доспехи.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I forged a signature on the armor documents",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я подделал подпись на документах на доспехи.",
+        "casual": "Я подделал подпись на документах на доспехи",
+        "slang": "Я подделал подпись на документах на доспехи",
+        "heavy": "Я подделал подпись на документах на доспехи",
+        "mirror": "Я подделал подпись на документах на доспехи"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I pulled one tooth",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "I forged armor"
+      },
+      "raw": "Я вырвал один зуб.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "I pulled one tooth",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я вырвал один зуб.",
+        "casual": "Я вырвал один зуб",
+        "slang": "Я вырвал один зуб",
+        "heavy": "Я вырвал один зуб",
+        "mirror": "Я вырвал один зуб"
+      },
+      "violations": []
+    },
+    {
+      "language": "fr",
+      "source": "ton armure est lourde",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "твоя броня тяжелая",
+      "detectedSourceLanguage": "fr",
+      "register": "informal",
+      "providerSafeInput": "ton armure est lourde",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "твоя броня тяжелая",
+        "casual": "твоя броня тяжелая",
+        "slang": "твоя броня тяжелая",
+        "heavy": "твоя броня тяжелая",
+        "mirror": "твоя броня тяжелая"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "My phone broke yesterday so I got a new one today",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Мой телефон сломался вчера, поэтому сегодня я купил новый.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "My phone broke yesterday so I got a new one today",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Мой телефон сломался вчера, поэтому сегодня я купил новый.",
+        "casual": "Мой телефон сломался вчера поэтому сегодня я купил новый",
+        "slang": "Мой телефон сломался вчера поэтому сегодня я купил новый",
+        "heavy": "Мой телефон сломался вчера поэтому сегодня я купил новый",
+        "mirror": "Мой телефон сломался вчера поэтому сегодня я купил новый"
+      },
+      "violations": []
+    }
+  ]
+}

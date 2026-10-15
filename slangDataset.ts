@@ -3939,6 +3939,14 @@ const slangDataset: {
       ],
       "gaming": [
         {
+          "id": "game_forge_luck_label",
+          "canonical": "Forge Luck", "forms": ["forge luck"],
+          "meaning": "crafting label or stat; preserve source wording without inferring an effect or official localization",
+          "keep_untranslated": true, "contexts": ["gaming", "crafting"],
+          "context_patterns": ["ores", "armor", "armour", "helmet", "stats", "gears", "masterwork"],
+          "negative_patterns": ["translation exercise", "literal translation"]
+        },
+        {
           "id": "game_pity_guarantee",
           "canonical": "pity guarantee",
           "forms": ["pity", "pities"],
@@ -19995,6 +20003,43 @@ const slangDataset: {
     }
   ],
   "source_normalization_rules": [
+    {
+      "id": "en_forged_crafting_sense",
+      "language_hint": true,
+      "language": "en", "pattern": "\\b(?<subject>I|we|he|she|they|you)\\s+forged\\b",
+      "replacement": "$<subject> crafted", "kind": "grammar",
+      "meaning": "crafting equipment rather than falsifying documents; preserve subject, tense and quantity",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["ores", "armor", "armour", "helmet", "weapon", "weapons", "gear", "gears", "smithing", "masterwork"],
+      "negative_patterns": ["signature", "signatures", "passport", "passports", "document", "documents", "identity", "cheque", "check", "certificate", "alliance", "friendship", "evidence"]
+    },
+    {
+      "id": "en_counted_ore_units",
+      "language": "en", "pattern": "(?<![\\p{L}\\p{N}.,])(?<count>\\d{1,6})\\s+ores\\b",
+      "replacement": "$<count> units of ore", "kind": "grammar",
+      "meaning": "countable crafting resource; keep exact count, not a number of mineral types",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["forge", "forged", "forging", "smithing", "craft", "crafting", "armor", "armour", "weapon", "weapons"],
+      "negative_patterns": ["kinds", "types", "varieties", "species"]
+    },
+    {
+      "id": "en_counted_ore_thousands",
+      "language": "en", "pattern": "(?<![\\p{L}\\p{N}.,])(?<count>[1-9]\\d{0,5})k\\s+ores\\b",
+      "replacement": "$<count> thousand units of ore", "kind": "abbreviation",
+      "meaning": "integer thousands of a crafting resource; no currency or percentage inference",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["forge", "forged", "forging", "smithing", "craft", "crafting", "armor", "armour", "weapon", "weapons"],
+      "negative_patterns": ["kinds", "types", "varieties", "species"]
+    },
+    {
+      "id": "en_pulled_one_crafting_result",
+      "language": "en", "pattern": "\\b(?<subject>I|we) pulled one(?=[.!?,]|$)",
+      "replacement": "$<subject> got one", "kind": "grammar",
+      "meaning": "obtained one result; no missing item, level or rarity inferred",
+      "confidence": "high", "current": true, "can_recognize": true, "requires_context": true,
+      "context_patterns": ["forged", "forge luck", "masterwork", "crafting"],
+      "negative_patterns": ["tooth", "teeth", "muscle", "lever", "trigger", "gun", "rope"]
+    },
     {
       "id": "en_reroll_currency_exchange",
       "language": "en",
