@@ -1,7 +1,7 @@
 @echo off
 setlocal
 title Update SonyTranslator v0.9.5
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0Install-SonyTranslator.ps1" -UpdateOnly
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0Update-SonyTranslator.ps1"
 set "SONY_EXIT=%ERRORLEVEL%"
 if not "%SONY_EXIT%"=="0" pause
 exit /b %SONY_EXIT%
