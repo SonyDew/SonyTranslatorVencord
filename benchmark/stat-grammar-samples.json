@@ -1,0 +1,12 @@
+[
+  ["en", "Bow?", "ru", {"previousMessage":"What weapon is this for?"}, {"required":["лук"],"forbidden":["поклон"]}],
+  ["en", "Bow?", "ru", {"replyMessage":"a violin bow"}],
+  ["en", "weed", "ru", {"replyMessage":"How did you get this tag?"}, {"required":["^weed$"],"forbidden":["сорняк"]}],
+  ["en", "a weed in the garden", "ru"],
+  ["en", "I have a bow with double crit damage", "ru", null, {"required":["с двойным критическим уроном"],"forbidden":["двойным критический"]}],
+  ["en", "I play with 90% crit rate", "ru", null, {"required":["с 90% шансом критического удара"],"forbidden":["90% шанс "]}],
+  ["en", "I want a new sub of crit rate", "ru", null, {"required":["дополнительный параметр шанса"],"forbidden":["сабвуфер"]}],
+  ["en", "im missin a tiny bit, average damage drops with 90% crit rate", "ru", {"replyMessage":"Almost at 100"}, {"forbidden":["упускаю.*факт"],"required":["не хватает|нужно.*немного", "90% шанса|90% шансом"]}],
+  ["en", "I am missing a little bit of the story", "ru", {"replyMessage":"a movie"}],
+  ["en", "instead of 15.45 I deal 15mil damage", "ru", null, {"required":["15[.,]45", "15 миллион"],"forbidden":["15[.,]45 миллион"]}]
+]

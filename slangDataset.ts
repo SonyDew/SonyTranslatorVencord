@@ -3939,22 +3939,61 @@ const slangDataset: {
       ],
       "gaming": [
         {
+          "id": "game_double_critical_damage",
+          "canonical": "double critical hit damage",
+          "forms": ["double crit damage", "double crit dmg"],
+          "meaning": "source explicitly qualifies critical damage as double; preserve that qualifier without inventing a numeric multiplier",
+          "protect_translation": true, "contexts": ["gaming"],
+          "translations": {"ru": ["двойной критический урон"]},
+          "translation_inflections": {"ru": {"genitive": "двойного критического урона", "instrumental": "двойным критическим уроном", "prepositional": "двойном критическом уроне", "dative": "двойному критическому урону"}}
+        },
+        {
+          "id": "game_extra_critical_chance",
+          "canonical": "additional critical hit chance",
+          "forms": ["extra crit rate", "extra crit chance"],
+          "meaning": "additional critical chance explicitly present in source",
+          "protect_translation": true, "contexts": ["gaming"],
+          "translations": {"ru": ["дополнительный шанс критического удара"]},
+          "translation_inflections": {"ru": {"genitive": "дополнительного шанса критического удара", "instrumental": "дополнительным шансом критического удара", "prepositional": "дополнительном шансе критического удара", "dative": "дополнительному шансу критического удара"}}
+        },
+        {
+          "id": "game_extra_critical_damage",
+          "canonical": "additional critical hit damage",
+          "forms": ["extra crit damage", "extra crit dmg"],
+          "meaning": "additional critical damage explicitly present in source",
+          "protect_translation": true, "contexts": ["gaming"],
+          "translations": {"ru": ["дополнительный критический урон"]},
+          "translation_inflections": {"ru": {"genitive": "дополнительного критического урона", "instrumental": "дополнительным критическим уроном", "prepositional": "дополнительном критическом уроне", "dative": "дополнительному критическому урону"}}
+        },
+        {
+          "id": "game_critical_chance_substat",
+          "canonical": "critical hit chance substat",
+          "forms": ["sub of crit rate", "crit rate substat", "crit rate sub stat", "crit rate sub"],
+          "meaning": "secondary equipment parameter for critical chance, not a subwoofer or subscriber",
+          "protect_translation": true,
+          "contexts": ["gaming"],
+          "translations": {"ru": ["дополнительный параметр шанса критического удара"]},
+          "translation_inflections": {"ru": {"genitive": "дополнительного параметра шанса критического удара", "instrumental": "дополнительным параметром шанса критического удара", "prepositional": "дополнительном параметре шанса критического удара", "dative": "дополнительному параметру шанса критического удара"}}
+        },
+        {
           "id": "game_critical_chance_term",
           "canonical": "critical hit chance",
           "forms": ["crit rate", "crit chance", "critical hit chance"],
           "meaning": "chance of a critical hit, distinct from its damage multiplier",
           "protect_translation": true,
           "contexts": ["gaming"],
-          "translations": {"ru": ["шанс критического удара"]}
+          "translations": {"ru": ["шанс критического удара"]},
+          "translation_inflections": {"ru": {"genitive": "шанса критического удара", "instrumental": "шансом критического удара", "prepositional": "шансе критического удара", "dative": "шансу критического удара"}}
         },
         {
           "id": "game_critical_damage_term",
           "canonical": "critical hit damage",
-          "forms": ["crit dmg", "crit damage", "critical hit damage"],
+          "forms": ["crit dmg", "critdmg", "crit damage", "critical hit damage"],
           "meaning": "damage of a critical hit, not its probability",
           "protect_translation": true,
           "contexts": ["gaming"],
-          "translations": {"ru": ["критический урон"]}
+          "translations": {"ru": ["критический урон"]},
+          "translation_inflections": {"ru": {"genitive": "критического урона", "instrumental": "критическим уроном", "prepositional": "критическом уроне", "dative": "критическому урону"}}
         },
         {
           "id": "game_skill_damage_term",
@@ -3963,7 +4002,8 @@ const slangDataset: {
           "meaning": "damage from skills",
           "protect_translation": true,
           "contexts": ["gaming"],
-          "translations": {"ru": ["урон навыков"]}
+          "translations": {"ru": ["урон навыков"]},
+          "translation_inflections": {"ru": {"genitive": "урона навыков", "instrumental": "уроном навыков", "prepositional": "уроне навыков", "dative": "урону навыков"}}
         },
         {
           "id": "game_f2p_player_label",
@@ -19935,6 +19975,25 @@ const slangDataset: {
   ],
   "source_normalization_rules": [
     {
+      "id": "en_skill_damage_expansion",
+      "language": "en",
+      "pattern": "\\bskill (?:dmg|damage)\\b",
+      "replacement": "skill damage",
+      "kind": "abbreviation",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_missing_small_stat_amount",
+      "language": "en",
+      "pattern": "\\b(?:I'm|im|I am)\\s+missin(?:g)?\\s+(?:a\\s+)?(?:tiny|little|small)\\s+bit\\b",
+      "replacement": "I still need a little more",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "requires_context": true,
+      "context_patterns": ["crit rate", "crit chance", "crit dmg", "critical hit chance", "100%", "damage", "stat cap"],
+      "negative_patterns": ["the point", "the fact", "the story", "movie", "the picture"]
+    },
+    {
       "id": "en_mine_stat_ellipsis",
       "language": "en",
       "pattern": "^mine(?=\\s+\\d+(?:\\.\\d+)?\\s*(?:atk|crit rate|crit dmg|skill dmg)\\b)",
@@ -19953,7 +20012,7 @@ const slangDataset: {
     {
       "id": "en_critical_damage_expansion",
       "language": "en",
-      "pattern": "\\bcrit dmg\\b",
+      "pattern": "\\bcrit\\s*(?:dmg|damage)\\b",
       "replacement": "critical hit damage",
       "kind": "abbreviation",
       "confidence": "high", "current": true, "can_recognize": true
@@ -20406,6 +20465,28 @@ const slangDataset: {
     }
   ],
   "incoming_chat_rules": [
+    {
+      "id": "en_bow_weapon_reply",
+      "language": "en", "pattern": "^bow\\s*\\?$", "normalized": "A bow weapon?",
+      "sense": "elliptical weapon question, not a greeting gesture",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["weapon", "archer", "arrow", "bow build", "ancient bow", "longbow"],
+      "negative_patterns": ["violin", "cello", "ribbon", "curtsy", "bow tie", "theatre", "theater", "ship"],
+      "slots": {"intent": "weapon_clarification", "speechAct": "question", "action": "identify_weapon"},
+      "outputs": {"ru": {"clean": ["Лук?"], "casual": ["Лук?"], "slang": ["лук?"], "heavy": ["лук?"]}}
+    },
+    {
+      "id": "en_weed_tag_label",
+      "language": "en", "pattern": "^weed$", "normalized": "weed",
+      "sense": "explicitly discussed tag label; preserve its spelling",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["tag", "guild tag", "clan tag", "display tag"],
+      "negative_patterns": ["garden", "lawn", "plant", "cannabis", "smoke"],
+      "slots": {"intent": "identify_tag", "speechAct": "reaction", "target": "tag_label"},
+      "outputs": {"ru": {"clean": ["weed"], "casual": ["weed"], "slang": ["weed"], "heavy": ["weed"]}}
+    },
     {
       "id": "en_true_agreement_reaction",
       "language": "en",
