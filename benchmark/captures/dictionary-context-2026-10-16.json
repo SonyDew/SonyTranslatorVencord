@@ -1,0 +1,145 @@
+{
+  "capturedAt": "2026-10-15T22:22:30.707Z",
+  "note": "Synthetic fixtures; live Google outputs are variable. Not a native-speaker fluency rating or Discord UI test.",
+  "rows": [
+    {
+      "language": "en",
+      "source": "rip",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "I only have one drop after 400 spins"
+      },
+      "raw": "рвать",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "That is unfortunate.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Жаль.",
+        "casual": "эх жаль",
+        "slang": "эх",
+        "heavy": "эх",
+        "mirror": "эх жаль"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "pities?",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "they should add a system for race rerolls"
+      },
+      "raw": "Жалости?",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "guaranteed drop systems?",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "гарант",
+        "casual": "гарант?",
+        "slang": "гарант?",
+        "heavy": "гарант",
+        "mirror": "гарант?"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "they gotta add race rerolls for shards n pities like the whole glory core system",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "I spent 400 spins on race rerolls"
+      },
+      "raw": "Им нужно добавить возможность перевыбора расы для осколков и жалости, как в системе ядер славы.",
+      "detectedSourceLanguage": "en",
+      "register": "informal",
+      "providerSafeInput": "they have to add random changes of the character's race in exchange for shards and guaranteed drop systems like the whole glory core system",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Им приходится добавлять случайные изменения расы персонажа в обмен на осколки и гарантированные системы выпадения предметов, как, например, вся система glory core.",
+        "casual": "им приходится добавлять случайные изменения расы персонажа в обмен на осколки и гарантированные системы выпадения предметов как например вся система glory core",
+        "slang": "им приходится добавлять случайные изменения расы персонажа в обмен на осколки и гарантированные системы выпадения предметов как например вся система glory core",
+        "heavy": "им приходится добавлять случайные изменения расы персонажа в обмен на осколки и гарантированные системы выпадения предметов как например вся система glory core",
+        "mirror": "им приходится добавлять случайные изменения расы персонажа в обмен на осколки и гарантированные системы выпадения предметов как например вся система glory core"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "yeah im 400spins in total i think i have gotten a demon once",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Да, у меня в общей сложности 400 вращений, кажется, мне однажды выпал демон.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "yeah I'm 400 attempts to get random drops in total i think i have gotten a demon once",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Да, у меня уже 400 попыток получить случайные предметы, кажется, мне однажды выпал демон.",
+        "casual": "да у меня уже 400 попыток получить случайные предметы кажется мне однажды выпал демон",
+        "slang": "да у меня уже 400 попыток получить случайные предметы кажется мне однажды выпал демон",
+        "heavy": "да у меня уже 400 попыток получить случайные предметы кажется мне однажды выпал демон",
+        "mirror": "да у меня уже 400 попыток получить случайные предметы кажется мне однажды выпал демон"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I feel pity for people after losing my gacha pulls",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Мне жаль людей, которые проиграли в своих гача-розыгрышах.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I feel pity for people after losing my gacha pulls",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Мне жаль людей, которые проиграли в своих гача-розыгрышах.",
+        "casual": "Мне жаль людей которые проиграли в своих гача-розыгрышах",
+        "slang": "Мне жаль людей которые проиграли в своих гача-розыгрышах",
+        "heavy": "Мне жаль людей которые проиграли в своих гача-розыгрышах",
+        "mirror": "Мне жаль людей которые проиграли в своих гача-розыгрышах"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "the centrifuge makes 400 spins",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Центрифуга совершает 400 оборотов.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "the centrifuge makes 400 spins",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Центрифуга совершает 400 оборотов.",
+        "casual": "центрифуга совершает 400 оборотов",
+        "slang": "центрифуга совершает 400 оборотов",
+        "heavy": "центрифуга совершает 400 оборотов",
+        "mirror": "центрифуга совершает 400 оборотов"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "rip the paper",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "разорвать бумагу",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "rip the paper",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "разорвать бумагу",
+        "casual": "разорвать бумагу",
+        "slang": "разорвать бумагу",
+        "heavy": "разорвать бумагу",
+        "mirror": "разорвать бумагу"
+      },
+      "violations": []
+    }
+  ]
+}

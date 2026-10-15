@@ -123,6 +123,9 @@ export interface GamingEntry {
     translation_inflections?: Record<string, Partial<Record<"genitive" | "instrumental" | "prepositional" | "dative", string>>>;
     contexts?: string[];
     translations?: Record<string, string[]>;
+    context_patterns?: string[];
+    negative_patterns?: string[];
+    requires_context?: boolean;
 }
 
 export interface ProfanityMeaning {
@@ -667,8 +670,8 @@ type SourceNormalizationResult = {
     expressive: Array<{ source: string; normalized: string; }>;
 };
 
-function normalizationContextMatches(rule: SourceNormalizationRule, input: string, context?: TranslationContext, originalInput = input): boolean {
-    const related = rule.requires_context ? reliableContextCorpus(context) : relatedContextCorpus(context);
+function normalizationContextMatches(rule: Pick<SourceNormalizationRule, "language" | "requires_context" | "context_patterns" | "negative_patterns">, input: string, context?: TranslationContext, originalInput = input, relevantOnly = false): boolean {
+    const related = rule.requires_context || relevantOnly ? reliableContextCorpus(context) : relatedContextCorpus(context);
     if (rule.requires_context && !reliableContextAvailable(context)) return false;
     const corpus = `${input}\n${originalInput}\n${related}`;
     if (rule.negative_patterns?.some(pattern => containsPhrase(corpus, pattern, rule.language))) return false;
@@ -691,7 +694,7 @@ function applySourceNormalizations(
     const code = normalizeLanguageCode(sourceLanguage);
     for (const rule of dataset.source_normalization_rules ?? []) {
         if (!rule.current || !rule.can_recognize || rule.confidence === "low" || normalizeLanguageCode(rule.language) !== code) continue;
-        if (!normalizationContextMatches(rule, text, context, originalInput)) continue;
+        if (!normalizationContextMatches(rule, text, context, originalInput, true)) continue;
         try {
             const regex = new RegExp(rule.pattern, "giu");
             const first = regex.exec(text);
@@ -1748,8 +1751,11 @@ function findGamingShortcut(
     sourceLanguage: string | null,
     targetLanguage: string,
     level: StyleLevel,
+    context?: TranslationContext,
+    protectedNames: string[] = [],
 ): string | null {
     const comparable = normalizeComparable(original);
+    if (protectedNames.some(name => normalizeComparable(name) === comparable)) return null;
     const targetCode = normalizeLanguageCode(targetLanguage);
     const detectedSource = sourceLanguage ? getDatasetLanguage(dataset, sourceLanguage) : undefined;
     const languages = detectedSource
@@ -1757,6 +1763,7 @@ function findGamingShortcut(
         : [...dataset.languages].sort((a, b) => normalizeLanguageCode(a.code) === "en" ? -1 : normalizeLanguageCode(b.code) === "en" ? 1 : 0);
     for (const source of languages) {
         for (const entry of source.gaming ?? []) {
+            if (!normalizationContextMatches({ ...entry, language: source.code }, original, context, original, true)) continue;
             if (!(entry.forms ?? []).some(form => normalizeComparable(form) === comparable)) continue;
             if (entry.keep_untranslated) return original.trim();
             const outputs = entry.translations?.[targetCode] ?? entry.translations?.[getDatasetLanguage(dataset, targetCode)?.code ?? ""] ?? [];
@@ -2067,7 +2074,7 @@ function protectText(
     if (crossRuleEnabled(dataset, "protect_file_paths")) {
         protectPattern(/[A-Za-z]:\\(?:[^\\\s]+\\)*[^\\\s]*/g);
         protectPattern(/(?:\.{0,2}\/)+(?:[^\s/]+\/)*[^\s/]+/g);
-        protectPattern(/(?<![\p{L}\p{N}_-])[\p{L}\p{N}_-]+\.(?:tsx?|jsx?|json|ya?ml|toml|md|py|cs|cpp|h|java|kt|log|zip)(?![\p{L}\p{N}_-])/giu);
+        protectPattern(/(?<![\p{L}\p{N}_-])[\p{L}\p{N}_-]+\.(?:tsx?|jsx?|json|ya?ml|toml|md|txt|csv|png|jpe?g|gif|webp|mp[34]|pdf|exe|py|cs|cpp|h|java|kt|log|zip)(?![\p{L}\p{N}_-])/giu);
     }
     if (crossRuleEnabled(dataset, "protect_cli")) protectPattern(/--?[A-Za-z][\w-]*/g);
     if (crossRuleEnabled(dataset, "protect_versions")) protectPattern(/\bv?\d+(?:\.\d+){1,}(?:[-+._][A-Za-z0-9]+)*\b/giu);
@@ -2091,6 +2098,7 @@ function protectText(
     })) || /\b(?:game|match|server|team|player|rank|queue|игр|катк|сервер|тим|матч)\b/iu.test(input);
     for (const gaming of source?.gaming ?? []) {
         if (!gaming.keep_untranslated) continue;
+        if (!normalizationContextMatches({ ...gaming, language: source!.code }, input, options.context, input, true)) continue;
         for (const form of gaming.forms ?? []) {
             if (form.length < 2) continue;
             const unambiguous = form === form.toLocaleUpperCase() && /[\p{L}]/u.test(form) || /\d/u.test(form);
@@ -2132,6 +2140,7 @@ function protectText(
     // Otherwise a member named "Crit Rate" could be translated as a stat.
     if (options.smartSourceSlang) for (const gaming of source?.gaming ?? []) {
         if (!gaming.protect_translation) continue;
+        if (!normalizationContextMatches({ ...gaming, language: source!.code }, input, options.context, input, true)) continue;
         const term = Object.entries(gaming.translations ?? {})
             .find(([code]) => normalizeLanguageCode(code) === normalizeLanguageCode(options.targetLanguage))?.[1]?.[0];
         if (!term) continue;
@@ -2229,7 +2238,11 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
                 findSemanticShortcut(dataset, input, analysis.semanticMatches, options.targetLanguage, level) ??
                 findReactionShortcut(dataset, input, analysis.language, options.targetLanguage, level) ??
                 findPhraseShortcut(dataset, input, analysis.language, options.targetLanguage, level) ??
-                findGamingShortcut(dataset, input, analysis.language, options.targetLanguage, level) ??
+                findGamingShortcut(dataset, input, analysis.language, options.targetLanguage, level, options.context,
+                    options.protectNames ? [
+                        ...options.customProtectedNames.split(/[,;\n]/g).map(name => name.trim()).filter(Boolean),
+                        ...analysis.recognizedEntities.map(entity => entity.source),
+                    ] : []) ??
                 findProfanityShortcut(dataset, input, analysis.language, options.targetLanguage, level, options.softenAmbiguousProfanity);
 
             analysis.providerSafeInput = protectedText.restore(working);

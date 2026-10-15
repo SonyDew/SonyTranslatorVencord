@@ -3939,6 +3939,27 @@ const slangDataset: {
       ],
       "gaming": [
         {
+          "id": "game_pity_guarantee",
+          "canonical": "pity guarantee",
+          "forms": ["pity", "pities"],
+          "meaning": "guaranteed reward threshold in a random draw system; not compassion; no fixed threshold inferred",
+          "protect_translation": false,
+          "contexts": ["gacha", "gaming"],
+          "context_patterns": ["gacha", "banner", "pulls", "spins", "rerolls", "hard pity", "soft pity"],
+          "negative_patterns": ["feel pity", "take pity", "self pity", "self-pity", "pity for", "pity people", "what a pity", "mercy", "compassion"],
+          "translations": {"ru": ["гарант"]}
+        },
+        {
+          "id": "game_glory_core_label",
+          "canonical": "Glory Core",
+          "forms": ["glory core"],
+          "meaning": "source game label in a reroll system; preserve until an official localized name is known",
+          "keep_untranslated": true,
+          "contexts": ["gaming"],
+          "context_patterns": ["rerolls", "gacha", "spins", "pities", "pity", "shards"],
+          "negative_patterns": ["translation exercise", "literal translation"]
+        },
+        {
           "id": "game_double_critical_damage",
           "canonical": "double critical hit damage",
           "forms": ["double crit damage", "double crit dmg"],
@@ -19975,6 +19996,52 @@ const slangDataset: {
   ],
   "source_normalization_rules": [
     {
+      "id": "en_reroll_currency_exchange",
+      "language": "en",
+      "pattern": "\\b(?<kind>race|clan) rerolls for (?<currency>shards|gems|tokens|coins)\\b",
+      "replacement": "random changes of the character's $<kind> in exchange for $<currency>",
+      "kind": "grammar", "meaning": "reroll purchase with explicitly named currency, not a race event or a reward from rerolling",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_gacha_pities_meaning",
+      "language": "en", "pattern": "\\bpities\\b",
+      "replacement": "guaranteed drop systems", "kind": "grammar",
+      "meaning": "plural guarantee mechanics, not compassion; thresholds remain unspecified",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["gacha", "banner", "pulls", "spins", "rerolls"],
+      "negative_patterns": ["feel pity", "take pity", "self pity", "self-pity", "pity for", "pity people", "what a pity", "mercy", "compassion"]
+    },
+    {
+      "id": "en_gacha_pity_meaning",
+      "language": "en", "pattern": "\\bpity\\b",
+      "replacement": "guaranteed drop system", "kind": "grammar",
+      "meaning": "guarantee mechanic, not compassion; no fixed threshold inferred",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["gacha", "banner", "pulls", "spins", "rerolls"],
+      "negative_patterns": ["feel pity", "take pity", "self pity", "self-pity", "pity for", "pity people", "what a pity", "mercy", "compassion"]
+    },
+    {
+      "id": "en_inventory_n_conjunction",
+      "language": "en", "pattern": "\\b(?<item>shards|gems|tokens|coins)\\s+n\\b",
+      "replacement": "$<item> and", "kind": "abbreviation",
+      "meaning": "compressed conjunction after an inventory currency noun; not arbitrary letter n",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["rerolls", "gacha", "spins", "inventory", "rewards"],
+      "negative_patterns": ["variable", "equation", "coordinate"]
+    },
+    {
+      "id": "en_counted_reward_spins",
+      "language": "en",
+      "pattern": "(?<![\\p{L}\\p{N}])(?<count>\\d{1,6})\\s*spins\\b",
+      "replacement": "$<count> attempts to get random drops",
+      "kind": "grammar",
+      "meaning": "counted attempts at random rewards, not physical rotations",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["gacha", "banner", "rerolls", "pity", "pities", "gotten", "rewards"],
+      "negative_patterns": ["washing machine", "washing", "rotation", "rpm", "bicycle", "figure skating", "centrifuge"]
+    },
+    {
       "id": "en_skill_damage_expansion",
       "language": "en",
       "pattern": "\\bskill (?:dmg|damage)\\b",
@@ -20465,6 +20532,30 @@ const slangDataset: {
     }
   ],
   "incoming_chat_rules": [
+    {
+      "id": "en_rip_setback_reaction",
+      "language": "en", "pattern": "^rip[.!]*$",
+      "normalized": "That is unfortunate.",
+      "sense": "sympathetic reaction to a game setback, not tearing or an instruction",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["rerolls", "spins", "gacha", "lost", "failed", "only have", "everything else"],
+      "negative_patterns": ["died", "death", "funeral", "passed away", "rest in peace", "paper", "dvd", "cd", "routing protocol"],
+      "slots": {"intent": "sympathy", "speechAct": "reaction", "register": "informal", "certainty": "high"},
+      "outputs": {"ru": {"clean": ["Жаль."], "casual": ["эх, жаль"], "slang": ["эх"], "heavy": ["эх"]}}
+    },
+    {
+      "id": "en_pity_system_question",
+      "language": "en", "pattern": "^pit(?:y|ies)\\?$",
+      "normalized": "A guaranteed reward system?",
+      "sense": "clarification of a gacha guarantee, not asking about compassion",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["rerolls", "spins", "gacha", "pulls", "banner"],
+      "negative_patterns": ["compassion", "mercy", "feel pity", "self-pity"],
+      "slots": {"intent": "clarification", "speechAct": "question", "certainty": "high"},
+      "outputs": {"ru": {"clean": ["Система гаранта?"], "casual": ["гарант?"], "slang": ["гарант?"], "heavy": ["гарант?"]}}
+    },
     {
       "id": "en_bow_weapon_reply",
       "language": "en", "pattern": "^bow\\s*\\?$", "normalized": "A bow weapon?",
