@@ -1,0 +1,194 @@
+{
+  "capturedAt": "2026-10-15T20:43:52.991Z",
+  "note": "Synthetic fixtures; live Google outputs are variable. Not a native-speaker fluency rating or Discord UI test.",
+  "rows": [
+    {
+      "language": "en",
+      "source": "must be gifted",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "Does spending gifted Robux still count as F2P?"
+      },
+      "raw": "должен быть одаренным",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "Must be received as a gift.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Это должно быть получено в подарок.",
+        "casual": "это должны подарить",
+        "slang": "это должны подарить",
+        "heavy": "это должны подарить",
+        "mirror": "это должны подарить"
+      }
+    },
+    {
+      "language": "en",
+      "source": "it has to be gifted",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "I got a gamepass"
+      },
+      "raw": "это должно быть подарком",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "Must be received as a gift.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Это должно быть получено в подарок.",
+        "casual": "это должны подарить",
+        "slang": "это должны подарить",
+        "heavy": "это должны подарить",
+        "mirror": "это должны подарить"
+      }
+    },
+    {
+      "language": "en",
+      "source": "he must be gifted",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "He is talented at mathematics"
+      },
+      "raw": "Он, должно быть, одарен.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "he must be gifted",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Он, должно быть, одарен.",
+        "casual": "он должно быть одарен",
+        "slang": "он должно быть одарен",
+        "heavy": "он должно быть одарен",
+        "mirror": "он должно быть одарен"
+      }
+    },
+    {
+      "language": "en",
+      "source": "this bee must be gifted",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "my hive in Bee Swarm"
+      },
+      "raw": "Эта пчела, должно быть, очень талантлива.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "this bee must be gifted",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Эта пчела, должно быть, очень талантлива.",
+        "casual": "эта пчела должно быть очень талантлива",
+        "slang": "эта пчела должно быть очень талантлива",
+        "heavy": "эта пчела должно быть очень талантлива",
+        "mirror": "эта пчела должно быть очень талантлива"
+      }
+    },
+    {
+      "language": "en",
+      "source": "f2p is not spending robux thats basically it",
+      "targetLanguage": "ru",
+      "raw": "В принципе, для игроков, не вкладывающих деньги в игру, трата Robux — это всё.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "An F2P player does not spend Robux.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "F2P — это игрок, который не тратит Robux.",
+        "casual": "f2p — это когда не тратишь robux",
+        "slang": "f2p — это когда не тратишь robux",
+        "heavy": "f2p — не тратишь robux",
+        "mirror": "f2p — это когда не тратишь robux"
+      }
+    },
+    {
+      "language": "en",
+      "source": "f2p is spending robux",
+      "targetLanguage": "ru",
+      "raw": "f2p тратит Robux",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "f2p is spending robux",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "f2p тратит robux",
+        "casual": "f2p тратит robux",
+        "slang": "f2p тратит robux",
+        "heavy": "f2p тратит robux",
+        "mirror": "f2p тратит robux"
+      }
+    },
+    {
+      "language": "en",
+      "source": "is this still an f2p?",
+      "targetLanguage": "ru",
+      "raw": "Это всё ещё бесплатная игра?",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "is this still an f2p?",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Это по-прежнему f2p?",
+        "casual": "это по-прежнему f2p?",
+        "slang": "это по-прежнему f2p?",
+        "heavy": "это по-прежнему f2p?",
+        "mirror": "это по-прежнему f2p?"
+      }
+    },
+    {
+      "language": "en",
+      "source": "there are also soft f2p players who buy a few passes",
+      "targetLanguage": "ru",
+      "raw": "Также есть игроки, предпочитающие бесплатную модель игры, которые покупают несколько бесплатных пропусков.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "there are also soft f2p players who buy a few passes",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Также есть игроки, использующие soft f2p, которые покупают несколько абонементов.",
+        "casual": "также есть игроки использующие soft f2p которые покупают несколько абонементов",
+        "slang": "также есть игроки использующие soft f2p которые покупают несколько абонементов",
+        "heavy": "также есть игроки использующие soft f2p которые покупают несколько абонементов",
+        "mirror": "также есть игроки использующие soft f2p которые покупают несколько абонементов"
+      }
+    },
+    {
+      "language": "en",
+      "source": "you need a race w/ luck",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "A race reroll changes character stats and luck bonuses"
+      },
+      "raw": "Вам нужна гонка с элементами удачи.",
+      "detectedSourceLanguage": "en",
+      "register": "informal",
+      "providerSafeInput": "you need a character race with a bonus to luck",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Тебе нужна раса персонажа с бонусом к удаче.",
+        "casual": "тебе нужна раса персонажа с бонусом к удаче",
+        "slang": "тебе нужна раса персонажа с бонусом к удаче",
+        "heavy": "тебе нужна раса персонажа с бонусом к удаче",
+        "mirror": "тебе нужна раса персонажа с бонусом к удаче"
+      }
+    },
+    {
+      "language": "en",
+      "source": "you need a race with luck",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "a horse race with a luck bonus"
+      },
+      "raw": "Вам нужна гонка, в которой вам повезет.",
+      "detectedSourceLanguage": "en",
+      "register": "informal",
+      "providerSafeInput": "you need a race with luck",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Тебе нужна гонка, в которой вам повезет.",
+        "casual": "тебе нужна гонка в которой вам повезет",
+        "slang": "тебе нужна гонка в которой вам повезет",
+        "heavy": "тебе нужна гонка в которой вам повезет",
+        "mirror": "тебе нужна гонка в которой вам повезет"
+      }
+    }
+  ]
+}

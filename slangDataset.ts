@@ -3939,6 +3939,15 @@ const slangDataset: {
       ],
       "gaming": [
         {
+          "id": "game_f2p_player_label",
+          "canonical": "F2P",
+          "forms": ["soft f2p", "f2p"],
+          "meaning": "non-paying player/account label; soft F2P is a community-dependent qualifier, not a game genre",
+          "keep_untranslated": true,
+          "contexts": ["gaming"],
+          "translations": {}
+        },
+        {
           "id": "game_gg",
           "canonical": "GG",
           "forms": [
@@ -13742,6 +13751,14 @@ const slangDataset: {
   ],
   "protected_entities": [
     {
+      "name": "Robux",
+      "aliases": ["robux"],
+      "type": "virtual_currency",
+      "case_sensitive": false,
+      "always_keep": true,
+      "protect_lowercase": true
+    },
+    {
       "name": "Steam",
       "aliases": [
         "steam"
@@ -19882,6 +19899,30 @@ const slangDataset: {
   ],
   "source_normalization_rules": [
     {
+      "id": "en_f2p_label_recognition",
+      "language": "en",
+      "pattern": "\\b(?:soft\\s+)?f2p\\b",
+      "replacement": "$&",
+      "meaning": "non-paying player label; preserve the community abbreviation",
+      "kind": "abbreviation",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "en_character_race_stat",
+      "language": "en",
+      "pattern": "\\brace\\s+(?:w/|with)\\s+(?:a\\s+)?(?<stat>luck|damage|strength|defense|defence|agility)\\b",
+      "replacement": "character race with a bonus to $<stat>",
+      "kind": "grammar",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "requires_context": true,
+      "context_patterns": ["race reroll", "racial", "elf", "demon", "clan", "luck stat", "luck bonus", "Sakura", "shards"],
+      "negative_patterns": ["horse", "car", "lap", "marathon", "racetrack", "racing"]
+    },
+    {
       "id": "de_speaker_lost_confusion",
       "language": "de",
       "pattern": "\\bich bin (?:komplett|total) lost\\b",
@@ -20274,6 +20315,72 @@ const slangDataset: {
     }
   ],
   "incoming_chat_rules": [
+    {
+      "id": "en_gifted_item_requirement",
+      "language": "en",
+      "pattern": "^(?:(?:it|that)\\s+)?(?:must|needs? to|has to|have to)\\s+be\\s+gifted[.!?]*$",
+      "normalized": "Must be received as a gift.",
+      "sense": "an item or currency must be received as a gift, not personal talent",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["robux", "gamepass", "gamepasses", "battlepass", "item", "skin"],
+      "negative_patterns": ["talent", "talented", "mathematics", "math", "bee", "hive"],
+      "slots": {"intent": "gift_requirement", "subject": "other", "action": "receive_gift", "register": "neutral"},
+      "outputs": {
+        "ru": {
+          "clean": ["Это должно быть получено в подарок."],
+          "casual": ["Это должны подарить."],
+          "slang": ["это должны подарить"],
+          "heavy": ["это должны подарить"]
+        }
+      }
+    },
+    {
+      "id": "en_gifted_items_requirement",
+      "language": "en",
+      "pattern": "^they\\s+(?:must|need to|have to)\\s+be\\s+gifted[.!?]*$",
+      "normalized": "They must be received as gifts.",
+      "sense": "plural items or currency must be received as gifts, not talented people",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["robux", "gamepass", "gamepasses", "battlepass", "item", "skin"],
+      "negative_patterns": ["talent", "talented", "mathematics", "math", "bee", "hive"],
+      "slots": {"intent": "gift_requirement", "subject": "other", "target": "items", "action": "receive_gift", "register": "neutral"},
+      "outputs": {
+        "ru": {
+          "clean": ["Они должны быть получены в подарок."],
+          "casual": ["Их должны подарить."],
+          "slang": ["их должны подарить"],
+          "heavy": ["их должны подарить"]
+        }
+      }
+    },
+    {
+      "id": "en_f2p_nonspending_definition",
+      "language": "en",
+      "pattern": "^f2p\\s+(?:is|means)\\s+(?:not|never)\\s+spending\\s+robux(?:[, ]+(?:that['’]?s|thats)\\s+basically\\s+it)?[.!]*$",
+      "normalized": "An F2P player does not spend Robux.",
+      "sense": "definition of a non-paying player, not a free game or an inverted spending claim",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true,
+      "can_generate": true,
+      "slots": {"intent": "nonspending_player_definition", "subject": "other", "action": "not_spend", "polarity": "negative", "register": "neutral"},
+      "outputs": {
+        "ru": {
+          "clean": ["F2P — это игрок, который не тратит Robux."],
+          "casual": ["F2P — это когда не тратишь Robux."],
+          "slang": ["f2p — это когда не тратишь Robux"],
+          "heavy": ["f2p — не тратишь Robux"]
+        }
+      }
+    },
     {
       "id": "en_named_casual_greeting",
       "language": "en",

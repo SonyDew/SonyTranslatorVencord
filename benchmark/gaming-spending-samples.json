@@ -1,0 +1,12 @@
+[
+  ["en", "must be gifted", "ru", {"replyMessage": "Does spending gifted Robux still count as F2P?"}],
+  ["en", "it has to be gifted", "ru", {"replyMessage": "I got a gamepass"}],
+  ["en", "he must be gifted", "ru", {"replyMessage": "He is talented at mathematics"}],
+  ["en", "this bee must be gifted", "ru", {"replyMessage": "my hive in Bee Swarm"}],
+  ["en", "f2p is not spending robux thats basically it", "ru"],
+  ["en", "f2p is spending robux", "ru"],
+  ["en", "is this still an f2p?", "ru"],
+  ["en", "there are also soft f2p players who buy a few passes", "ru"],
+  ["en", "you need a race w/ luck", "ru", {"replyMessage": "A race reroll changes character stats and luck bonuses"}],
+  ["en", "you need a race with luck", "ru", {"replyMessage": "a horse race with a luck bonus"}]
+]

@@ -2,7 +2,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import dataset from "../slangDataset.ts";
-import { createTranslationEngine, type EngineOptions } from "../translationCore.ts";
+import { createTranslationEngine, type EngineOptions, type TranslationContext } from "../translationCore.ts";
 import { googleSourceCode, runPreparedTranslation } from "../translationRunner.ts";
 
 const vencordPath = process.argv[2];
@@ -33,7 +33,8 @@ function google(text: string, sourceLanguage: string | null, targetLanguage: str
 }
 const engine = createTranslationEngine(dataset);
 const rows: unknown[] = [];
-for (const [language, source, targetLanguage] of [
+const samples: Array<[string, string, string, TranslationContext?]> = process.argv[4]
+    ? JSON.parse(readFileSync(process.argv[4], "utf8")) : [
     ["en", "im cooked 💀", "ru"], ["de", "ich bin komplett lost", "ru"],
     ["ru", "пиздец как я хочу спать", "en"], ["uk", "шо ти робиш", "en"],
     ["zh-CN", "我寄了", "ru"], ["zh-TW", "你484忘了", "ru"],
@@ -43,10 +44,11 @@ for (const [language, source, targetLanguage] of [
     ["en", "It's cool outside.", "ru"], ["en", "I ordered a mocha.", "ru"],
     ["en", "She is sick.", "ru"], ["en", "I cooked chicken for dinner.", "ru"],
     ["de", "Ich habe meinen Schlüssel verloren.", "ru"], ["zh-TW", "數量是484個", "ru"],
-]) {
+];
+for (const [language, source, targetLanguage, context] of samples) {
     const options: EngineOptions = { kind: "received", targetLanguage, mode: "clean", preserveStyle: true,
         smartSourceSlang: true, targetSlangPacks: true, protectNames: true, customProtectedNames: "",
-        dropEnglishApostrophes: false, softenAmbiguousProfanity: true };
+        dropEnglishApostrophes: false, softenAmbiguousProfanity: true, context };
     try {
         const raw = await google(source, null, targetLanguage);
         const outputs: Record<string, string> = {};
@@ -56,7 +58,7 @@ for (const [language, source, targetLanguage] of [
                 (text, detected) => google(text, detected, targetLanguage));
         }
         const prepared = engine.prepare(source, options);
-        rows.push({ language, source, targetLanguage, raw, detectedSourceLanguage: prepared.sourceLanguage,
+        rows.push({ language, source, targetLanguage, context, raw, detectedSourceLanguage: prepared.sourceLanguage,
             register: prepared.analysis.register, providerSafeInput: prepared.analysis.providerSafeInput,
             selectedSense: prepared.analysis.semanticMatches.map(match => match.id), outputs });
         process.stdout.write(`${language}: ${source} → ${outputs.mirror}\n`);
