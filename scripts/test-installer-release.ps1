@@ -56,6 +56,10 @@ try {
     if ((Invoke-Isolated 'Skip').ExitCode -ne 0) { throw 'Update simulation failed.' }
     if (Test-Path -LiteralPath (Join-Path $Plugin 'rollback-marker.txt')) { throw 'Successful update did not replace the old payload.' }
     if ((Get-Content -LiteralPath $indexPath -Raw) -notmatch [regex]::Escape("v$ExpectedVersion")) { throw "v$PreviousVersion update did not install the current payload." }
+    $backups = @(Get-ChildItem -LiteralPath (Join-Path $FakeLocal 'SonyTranslator\backups') -Directory)
+    if (-not ($backups | Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName 'rollback-marker.txt') })) {
+        throw 'Successful update deleted the recovery backup.'
+    }
 
     Set-Content -LiteralPath (Join-Path $Plugin 'rollback-marker.txt') -Value 'previous-version-must-survive' -Encoding utf8
     $failedResult = Invoke-Isolated 'Fail'

@@ -246,15 +246,16 @@ function Install-Payload {
         New-Item -ItemType Directory -Force -Path $backupRoot | Out-Null
         $script:BackupDir = Join-Path $backupRoot ("SonyTranslator-" + [DateTime]::UtcNow.ToString('yyyyMMddHHmmssfff'))
         Copy-Item -LiteralPath $script:PluginDir -Destination $script:BackupDir -Recurse
-        Write-Good 'Temporary plugin backup created'
+        Write-Good 'Plugin backup saved for recovery'
     }
 
+    # From this point a partial copy/removal also requires rollback.
+    $script:PayloadInstalled = $true
     if (Test-Path -LiteralPath $script:PluginDir) {
         Assert-SafePluginPath $script:PluginDir $script:VencordDir
         Remove-Item -LiteralPath $script:PluginDir -Recurse -Force
     }
     Copy-Item -LiteralPath $PayloadDir -Destination $script:PluginDir -Recurse
-    $script:PayloadInstalled = $true
     Write-Good "SonyTranslator $PluginVersion prepared."
 }
 
@@ -270,23 +271,27 @@ function Restore-PreviousPlugin {
     }
 }
 
-function Remove-TemporaryBackup {
-    if ($script:BackupDir -and (Test-Path -LiteralPath $script:BackupDir)) {
-        $backupRoot = Get-FullPath (Join-Path $BaseDir 'backups')
-        $actual = Get-FullPath $script:BackupDir
-        if (-not $actual.StartsWith($backupRoot + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
-            throw "Refusing unsafe backup cleanup path: $actual"
-        }
-        Remove-Item -LiteralPath $script:BackupDir -Recurse -Force
-    }
-}
-
 function Inject-Vencord([string]$Directory) {
     if ($SkipInject -or $BuildMode -ne 'Normal') { return }
     Write-Step 'Injecting the verified custom Vencord build'
     Push-Location $Directory
     try {
-        Invoke-InstallerCommand 'node.exe' @('scripts\runInstaller.mjs', '--', '--install', '--branch', 'auto')
+        # The upstream JS launcher currently catches native failure without a
+        # failing exit code. Use it only to fetch the CLI; invoke the CLI itself
+        # for injection so failure actually enters our rollback transaction.
+        Invoke-InstallerCommand 'node.exe' @('scripts\runInstaller.mjs', '--', '--help')
+        $cli = Join-Path $Directory 'dist\Installer\VencordInstallerCli.exe'
+        if (-not (Test-Path -LiteralPath $cli -PathType Leaf)) { throw 'Vencord injection helper was not downloaded.' }
+        $previousUserData = $env:VENCORD_USER_DATA_DIR
+        $previousDevInstall = $env:VENCORD_DEV_INSTALL
+        try {
+            $env:VENCORD_USER_DATA_DIR = $Directory
+            $env:VENCORD_DEV_INSTALL = '1'
+            Invoke-InstallerCommand $cli @('--install', '--branch', 'auto')
+        } finally {
+            $env:VENCORD_USER_DATA_DIR = $previousUserData
+            $env:VENCORD_DEV_INSTALL = $previousDevInstall
+        }
     } finally { Pop-Location }
 }
 
@@ -339,7 +344,6 @@ try {
     Invoke-VencordBuild $script:VencordDir
     Inject-Vencord $script:VencordDir
     [void](Start-DiscordAfterOperation $script:PreviouslyRunningDiscordClient 'successful installation')
-    Remove-TemporaryBackup
     Write-Good "SonyTranslator $PluginVersion installed successfully."
     Write-Host "Log: $LogPath" -ForegroundColor DarkGray
     exit 0
@@ -351,6 +355,7 @@ try {
         if ($script:HadPreviousPlugin -and $script:VencordDir -and $BuildMode -eq 'Normal') {
             Write-Step 'Rebuilding the previous plugin after rollback'
             Invoke-VencordBuild $script:VencordDir
+            Inject-Vencord $script:VencordDir
         }
         $rollbackSucceeded = $true
     } catch {
