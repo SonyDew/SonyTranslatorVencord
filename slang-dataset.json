@@ -18522,7 +18522,10 @@
         "toi",
         "ton",
         "ta",
-        "tes"
+        "tes",
+        "tkt",
+        "t'inquiète",
+        "t’inquiète"
       ],
       "confidence": "high"
     },
@@ -18711,6 +18714,22 @@
     }
   ],
   "register_repairs": [
+    {
+      "id": "ru_inf_reassurance_imperative",
+      "target_language": "ru",
+      "register": "informal",
+      "pattern": "^не волнуйтесь(?![\\p{L}])",
+      "replacement": "Не волнуйся",
+      "confidence": "high"
+    },
+    {
+      "id": "ru_inf_forgot_question",
+      "target_language": "ru",
+      "register": "informal",
+      "pattern": "^вы забыли(?=\\s*[?？]|\\s*$)",
+      "replacement": "Ты забыл",
+      "confidence": "high"
+    },
     {
       "id": "de_inf_haben_q",
       "target_language": "de",
@@ -19868,7 +19887,7 @@
       "id": "pt_bora_play_invitation",
       "language": "pt-br",
       "pattern": "\\bbora jogar\\b",
-      "replacement": "vamos jogar",
+      "replacement": "que tal jogar",
       "kind": "grammar",
       "confidence": "high",
       "current": true,

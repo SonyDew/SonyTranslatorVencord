@@ -49,3 +49,28 @@ literal provider sentinel. It checks semantic reconciliation, nonempty final
 outputs, and absence of invented profanity. This is a deterministic regression
 test, not a live Google quality score or independent human fluency rating.
 Normalization tests include entity collisions and literal/acronym negatives.
+
+## Live validation follow-up
+
+An optional developer capture tool now compares raw Google responses and final
+pipeline outputs on synthetic fixtures for all twelve languages plus six literal
+negatives. Captures are in `benchmark/captures/`; they contain no Discord history.
+This exposed bugs that the earlier preparation-only negatives missed:
+
+* Generic numeric-slang recognition rewrote literal `484` (and could rewrite
+  `94`, `87`, `666`, `233`). Numeric-only forms no longer expand in the generic
+  word pass; bounded grammatical rules must supply their meaning.
+* French `tkt` and `t'inquiète` did not preserve informal address through Google.
+  Register recognition now includes these forms, with narrow Russian repairs.
+* The proposed Portuguese `bora jogar → vamos jogar` normalization lost the
+  invitation speech act in actual Google output. It was replaced with an
+  explicit invitation frame `que tal jogar`; a future assertion is forbidden
+  in its regression test. This is an internal provider paraphrase, not forced
+  target slang.
+
+Initial and corrected captures are both retained, so a reviewer can distinguish
+discovered regressions from claimed improvements. Several outputs still differ
+only in rhythm between modes; captures must not be marketed as proof of native
+fluency. Google also makes gender/number choices that remain uncertain without
+context. The new capture command is explicit and optional; normal tests stay
+offline and the plugin still has only the existing Google transport.
