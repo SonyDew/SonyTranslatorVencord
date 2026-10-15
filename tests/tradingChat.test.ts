@@ -62,6 +62,14 @@ test("technical terms never take precedence over names, URLs or code", () => {
     ] } });
     assert.equal(member.restore(member.text), "hello Crit Rate");
 });
+test("stat slots preserve ratios, percentages and zero values without adding units", async () => {
+    const p = engine.prepare("4/4, crit rate 0%, crit dmg 19%, skill dmg 22", base);
+    const result = await runPreparedTranslation(engine, p, async text => text);
+    assert.match(result, /4\/4/);
+    assert.match(result, /шанс критического удара 0%/);
+    assert.match(result, /критический урон 19%/);
+    assert.match(result, /урон навыков 22(?!%)/);
+});
 test("technical target slots are optional and have a conservative language fallback", () => {
     assert.match(engine.prepare("crit rate 14", { ...base, smartSourceSlang: false }).text, /crit rate/);
     const p = engine.prepare("crit rate 14", { ...base, targetLanguage: "fr" });

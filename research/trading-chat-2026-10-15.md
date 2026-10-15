@@ -47,3 +47,29 @@ item names such as Ghost/Stella require reliable entity evidence; informal `you`
 can be singular or plural; malformed trading claims and uncertain quantities are
 not reconstructed by guessing. A Boolean `True` may remain a literal provider
 translation rather than agreement, as intended by the negative fixture.
+
+## Repeatable local update gate
+
+After copying the candidate plugin into an **isolated** Vencord checkout with its
+dependencies installed, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/validate-live-quality.ps1 -VencordPath "G:/path/to/isolated/Vencord"
+```
+
+It verifies candidate-source identity, runs offline tests and strict core typing,
+captures all twelve source languages plus literal negatives, checks gaming and
+trading final-output invariants, then runs full Vencord typing and production
+build. Any failed command stops the gate. Reports are retained under the ignored
+`release/quality-checks` directory. It does not install or restart Discord and it
+does not run GitHub Actions. It cannot automatically judge all nuances of fluency.
+
+## Installation check
+
+The candidate was combined locally with the unmerged PR #3 installer and installed
+into the existing private Vencord checkout. The actual build/injection returned
+success, a previous-plugin backup was retained, and the same Stable client restarted
+with a visible window. Installed runtime files match the tested archive byte-for-byte
+(working-tree comparisons additionally normalize Git LF/CRLF differences).
+Live Google acceptance checks were repeated after installation. No claim of direct
+visual inspection of Discord's chat is made; the user supplies that final UI check.
