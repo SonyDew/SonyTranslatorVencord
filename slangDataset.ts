@@ -19863,6 +19863,69 @@ const slangDataset: {
   ],
   "source_normalization_rules": [
     {
+      "id": "de_speaker_lost_confusion",
+      "language": "de",
+      "pattern": "\\bich bin (?:komplett|total) lost\\b",
+      "replacement": "ich bin völlig verwirrt",
+      "kind": "grammar",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "fr_reassurance_tkt_clause",
+      "language": "fr",
+      "pattern": "\\btkt(?=\\s+(?:je|tu|on|ça|ca)\\b)",
+      "replacement": "ne t'inquiète pas,",
+      "meaning": "reassurance before a conversational clause",
+      "kind": "abbreviation",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "pt_bora_play_invitation",
+      "language": "pt-br",
+      "pattern": "\\bbora jogar\\b",
+      "replacement": "vamos jogar",
+      "kind": "grammar",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "pl_nwm_complement",
+      "language": "pl",
+      "pattern": "\\bnwm(?=\\s+(?:czy|jak|co|gdzie|kiedy|dlaczego)\\b)",
+      "replacement": "nie wiem",
+      "meaning": "I do not know before a complement clause",
+      "kind": "abbreviation",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "tw_484_second_person_question",
+      "language": "zh-tw",
+      "pattern": "你\\s*484(?=\\s*(?:忘|用|怕|想|要|有|沒|不|在))",
+      "replacement": "你是不是",
+      "kind": "abbreviation",
+      "meaning": "second-person yes/no question; not a number or bare username",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
+      "id": "uk_sho_second_person_question",
+      "language": "uk",
+      "pattern": "(?<![\\p{L}\\p{N}_])шо(?=\\s+ти\\s+(?:робиш|думаєш|хочеш)(?![\\p{L}\\p{N}_]))",
+      "replacement": "що",
+      "kind": "grammar",
+      "confidence": "high",
+      "current": true,
+      "can_recognize": true
+    },
+    {
       "id": "en_accuse_off_typo",
       "language": "en",
       "pattern": "\\b(accus(?:e|es|ed|ing)\\s+(?:me|you|him|her|us|them))\\s+off\\b",

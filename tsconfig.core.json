@@ -10,6 +10,7 @@
   "include": [
     "translationCore.ts",
     "translationRunner.ts",
+    "requestQueue.ts",
     "localization.ts",
     "slangDataset.ts"
   ]

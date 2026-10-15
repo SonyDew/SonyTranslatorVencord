@@ -871,6 +871,22 @@ function stopwordScores(input: string): Map<string, number> {
     return scores;
 }
 
+function shouldPreserveIncoming(dataset: SlangDataset, input: string, language: string | null, options: EngineOptions): boolean {
+    if (options.kind !== "received" || !language) return false;
+    const target = normalizeLanguageCode(options.targetLanguage);
+    if (normalizeLanguageCode(language) !== target) return false;
+    if (["ru", "uk"].includes(target)) return true;
+    // CJK scripts need explicit, region-correct evidence; shared Han alone is
+    // ambiguous between Japanese and both Chinese profiles.
+    if (target === "ja") return /[\u3040-\u30ff]/u.test(input) && !/\p{Script=Cyrillic}|[\uac00-\ud7af]/u.test(input);
+    if (target === "ko") return /[\uac00-\ud7af]/u.test(input) && !/\p{Script=Cyrillic}|[\u3040-\u30ff]/u.test(input);
+    if (target.startsWith("zh")) return /[\u3400-\u9fff]/u.test(input) && !/\p{Script=Cyrillic}|[\u3040-\u30ff\uac00-\ud7af]/u.test(input);
+    if (hasMixedScripts(input)) return false;
+    const ranked = [...stopwordScores(input)].sort((a, b) => b[1] - a[1]);
+    // Avoid silently skipping polysemous one-word reactions (real, cool, etc.).
+    return ranked[0]?.[0] === target && ranked[0][1] >= 2 && ranked[0][1] > (ranked[1]?.[1] ?? 0);
+}
+
 function detectSourceLanguage(dataset: SlangDataset, input: string, context?: TranslationContext): string | null {
     const comparable = normalizeComparable(input);
     if (!comparable) return null;
@@ -907,12 +923,20 @@ function detectSourceLanguage(dataset: SlangDataset, input: string, context?: Tr
 
     const byScript = scriptLanguage(input);
     if (byScript === "ru") {
-        const ukScore = ["це", "що", "який", "якщо", "мені", "тобі", "ти", "можеш", "зараз", "можливо", "будь ласка"]
+        const ukScore = ["це", "що", "який", "якщо", "мені", "тобі", "ти", "можеш", "зараз", "можливо", "будь ласка", "вже", "йду", "спати", "робиш", "нема"]
             .filter(word => containsPhrase(input, word, "uk")).length;
         const ruScore = ["это", "что", "который", "если", "мне", "тебе", "сейчас", "может", "пожалуйста"]
             .filter(word => containsPhrase(input, word, "ru")).length;
         if (ukScore > ruScore) return "uk";
     }
+    // Shared Han characters alone cannot distinguish Mainland and Taiwan.
+    // A bounded, high-confidence regional construction is stronger evidence
+    // than the default Simplified fallback (bare numbers are not evidence).
+    if (byScript === "zh-cn" && (dataset.source_normalization_rules ?? []).some(rule => {
+        if (normalizeLanguageCode(rule.language) !== "zh-tw" || !rule.current || !rule.can_recognize || rule.confidence !== "high") return false;
+        if (!normalizationContextMatches(rule, input, context)) return false;
+        try { return new RegExp(rule.pattern, "iu").test(input); } catch { return false; }
+    })) return "zh-tw";
     if (byScript) return byScript;
 
     const scores = stopwordScores(input);
@@ -2119,9 +2143,7 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
             const level = levelForMode(options.mode, analysis.style);
             // Incoming Cyrillic text already in the reading language is data to keep,
             // not a request to autocorrect or restyle the author's own wording.
-            const preserveTargetText = options.kind === "received" &&
-                ["ru", "uk"].includes(normalizeLanguageCode(options.targetLanguage)) &&
-                normalizeLanguageCode(analysis.language ?? "") === normalizeLanguageCode(options.targetLanguage);
+            const preserveTargetText = shouldPreserveIncoming(dataset, input, analysis.language, options);
             const chatMatch = analysis.incomingChatMatches.find(match => match.confidence !== "low");
             const emoji = emojiTail(input);
             const providerSource = chatMatch && !preserveTargetText
@@ -2138,7 +2160,8 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
             }
             if (options.softenAmbiguousProfanity && options.kind === "sent") working = normalizeAmbiguousProfanity(working);
 
-            const foreignSegments = preserveTargetText && !options.preserveMixedEnglish
+            const foreignSegments = preserveTargetText && !options.preserveMixedEnglish &&
+                ["ru", "uk", "ja", "ko", "zh-cn", "zh-tw"].includes(normalizeLanguageCode(options.targetLanguage))
                 ? [...working.matchAll(/(?<![\p{L}\p{N}_])(?:(?!SONYPROTECT)[A-Za-z][A-Za-z'-]*)(?:[ \t]+(?!SONYPROTECT)[A-Za-z][A-Za-z'-]*)*/gu)]
                     .map(match => ({ text: match[0], index: match.index! }))
                 : [];

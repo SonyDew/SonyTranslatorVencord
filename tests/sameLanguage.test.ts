@@ -12,6 +12,23 @@ const options: EngineOptions = {
     context: { domain: "chat", previousMessages: ["а там можно remap buttons", "хз как на русском"] },
 };
 
+for (const [targetLanguage, source] of [
+    ["en", "this is your game"], ["de", "das ist nicht mein Spiel"], ["fr", "je ne sais pas"],
+    ["es", "esto es para la partida"], ["pt-BR", "você não precisa disso"], ["pl", "nie wiem ale mam czas"],
+    ["ja", "これはまだ直ってない"], ["ko", "이 게임은 아직 안 고쳤어"],
+    ["zh-CN", "这个游戏还没有更新"], ["zh-TW", "這個遊戲還沒有更新"], ["uk", "я вже йду спати"],
+]) test(`already ${targetLanguage} bypasses provider conservatively`, async () => {
+    const prepared = engine.prepare(source, { ...options, targetLanguage, preserveMixedEnglish: true });
+    assert.equal(prepared.preserveTargetText, true);
+    assert.equal(await runPreparedTranslation(engine, prepared, async () => { throw new Error("No retranslating"); }), source);
+});
+
+test("same-language protection does not swallow ambiguous reactions or clearly foreign scripts", () => {
+    assert.equal(engine.prepare("Cool", { ...options, targetLanguage: "en" }).preserveTargetText, false);
+    assert.equal(engine.prepare("c'est un jeu", { ...options, targetLanguage: "de" }).preserveTargetText, false);
+    assert.equal(engine.prepare("これはゲームです", { ...options, targetLanguage: "zh-TW" }).preserveTargetText, false);
+});
+
 for (const source of ["ладно", "все", "я спаит", "спатт", "гн", "и тебе", "норм?", "эт прикольно", "хз как на русском", "а да"]) {
     test(`already Russian stays exact without Google: ${source}`, async () => {
         for (const mode of ["clean", "casual", "slang", "heavy", "mirror"] as const) {
