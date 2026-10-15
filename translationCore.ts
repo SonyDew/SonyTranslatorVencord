@@ -658,10 +658,10 @@ type SourceNormalizationResult = {
 
 function normalizationContextMatches(rule: SourceNormalizationRule, input: string, context?: TranslationContext): boolean {
     const related = relatedContextCorpus(context);
-    if (rule.requires_context && !related) return false;
-    if (rule.negative_patterns?.some(pattern => containsPhrase(input, pattern, rule.language))) return false;
-    if (!rule.context_patterns?.length) return true;
+    if (rule.requires_context && !reliableContextAvailable(context)) return false;
     const corpus = `${input}\n${related}`;
+    if (rule.negative_patterns?.some(pattern => containsPhrase(corpus, pattern, rule.language))) return false;
+    if (!rule.context_patterns?.length) return true;
     return rule.context_patterns.some(pattern => containsPhrase(corpus, pattern, rule.language));
 }
 
