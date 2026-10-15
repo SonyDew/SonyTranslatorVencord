@@ -1,0 +1,257 @@
+{
+  "capturedAt": "2026-10-15T20:58:38.871Z",
+  "note": "Synthetic fixtures; live Google outputs are variable. Not a native-speaker fluency rating or Discord UI test.",
+  "rows": [
+    {
+      "language": "en",
+      "source": "True",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "Bow scrolls may become useful after the update"
+      },
+      "raw": "Истинный",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I agree.",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Верно.",
+        "casual": "Да согласен",
+        "slang": "да точно",
+        "heavy": "точно",
+        "mirror": "Да согласен"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "True",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "a Python boolean literal"
+      },
+      "raw": "Истинный",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "True",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Истинный",
+        "casual": "Истинный",
+        "slang": "Истинный",
+        "heavy": "Истинный",
+        "mirror": "Истинный"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I bought a scroll for 5k something",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Я купил свиток за 5 тысяч с чем-то.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I bought a scroll for 5 thousand and a bit",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я купил свиток за 5 тысяч с небольшим.",
+        "casual": "Я купил свиток за 5 тысяч с небольшим",
+        "slang": "Я купил свиток за 5 тысяч с небольшим",
+        "heavy": "Я купил свиток за 5 тысяч с небольшим",
+        "mirror": "Я купил свиток за 5 тысяч с небольшим"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I sold that for 28k and some change",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Я продал это за 28 тысяч с небольшим.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I sold that for 28 thousand and a bit",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я продал это за 28 тысяч с небольшим.",
+        "casual": "Я продал это за 28 тысяч с небольшим",
+        "slang": "Я продал это за 28 тысяч с небольшим",
+        "heavy": "Я продал это за 28 тысяч с небольшим",
+        "mirror": "Я продал это за 28 тысяч с небольшим"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I ran a 5k race",
+      "targetLanguage": "ru",
+      "raw": "Я пробежал забег на 5 км.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "I ran a 5k race",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я пробежал забег на 5 км.",
+        "casual": "Я пробежал забег на 5 км",
+        "slang": "Я пробежал забег на 5 км",
+        "heavy": "Я пробежал забег на 5 км",
+        "mirror": "Я пробежал забег на 5 км"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "crit rate 14, crit dmg 19 and skill dmg 22",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Шанс критического удара 14, критический урон 19 и урон от навыков 22",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "шанс критического удара 14, критический урон 19 and урон навыков 22",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "шанс критического удара 14, критический урон 19 и урон навыков 22",
+        "casual": "шанс критического удара 14, критический урон 19 и урон навыков 22",
+        "slang": "шанс критического удара 14, критический урон 19 и урон навыков 22",
+        "heavy": "шанс критического удара 14, критический урон 19 и урон навыков 22",
+        "mirror": "шанс критического удара 14, критический урон 19 и урон навыков 22"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I thought you needed crit rate",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Я думал, тебе нужен показатель критического урона.",
+      "detectedSourceLanguage": "en",
+      "register": "informal",
+      "providerSafeInput": "I thought you needed шанс критического удара",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я думал, тебе нужен шанс критического удара",
+        "casual": "Я думал тебе нужен шанс критического удара",
+        "slang": "Я думал тебе нужен шанс критического удара",
+        "heavy": "Я думал тебе нужен шанс критического удара",
+        "mirror": "Я думал тебе нужен шанс критического удара"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "mine 25atk, 24 skill dmg and 21 crit dmg",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "мины 25 атаки, 24 урона от навыков и 21 критического урона",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "the one I have has 25atk, 24 урон навыков and 21 критический урон",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "У меня есть 25atk, 24 урон навыков и 21 критический урон.",
+        "casual": "у меня есть 25atk, 24 урон навыков и 21 критический урон",
+        "slang": "у меня есть 25atk, 24 урон навыков и 21 критический урон",
+        "heavy": "у меня есть 25atk, 24 урон навыков и 21 критический урон",
+        "mirror": "у меня есть 25atk, 24 урон навыков и 21 критический урон"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "the coal mine is closed",
+      "targetLanguage": "ru",
+      "raw": "угольная шахта закрыта",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "the coal mine is closed",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "угольная шахта закрыта",
+        "casual": "угольная шахта закрыта",
+        "slang": "угольная шахта закрыта",
+        "heavy": "угольная шахта закрыта",
+        "mirror": "угольная шахта закрыта"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I've run with you",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "Your raid build has enough crit rate"
+      },
+      "raw": "Я бежал вместе с тобой",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I played together with you",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я играл вместе с тобой",
+        "casual": "Я играл вместе с тобой",
+        "slang": "Я играл вместе с тобой",
+        "heavy": "Я играл вместе с тобой",
+        "mirror": "Я играл вместе с тобой"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I've run with you",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "our running club marathon"
+      },
+      "raw": "Я бежал вместе с тобой",
+      "detectedSourceLanguage": "en",
+      "register": "informal",
+      "providerSafeInput": "I've run with you",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я бежал вместе с тобой",
+        "casual": "Я бежал вместе с тобой",
+        "slang": "Я бежал вместе с тобой",
+        "heavy": "Я бежал вместе с тобой",
+        "mirror": "Я бежал вместе с тобой"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "that scroll was still buns compared to the other weapon",
+      "targetLanguage": "ru",
+      "raw": "Этот свиток всё ещё был скромнее по сравнению с другим оружием.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "that scroll was still poor in quality compared to the other weapon",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Качество этого свитка всё ещё было низким по сравнению с другим оружием.",
+        "casual": "качество этого свитка всё ещё было низким по сравнению с другим оружием",
+        "slang": "качество этого свитка всё ещё было низким по сравнению с другим оружием",
+        "heavy": "качество этого свитка всё ещё было низким по сравнению с другим оружием",
+        "mirror": "качество этого свитка всё ещё было низким по сравнению с другим оружием"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "the bakery buns were soft",
+      "targetLanguage": "ru",
+      "raw": "Булочки из пекарни были мягкими.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "the bakery buns were soft",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Булочки из пекарни были мягкими.",
+        "casual": "булочки из пекарни были мягкими",
+        "slang": "булочки из пекарни были мягкими",
+        "heavy": "булочки из пекарни были мягкими",
+        "mirror": "булочки из пекарни были мягкими"
+      },
+      "violations": []
+    }
+  ]
+}

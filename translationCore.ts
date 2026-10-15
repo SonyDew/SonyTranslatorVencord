@@ -118,8 +118,14 @@ export interface GamingEntry {
     forms?: string[];
     meaning?: string;
     keep_untranslated?: boolean;
+    /** Protect an unambiguous technical term with its target-language value. */
+    protect_translation?: boolean;
+    translation_inflections?: Record<string, Partial<Record<"genitive" | "instrumental" | "prepositional" | "dative", string>>>;
     contexts?: string[];
     translations?: Record<string, string[]>;
+    context_patterns?: string[];
+    negative_patterns?: string[];
+    requires_context?: boolean;
 }
 
 export interface ProfanityMeaning {
@@ -276,6 +282,8 @@ export interface SourceNormalizationRule {
     replacement: string;
     kind: "typo" | "abbreviation" | "expressive" | "grammar";
     meaning?: string;
+    /** Full grammatical source constructions may disambiguate weak lexical detection. */
+    language_hint?: boolean;
     confidence: SemanticConfidence;
     current: boolean;
     can_recognize: boolean;
@@ -603,6 +611,14 @@ function relatedContextCorpus(context?: TranslationContext): string {
     return relevantContextTexts(context).join(" \n ");
 }
 
+function reliableContextCorpus(context?: TranslationContext): string {
+    if (!context) return "";
+    const turns = context.previousTurns?.length
+        ? context.previousTurns.filter(turn => (turn.relevance ?? 0) >= 3).sort((a, b) => (b.relevance ?? 0) - (a.relevance ?? 0)).slice(0, 4).map(turn => turn.content)
+        : [...(context.previousMessages ?? []).slice(-4), context.previousMessage ?? ""];
+    return [context.replyMessage ?? "", ...turns].filter(Boolean).join("\n");
+}
+
 function inferContextDomain(input: string, context?: TranslationContext): NonNullable<TranslationContext["domain"]> {
     if (context?.domain) return context.domain;
     const corpus = contextCorpus(input, context);
@@ -656,10 +672,10 @@ type SourceNormalizationResult = {
     expressive: Array<{ source: string; normalized: string; }>;
 };
 
-function normalizationContextMatches(rule: SourceNormalizationRule, input: string, context?: TranslationContext): boolean {
-    const related = relatedContextCorpus(context);
+function normalizationContextMatches(rule: Pick<SourceNormalizationRule, "language" | "requires_context" | "context_patterns" | "negative_patterns">, input: string, context?: TranslationContext, originalInput = input, relevantOnly = false): boolean {
+    const related = rule.requires_context || relevantOnly ? reliableContextCorpus(context) : relatedContextCorpus(context);
     if (rule.requires_context && !reliableContextAvailable(context)) return false;
-    const corpus = `${input}\n${related}`;
+    const corpus = `${input}\n${originalInput}\n${related}`;
     if (rule.negative_patterns?.some(pattern => containsPhrase(corpus, pattern, rule.language))) return false;
     if (!rule.context_patterns?.length) return true;
     return rule.context_patterns.some(pattern => containsPhrase(corpus, pattern, rule.language));
@@ -670,6 +686,7 @@ function applySourceNormalizations(
     input: string,
     sourceLanguage: string | null,
     context?: TranslationContext,
+    originalInput = input,
 ): SourceNormalizationResult {
     let text = input;
     const typos: SourceNormalizationResult["typos"] = [];
@@ -679,7 +696,7 @@ function applySourceNormalizations(
     const code = normalizeLanguageCode(sourceLanguage);
     for (const rule of dataset.source_normalization_rules ?? []) {
         if (!rule.current || !rule.can_recognize || rule.confidence === "low" || normalizeLanguageCode(rule.language) !== code) continue;
-        if (!normalizationContextMatches(rule, text, context)) continue;
+        if (!normalizationContextMatches(rule, text, context, originalInput, true)) continue;
         try {
             const regex = new RegExp(rule.pattern, "giu");
             const first = regex.exec(text);
@@ -940,6 +957,17 @@ function detectSourceLanguage(dataset: SlangDataset, input: string, context?: Tr
     if (byScript) return byScript;
 
     const scores = stopwordScores(input);
+    const grammarHints = new Set((dataset.source_normalization_rules ?? [])
+        .filter(rule => rule.language_hint && rule.current && rule.can_recognize && rule.confidence === "high")
+        .filter(rule => normalizationContextMatches(rule, input, context, input, true))
+        .filter(rule => { try { return new RegExp(rule.pattern, "iu").test(input); } catch { return false; } })
+        .map(rule => normalizeLanguageCode(rule.language)));
+    if (grammarHints.size === 1) {
+        const code = [...grammarHints][0];
+        // A context-validated subject + predicate outweighs one foreign
+        // possessive/register token (English "a TON" versus French "ton").
+        scores.set(code, (scores.get(code) ?? 0) + 8);
+    }
     for (const marker of dataset.register_markers ?? []) {
         if (markerMatches(marker, input)) {
             const code = normalizeLanguageCode(marker.language);
@@ -1085,7 +1113,7 @@ function findIncomingChatMatches(
     for (const rule of dataset.incoming_chat_rules ?? []) {
         if (!rule.current || !rule.can_recognize || normalizeLanguageCode(rule.language) !== code) continue;
         if (rule.requires_context && !reliableContextAvailable(context)) continue;
-        const corpus = `${input}\n${relatedContextCorpus(context)}`;
+        const corpus = `${input}\n${rule.requires_context ? reliableContextCorpus(context) : relatedContextCorpus(context)}`;
         if (rule.context_patterns?.length && !rule.context_patterns.some(pattern => containsPhrase(corpus, pattern, code))) continue;
         if (rule.negative_patterns?.some(pattern => containsPhrase(corpus, pattern, code))) continue;
         try {
@@ -1736,8 +1764,11 @@ function findGamingShortcut(
     sourceLanguage: string | null,
     targetLanguage: string,
     level: StyleLevel,
+    context?: TranslationContext,
+    protectedNames: string[] = [],
 ): string | null {
     const comparable = normalizeComparable(original);
+    if (protectedNames.some(name => normalizeComparable(name) === comparable)) return null;
     const targetCode = normalizeLanguageCode(targetLanguage);
     const detectedSource = sourceLanguage ? getDatasetLanguage(dataset, sourceLanguage) : undefined;
     const languages = detectedSource
@@ -1745,6 +1776,7 @@ function findGamingShortcut(
         : [...dataset.languages].sort((a, b) => normalizeLanguageCode(a.code) === "en" ? -1 : normalizeLanguageCode(b.code) === "en" ? 1 : 0);
     for (const source of languages) {
         for (const entry of source.gaming ?? []) {
+            if (!normalizationContextMatches({ ...entry, language: source.code }, original, context, original, true)) continue;
             if (!(entry.forms ?? []).some(form => normalizeComparable(form) === comparable)) continue;
             if (entry.keep_untranslated) return original.trim();
             const outputs = entry.translations?.[targetCode] ?? entry.translations?.[getDatasetLanguage(dataset, targetCode)?.code ?? ""] ?? [];
@@ -2014,19 +2046,25 @@ function protectText(
     options: EngineOptions,
 ): { text: string; restore: (translated: string) => string; } {
     const values: string[] = [];
+    const termForms = new Map<number, NonNullable<GamingEntry["translation_inflections"]>[string]>();
     let salt = hashText(input);
     while (input.toLocaleUpperCase().includes(`SONYPROTECT${salt}`)) salt += "X";
     let text = input;
     const tokenFor = (index: number) => `SONYPROTECT${salt}TOKEN${index}END`;
-    const protectValue = (value: string) => tokenFor(values.push(value) - 1);
+    const protectValue = (value: string, forms?: NonNullable<GamingEntry["translation_inflections"]>[string]) => {
+        const index = values.push(value) - 1;
+        if (forms) termForms.set(index, forms);
+        return tokenFor(index);
+    };
     const protectPattern = (
         pattern: RegExp,
         predicate?: (value: string) => boolean,
         canonical?: (value: string) => string,
+        forms?: NonNullable<GamingEntry["translation_inflections"]>[string],
     ) => {
         text = text.replace(pattern, value => {
             if (value.includes("SONYPROTECT") || (predicate && !predicate(value))) return value;
-            return protectValue(canonical ? canonical(value) : value);
+            return protectValue(canonical ? canonical(value) : value, forms);
         });
     };
 
@@ -2049,7 +2087,7 @@ function protectText(
     if (crossRuleEnabled(dataset, "protect_file_paths")) {
         protectPattern(/[A-Za-z]:\\(?:[^\\\s]+\\)*[^\\\s]*/g);
         protectPattern(/(?:\.{0,2}\/)+(?:[^\s/]+\/)*[^\s/]+/g);
-        protectPattern(/(?<![\p{L}\p{N}_-])[\p{L}\p{N}_-]+\.(?:tsx?|jsx?|json|ya?ml|toml|md|py|cs|cpp|h|java|kt|log|zip)(?![\p{L}\p{N}_-])/giu);
+        protectPattern(/(?<![\p{L}\p{N}_-])[\p{L}\p{N}_-]+\.(?:tsx?|jsx?|json|ya?ml|toml|md|txt|csv|png|jpe?g|gif|webp|mp[34]|pdf|exe|py|cs|cpp|h|java|kt|log|zip)(?![\p{L}\p{N}_-])/giu);
     }
     if (crossRuleEnabled(dataset, "protect_cli")) protectPattern(/--?[A-Za-z][\w-]*/g);
     if (crossRuleEnabled(dataset, "protect_versions")) protectPattern(/\bv?\d+(?:\.\d+){1,}(?:[-+._][A-Za-z0-9]+)*\b/giu);
@@ -2073,6 +2111,7 @@ function protectText(
     })) || /\b(?:game|match|server|team|player|rank|queue|игр|катк|сервер|тим|матч)\b/iu.test(input);
     for (const gaming of source?.gaming ?? []) {
         if (!gaming.keep_untranslated) continue;
+        if (!normalizationContextMatches({ ...gaming, language: source!.code }, input, options.context, input, true)) continue;
         for (const form of gaming.forms ?? []) {
             if (form.length < 2) continue;
             const unambiguous = form === form.toLocaleUpperCase() && /[\p{L}]/u.test(form) || /\d/u.test(form);
@@ -2110,13 +2149,49 @@ function protectText(
         }
     }
 
+    // Technical semantic slots come after code, member names and custom entities.
+    // Otherwise a member named "Crit Rate" could be translated as a stat.
+    if (options.smartSourceSlang) for (const gaming of source?.gaming ?? []) {
+        if (!gaming.protect_translation) continue;
+        if (!normalizationContextMatches({ ...gaming, language: source!.code }, input, options.context, input, true)) continue;
+        const term = Object.entries(gaming.translations ?? {})
+            .find(([code]) => normalizeLanguageCode(code) === normalizeLanguageCode(options.targetLanguage))?.[1]?.[0];
+        if (!term) continue;
+        const forms = Object.entries(gaming.translation_inflections ?? {})
+            .find(([code]) => normalizeLanguageCode(code) === normalizeLanguageCode(options.targetLanguage))?.[1];
+        for (const form of gaming.forms ?? []) {
+            try { protectPattern(phraseRegex(form, source!.code), undefined, () => term, forms); }
+            catch { /* Malformed optional term data falls back to the provider. */ }
+        }
+    }
+
     return {
         text,
         restore(translated: string) {
             let result = translated;
             values.forEach((value, index) => {
                 const token = tokenFor(index);
-                result = result.replace(new RegExp(escapeRegex(token), "gi"), value);
+                // Opaque transport placeholders occasionally get a spurious
+                // "labelled" wrapper. Remove it only beside our technical slot
+                // and only when the source never described a label/mark/tag.
+                if (termForms.has(index) && normalizeLanguageCode(options.targetLanguage) === "ru" &&
+                    !/\b(?:label(?:led|ed)?|mark(?:ed|ing)?|tag)\b/iu.test(input)) {
+                    result = result.replace(new RegExp(`(?<![\\p{L}])(с\\s+)маркировкой\\s+(?=${escapeRegex(token)})`, "giu"), "$1");
+                }
+                result = result.replace(new RegExp(escapeRegex(token), "gi"), (_matched, offset: number) => {
+                    const forms = termForms.get(index);
+                    if (!forms || normalizeLanguageCode(options.targetLanguage) !== "ru") return value;
+                    const prefix = result.slice(Math.max(0, offset - 100), offset);
+                    // Only the protected technical term is inflected. Never run
+                    // morphology over arbitrary names, code or surrounding text.
+                    if (/(?:^|[^\p{L}])(?:с|со)\s+\d[\d.,]*\s*%\s*$/iu.test(prefix)) return forms.instrumental ?? value;
+                    if (/(?:^|[^\p{L}])при\s+\d[\d.,]*\s*%\s*$/iu.test(prefix)) return forms.prepositional ?? value;
+                    if (/(?:\d[\d.,]*\s*%\s*|(?:^|[^\p{L}])(?:без|вместо|для|до|от)\s+)(?:(?:дополнительного|высокого|низкого|двойного|нового)\s+)?$/iu.test(prefix)) return forms.genitive ?? value;
+                    if (/(?:^|[^\p{L}])(?:с|со)\s+(?:(?:двойным|дополнительным|высоким|низким|полным|новым)\s+)?$/iu.test(prefix)) return forms.instrumental ?? value;
+                    if (/(?:^|[^\p{L}])(?:о|об|при)\s+(?:(?:двойном|дополнительном|высоком|низком|новом)\s+)?$/iu.test(prefix)) return forms.prepositional ?? value;
+                    if (/(?:^|[^\p{L}])к\s+(?:(?:двойному|дополнительному|высокому|низкому|новому)\s+)?$/iu.test(prefix)) return forms.dative ?? value;
+                    return value;
+                });
             });
             return result;
         },
@@ -2155,7 +2230,7 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
             const protectedText = protectText(dataset, providerSource, analysis.language, options);
             let working = protectedText.text;
             if (options.smartSourceSlang && !preserveTargetText) {
-                working = applySourceNormalizations(dataset, working, analysis.language, options.context).text;
+                working = applySourceNormalizations(dataset, working, analysis.language, options.context, input).text;
                 working = applyPragmaticProfanityNormalization(dataset, working, analysis.pragmaticProfanity);
                 working = applySemanticRecognition(dataset, working, analysis.semanticMatches);
                 if (analysis.language === "ru" || analysis.language === "uk") working = applyRules(working, SOURCE_NORMALIZATION_RULES);
@@ -2176,7 +2251,11 @@ export function createTranslationEngine(rawDataset: unknown): TranslationEngine 
                 findSemanticShortcut(dataset, input, analysis.semanticMatches, options.targetLanguage, level) ??
                 findReactionShortcut(dataset, input, analysis.language, options.targetLanguage, level) ??
                 findPhraseShortcut(dataset, input, analysis.language, options.targetLanguage, level) ??
-                findGamingShortcut(dataset, input, analysis.language, options.targetLanguage, level) ??
+                findGamingShortcut(dataset, input, analysis.language, options.targetLanguage, level, options.context,
+                    options.protectNames ? [
+                        ...options.customProtectedNames.split(/[,;\n]/g).map(name => name.trim()).filter(Boolean),
+                        ...analysis.recognizedEntities.map(entity => entity.source),
+                    ] : []) ??
                 findProfanityShortcut(dataset, input, analysis.language, options.targetLanguage, level, options.softenAmbiguousProfanity);
 
             analysis.providerSafeInput = protectedText.restore(working);

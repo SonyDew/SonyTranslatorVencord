@@ -3920,6 +3920,102 @@
       ],
       "gaming": [
         {
+          "id": "game_forge_luck_label",
+          "canonical": "Forge Luck", "forms": ["forge luck"],
+          "meaning": "crafting label or stat; preserve source wording without inferring an effect or official localization",
+          "keep_untranslated": true, "contexts": ["gaming", "crafting"],
+          "context_patterns": ["ores", "armor", "armour", "helmet", "stats", "gears", "masterwork"],
+          "negative_patterns": ["translation exercise", "literal translation"]
+        },
+        {
+          "id": "game_pity_guarantee",
+          "canonical": "pity guarantee",
+          "forms": ["pity", "pities"],
+          "meaning": "guaranteed reward threshold in a random draw system; not compassion; no fixed threshold inferred",
+          "protect_translation": false,
+          "contexts": ["gacha", "gaming"],
+          "context_patterns": ["gacha", "banner", "pulls", "spins", "rerolls", "hard pity", "soft pity"],
+          "negative_patterns": ["feel pity", "take pity", "self pity", "self-pity", "pity for", "pity people", "what a pity", "mercy", "compassion"],
+          "translations": {"ru": ["гарант"]}
+        },
+        {
+          "id": "game_glory_core_label",
+          "canonical": "Glory Core",
+          "forms": ["glory core"],
+          "meaning": "source game label in a reroll system; preserve until an official localized name is known",
+          "keep_untranslated": true,
+          "contexts": ["gaming"],
+          "context_patterns": ["rerolls", "gacha", "spins", "pities", "pity", "shards"],
+          "negative_patterns": ["translation exercise", "literal translation"]
+        },
+        {
+          "id": "game_double_critical_damage",
+          "canonical": "double critical hit damage",
+          "forms": ["double crit damage", "double crit dmg"],
+          "meaning": "source explicitly qualifies critical damage as double; preserve that qualifier without inventing a numeric multiplier",
+          "protect_translation": true, "contexts": ["gaming"],
+          "translations": {"ru": ["двойной критический урон"]},
+          "translation_inflections": {"ru": {"genitive": "двойного критического урона", "instrumental": "двойным критическим уроном", "prepositional": "двойном критическом уроне", "dative": "двойному критическому урону"}}
+        },
+        {
+          "id": "game_extra_critical_chance",
+          "canonical": "additional critical hit chance",
+          "forms": ["extra crit rate", "extra crit chance"],
+          "meaning": "additional critical chance explicitly present in source",
+          "protect_translation": true, "contexts": ["gaming"],
+          "translations": {"ru": ["дополнительный шанс критического удара"]},
+          "translation_inflections": {"ru": {"genitive": "дополнительного шанса критического удара", "instrumental": "дополнительным шансом критического удара", "prepositional": "дополнительном шансе критического удара", "dative": "дополнительному шансу критического удара"}}
+        },
+        {
+          "id": "game_extra_critical_damage",
+          "canonical": "additional critical hit damage",
+          "forms": ["extra crit damage", "extra crit dmg"],
+          "meaning": "additional critical damage explicitly present in source",
+          "protect_translation": true, "contexts": ["gaming"],
+          "translations": {"ru": ["дополнительный критический урон"]},
+          "translation_inflections": {"ru": {"genitive": "дополнительного критического урона", "instrumental": "дополнительным критическим уроном", "prepositional": "дополнительном критическом уроне", "dative": "дополнительному критическому урону"}}
+        },
+        {
+          "id": "game_critical_chance_substat",
+          "canonical": "critical hit chance substat",
+          "forms": ["sub of crit rate", "crit rate substat", "crit rate sub stat", "crit rate sub"],
+          "meaning": "secondary equipment parameter for critical chance, not a subwoofer or subscriber",
+          "protect_translation": true,
+          "contexts": ["gaming"],
+          "translations": {"ru": ["дополнительный параметр шанса критического удара"]},
+          "translation_inflections": {"ru": {"genitive": "дополнительного параметра шанса критического удара", "instrumental": "дополнительным параметром шанса критического удара", "prepositional": "дополнительном параметре шанса критического удара", "dative": "дополнительному параметру шанса критического удара"}}
+        },
+        {
+          "id": "game_critical_chance_term",
+          "canonical": "critical hit chance",
+          "forms": ["crit rate", "crit chance", "critical hit chance"],
+          "meaning": "chance of a critical hit, distinct from its damage multiplier",
+          "protect_translation": true,
+          "contexts": ["gaming"],
+          "translations": {"ru": ["шанс критического удара"]},
+          "translation_inflections": {"ru": {"genitive": "шанса критического удара", "instrumental": "шансом критического удара", "prepositional": "шансе критического удара", "dative": "шансу критического удара"}}
+        },
+        {
+          "id": "game_critical_damage_term",
+          "canonical": "critical hit damage",
+          "forms": ["crit dmg", "critdmg", "crit damage", "critical hit damage"],
+          "meaning": "damage of a critical hit, not its probability",
+          "protect_translation": true,
+          "contexts": ["gaming"],
+          "translations": {"ru": ["критический урон"]},
+          "translation_inflections": {"ru": {"genitive": "критического урона", "instrumental": "критическим уроном", "prepositional": "критическом уроне", "dative": "критическому урону"}}
+        },
+        {
+          "id": "game_skill_damage_term",
+          "canonical": "skill damage",
+          "forms": ["skill dmg", "skill damage"],
+          "meaning": "damage from skills",
+          "protect_translation": true,
+          "contexts": ["gaming"],
+          "translations": {"ru": ["урон навыков"]},
+          "translation_inflections": {"ru": {"genitive": "урона навыков", "instrumental": "уроном навыков", "prepositional": "уроне навыков", "dative": "урону навыков"}}
+        },
+        {
           "id": "game_f2p_player_label",
           "canonical": "F2P",
           "forms": ["soft f2p", "f2p"],
@@ -18732,6 +18828,15 @@
   ],
   "register_repairs": [
     {
+      "id": "ru_inf_need_mid_clause",
+      "target_language": "ru",
+      "register": "informal",
+      "pattern": "(?<![\\p{L}])вам\\s+(нужен|нужна|нужно|нужны)(?![\\p{L}])",
+      "replacement": "тебе $1",
+      "confidence": "high",
+      "case_sensitive": true
+    },
+    {
       "id": "ru_inf_reassurance_imperative",
       "target_language": "ru",
       "register": "informal",
@@ -19093,7 +19198,7 @@
       "id": "ru_inf_to_you",
       "target_language": "ru",
       "register": "informal",
-      "pattern": "Вам",
+      "pattern": "(?<![\\p{L}])Вам(?![\\p{L}])",
       "replacement": "Тебе",
       "confidence": "high",
       "contexts": [
@@ -19880,6 +19985,163 @@
   ],
   "source_normalization_rules": [
     {
+      "id": "en_forged_crafting_sense",
+      "language_hint": true,
+      "language": "en", "pattern": "\\b(?<subject>I|we|he|she|they|you)\\s+forged\\b",
+      "replacement": "$<subject> crafted", "kind": "grammar",
+      "meaning": "crafting equipment rather than falsifying documents; preserve subject, tense and quantity",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["ores", "armor", "armour", "helmet", "weapon", "weapons", "gear", "gears", "smithing", "masterwork"],
+      "negative_patterns": ["signature", "signatures", "passport", "passports", "document", "documents", "identity", "cheque", "check", "certificate", "alliance", "friendship", "evidence"]
+    },
+    {
+      "id": "en_counted_ore_units",
+      "language": "en", "pattern": "(?<![\\p{L}\\p{N}.,])(?<count>\\d{1,6})\\s+ores\\b",
+      "replacement": "$<count> units of ore", "kind": "grammar",
+      "meaning": "countable crafting resource; keep exact count, not a number of mineral types",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["forge", "forged", "forging", "smithing", "craft", "crafting", "armor", "armour", "weapon", "weapons"],
+      "negative_patterns": ["kinds", "types", "varieties", "species"]
+    },
+    {
+      "id": "en_counted_ore_thousands",
+      "language": "en", "pattern": "(?<![\\p{L}\\p{N}.,])(?<count>[1-9]\\d{0,5})k\\s+ores\\b",
+      "replacement": "$<count> thousand units of ore", "kind": "abbreviation",
+      "meaning": "integer thousands of a crafting resource; no currency or percentage inference",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["forge", "forged", "forging", "smithing", "craft", "crafting", "armor", "armour", "weapon", "weapons"],
+      "negative_patterns": ["kinds", "types", "varieties", "species"]
+    },
+    {
+      "id": "en_pulled_one_crafting_result",
+      "language": "en", "pattern": "\\b(?<subject>I|we) pulled one(?=[.!?,]|$)",
+      "replacement": "$<subject> got one", "kind": "grammar",
+      "meaning": "obtained one result; no missing item, level or rarity inferred",
+      "confidence": "high", "current": true, "can_recognize": true, "requires_context": true,
+      "context_patterns": ["forged", "forge luck", "masterwork", "crafting"],
+      "negative_patterns": ["tooth", "teeth", "muscle", "lever", "trigger", "gun", "rope"]
+    },
+    {
+      "id": "en_reroll_currency_exchange",
+      "language": "en",
+      "pattern": "\\b(?<kind>race|clan) rerolls for (?<currency>shards|gems|tokens|coins)\\b",
+      "replacement": "random changes of the character's $<kind> in exchange for $<currency>",
+      "kind": "grammar", "meaning": "reroll purchase with explicitly named currency, not a race event or a reward from rerolling",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_gacha_pities_meaning",
+      "language": "en", "pattern": "\\bpities\\b",
+      "replacement": "guaranteed drop systems", "kind": "grammar",
+      "meaning": "plural guarantee mechanics, not compassion; thresholds remain unspecified",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["gacha", "banner", "pulls", "spins", "rerolls"],
+      "negative_patterns": ["feel pity", "take pity", "self pity", "self-pity", "pity for", "pity people", "what a pity", "mercy", "compassion"]
+    },
+    {
+      "id": "en_gacha_pity_meaning",
+      "language": "en", "pattern": "\\bpity\\b",
+      "replacement": "guaranteed drop system", "kind": "grammar",
+      "meaning": "guarantee mechanic, not compassion; no fixed threshold inferred",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["gacha", "banner", "pulls", "spins", "rerolls"],
+      "negative_patterns": ["feel pity", "take pity", "self pity", "self-pity", "pity for", "pity people", "what a pity", "mercy", "compassion"]
+    },
+    {
+      "id": "en_inventory_n_conjunction",
+      "language": "en", "pattern": "\\b(?<item>shards|gems|tokens|coins)\\s+n\\b",
+      "replacement": "$<item> and", "kind": "abbreviation",
+      "meaning": "compressed conjunction after an inventory currency noun; not arbitrary letter n",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["rerolls", "gacha", "spins", "inventory", "rewards"],
+      "negative_patterns": ["variable", "equation", "coordinate"]
+    },
+    {
+      "id": "en_counted_reward_spins",
+      "language": "en",
+      "pattern": "(?<![\\p{L}\\p{N}])(?<count>\\d{1,6})\\s*spins\\b",
+      "replacement": "$<count> attempts to get random drops",
+      "kind": "grammar",
+      "meaning": "counted attempts at random rewards, not physical rotations",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["gacha", "banner", "rerolls", "pity", "pities", "gotten", "rewards"],
+      "negative_patterns": ["washing machine", "washing", "rotation", "rpm", "bicycle", "figure skating", "centrifuge"]
+    },
+    {
+      "id": "en_skill_damage_expansion",
+      "language": "en",
+      "pattern": "\\bskill (?:dmg|damage)\\b",
+      "replacement": "skill damage",
+      "kind": "abbreviation",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_missing_small_stat_amount",
+      "language": "en",
+      "pattern": "\\b(?:I'm|im|I am)\\s+missin(?:g)?\\s+(?:a\\s+)?(?:tiny|little|small)\\s+bit\\b",
+      "replacement": "I still need a little more",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "requires_context": true,
+      "context_patterns": ["crit rate", "crit chance", "crit dmg", "critical hit chance", "100%", "damage", "stat cap"],
+      "negative_patterns": ["the point", "the fact", "the story", "movie", "the picture"]
+    },
+    {
+      "id": "en_mine_stat_ellipsis",
+      "language": "en",
+      "pattern": "^mine(?=\\s+\\d+(?:\\.\\d+)?\\s*(?:atk|crit rate|crit dmg|skill dmg)\\b)",
+      "replacement": "the one I have has",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_critical_chance_expansion",
+      "language": "en",
+      "pattern": "\\bcrit (?:rate|chance)\\b",
+      "replacement": "critical hit chance",
+      "kind": "abbreviation",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_critical_damage_expansion",
+      "language": "en",
+      "pattern": "\\bcrit\\s*(?:dmg|damage)\\b",
+      "replacement": "critical hit damage",
+      "kind": "abbreviation",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_price_k_something",
+      "language": "en",
+      "pattern": "(?<![\\p{L}\\p{N}.,])(?<amount>[1-9]\\d{0,5})k\\s+(?:and\\s+)?(?:something|some change)\\b",
+      "replacement": "$<amount> thousand and a bit",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["buy", "bought", "sold", "sell", "paid", "price", "cost", "worth", "trade"],
+      "negative_patterns": ["race", "marathon", "kilometer", "kilometre", "running", "resolution"]
+    },
+    {
+      "id": "en_run_with_teammate",
+      "language": "en",
+      "pattern": "\\b(?<subject>I|we)(?:['’]ve| have)?\\s+(?:run|ran)\\s+with\\s+you\\b",
+      "replacement": "$<subject> played together with you",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "requires_context": true,
+      "context_patterns": ["raid", "dungeon", "boss", "party", "build", "crit rate", "crit dmg", "scroll", "guild", "co-op"],
+      "negative_patterns": ["marathon", "jogging", "running club", "kilometer", "kilometre", "5k race"]
+    },
+    {
+      "id": "en_buns_comparison_quality",
+      "language": "en",
+      "pattern": "\\b(?<verb>is|was|are|were)(?<still> still)? buns(?= compared to\\b)",
+      "replacement": "$<verb>$<still> poor in quality",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["weapon", "scroll", "build", "game", "damage", "sword"],
+      "negative_patterns": ["bread", "bakery", "burger", "cinnamon", "hair"]
+    },
+    {
       "id": "en_f2p_label_recognition",
       "language": "en",
       "pattern": "\\b(?:soft\\s+)?f2p\\b",
@@ -20296,6 +20558,64 @@
     }
   ],
   "incoming_chat_rules": [
+    {
+      "id": "en_rip_setback_reaction",
+      "language": "en", "pattern": "^rip[.!]*$",
+      "normalized": "That is unfortunate.",
+      "sense": "sympathetic reaction to a game setback, not tearing or an instruction",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["rerolls", "spins", "gacha", "lost", "failed", "only have", "everything else"],
+      "negative_patterns": ["died", "death", "funeral", "passed away", "rest in peace", "paper", "dvd", "cd", "routing protocol"],
+      "slots": {"intent": "sympathy", "speechAct": "reaction", "register": "informal", "certainty": "high"},
+      "outputs": {"ru": {"clean": ["Жаль."], "casual": ["эх, жаль"], "slang": ["эх"], "heavy": ["эх"]}}
+    },
+    {
+      "id": "en_pity_system_question",
+      "language": "en", "pattern": "^pit(?:y|ies)\\?$",
+      "normalized": "A guaranteed reward system?",
+      "sense": "clarification of a gacha guarantee, not asking about compassion",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["rerolls", "spins", "gacha", "pulls", "banner"],
+      "negative_patterns": ["compassion", "mercy", "feel pity", "self-pity"],
+      "slots": {"intent": "clarification", "speechAct": "question", "certainty": "high"},
+      "outputs": {"ru": {"clean": ["Система гаранта?"], "casual": ["гарант?"], "slang": ["гарант?"], "heavy": ["гарант?"]}}
+    },
+    {
+      "id": "en_bow_weapon_reply",
+      "language": "en", "pattern": "^bow\\s*\\?$", "normalized": "A bow weapon?",
+      "sense": "elliptical weapon question, not a greeting gesture",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["weapon", "archer", "arrow", "bow build", "ancient bow", "longbow"],
+      "negative_patterns": ["violin", "cello", "ribbon", "curtsy", "bow tie", "theatre", "theater", "ship"],
+      "slots": {"intent": "weapon_clarification", "speechAct": "question", "action": "identify_weapon"},
+      "outputs": {"ru": {"clean": ["Лук?"], "casual": ["Лук?"], "slang": ["лук?"], "heavy": ["лук?"]}}
+    },
+    {
+      "id": "en_weed_tag_label",
+      "language": "en", "pattern": "^weed$", "normalized": "weed",
+      "sense": "explicitly discussed tag label; preserve its spelling",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "context_patterns": ["tag", "guild tag", "clan tag", "display tag"],
+      "negative_patterns": ["garden", "lawn", "plant", "cannabis", "smoke"],
+      "slots": {"intent": "identify_tag", "speechAct": "reaction", "target": "tag_label"},
+      "outputs": {"ru": {"clean": ["weed"], "casual": ["weed"], "slang": ["weed"], "heavy": ["weed"]}}
+    },
+    {
+      "id": "en_true_agreement_reaction",
+      "language": "en",
+      "pattern": "^true[.!]*$",
+      "normalized": "I agree.",
+      "sense": "short agreement reaction, not an adjective or Boolean literal",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "negative_patterns": ["boolean", "python", "truth table", "literal", "constant", "programming"],
+      "slots": {"intent": "agreement", "speechAct": "reaction", "stance": "agreement"},
+      "outputs": {"ru": {"clean": ["Верно."], "casual": ["Да, согласен."], "slang": ["да, точно"], "heavy": ["точно"]}}
+    },
     {
       "id": "en_gifted_item_requirement",
       "language": "en",

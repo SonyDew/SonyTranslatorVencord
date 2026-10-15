@@ -6,9 +6,9 @@ Discord-Nachrichten übersetzen und Bedeutung sowie Schreibstil erhalten. Von **
 
 ![Illustrative Übersetzungsbeispiele mit fiktiven Teilnehmern](images/chat-preview.svg)
 
-## Installation von v0.9.5
+## Installation von v0.9.6
 
-1. **SonyTranslator-AutoInstaller-0.9.5.zip** unter [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest) herunterladen.
+1. **SonyTranslator-AutoInstaller-0.9.6.zip** unter [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest) herunterladen.
 2. Das gesamte Archiv entpacken.
 3. **Install SonyTranslator.cmd** oder **Update SonyTranslator.cmd** starten.
 4. Auf den Abschluss warten. Der zuvor gestartete Stable/Canary/PTB-Client wird wieder geöffnet.

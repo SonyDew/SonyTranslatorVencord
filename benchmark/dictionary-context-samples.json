@@ -1,0 +1,9 @@
+[
+  ["en", "rip", "ru", {"replyMessage":"I only have one drop after 400 spins"}, {"required":["жаль|эх"],"forbidden":["рвать"]}],
+  ["en", "pities?", "ru", {"replyMessage":"they should add a system for race rerolls"}, {"required":["гарант"],"forbidden":["жалост"]}],
+  ["en", "they gotta add race rerolls for shards n pities like the whole glory core system", "ru", {"replyMessage":"I spent 400 spins on race rerolls"}, {"required":["гарант", "glory core", "в обмен на осколки|за осколки"],"forbidden":["жалост", "ядер славы", "для получения осколков"]}],
+  ["en", "yeah im 400spins in total i think i have gotten a demon once", "ru", null, {"required":["400"],"forbidden":["400 вращени"]}],
+  ["en", "I feel pity for people after losing my gacha pulls", "ru", null, {"forbidden":["гарант"]}],
+  ["en", "the centrifuge makes 400 spins", "ru", null, {"required":["400"],"forbidden":["наград", "прокрут"]}],
+  ["en", "rip the paper", "ru", null, {"forbidden":["эх, жаль"]}]
+]

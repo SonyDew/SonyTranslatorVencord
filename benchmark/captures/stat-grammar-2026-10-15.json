@@ -1,0 +1,205 @@
+{
+  "capturedAt": "2026-10-15T21:16:01.790Z",
+  "note": "Synthetic fixtures; live Google outputs are variable. Not a native-speaker fluency rating or Discord UI test.",
+  "rows": [
+    {
+      "language": "en",
+      "source": "Bow?",
+      "targetLanguage": "ru",
+      "context": {
+        "previousMessage": "What weapon is this for?"
+      },
+      "raw": "Поклон?",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "A bow weapon?",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Лук?",
+        "casual": "Лук?",
+        "slang": "лук?",
+        "heavy": "лук?",
+        "mirror": "Лук?"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "Bow?",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "a violin bow"
+      },
+      "raw": "Поклон?",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "Bow?",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Поклон?",
+        "casual": "Поклон?",
+        "slang": "Поклон?",
+        "heavy": "Поклон?",
+        "mirror": "Поклон?"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "weed",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "How did you get this tag?"
+      },
+      "raw": "сорняк",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "weed",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "weed",
+        "casual": "weed",
+        "slang": "weed",
+        "heavy": "weed",
+        "mirror": "weed"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "a weed in the garden",
+      "targetLanguage": "ru",
+      "raw": "сорняк в саду",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "a weed in the garden",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "сорняк в саду",
+        "casual": "сорняк в саду",
+        "slang": "сорняк в саду",
+        "heavy": "сорняк в саду",
+        "mirror": "сорняк в саду"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I have a bow with double crit damage",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "У меня есть лук с удвоенным критическим уроном.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I have a bow with двойной критический урон",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "У меня есть лук с двойным критическим уроном.",
+        "casual": "У меня есть лук с двойным критическим уроном",
+        "slang": "У меня есть лук с двойным критическим уроном",
+        "heavy": "У меня есть лук с двойным критическим уроном",
+        "mirror": "У меня есть лук с двойным критическим уроном"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I play with 90% crit rate",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Я играю с 90% шансом критического удара.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I play with 90% шанса критического удара",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Я играю с 90% шансом критического удара",
+        "casual": "Я играю с 90% шансом критического удара",
+        "slang": "Я играю с 90% шансом критического удара",
+        "heavy": "Я играю с 90% шансом критического удара",
+        "mirror": "Я играю с 90% шансом критического удара"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I want a new sub of crit rate",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Мне нужна новая подпрограмма для повышения шанса критического удара.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I want a new дополнительный параметр шанса критического удара",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Мне нужен новый дополнительный параметр шанса критического удара",
+        "casual": "Мне нужен новый дополнительный параметр шанса критического удара",
+        "slang": "Мне нужен новый дополнительный параметр шанса критического удара",
+        "heavy": "Мне нужен новый дополнительный параметр шанса критического удара",
+        "mirror": "Мне нужен новый дополнительный параметр шанса критического удара"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "im missin a tiny bit, average damage drops with 90% crit rate",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "Almost at 100"
+      },
+      "raw": "Я немного упустил, средний урон падает при 90% шансе критического удара.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I still need a little more, average damage drops with 90% шанса критического удара",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Мне еще немного не хватает, средний урон падает на 90% шанса критического удара",
+        "casual": "мне еще немного не хватает, средний урон падает на 90% шанса критического удара",
+        "slang": "мне еще немного не хватает, средний урон падает на 90% шанса критического удара",
+        "heavy": "мне еще немного не хватает, средний урон падает на 90% шанса критического удара",
+        "mirror": "мне еще немного не хватает, средний урон падает на 90% шанса критического удара"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "I am missing a little bit of the story",
+      "targetLanguage": "ru",
+      "context": {
+        "replyMessage": "a movie"
+      },
+      "raw": "Мне немного не хватает деталей сюжета.",
+      "detectedSourceLanguage": "en",
+      "register": "neutral",
+      "providerSafeInput": "I am missing a little bit of the story",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Мне немного не хватает деталей сюжета.",
+        "casual": "Мне немного не хватает деталей сюжета",
+        "slang": "Мне немного не хватает деталей сюжета",
+        "heavy": "Мне немного не хватает деталей сюжета",
+        "mirror": "Мне немного не хватает деталей сюжета"
+      },
+      "violations": []
+    },
+    {
+      "language": "en",
+      "source": "instead of 15.45 I deal 15mil damage",
+      "targetLanguage": "ru",
+      "context": null,
+      "raw": "Вместо 15,45 я наношу 15 миллионов урона.",
+      "detectedSourceLanguage": null,
+      "register": "neutral",
+      "providerSafeInput": "instead of 15.45 I deal 15mil damage",
+      "selectedSense": [],
+      "outputs": {
+        "clean": "Вместо 15.45 я наношу 15 миллионов урона.",
+        "casual": "вместо 15.45 я наношу 15 миллионов урона.",
+        "slang": "вместо 15.45 я наношу 15 миллионов урона.",
+        "heavy": "вместо 15.45 я наношу 15 миллионов урона.",
+        "mirror": "вместо 15.45 я наношу 15 миллионов урона."
+      },
+      "violations": []
+    }
+  ]
+}

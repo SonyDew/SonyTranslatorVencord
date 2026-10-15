@@ -1,0 +1,15 @@
+[
+  ["en", "True", "ru", {"replyMessage": "Bow scrolls may become useful after the update"}, {"required": ["верно|согласен|точно"], "forbidden": ["истинный"]}],
+  ["en", "True", "ru", {"replyMessage": "a Python boolean literal"}],
+  ["en", "I bought a scroll for 5k something", "ru", null, {"required": ["5\\s+тысяч|5000"], "forbidden": ["5000\\s+тысяч|миллион"]}],
+  ["en", "I sold that for 28k and some change", "ru", null, {"required": ["28\\s+тысяч|28000"], "forbidden": ["28000\\s+тысяч|миллион"]}],
+  ["en", "I ran a 5k race", "ru"],
+  ["en", "crit rate 14, crit dmg 19 and skill dmg 22", "ru", null, {"required": ["шанс критического удара 14", "критический урон 19", "урон навыков 22"], "forbidden": ["SONYPROTECT"]}],
+  ["en", "I thought you needed crit rate", "ru", null, {"required": ["шанс критического удара", "тебе"], "forbidden": ["вам", "критический урон"]}],
+  ["en", "mine 25atk, 24 skill dmg and 21 crit dmg", "ru", null, {"required": ["25", "24", "21"], "forbidden": ["мины", "SONYPROTECT"]}],
+  ["en", "the coal mine is closed", "ru"],
+  ["en", "I've run with you", "ru", {"replyMessage": "Your raid build has enough crit rate"}, {"required": ["играл"], "forbidden": ["код"]}],
+  ["en", "I've run with you", "ru", {"replyMessage": "our running club marathon"}],
+  ["en", "that scroll was still buns compared to the other weapon", "ru"],
+  ["en", "the bakery buns were soft", "ru"]
+]

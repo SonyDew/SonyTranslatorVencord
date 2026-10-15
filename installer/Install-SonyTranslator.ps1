@@ -17,7 +17,7 @@ $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 
 $ProductName = 'SonyTranslator'
-$PluginVersion = '0.9.5'
+$PluginVersion = '0.9.6'
 $RepoUrl = 'https://github.com/Vendicated/Vencord.git'
 $BaseDir = Join-Path $env:LOCALAPPDATA 'SonyTranslator'
 $DefaultVencordDir = Join-Path $BaseDir 'Vencord'

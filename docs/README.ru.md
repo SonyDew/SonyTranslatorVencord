@@ -6,9 +6,9 @@
 
 ![Пример перевода с вымышленными участниками](images/chat-preview.svg)
 
-## Установка v0.9.5
+## Установка v0.9.6
 
-1. Скачайте **SonyTranslator-AutoInstaller-0.9.5.zip** из [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
+1. Скачайте **SonyTranslator-AutoInstaller-0.9.6.zip** из [Releases](https://github.com/SonyDew/SonyTranslatorVencord/releases/latest).
 2. Распакуйте архив целиком.
 3. Запустите **Install SonyTranslator.cmd** или **Update SonyTranslator.cmd**.
 4. Дождитесь завершения. Запущенный до установки Discord Stable/Canary/PTB запустится снова.
