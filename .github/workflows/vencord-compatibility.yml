@@ -1,0 +1,52 @@
+name: Vencord compatibility
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+
+  vencord:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Checkout current Vencord
+        run: git clone --depth 1 --branch main https://github.com/Vendicated/Vencord.git vencord
+      - name: Install plugin files
+        run: |
+          mkdir -p vencord/src/userplugins/SonyTranslator
+          cp index.tsx styles.css translationCore.ts translationRunner.ts localization.ts slangDataset.ts vencord/src/userplugins/SonyTranslator/
+      - name: Install pnpm from upstream packageManager
+        working-directory: vencord
+        run: |
+          corepack enable
+          corepack prepare "$(node -p 'require("./package.json").packageManager')" --activate
+      - name: Install Vencord dependencies
+        working-directory: vencord
+        run: pnpm install --frozen-lockfile
+      - name: Typecheck current Vencord plus SonyTranslator
+        working-directory: vencord
+        run: pnpm testTsc
+      - name: Build current Vencord plus SonyTranslator
+        working-directory: vencord
+        run: pnpm build
