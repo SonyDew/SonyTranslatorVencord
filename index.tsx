@@ -1806,7 +1806,7 @@ function SonyTranslatorModal({ rootProps }: { rootProps: RenderModalProps; }) {
                         color={Button.Colors.PRIMARY}
                         onClick={() => {
                             clearTranslationCache();
-                            showToast(`SonyTranslator: ${t("cleared")}`, "success");
+                            showToast({ text: `SonyTranslator: ${t("cleared")}`, variant: "success" });
                         }}
                     >
                         {t("clear")}
@@ -1890,7 +1890,7 @@ export default definePlugin({
             if (translated) message.content = translated;
         } catch (error) {
             console.error("[SonyTranslator] outgoing translation failed", error);
-            showToast(`SonyTranslator: ${uiText(LocaleStore.locale, "sendFailed")}`, "failure");
+            showToast({ text: `SonyTranslator: ${uiText(LocaleStore.locale, "sendFailed")}`, variant: "critical" });
         }
     },
 
