@@ -3920,6 +3920,33 @@
       ],
       "gaming": [
         {
+          "id": "game_critical_chance_term",
+          "canonical": "critical hit chance",
+          "forms": ["crit rate", "crit chance", "critical hit chance"],
+          "meaning": "chance of a critical hit, distinct from its damage multiplier",
+          "protect_translation": true,
+          "contexts": ["gaming"],
+          "translations": {"ru": ["шанс критического удара"]}
+        },
+        {
+          "id": "game_critical_damage_term",
+          "canonical": "critical hit damage",
+          "forms": ["crit dmg", "crit damage", "critical hit damage"],
+          "meaning": "damage of a critical hit, not its probability",
+          "protect_translation": true,
+          "contexts": ["gaming"],
+          "translations": {"ru": ["критический урон"]}
+        },
+        {
+          "id": "game_skill_damage_term",
+          "canonical": "skill damage",
+          "forms": ["skill dmg", "skill damage"],
+          "meaning": "damage from skills",
+          "protect_translation": true,
+          "contexts": ["gaming"],
+          "translations": {"ru": ["урон навыков"]}
+        },
+        {
           "id": "game_f2p_player_label",
           "canonical": "F2P",
           "forms": ["soft f2p", "f2p"],
@@ -18732,6 +18759,15 @@
   ],
   "register_repairs": [
     {
+      "id": "ru_inf_need_mid_clause",
+      "target_language": "ru",
+      "register": "informal",
+      "pattern": "(?<![\\p{L}])вам\\s+(нужен|нужна|нужно|нужны)(?![\\p{L}])",
+      "replacement": "тебе $1",
+      "confidence": "high",
+      "case_sensitive": true
+    },
+    {
       "id": "ru_inf_reassurance_imperative",
       "target_language": "ru",
       "register": "informal",
@@ -19093,7 +19129,7 @@
       "id": "ru_inf_to_you",
       "target_language": "ru",
       "register": "informal",
-      "pattern": "Вам",
+      "pattern": "(?<![\\p{L}])Вам(?![\\p{L}])",
       "replacement": "Тебе",
       "confidence": "high",
       "contexts": [
@@ -19880,6 +19916,61 @@
   ],
   "source_normalization_rules": [
     {
+      "id": "en_mine_stat_ellipsis",
+      "language": "en",
+      "pattern": "^mine(?=\\s+\\d+(?:\\.\\d+)?\\s*(?:atk|crit rate|crit dmg|skill dmg)\\b)",
+      "replacement": "the one I have has",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_critical_chance_expansion",
+      "language": "en",
+      "pattern": "\\bcrit (?:rate|chance)\\b",
+      "replacement": "critical hit chance",
+      "kind": "abbreviation",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_critical_damage_expansion",
+      "language": "en",
+      "pattern": "\\bcrit dmg\\b",
+      "replacement": "critical hit damage",
+      "kind": "abbreviation",
+      "confidence": "high", "current": true, "can_recognize": true
+    },
+    {
+      "id": "en_price_k_something",
+      "language": "en",
+      "pattern": "(?<![\\p{L}\\p{N}.,])(?<amount>[1-9]\\d{0,5})k\\s+(?:and\\s+)?(?:something|some change)\\b",
+      "replacement": "$<amount> thousand and a bit",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["buy", "bought", "sold", "sell", "paid", "price", "cost", "worth", "trade"],
+      "negative_patterns": ["race", "marathon", "kilometer", "kilometre", "running", "resolution"]
+    },
+    {
+      "id": "en_run_with_teammate",
+      "language": "en",
+      "pattern": "\\b(?<subject>I|we)(?:['’]ve| have)?\\s+(?:run|ran)\\s+with\\s+you\\b",
+      "replacement": "$<subject> played together with you",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "requires_context": true,
+      "context_patterns": ["raid", "dungeon", "boss", "party", "build", "crit rate", "crit dmg", "scroll", "guild", "co-op"],
+      "negative_patterns": ["marathon", "jogging", "running club", "kilometer", "kilometre", "5k race"]
+    },
+    {
+      "id": "en_buns_comparison_quality",
+      "language": "en",
+      "pattern": "\\b(?<verb>is|was|are|were)(?<still> still)? buns(?= compared to\\b)",
+      "replacement": "$<verb>$<still> poor in quality",
+      "kind": "grammar",
+      "confidence": "high", "current": true, "can_recognize": true,
+      "context_patterns": ["weapon", "scroll", "build", "game", "damage", "sword"],
+      "negative_patterns": ["bread", "bakery", "burger", "cinnamon", "hair"]
+    },
+    {
       "id": "en_f2p_label_recognition",
       "language": "en",
       "pattern": "\\b(?:soft\\s+)?f2p\\b",
@@ -20296,6 +20387,18 @@
     }
   ],
   "incoming_chat_rules": [
+    {
+      "id": "en_true_agreement_reaction",
+      "language": "en",
+      "pattern": "^true[.!]*$",
+      "normalized": "I agree.",
+      "sense": "short agreement reaction, not an adjective or Boolean literal",
+      "confidence": "high", "current": true, "can_recognize": true, "can_generate": true,
+      "requires_context": true,
+      "negative_patterns": ["boolean", "python", "truth table", "literal", "constant", "programming"],
+      "slots": {"intent": "agreement", "speechAct": "reaction", "stance": "agreement"},
+      "outputs": {"ru": {"clean": ["Верно."], "casual": ["Да, согласен."], "slang": ["да, точно"], "heavy": ["точно"]}}
+    },
     {
       "id": "en_gifted_item_requirement",
       "language": "en",

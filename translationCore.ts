@@ -118,6 +118,8 @@ export interface GamingEntry {
     forms?: string[];
     meaning?: string;
     keep_untranslated?: boolean;
+    /** Protect an unambiguous technical term with its target-language value. */
+    protect_translation?: boolean;
     contexts?: string[];
     translations?: Record<string, string[]>;
 }
@@ -2107,6 +2109,19 @@ function protectText(
             protectPattern(/\b(?=[A-Za-z0-9.+#_-]*[A-Z])(?=[A-Za-z0-9.+#_-]*[a-z])[A-Za-z]*[a-z][A-Z][A-Za-z0-9.+#_-]*\b/g);
             protectPattern(/\b(?:[A-Z]{2,}|[A-Z][a-z]+)\s+\d[A-Za-z0-9.-]*(?:\s+[A-Z0-9][A-Za-z0-9.-]*){0,3}\b/g);
             protectPattern(/\b[A-Z][A-Za-z0-9.+#'_-]*(?:\s+(?:[A-Z][A-Za-z0-9.+#'_-]*|\d+[A-Za-z0-9.+#'_-]*)){1,4}\b/g);
+        }
+    }
+
+    // Technical semantic slots come after code, member names and custom entities.
+    // Otherwise a member named "Crit Rate" could be translated as a stat.
+    if (options.smartSourceSlang) for (const gaming of source?.gaming ?? []) {
+        if (!gaming.protect_translation) continue;
+        const term = Object.entries(gaming.translations ?? {})
+            .find(([code]) => normalizeLanguageCode(code) === normalizeLanguageCode(options.targetLanguage))?.[1]?.[0];
+        if (!term) continue;
+        for (const form of gaming.forms ?? []) {
+            try { protectPattern(phraseRegex(form, source!.code), undefined, () => term); }
+            catch { /* Malformed optional term data falls back to the provider. */ }
         }
     }
 

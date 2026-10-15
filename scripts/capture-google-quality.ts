@@ -33,7 +33,8 @@ function google(text: string, sourceLanguage: string | null, targetLanguage: str
 }
 const engine = createTranslationEngine(dataset);
 const rows: unknown[] = [];
-const samples: Array<[string, string, string, TranslationContext?]> = process.argv[4]
+type QualityInvariant = { required?: string[]; forbidden?: string[] };
+const samples: Array<[string, string, string, TranslationContext?, QualityInvariant?]> = process.argv[4]
     ? JSON.parse(readFileSync(process.argv[4], "utf8")) : [
     ["en", "im cooked 💀", "ru"], ["de", "ich bin komplett lost", "ru"],
     ["ru", "пиздец как я хочу спать", "en"], ["uk", "шо ти робиш", "en"],
@@ -45,7 +46,7 @@ const samples: Array<[string, string, string, TranslationContext?]> = process.ar
     ["en", "She is sick.", "ru"], ["en", "I cooked chicken for dinner.", "ru"],
     ["de", "Ich habe meinen Schlüssel verloren.", "ru"], ["zh-TW", "數量是484個", "ru"],
 ];
-for (const [language, source, targetLanguage, context] of samples) {
+for (const [language, source, targetLanguage, context, invariants] of samples) {
     const options: EngineOptions = { kind: "received", targetLanguage, mode: "clean", preserveStyle: true,
         smartSourceSlang: true, targetSlangPacks: true, protectNames: true, customProtectedNames: "",
         dropEnglishApostrophes: false, softenAmbiguousProfanity: true, context };
@@ -58,9 +59,15 @@ for (const [language, source, targetLanguage, context] of samples) {
                 (text, detected) => google(text, detected, targetLanguage));
         }
         const prepared = engine.prepare(source, options);
+        const violations: string[] = [];
+        for (const [mode, output] of Object.entries(outputs)) {
+            for (const pattern of invariants?.required ?? []) if (!new RegExp(pattern, "iu").test(output)) violations.push(`${mode}: missing ${pattern}`);
+            for (const pattern of invariants?.forbidden ?? []) if (new RegExp(pattern, "iu").test(output)) violations.push(`${mode}: forbidden ${pattern}`);
+        }
+        if (violations.length) process.exitCode = 1;
         rows.push({ language, source, targetLanguage, context, raw, detectedSourceLanguage: prepared.sourceLanguage,
             register: prepared.analysis.register, providerSafeInput: prepared.analysis.providerSafeInput,
-            selectedSense: prepared.analysis.semanticMatches.map(match => match.id), outputs });
+            selectedSense: prepared.analysis.semanticMatches.map(match => match.id), outputs, violations });
         process.stdout.write(`${language}: ${source} → ${outputs.mirror}\n`);
     } catch (error) {
         rows.push({ language, source, targetLanguage, error: error instanceof Error ? error.message : String(error) });
