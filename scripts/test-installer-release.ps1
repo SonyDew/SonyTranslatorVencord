@@ -24,18 +24,24 @@ if ($installerSource -notmatch 'Start-DiscordAfterOperation' -or $installerSourc
 '{"name":"fake-vencord","packageManager":"pnpm@11.9.0"}' | Set-Content -LiteralPath (Join-Path $FakeVencord 'package.json') -Encoding utf8
 $oldLocal = $env:LOCALAPPDATA
 $env:LOCALAPPDATA = $FakeLocal
+. (Join-Path $PSScriptRoot 'installer-fixtures.ps1')
+foreach ($client in @('Stable', 'Canary', 'PTB')) { [void](New-TestDiscord $FakeLocal $client '') }
 
 function Invoke-Isolated(
     [string]$Mode,
     [string]$RunningClient = 'None',
     [string]$LaunchLog,
-    [switch]$LaunchFailure
+    [switch]$LaunchFailure,
+    [switch]$Updating
 ) {
     $arguments = @(
         '-NoLogo', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $Installer,
         '-VencordPath', $FakeVencord, '-NonInteractive', '-SkipInject',
         '-BuildMode', $Mode, '-TestRunningDiscordClient', $RunningClient
     )
+    $selected = if ($RunningClient -eq 'None') { 'Stable' } else { $RunningClient }
+    $arguments += @('-DiscordClient', $selected)
+    if ($Updating) { $arguments += '-UpdateOnly' }
     if ($LaunchLog) { $arguments += @('-TestDiscordLaunchLog', $LaunchLog) }
     if ($LaunchFailure) { $arguments += '-TestDiscordLaunchFailure' }
     $output = @(& powershell.exe @arguments 2>&1 | ForEach-Object { $_.ToString() })
@@ -46,6 +52,7 @@ function Invoke-Isolated(
 
 try {
     if ((Invoke-Isolated 'Skip').ExitCode -ne 0) { throw 'Fresh-install simulation failed.' }
+    foreach ($client in @('Stable', 'Canary', 'PTB')) { [void](New-TestDiscord $FakeLocal $client (Join-Path $FakeVencord 'dist/patcher.js')) }
     $Plugin = Join-Path $FakeVencord 'src\userplugins\SonyTranslator'
     if ((Get-Content -LiteralPath (Join-Path $Plugin 'index.tsx') -Raw) -notmatch [regex]::Escape("v$ExpectedVersion")) { throw 'Fresh install payload/version mismatch.' }
 
@@ -53,9 +60,20 @@ try {
     (Get-Content -LiteralPath $indexPath -Raw).Replace("v$ExpectedVersion", "v$PreviousVersion") |
         Set-Content -LiteralPath $indexPath -Encoding utf8
     Set-Content -LiteralPath (Join-Path $Plugin 'rollback-marker.txt') -Value 'previous-version-must-survive' -Encoding utf8
-    if ((Invoke-Isolated 'Skip').ExitCode -ne 0) { throw 'Update simulation failed.' }
+    if ((Invoke-Isolated 'Skip' -Updating).ExitCode -ne 0) { throw 'Update simulation failed.' }
     if (Test-Path -LiteralPath (Join-Path $Plugin 'rollback-marker.txt')) { throw 'Successful update did not replace the old payload.' }
     if ((Get-Content -LiteralPath $indexPath -Raw) -notmatch [regex]::Escape("v$ExpectedVersion")) { throw "v$PreviousVersion update did not install the current payload." }
+
+    # Surviving source/settings cannot turn a removed Vencord into a valid update.
+    $before = (Get-FileHash -LiteralPath $indexPath).Hash
+    $resources = New-TestDiscord $FakeLocal 'Stable' ''
+    $missingLaunchLog = Join-Path $TempRoot 'missing-vencord-launch.log'
+    $missingResult = Invoke-Isolated 'Skip' 'Stable' $missingLaunchLog -Updating
+    if ($missingResult.ExitCode -eq 0 -or $missingResult.Output -match 'Closing simulated Discord|installed successfully' -or
+        (Test-Path -LiteralPath $missingLaunchLog) -or (Get-FileHash -LiteralPath $indexPath).Hash -ne $before) {
+        throw 'Removed Vencord update changed state or reported success.'
+    }
+    [void](New-TestDiscord $FakeLocal 'Stable' (Join-Path $FakeVencord 'dist/patcher.js'))
 
     Set-Content -LiteralPath (Join-Path $Plugin 'rollback-marker.txt') -Value 'previous-version-must-survive' -Encoding utf8
     $failedResult = Invoke-Isolated 'Fail'

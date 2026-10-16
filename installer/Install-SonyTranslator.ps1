@@ -5,6 +5,8 @@ param(
     [switch]$NonInteractive,
     [switch]$SkipInject,
     [switch]$SkipDiscordLaunch,
+    [ValidateSet('Auto', 'Stable', 'Canary', 'PTB')]
+    [string]$DiscordClient = 'Auto',
     [ValidateSet('Auto', 'None', 'Stable', 'Canary', 'PTB')]
     [string]$TestRunningDiscordClient = 'Auto',
     [string]$TestDiscordLaunchLog,
@@ -30,6 +32,10 @@ $script:HadPreviousPlugin = $false
 $script:PayloadInstalled = $false
 $script:PreviouslyRunningDiscordClient = $null
 $script:DiscordWasStopped = $false
+$script:SelectedDiscord = $null
+$script:LoaderBackup = $null
+$script:InjectionAttempted = $false
+. (Join-Path $PSScriptRoot 'VencordInstallation.ps1')
 
 $DiscordClients = @(
     @{ Id = 'Stable'; Process = 'Discord'; Root = 'Discord'; Exe = 'Discord.exe' },
@@ -93,11 +99,12 @@ function Stop-RunningDiscordClients {
     }
 
     Write-Step "Closing Discord before Vencord build/injection (will restart $($script:PreviouslyRunningDiscordClient))"
-    $running = @($DiscordClients | ForEach-Object { Get-Process -Name $_.Process -ErrorAction SilentlyContinue })
+    $selectedClient = Get-DiscordClient $script:SelectedDiscord.Client
+    $running = @(Get-Process -Name $selectedClient.Process -ErrorAction SilentlyContinue)
     if ($running.Count) { $running | Stop-Process -Force -ErrorAction Stop }
     $deadline = [DateTime]::UtcNow.AddSeconds(10)
     do {
-        $remaining = @($DiscordClients | ForEach-Object { Get-Process -Name $_.Process -ErrorAction SilentlyContinue })
+        $remaining = @(Get-Process -Name $selectedClient.Process -ErrorAction SilentlyContinue)
         if (-not $remaining.Count) { break }
         Start-Sleep -Milliseconds 200
     } while ([DateTime]::UtcNow -lt $deadline)
@@ -199,7 +206,7 @@ function Prepare-VencordSource([string]$Directory) {
         return
     }
 
-    if ($UpdateOnly) { Write-Warn 'No previous private checkout found; performing a full install.' }
+    if ($UpdateOnly) { throw 'The existing SonyTranslator source checkout is missing. Use Install SonyTranslator.cmd to install it again.' }
     if (Test-Path -LiteralPath $Directory) {
         $items = @(Get-ChildItem -LiteralPath $Directory -Force -ErrorAction SilentlyContinue)
         if ($items.Count) { throw "The selected Vencord folder is not a valid checkout and is not empty: $Directory" }
@@ -246,15 +253,15 @@ function Install-Payload {
         New-Item -ItemType Directory -Force -Path $backupRoot | Out-Null
         $script:BackupDir = Join-Path $backupRoot ("SonyTranslator-" + [DateTime]::UtcNow.ToString('yyyyMMddHHmmssfff'))
         Copy-Item -LiteralPath $script:PluginDir -Destination $script:BackupDir -Recurse
-        Write-Good 'Temporary plugin backup created'
+        Write-Good 'Plugin backup saved for recovery'
     }
 
+    $script:PayloadInstalled = $true
     if (Test-Path -LiteralPath $script:PluginDir) {
         Assert-SafePluginPath $script:PluginDir $script:VencordDir
         Remove-Item -LiteralPath $script:PluginDir -Recurse -Force
     }
     Copy-Item -LiteralPath $PayloadDir -Destination $script:PluginDir -Recurse
-    $script:PayloadInstalled = $true
     Write-Good "SonyTranslator $PluginVersion prepared."
 }
 
@@ -270,15 +277,32 @@ function Restore-PreviousPlugin {
     }
 }
 
-function Remove-TemporaryBackup {
-    if ($script:BackupDir -and (Test-Path -LiteralPath $script:BackupDir)) {
-        $backupRoot = Get-FullPath (Join-Path $BaseDir 'backups')
-        $actual = Get-FullPath $script:BackupDir
-        if (-not $actual.StartsWith($backupRoot + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
-            throw "Refusing unsafe backup cleanup path: $actual"
+function Backup-DiscordLoader {
+    if ($BuildMode -ne 'Normal') { return }
+    $script:LoaderBackup = Join-Path (Join-Path $BaseDir 'backups') ('Discord-loader-' + [guid]::NewGuid().ToString('N'))
+    New-Item -ItemType Directory -Path $script:LoaderBackup -Force | Out-Null
+    foreach ($file in @('app.asar', '_app.asar')) {
+        $source = Join-Path $script:SelectedDiscord.Resources $file
+        if (Test-Path -LiteralPath $source -PathType Leaf) {
+            Copy-Item -LiteralPath $source -Destination (Join-Path $script:LoaderBackup $file)
         }
-        Remove-Item -LiteralPath $script:BackupDir -Recurse -Force
     }
+}
+
+function Restore-DiscordLoader {
+    if (-not $script:InjectionAttempted -or -not $script:LoaderBackup) { return }
+    Assert-SonyDiscordTargetUnchanged $script:SelectedDiscord
+    $expectedResources = Get-FullPath $script:SelectedDiscord.Resources
+    $clientRoot = Get-FullPath $script:SelectedDiscord.Root
+    if (-not $expectedResources.StartsWith($clientRoot + '\', [StringComparison]::OrdinalIgnoreCase) -or
+        $expectedResources -notmatch '[\\/]app-\d+(?:\.\d+){2,3}[\\/]resources$') { throw 'Unsafe Discord recovery target.' }
+    foreach ($file in @('app.asar', '_app.asar')) {
+        $backup = Join-Path $script:LoaderBackup $file
+        $destination = Join-Path $expectedResources $file
+        if (Test-Path -LiteralPath $backup -PathType Leaf) { Copy-Item -LiteralPath $backup -Destination $destination -Force }
+        elseif (Test-Path -LiteralPath $destination -PathType Leaf) { Remove-Item -LiteralPath $destination -Force }
+    }
+    Write-Good 'Previous Discord loader restored.'
 }
 
 function Inject-Vencord([string]$Directory) {
@@ -286,7 +310,22 @@ function Inject-Vencord([string]$Directory) {
     Write-Step 'Injecting the verified custom Vencord build'
     Push-Location $Directory
     try {
-        Invoke-InstallerCommand 'node.exe' @('scripts\runInstaller.mjs', '--', '--install', '--branch', 'auto')
+        Invoke-InstallerCommand 'node.exe' @('scripts\runInstaller.mjs', '--', '--help')
+        $cli = Join-Path $Directory 'dist\Installer\VencordInstallerCli.exe'
+        if (-not (Test-Path -LiteralPath $cli -PathType Leaf)) { throw 'Vencord injection helper is missing.' }
+        $previousUserData = $env:VENCORD_USER_DATA_DIR
+        $previousDevInstall = $env:VENCORD_DEV_INSTALL
+        try {
+            $env:VENCORD_USER_DATA_DIR = $Directory
+            $env:VENCORD_DEV_INSTALL = '1'
+            Assert-SonyDiscordTargetUnchanged $script:SelectedDiscord
+            $script:InjectionAttempted = $true
+            Invoke-InstallerCommand $cli @('--install', '--location', $script:SelectedDiscord.Root)
+        } finally {
+            $env:VENCORD_USER_DATA_DIR = $previousUserData
+            $env:VENCORD_DEV_INSTALL = $previousDevInstall
+        }
+        Assert-SonyDiscordInjection $script:SelectedDiscord (Join-Path $Directory 'dist\patcher.js')
     } finally { Pop-Location }
 }
 
@@ -325,21 +364,29 @@ try { Start-Transcript -Path $LogPath -Append | Out-Null } catch { }
 try {
     Write-Host 'SonyTranslator AutoInstaller' -ForegroundColor Magenta
     Write-Host "Installer/plugin version: $PluginVersion"
+    if ($BuildMode -eq 'Normal' -and $SkipInject) { throw 'Skipping injection is only available in isolated validation mode.' }
     $script:PreviouslyRunningDiscordClient = Get-RunningDiscordClient
     if ($script:PreviouslyRunningDiscordClient) {
         Write-Good "Detected running Discord client: $($script:PreviouslyRunningDiscordClient)"
     } else {
         Write-Host 'No running Discord client detected; no client will be guessed after installation.'
     }
+    Write-Step 'Checking Discord and Vencord installation'
+    $script:VencordDir = Select-VencordDirectory
+    $script:SelectedDiscord = Select-SonyDiscordInstallation @(Get-SonyDiscordInstallations) $DiscordClient `
+        $script:PreviouslyRunningDiscordClient ([bool]$UpdateOnly) (Join-Path $script:VencordDir 'dist\patcher.js')
+    if ($UpdateOnly -and -not (Test-Path -LiteralPath (Join-Path $script:VencordDir 'package.json') -PathType Leaf)) {
+        throw 'The existing SonyTranslator source checkout is missing. Use Install SonyTranslator.cmd to install it again.'
+    }
+    Write-Good "Discord $($script:SelectedDiscord.Client) selected. Vencord: $($script:SelectedDiscord.State)."
+    Backup-DiscordLoader
     Stop-RunningDiscordClients
     Install-Prerequisites
-    $script:VencordDir = Select-VencordDirectory
     Prepare-VencordSource $script:VencordDir
     Install-Payload
     Invoke-VencordBuild $script:VencordDir
     Inject-Vencord $script:VencordDir
     [void](Start-DiscordAfterOperation $script:PreviouslyRunningDiscordClient 'successful installation')
-    Remove-TemporaryBackup
     Write-Good "SonyTranslator $PluginVersion installed successfully."
     Write-Host "Log: $LogPath" -ForegroundColor DarkGray
     exit 0
@@ -348,10 +395,13 @@ try {
     $rollbackSucceeded = $false
     try {
         Restore-PreviousPlugin
-        if ($script:HadPreviousPlugin -and $script:VencordDir -and $BuildMode -eq 'Normal') {
+        if ($script:PayloadInstalled -and $script:HadPreviousPlugin -and $script:VencordDir -and $BuildMode -eq 'Normal' -and
+            $script:SelectedDiscord.State -eq 'Active' -and
+            $script:SelectedDiscord.Patcher -ieq (Join-Path $script:VencordDir 'dist\patcher.js')) {
             Write-Step 'Rebuilding the previous plugin after rollback'
             Invoke-VencordBuild $script:VencordDir
         }
+        Restore-DiscordLoader
         $rollbackSucceeded = $true
     } catch {
         Write-Host "ROLLBACK WARNING: $($_.Exception.Message)" -ForegroundColor Yellow

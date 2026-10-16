@@ -40,7 +40,7 @@ Copy-Item -LiteralPath (Join-Path $Root 'benchmark') -Destination (Join-Path $So
 Copy-Item -LiteralPath (Join-Path $Root 'docs') -Destination (Join-Path $SourceRoot 'docs') -Recurse
 Copy-Item -LiteralPath (Join-Path $Root 'installer') -Destination (Join-Path $SourceRoot 'installer') -Recurse
 Copy-Item -LiteralPath (Join-Path $Root 'docs') -Destination (Join-Path $InstallerRoot 'payload\SonyTranslator\docs') -Recurse
-foreach ($file in @('Install-SonyTranslator.ps1', 'Install SonyTranslator.cmd', 'Update SonyTranslator.cmd', 'Uninstall-SonyTranslator.ps1', 'Uninstall SonyTranslator.cmd', 'README.txt')) {
+foreach ($file in @('Install-SonyTranslator.ps1', 'VencordInstallation.ps1', 'Install SonyTranslator.cmd', 'Update SonyTranslator.cmd', 'Uninstall-SonyTranslator.ps1', 'Uninstall SonyTranslator.cmd', 'README.txt')) {
     Copy-Item -LiteralPath (Join-Path $Root "installer\$file") -Destination (Join-Path $InstallerRoot $file)
 }
 

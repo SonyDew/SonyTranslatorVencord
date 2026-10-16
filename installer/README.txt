@@ -9,18 +9,30 @@ Normal installation/update:
 
 "Update SonyTranslator.cmd" uses the same safe installer and is provided for users
 coming from an older AutoInstaller release.
+Update requires the selected Discord client to be connected to this SonyTranslator
+Vencord build. Leftover source or settings folders do not count. If Vencord was
+removed or another build is active, Update stops before closing Discord.
+Use Install SonyTranslator.cmd for an explicit fresh install or repair instead.
+With several clients installed and none running, choose one explicitly:
+powershell -File Install-SonyTranslator.ps1 -DiscordClient Stable
+Supported choices: Stable, Canary, PTB. A running different client is never chosen
+just because Vencord exists elsewhere.
 
 What it does:
 - uses a private Vencord source checkout in %LOCALAPPDATA%\SonyTranslator\Vencord;
 - installs Node.js 22 LTS and Git through winget only when they are missing;
 - copies only the bundled SonyTranslator payload;
-- temporarily backs up only src\userplugins\SonyTranslator;
-- builds Vencord, injects the verified build, and removes the temporary backup;
+- backs up src\userplugins\SonyTranslator and the selected Discord bootstrap;
+- builds Vencord, injects into the selected client, and verifies its loader;
 - remembers the Discord Stable/Canary/PTB client that was running before installation;
 - closes Discord before build/injection and restarts only that same client afterward;
 - also restarts the previous client after a completed rollback when installation fails;
 - never guesses between installed clients when none was running;
 - restores the previous SonyTranslator files if installation/build/injection fails.
+Backups remain in %LOCALAPPDATA%\SonyTranslator\backups for manual recovery.
+Official small app.asar bootstraps are supported. Unknown loader formats stop an
+update rather than being guessed as installed. Nonstandard/portable clients need
+separate support; this detection covers normal Windows Stable, Canary and PTB.
 
 It does not delete other plugins or Discord/Vencord settings. Installer details are
 written to %LOCALAPPDATA%\SonyTranslator\installer.log.
